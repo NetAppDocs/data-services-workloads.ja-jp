@@ -1,0 +1,420 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/create-sql-database-server.html 
+keywords: create, server, Microsoft SQL, deploy, host, deploy a database host, database host 
+summary: データベース向け NetApp Workload Factory 内で新しい Microsoft SQL Server を作成します。 
+---
+= Microsoft SQL Server を NetApp Workload Factory for Databases に作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workload Factory for Databasesで新しいMicrosoft SQL Server、またはデータベースホストを作成するには、FSx for ONTAPファイルシステムの導入とActive Directoryのリソースが必要です。
+
+
+
+[[about-this-task]]
+== タスク概要
+
+Workload FactoryからMicrosoft SQL Serverを作成する前に、データベース ホスト構成で利用可能なストレージ導入タイプ、MicrosoftマルチパスI/O構成、Active Directory展開、ネットワークの詳細、およびこの操作を完了するための要件について確認してください。
+
+展開後、次のことが必要になります。<<ステップ2：Microsoft SQL Serverでリモート接続を有効にする,Microsoft SQL Serverでリモート接続を有効にする>>。
+
+.FSx for ONTAPファイルシステムの導入
+新しいMicrosoft SQL Serverを作成するには、ストレージバックエンドとしてFSx for ONTAPファイルシステムが必要です。既存のFSx for ONTAPファイルシステムを使用するか、新しいファイルシステムを作成できます。データベース サーバのストレージバックエンドとして既存のFSx for ONTAPファイルシステムを選択した場合、Microsoft SQLワークロード用に新しいストレージVMが作成されます。
+
+FSx for ONTAPファイルシステムには2つのMicrosoft SQL Server導入モデルがあります：_フェールオーバー クラスタ インスタンス（FCI）_または_スタンドアロン_。選択したFSx for ONTAP導入モデルに応じて、FSx for ONTAPファイルシステム用に異なるリソースが作成されます。
+
+* *フェールオーバー クラスター インスタンス（FCI）Microsoft SQL導入*：FCI導入用に新しいFSx for ONTAPファイルシステムが選択されると、マルチアベイラビリティゾーンのFSx for NetApp ONTAPファイルシステムが導入されます。FCI導入では、データ ファイル、ログ ファイル、tempdbファイル用に個別のボリュームとLUNが作成されます。Windowsクラスタのクォーラムまたはウィットネス ディスク用に、追加のボリュームとLUNが作成されます。
+* *スタンドアロンのMicrosoft SQL展開*：新しいMicrosoft SQL Serverが作成されると、シングルアベイラビリティゾーンのFSx for ONTAPファイルシステムが作成されます。さらに、データ ファイル、ログ、およびtempdbファイル用に、個別のボリュームとLUNが作成されます。
+
+
+.Microsoft マルチパス I/O 構成
+Microsoft SQL Serverのどちらの導入モデルでも、iSCSIストレージ プロトコルを使用したLUNの作成が必要です。Workload Factoryは、FSx for ONTAP上のSQL Server向けにLUNを構成する一環として、Microsoft Multi-path I/O（MPIO）を構成します。MPIOは、AWSおよびNetAppのベストプラクティスに基づいて構成されます。
+
+詳細については、link:https://aws.amazon.com/blogs/modernizing-with-aws/sql-server-high-availability-amazon-fsx-for-netapp-ontap/["Amazon FSx for NetApp ONTAP を使用した SQL Server 高可用性デプロイメント"^]を参照してください。
+
+.Active Directory
+Active Directory（AD）の展開中に、以下のことが起こります：
+
+* 既存のSQLサービスアカウントを指定しない場合、ドメイン内に新しいMicrosoft SQLサービスアカウントが作成されます。
+* Windowsクラスター、ノードホスト名、およびMicrosoft SQL FCI名が、管理対象コンピューターとしてMicrosoft SQLサービスアカウントに追加されます。
+* Windowsクラスタエントリには、コンピュータをドメインに追加するための権限が割り当てられています。
+
+
+.ユーザー管理のActive Directoryセキュリティグループ
+Workload FactoryでのMicrosoft SQL Serverのデプロイ中に「ユーザー管理の Active Directory」を選択した場合は、デプロイのためにEC2インスタンスとディレクトリサービス間のトラフィックを許可するセキュリティグループを指定する必要があります。Workload Factoryは、AWS Managed Microsoft ADの場合とは異なり、ユーザー管理の Active Directoryに対してセキュリティグループを自動的にアタッチしません。
+
+.リソースロールバック
+ドメインネームシステム（DNS）リソースをロールバックすることにした場合、ADおよびDNS内のリソースレコードは自動的に削除されません。DNSサーバとADからレコードを削除するには、以下の手順に従ってください。
+
+* ユーザー管理型ADの場合、まずlink:https://learn.microsoft.com/en-us/powershell/module/activedirectory/remove-adcomputer?view=windowsserver2022-ps["ADコンピュータを削除します"^]。次に、DNSマネージャーからDNSサーバーに接続し、link:https://learn.microsoft.com/en-us/windows-server/networking/technologies/ipam/delete-dns-resource-records["DNSリソースレコードを削除する"^]。
+* AWS Managed Microsoft AD の場合、link:https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_install_ad_tools.html["AD管理ツールをインストールします"^]。次に、link:https://learn.microsoft.com/en-us/powershell/module/activedirectory/remove-adcomputer?view=windowsserver2022-ps["ADコンピュータを削除します"^]。最後に、DNSマネージャからDNSサーバに接続し、link:https://learn.microsoft.com/en-us/windows-server/networking/technologies/ipam/delete-dns-resource-records["DNSリソースレコードを削除する"^]。
+
+
+
+
+[[before-you-begin]]
+== 開始する前に
+
+新しいデータベースホストを作成する前に、以下の前提条件を満たしていることを確認してください。
+
+.認証情報と権限
+Workload Factoryで新しいデータベースホストを作成するには、AWSアカウントでlink:../fsx-storage/add-credentials.html["_データベースホストの作成_権限を付与する"^]する必要があります。
+
+.Active Directory
+Active Directoryに接続するには、以下の操作を実行するための管理者権限が必要です：
+
+* ドメインに参加する
+* コンピュータオブジェクトを作成する
+* デフォルトの組織単位（OU）にオブジェクトを作成します
+* すべてのプロパティを読み取る
+* ドメインユーザーをADノードのローカル管理者にする
+* ADにMicrosoft SQL Serverサービスユーザーがまだ存在しない場合は、作成します。
+
+
+
+
+[[step-1-create-a-database-server]]
+== ステップ 1：データベース サーバを作成する
+
+Workload Factoryで_Automate_モードの権限を使用して、_Quick create_または_Advanced create_の導入モードでこのタスクを完了できます。Codeboxで利用可能な次のツールを使用することもできます：REST API、AWS CLI、AWS CloudFormation、Terraform。link:../admin/codebox-automation.html["Codeboxを使用した自動化の方法について学習します"^]。
+
+
+NOTE: CodeboxからTerraformを使用する場合、コピーまたはダウンロードしたコードでは `fsxadmin`および `vsadmin`のパスワードが非表示になります。コードを実行する際に、パスワードを再入力する必要があります。_Automate_モードの権限に加えて、ユーザーアカウントに以下の権限を含める必要があります： `iam:TagRole`および `iam:TagInstanceProfile`。link:../admin/codebox-automation.html["CodeboxでTerraformの使い方を学びましょう"^]。
+
+デプロイ時に、Workload Factoryは、SQLプロビジョニング用のスクリプトへの認証情報委任のためにCredSSPを有効にします。グループポリシーによってすべてのドメイン コンピュータでCredSSP委任がブロックされている場合、デプロイは失敗します。デプロイ後、Workload FactoryはCredSSPを無効にします。
+
+[role="tabbed-block"]
+====
+.クイック作成
+--
+
+NOTE: _Quick create_では、FCIがデフォルトの展開モデル、Windows 2016がデフォルトのWindowsバージョン、SQL 2019 Standard EditionがデフォルトのSQLバージョンとなっています。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースの概要で、*ホストのデプロイ*を選択し、次にメニューから*Microsoft SQL Server*を選択します。
+. *クイック作成*を選択します。
+. 「AWS設定」で、以下の情報を入力してください：
++
+.. *AWS認証情報*：新しいデータベースホストをデプロイするための自動化権限を持つAWS認証情報を選択してください。
++
+_データベースホストの作成_権限を持つAWS認証情報を使用すると、workload factory内でお客様のAWSアカウントから新しいデータベースホストをWorkload Factoryがデプロイおよび管理できるようになります。
+
++
+_view, planning, and analysis_ 権限を持つAWS認証情報を使用すると、Workload FactoryはAWS CloudFormationコンソールで使用するためのCloudFormationテンプレートを生成できます。
+
++
+Workload FactoryにAWS認証情報が関連付けられておらず、Workload Factoryで新しいサーバを作成する場合は、*オプション1*に従って認証情報ページに移動してください。データベースワークロードに必要な認証情報と_データベースホスト作成_権限を手動で追加します。
+
++
+Workload Factoryで新しいサーバの作成フォームに入力し、AWS CloudFormationでの導入用の完全なYAMLファイルテンプレートをダウンロードできるようにする場合は、AWS CloudFormation内で新しいサーバを作成するために必要な権限を確保するために、*オプション2*に従ってください。データベースワークロードに必要なクレデンシャルと_表示、計画、分析_の権限を手動で追加します。
+
++
+オプションとして、Codeboxから部分的に完成したYAMLファイルテンプレートをダウンロードすることで、認証情報や権限を一切必要とせずに、Workload Factoryの外部でスタックを作成できます。YAMLファイルをダウンロードするには、Codeboxのドロップダウンから *CloudFormation* を選択します。
+
+.. *リージョンとVPC*：リージョンとVPCネットワークを選択してください。
++
+展開サブネットが既存のインターフェイスエンドポイントに関連付けられていること、およびセキュリティグループが選択したサブネットに対してHTTPS（443）プロトコルへのアクセスを許可していることを確認してください。
+
++
+AWS サービス インターフェイス エンドポイント（SQS、FSx、EC2、CloudWatch、CloudFormation、SSM）および S3 ゲートウェイ エンドポイントは、見つからない場合はデプロイ中に作成されます。
+
++
+VPC DNS属性 `EnableDnsSupport`および `EnableDnsHostnames`がまだ `true`に設定されていない場合、エンドポイントアドレス解決を有効にするために変更されます。
+
++
+クロスVPC DNSを使用する場合、DNSが存在するもう一方のVPC上のエンドポイントのセキュリティグループでは、導入サブネットへのポート443を許可する必要があります。そうでない場合は、クロスVPCのActive Directoryに参加する際に、ローカルVPCのDNSリゾルバを指定する必要があります。複数の複製されたドメイン コントローラ環境で、サブネットから一部のドメイン コントローラにアクセスできない場合は、*CloudFormationにリダイレクト*して `Preferred domain controller`を入力し、Active Directoryに接続できます。
+
+.. *可用性ゾーン*：フェールオーバークラスタインスタンス（FCI）のデプロイメントモデルに従って、可用性ゾーンとサブネットを選択します。
++
+
+NOTE: FCIの展開は、マルチアベイラビリティゾーン（MAZ）のFSx for ONTAP構成でのみサポートされます。
+
++
+... *クラスタ構成 - ノード 1* フィールドで、*可用性ゾーン* ドロップダウンメニューから MAZ FSx for ONTAP 構成のプライマリ可用性ゾーンを選択し、*サブネット* ドロップダウンメニューからプライマリ可用性ゾーンのサブネットを選択します。
+... *Cluster configuration - Node 2*フィールドで、*Availability zone*ドロップダウンメニューからMAZ FSx for ONTAP構成のセカンダリ可用性ゾーンを選択し、*Subnet*ドロップダウンメニューからセカンダリ可用性ゾーンのサブネットを選択します。
+
+
+
+
+. 「アプリケーション設定」で、「データベース認証情報」のユーザー名とパスワードを入力します。
++
+GovCloudアカウントの場合は、AWS SSM パラメーター ARN の値を次の形式で入力してください：
+`{fsx:{"username":"fsxadmin","password":"pass"}}`
+
++
+この値は、AWS マネジメントコンソールのパラメーターストアの「パラメーターの詳細」に表示されます。AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
+. 「接続性」の項目に、以下の情報を入力してください：
++
+.. *キーペア*：キーペアを選択してください。
+.. *Active Directory*：
++
+... *ドメイン名*フィールドで、ドメイン名を選択または入力します。
++
+.... AWSが管理するActive Directoryの場合、ドメイン名がドロップダウンメニューに表示されます。
+.... ユーザー管理のActive Directoryの場合は、*検索と追加*フィールドに名前を入力し、*追加*をクリックします。
+
+
+... *DNSアドレス*フィールドに、ドメインのDNS IPアドレスを入力します。最大3つのIPアドレスを追加できます。
++
+AWS が管理する Active Directory の場合、DNS の IP アドレスがドロップダウン メニューに表示されます。
+
+... *ユーザー名*フィールドに、Active Directoryドメインのユーザー名を入力します。
+... *パスワード*フィールドに、Active Directoryドメインのパスワードを入力してください。
++
+GovCloudアカウントの場合は、Active Directory認証情報用のAWS SSMパラメータARN値を次の形式で入力してください： `{fsx:{"username":"fsxadmin","password":"pass"}}`AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
+
+
+
+
+. *インフラストラクチャ設定*で、以下の情報を提供してください：
++
+.. *FSx for ONTAPシステム*：新しいFSx for ONTAPファイルシステムを作成するか、既存のFSx for ONTAPファイルシステムを使用します。
++
+... *新しいFSx for ONTAPの作成*：ユーザー名とパスワードを入力してください。
++
+GovCloudアカウントの場合は、FSx for ONTAPクレデンシャルのAWS SSMパラメータARN値を次の形式で入力します： `{fsx:{"username":"fsxadmin","password":"pass"}}`。AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
++
+新しいFSx for ONTAPファイルシステムでは、インストール時間が30分以上長くなる場合があります。
+
+... *既存のFSx for ONTAPを選択*：FSx for ONTAP名を選択し、ファイルシステムのユーザー名とパスワードを入力してください。
++
+既存のFSx for ONTAPファイルシステムについては、以下の点を確認してください：
+
++
+**** FSx for ONTAPにアタッチされたルーティンググループにより、サブネットへのルートを導入に使用できるようになります。
+**** セキュリティグループは、導入に使用されるサブネットからのトラフィック、具体的にはHTTPS（443）およびiSCSI（3260）TCPポートを許可します。
+
+
+
+
+.. *データドライブのサイズ*：データドライブの容量を入力し、容量の単位を選択してください。
+
+
+. 概要：
++
+.. *プレビューデフォルト*：Quick createが設定したデフォルトの構成を確認します。
+.. *概算費用*：表示されているリソースを導入した場合に発生する可能性のある料金の概算を示します。
+
+
+. *作成*をクリックします。
++
+または、これらのデフォルト設定を今すぐ変更する場合は、「Advanced create」を使用してデータベース サーバを作成します。
+
++
+後でホストをデプロイするために、*設定を保存*を選択することもできます。
+
+
+
+--
+.高度な作成
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースの概要で、*ホストのデプロイ*を選択し、次にメニューから*Microsoft SQL Server*を選択します。
+. *詳細作成*を選択してください。
+. *デプロイメントモデル*には、*フェールオーバークラスタインスタンス*または*シングルインスタンス*を選択します。
+. 「AWS設定」で、以下の情報を入力してください：
++
+.. *AWS認証情報*：新しいデータベースホストをデプロイするための自動化権限を持つAWS認証情報を選択してください。
++
+_データベースホストの作成_権限を持つAWS認証情報を使用すると、workload factory内でお客様のAWSアカウントから新しいデータベースホストをWorkload Factoryがデプロイおよび管理できるようになります。
+
++
+_view, planning, and analysis_ 権限を持つAWS認証情報を使用すると、Workload FactoryはAWS CloudFormationコンソールで使用するためのCloudFormationテンプレートを生成できます。
+
++
+Workload FactoryにAWS認証情報が関連付けられておらず、Workload Factoryで新しいサーバを作成する場合は、*オプション1*に従って認証情報ページに移動してください。データベースワークロードに必要な認証情報と_データベースホスト作成_権限を手動で追加します。
+
++
+Workload Factoryで新しいサーバの作成フォームに入力し、AWS CloudFormationでの導入用の完全なYAMLファイルテンプレートをダウンロードできるようにする場合は、AWS CloudFormation内で新しいサーバを作成するために必要な権限を確保するために、*オプション2*に従ってください。データベースワークロードに必要なクレデンシャルと_表示、計画、分析_の権限を手動で追加します。
+
++
+オプションとして、Codeboxから部分的に完成したYAMLファイルテンプレートをダウンロードすることで、認証情報や権限を一切必要とせずに、Workload Factoryの外部でスタックを作成できます。YAMLファイルをダウンロードするには、Codeboxのドロップダウンから *CloudFormation* を選択します。
+
+.. *リージョンとVPC*：リージョンとVPCネットワークを選択してください。
++
+既存のインターフェースエンドポイントのセキュリティグループが、選択したサブネットに対してHTTPS（443）プロトコルへのアクセスを許可していることを確認してください。
+
++
+AWSサービスインターフェイスエンドポイント（SQS、FSx、EC2、CloudWatch、Cloud Formation、SSM）およびS3ゲートウェイエンドポイントは、見つからない場合はデプロイ中に作成されます。
+
++
+VPC DNS属性 `EnableDnsSupport`および `EnableDnsHostnames`は、まだ `true`に設定されていない場合、エンドポイントアドレス解決を有効にするように変更されます。
+
+.. *アベイラビリティゾーン*：選択した導入モデルに応じて、アベイラビリティゾーンとサブネットを選択します。高可用性を確保するため、サブネット間で同じルートテーブルを共有しないようにしてください。
++
+
+NOTE: FCIの展開は、マルチアベイラビリティゾーン（MAZ）のFSx for ONTAP構成でのみサポートされます。
+
++
+*** シングルインスタンス展開の場合：
++
+**** 「クラスタ構成 - ノード 1」フィールドで、「アベイラビリティゾーン」ドロップダウンメニューからアベイラビリティゾーンを選択し、「サブネット」ドロップダウンメニューからサブネットを選択します。
+
+
+*** FCI展開の場合：
++
+**** *クラスタ構成 - ノード 1* フィールドで、*可用性ゾーン* ドロップダウンメニューから MAZ FSx for ONTAP 構成のプライマリ可用性ゾーンを選択し、*サブネット* ドロップダウンメニューからプライマリ可用性ゾーンのサブネットを選択します。
+**** *Cluster configuration - Node 2*フィールドで、*Availability zone*ドロップダウンメニューからMAZ FSx for ONTAP構成のセカンダリ可用性ゾーンを選択し、*Subnet*ドロップダウンメニューからセカンダリ可用性ゾーンのサブネットを選択します。
+
+
+
+
+.. *セキュリティグループ*：ワークロードセキュリティグループが作成され、ノード上の Microsoft SQL Server および Windows クラスタ通信に必要なポートとプロトコルが許可されます。さらに、1つまたは複数のセキュリティグループを選択することもできます。
+
+
+. 「アプリケーション設定」で、以下の情報を入力してください：
++
+.. 「SQL Server のインストールタイプ」で、「ライセンス付属 AMI」または「カスタム AMI を使用する」を選択します。
++
+... 「ライセンス付属AMI」を選択した場合は、以下の情報を提供してください：
++
+.... *オペレーティングシステム*：*Windows server 2016*、*Windows server 2019*、または*Windows server 2022*を選択してください。
+.... *データベースエディション*：*SQL Server Standard Edition* または *SQL Server Enterprise Edition* を選択してください。
+.... *データベースバージョン*：*SQL Server 2016*、*SQL Server 2019*、または*SQL Server 2022*を選択してください。
+.... *SQL Server AMI*：ドロップダウンメニューからSQL Server AMIを選択してください。
+
+
+... *カスタムAMIを使用する* を選択した場合は、ドロップダウンメニューからAMIを選択してください。
+
+
+.. *SQL Serverの照合順序*：サーバに使用する照合順序セットを選択します。
++
+
+NOTE: 選択した照合順序セットがインストールに適していない場合は、デフォルトの照合順序「SQL_Latin1_General_CP1_CI_AS」を選択することをお勧めします。
+
+.. *データベース名*：データベースクラスタ名を入力してください。
+.. *データベース認証情報*：新しいサービスアカウントのユーザ名とパスワードを入力するか、Active Directoryの既存のサービスアカウントの認証情報を使用します。
++
+オプション：SQL Serverサービスアカウントに*マネージドサービスアカウントを使用する*を選択します。お使いの環境でMSA（マネージドサービスアカウント）またはグループマネージドサービスアカウント（gMSA）を使用しており、Active Directoryでパスワードを管理している場合は、このオプションを使用してください。
+
++
+GovCloudアカウントの場合は、AWS SSM パラメーター ARN の値を次の形式で入力してください：
+`{fsx:{"username":"fsxadmin","password":"pass"}}`
+
++
+この値は、AWS マネジメントコンソールのパラメーターストアの「パラメーターの詳細」に表示されます。AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
+
+
+. 「接続性」の項目に、以下の情報を入力してください：
++
+.. *キーペア*：インスタンスに安全に接続するためのキーペアを選択してください。
+.. *Active Directory*：以下のActive Directoryの詳細を入力してください：
++
+... *ドメイン名*フィールドで、ドメイン名を選択または入力します。
++
+.... AWSが管理するActive Directoryの場合、ドメイン名がドロップダウンメニューに表示されます。
+.... ユーザー管理のActive Directoryの場合は、*検索と追加*フィールドに名前を入力し、*追加*をクリックします。
+
+
+... *DNSアドレス*フィールドに、ドメインのDNS IPアドレスを入力します。最大3つのIPアドレスを追加できます。
++
+AWS が管理する Active Directory の場合、DNS の IP アドレスがドロップダウン メニューに表示されます。
+
+... Active Directoryドメインのユーザー名とパスワードを入力します。
++
+GovCloudアカウントの場合は、Active Directory認証情報用のAWS SSMパラメータARN値を次の形式で入力してください： `{fsx:{"username":"fsxadmin","password":"pass"}}`AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
+... *優先ドメイン コントローラ*：必要に応じて、参加するActive Directoryで使用する優先ドメイン コントローラを入力します。
+... *優先組織単位パス*：必要に応じて、参加するActive Directoryの優先組織単位（OU）を入力します。
+... *対象Active Directoryグループ*：必要に応じて、コンピュータを追加する対象Active Directoryグループを入力します。
+
+
+
+
+. *インフラストラクチャ設定*で、以下の情報を提供してください：
++
+.. *DBインスタンスタイプ*：ドロップダウンメニューからデータベースインスタンスタイプを選択してください。
+.. *FSx for ONTAPシステム*：新しいFSx for ONTAPファイルシステムを作成するか、既存のFSx for ONTAPファイルシステムを使用します。
++
+... *新しいFSx for ONTAPの作成*：ユーザー名とパスワードを入力してください。
++
+GovCloudアカウントの場合は、FSx for ONTAPクレデンシャルのAWS SSMパラメータARN値を次の形式で入力します： `{fsx:{"username":"fsxadmin","password":"pass"}}`。AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
++
+新しいFSx for ONTAPファイルシステムでは、インストール時間が30分以上長くなる場合があります。
+
+... *既存のFSx for ONTAPを選択*：ドロップダウンメニューからFSx for ONTAPの名前を選択し、ファイルシステムのユーザ名とパスワードを入力します。
++
+既存のFSx for ONTAPファイルシステムについては、以下の点を確認してください：
+
++
+**** FSx for ONTAPにアタッチされたルーティンググループにより、サブネットへのルートを導入に使用できるようになります。
+**** セキュリティグループは、導入に使用されるサブネットからのトラフィック、具体的にはHTTPS（443）およびiSCSI（3260）TCPポートを許可します。
+
+
+
+
+.. *Snapshotポリシー*：デフォルトで有効になっています。スナップショットは毎日取得され、保持期間は7日間です。
++
+スナップショットは、SQLワークロード用に作成されたボリュームに割り当てられます。
+
+.. *データドライブのサイズ*：データドライブの容量を入力し、容量の単位を選択してください。
+.. *プロビジョニングされたIOPS*：*自動*または*ユーザプロビジョニング*を選択してください。*ユーザプロビジョニング*を選択した場合は、IOPS値を入力してください。
+.. *スループット容量*：ドロップダウンメニューからスループット容量を選択してください。
++
+地域によっては、4 GBpsのスループット容量を選択できる場合があります。4 GBpsのスループット容量をプロビジョニングするには、FSx for ONTAPファイルシステムを最低5,120 GiBのSSDストレージ容量と160,000 SSD IOPSで構成する必要があります。
+
+.. *暗号化*：アカウント内のキー、または別のアカウントのキーを選択してください。別のアカウントの暗号化キーのARNを入力する必要があります。
++
+FSx for ONTAPカスタム暗号化キーは、サービスへの適用性に基づいて一覧表示されません。適切なFSx暗号化キーを選択してください。FSx以外の暗号化キーを使用すると、サーバの作成に失敗します。
+
++
+AWSマネージドキーは、サービスへの適用性に基づいてフィルタリングされます。
+
+.. *タグ*：オプションで、最大40個のタグを追加できます。
+.. *Simple Notification Service*：オプションで、ドロップダウンメニューからMicrosoft SQL ServerのSNSトピックを選択することで、この構成のSimple Notification Service（SNS）を有効にすることができます。
++
+... Simple Notification Serviceを有効にします。
+... ドロップダウンメニューからARNを選択してください。
+
+
+.. *CloudWatch監視*：オプションで、CloudWatch監視を有効にできます。
++
+障害発生時のデバッグ用にCloudWatchを有効にすることをお勧めします。AWS CloudFormationコンソールに表示されるイベントは概要であり、根本原因は特定されません。すべての詳細ログは、EC2インスタンスの `C:\cfn\logs`フォルダに保存されます。
+
++
+CloudWatchでは、スタックの名前でロググループが作成されます。すべての検証ノードとSQLノードのログストリームが、ロググループの下に表示されます。CloudWatchはスクリプトの進行状況を表示し、デプロイが失敗したかどうか、およびいつ失敗したかを把握するのに役立つ情報を提供します。
+
+.. *リソースのロールバック*：この機能は現在サポートされていません。
+
+
+. サマリ
++
+.. *概算費用*：表示されているリソースを導入した場合に発生する可能性のある料金の概算を示します。
+
+
+. *作成*をクリックして、新しいデータベースホストをデプロイします。
++
+または、設定を保存することもできます。
+
+
+
+--
+====
+
+
+[[step-2-enable-remote-connection-on-the-microsoft-sql-server]]
+== ステップ2：Microsoft SQL Serverでリモート接続を有効にする
+
+サーバの導入後、Workload FactoryはMicrosoft SQL Serverでのリモート接続を有効にしません。リモート接続を有効にするには、次の手順を実行します。
+
+.手順
+. Microsoft ドキュメントの link:https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/network-security-allow-local-system-to-use-computer-identity-for-ntlm["ネットワークセキュリティ：ローカルシステムがNTLMにコンピュータIDを使用することを許可する"^] を参照して、NTLM にコンピュータ ID を使用してください。
+. Microsoftのドキュメントのlink:https://learn.microsoft.com/en-us/troubleshoot/sql/database-engine/connect/network-related-or-instance-specific-error-occurred-while-establishing-connection["SQL Serverへの接続を確立中に、ネットワーク関連またはインスタンス固有のエラーが発生しました"]を参照して、動的ポート構成を確認してください。
+. セキュリティグループ内で、必要なクライアントIPアドレスまたはサブネットを許可します。
+
+
+.次の手順
+これでlink:create-sql-database.html["Workload Factory for Databasesでデータベースを作成する"]できます。

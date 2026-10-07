@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/register-instance.html 
+keywords: manage, register, Microsoft SQL Server instance, Oracle database, manage database, manage instance 
+summary: リソースを登録して、データベース向けNetApp Workload Factoryでリソースのステータス、リソースの使用状況、保護、ストレージのパフォーマンスを監視できるようにします。 
+---
+= データベース向けNetApp Workload Factoryにリソースを登録する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Microsoft SQL Server のインスタンスおよび Oracle のデータベースを登録することで、リソースの管理、データベースとサンドボックス クローンの作成、エラー ログ分析の実行、および構成の最適化を NetApp Workload Factory for Databases で行うことができます。
+
+リソースを登録できるのは、FSx for ONTAP ファイルシステムストレージで実行されている場合のみです。
+
+
+
+[[about-the-task]]
+== タスクについて
+
+インスタンス（SQL Server）またはデータベース（Oracle）の登録には、インスタンスまたはデータベースの認証と準備という2つのステップが必要です。認証とは、インスタンスまたはデータベースの資格情報を検証するプロセスです。準備には、link:create-sql-database.html["データベースの作成"]、link:create-sandbox-clone.html["サンドボックスの作成"]、link:analyze-error-logs.html["エラーログ分析"]、またはlink:optimize-configurations.html["Well-Architected評価"]などのWorkload Factory for Databasesの機能の最小要件を満たすために、AWS、NetApp、およびPowerShellモジュールをインスタンスまたはデータベースにインストールすることが含まれます。
+
+Workload Factory は、Microsoft SQL Server インスタンスと Oracle データベースの登録と管理のみをサポートしています。Workload Factory で選択した AWS アカウントの認証情報に応じて、PostgreSQL ホストがインベントリに表示されます。現在、Workload Factory は、Amazon Linux オペレーティングシステムでのみ実行されている未登録の PostgreSQL インスタンスをサポートしています。
+
+
+
+[[before-you-begin]]
+== 開始する前に
+
+インスタンスまたはデータベースを登録する前に、以下の手順を実行する必要があります。
+
+* 登録したいリソースのホストがインベントリに表示されていることを確認してください。link:../fsx-storage/add-credentials.html["操作および修復の権限を付与する"^] AWSアカウントで。
+* 登録するリソースをホストする FSx for ONTAP ファイルシステムにリンクを関連付けます。link:../fsx-storage/create-link.html["既存のリンクを関連付ける方法、または新しいリンクを作成して関連付ける方法について説明します。"^] リンクが関連付けられたら、この操作に戻ります。
+
+
+
+
+[[registering-an-instance-in-a-private-network]]
+=== プライベートネットワークにインスタンスを登録する
+
+外部接続のないプライベート ネットワークにインスタンスまたはデータベースを登録するには、必要なエンドポイントを VPC で使用できるようにし、それらを関連するサブネットに関連付けます。インターフェイス エンドポイントのセキュリティ グループでポート 443 を許可します。
+
+* `S3 Gateway/endpoint`
+* `ssm`
+* `ssmmessages`
+* `fsx`
++
+アウトバウンド EC2 接続にプロキシ サーバを使用する場合は、管理操作のために次のドメインへのアクセスを許可します：
+
+* ``.microsoft.com``（SQL Server）
+* ``.powershellgallery.com``（SQL Server）
+* ``.aws.amazon.com``
+* ``.amazonaws.com``
+
+
+
+
+[[register-a-microsoft-sql-server-instance]]
+== Microsoft SQL Serverインスタンスを登録する
+
+インスタンスの登録には、インスタンス認証と準備という2つのステップがあります。単一のインスタンス、または複数のインスタンスを登録できます。
+
+Workload Factory は、SQL Server のフェールオーバークラスタインスタンス（FCI）およびスタンドアロン導入の登録をサポートしています。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースメニューから、*インベントリ*を選択します。
+. インベントリで、エンジンタイプとして*Microsoft SQL Server*を選択します。
+. 「インスタンス」タブを選択してください。
+. 単一インスタンスを登録するか、複数インスタンスを登録するかを選択してください。
+. インスタンスを認証するには（手順 1）、次の手順を実行し、*次へ*を選択します：
++
+.. *すべてのインスタンスに同じクレデンシャルを使用する*か*クレデンシャルを手動で管理する*かを選択します。
+.. ユーザー名とパスワード情報を提供して、SQL Server と Windows を認証します。
++
+インスタンスが認証されている場合は、*次へ*を選択します。
+
+
+
+. 準備するには（手順 2）、インスタンスが最小要件を満たしていることを確認します。
++
+最小要件を満たすには、インスタンスにAWSとNetApp PowerShellモジュールとPowerShell 7モジュールがインストールされており、「前提条件チェック」にリストされている機能の少なくとも1つについて前提条件を完了する必要があります。
+
++
+.. *Prerequisite check view*で前提条件を確認します。
++
+インスタンスを登録するには、*Review well-architected issues and recommendations* などの単一の機能のすべての前提条件を完了する必要があります。
+
+.. 各機能の*セットアップの詳細*を選択して、機能の前提条件を確認し、画面上の指示に従って機能の不足している前提条件を完了します。
++
+Workload Factory でlink:optimize-configurations.html["適切に設計された問題を確認して修正"]を有効にするには、*Well-Architected の問題と推奨事項を確認する*および*Well-Architected の問題を修正する*のすべての前提条件を完了します。
+
+
+
+. すべての前提条件を完了したら、インスタンスを*登録*します。
+
+
+.結果
+インスタンスの登録が開始されます。進行状況を追跡するには、*ジョブ監視*タブを選択します。
+
+
+
+[[register-an-oracle-database]]
+== Oracleデータベースを登録する
+
+インスタンスの登録には、データベース認証と準備という2つのステップがあります。単一のインスタンスまたは複数のデータベースを登録できます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースメニューから、*インベントリ*を選択します。
+. インベントリで、エンジンタイプとして *Oracle* を選択します。
+. *データベース*タブを選択します。
+. 単一のデータベースを登録するか、複数のデータベースを登録するかを選択してください。
+. データベースを認証するには（手順1）、以下の手順を実行し、*次へ*を選択してください：
++
+.. *すべてのインスタンスに同じクレデンシャルを使用する*か*クレデンシャルを手動で管理する*かを選択します。
+.. ユーザー名とパスワード情報を指定して、Oracle ユーザーと Automatic Storage Management（ASM）グリッドユーザー（該当する場合）を認証します。
++
+データベースが認証されている場合は、*次へ*を選択します。
+
+
+
+. 準備するには（手順2）、データベースが必要な前提条件を満たしていることを確認します。必要なモジュールがすべてインストールされ、前提条件が満たされている場合は、*次へ*を選択してデータベースを登録します。それ以外の場合は、次の手順に従ってください。
++
+.. *Prerequisite check view*で前提条件を確認します。
++
+データベースを登録するには、*適切に設計された問題と推奨事項を確認する*などの単一の機能のすべての前提条件を完了する必要があります。
+
+.. 各機能の*セットアップの詳細*を選択して、機能の前提条件を確認し、画面上の指示に従って機能の不足している前提条件を完了します。
++
+データベースに Workload Factory link:optimize-configurations.html["適切に設計された問題を確認して修正"]を導入するには、*well-architected の問題と推奨事項を確認する*および*well-architected の問題を修正する*機能の下にリストされているすべての前提条件を完了してください。
+
+
+
+. 前提条件を完了したら、データベースを*登録*します。
+
+
+.結果
+データベースの登録が開始されます。進行状況を追跡するには、*ジョブ監視*タブを選択します。
+
+.次の手順
+登録後、これらのタスクを実行できます。
+
+* インベントリからデータベースを表示する
+* link:create-sql-database.html["データベースを作成する"]
+* link:create-sandbox-clone.html["データベースのクローン（サンドボックス）を作成する"]
+* link:optimize-configurations.html["データベース構成に関する包括的かつ適切なアーキテクチャ評価を取得します。"]
+

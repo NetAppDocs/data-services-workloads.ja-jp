@@ -1,0 +1,17 @@
+= Workload Factory 向け Oracle Cloud Infrastructure NetApp ストレージサービスの初期リリース
+:allow-uri-read: 
+
+
+
+
+[[initial-release-of-oracle-cloud-infrastructure-netapp-storage-service-for-workload-factory]]
+=== Workload Factory 向け Oracle Cloud Infrastructure NetApp ストレージサービスの初期リリース
+
+Workload Factory 向け OCI NetApp Storage Service（OCI NSS）の初期リリースでは、オンボーディング、システム検出、クレデンシャル管理、リンクの作成と関連付けが提供されます。OCI NSS へのアクセスをリクエストするには、Oracle にサポート チケットを発行してください。
+
+
+
+[[workload-factory-documentation-for-netapp-console-users]]
+=== NetApp Console ユーザー向けの Workload Factory ドキュメント
+
+Workload Factory の詳細なドキュメントは NetApp Console で確認できます。これには、オンボーディング、システム検出、認証情報管理、リンクの作成と関連付けに関するガイドが含まれています。

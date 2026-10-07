@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/create-cyber-vault.html 
+keywords: create cyber vault, volume cyber vault, protect data cyber vault, cyber vault setup 
+summary: NetApp cyber vaultと、ランサムウェアやサイバー脅威からデータを保護するためのcyber vaultアーキテクチャを実装する方法について説明します。 
+---
+= サイバーボールトでFSx for ONTAPのデータを保護する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+cyber vaultボリュームとは、データのバックアップコピーを保存するために使用される、隔離された安全なストレージの場所であり、ランサムウェア攻撃やその他のサイバー脅威からデータを保護します。vaultの作成の一環として、cyber vaultボリュームを作成し、すべてのクライアントプロトコルを無効にし、ソースボリュームとcyber vaultボリューム間のレプリケーション関係を設定して、cyber vaultボリューム上に不変のスナップショットを作成します。
+
+.cyber vaultとは何ですか？
+cyber vaultは、重要なデータを主要なITインフラストラクチャとは別の隔離された環境に保存する、特定のデータ保護技術です。
+
+cyber vaultは、マルウェア、ランサムウェア、さらには内部の脅威など、メインネットワークに影響を与える脅威の影響を受けない、「エアギャップ」された不変かつ消去不可能なデータ リポジトリです。cyber vaultは、不変かつ消去不可能なスナップショットによって実現できます。
+
+従来の方式を用いたエアギャップバックアップでは、空間を確保し、プライマリメディアとセカンダリメディアを物理的に分離する必要があります。メディアを外部の場所に移動したり、接続を切断したりすることで、悪意のある人物はデータにアクセスできなくなります。これはデータを保護しますが、復旧時間が長くなる可能性があります。
+
+.FSx for ONTAP cyber vault
+Amazon FSx for NetApp ONTAP は、cyber vault のソースおよびターゲットとしてサポートされています。
+
+.導入
+Workload Factoryは、cyber vaultアーキテクチャの作成を支援します。お客様がNetAppに連絡してcyber vaultの実装に関心があることをお伝えいただくと、NetAppのスペシャリストがお客様にご連絡し、要件についてご相談させていただきます。
+
+利用を開始するには、ng-FSx-CyberVault@netapp.com にメールを送信してください。
+
+.関連情報
+cyber vaultの詳細と、このアーキテクチャの設定方法については、link:https://docs.netapp.com/us-en/netapp-solutions-dataops/cyber-vault/ontap-cyber-vault-overview.html["ONTAP cyber vaultドキュメント"^]を参照してください。

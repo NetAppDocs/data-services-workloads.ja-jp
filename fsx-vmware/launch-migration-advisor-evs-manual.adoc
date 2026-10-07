@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/launch-migration-advisor-evs-manual.html 
+keywords: overview, concepts, features, use case, workloads, how Workload Factory works, migration, manual, specification, deploy, deployment, plan 
+summary: VMware planning centerにアクセスするには、NetApp Workload Factoryにログインします。EVSのデプロイメントプランは手動で作成できます。 
+---
+= Amazon EVS のデプロイ プランを手動で作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware planning centerにアクセスするには、NetApp Workload Factoryにログインします。そこから、ニーズに合わせてカスタマイズされたAmazon EVSの導入プランまたは移行プランを手動で作成できます。
+
+Amazon Elastic VMware Serviceでは、仮想マシンの要件を手動で指定し、カスタマイズされたAmazon FSx for NetApp ONTAPファイルシステムを外部データストアとして使用できます。
+
+
+
+[[requirements]]
+== 要件
+
+* Workload Factoryにアクセスするには、ユーザー名とパスワードが必要です。アクセス権をお持ちでない場合は、今すぐアカウントを作成してください。手順を確認してくださいlink:quick-start-vmware.html["ここをクリックしてください。"]。
+* Amazon Elastic VMware Serviceのサブスクリプションが必要です。
+
+
+
+
+[[steps]]
+== 手順
+
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]を選択し、*ワークロード* > *VMware* を選択します。
++
+計画センターが表示されます。
+
+. *EVSプランを手動で作成する*を選択します。
+. VM環境の要件を入力してください。
++
+[NOTE]
+====
+VM移行のパフォーマンス要件と推奨事項については、以下の点に留意してください：
+
+** パフォーマンス上の理由から、VMインベントリには最低10TiBのストレージ容量を推奨します。
+** Amazon Elastic VMware Serviceのデータストアには、このデプロイメントで指定する必要なIOPS数に応じて、最低限必要なスループットが定められています。
+** FSx for ONTAPファイルシステムの構成に応じて、Amazon Elastic VMware Service環境が最適なパフォーマンスを発揮するには、最低限の数の外部データストアが必要です。
+
+
+====
+. 準備ができたら、*プランの確認*を選択して移行プランを確認します。
+. 計画を確認してください。各セクションを展開すると、計画の詳細が表示されます。
++
+デフォルトでは、Workload Factoryは移行計画を計画センターに保存します。このオプションはページ上部付近で選択解除できます。
+
+. 必要に応じて、ページ右上の*プランの管理*を選択し、次に*レポートのダウンロード（.pdf）*または*VMストレージ導入のダウンロード（.csv）*を選択することで、移行プランをPDFまたはCSVファイルとしてエクスポートできます。
++
+.csv ファイルには、移行計画に含まれるすべての仮想マシンと、それらに割り当てられたストレージボリュームのマップが作成されます。
+
+. デプロイメントプランをプロビジョニングする準備ができたら、*Provision*を選択します。
+
+
+link:deploy-fsx-file-system-evs.html["VMwareワークロードに推奨されるFSx for ONTAPファイルシステムをデプロイする"]。

@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/quick-start-fsx.html 
+keywords: Amazon FSx for NetApp ONTAP, fsx, netapp, quick, get started, install, deploy, setup, launch, requirements, prerequisites, credentials, permissions, policy 
+summary: わずか数ステップで、NetApp Workload FactoryでのFSx for ONTAPの使用を開始できます。 
+---
+= NetApp Workload Factory での Amazon FSx for NetApp ONTAP のクイックスタート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+認証情報と権限を追加し、必要に応じてリンクを作成し、ストレージシステムを作成または検出して、Amazon FSx for NetApp ONTAPの使用を開始します。
+
+開始するには、以下の手順に従ってください。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"] 資格情報と権限を追加する
+[role="quick-margin-para"]
+link:add-credentials.html["アカウントに認証情報を手動で追加する"^]これには、データベースやEDAなどのワークロード機能の選択、および必要な権限に対するIAMポリシーの作成が含まれます。
+
+[role="quick-margin-para"]
+お客様のニーズに合わせてlink:permissions-reference-fsx.html["許可ポリシー"^]を選択してください。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"] オプション：コンソールエージェントまたはリンクを作成します
+[role="quick-margin-para"]
+NetApp Console から一部の管理タスクを実行するには、Console エージェントまたは NetApp Workload Factory リンクが必要です。_Console エージェント_ は、FSx for ONTAP ファイルシステムを管理するために VPC にデプロイする仮想マシンです。_リンク_ は AWS Lambda を利用して、FSx for ONTAP ファイルシステムへの信頼関係と接続を作成します。
+
+[role="quick-margin-list"]
+* link:../setup/links-overview.html["FSx for ONTAPの管理にConsoleエージェントまたはリンクが必要になるタイミングについて"]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-install-options-aws.html["AWSでコンソールエージェントを作成する方法"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["オンプレミスでコンソールエージェントを作成する方法"^]
+* link:create-link.html["リンクの作成方法を学ぶ"^]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]ファイルシステムを作成する
+[role="quick-margin-para"]
+NetApp Consoleから直接FSx for ONTAPファイルシステムを作成するか、AWS環境ですでに作成したファイルシステムを検出します。link:create-discover-systems.html["ファイルシステムの作成方法、または既存のファイルシステムの検出方法について説明します。"]
+
+[role="quick-margin-para"]
+また、ストレージ節約計算ツールを使用して、Amazon Elastic Block Store、Elastic File System、および FSx for Windows File Server ストレージ環境のコストを FSx for ONTAP と比較することもできます。link:explore-savings.html["ストレージ節約計算ツールを使って、節約額を調べてみましょう。"]
+
+.次の手順
+ストレージインベントリにファイルシステムがあると、link:create-volume.html["ボリュームを作成する"]、FSx for ONTAPファイルシステムの管理、およびリソースのデータ保護のセットアップを行うことができます。

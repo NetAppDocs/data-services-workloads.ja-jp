@@ -1,0 +1,66 @@
+---
+indexpage:
+  title: NetApp Workload Factoryのドキュメント
+  summary: NetApp Workload Factoryの使用を開始して、クラウドストレージワークロードを最大限に活用しましょう。セットアップが完了すると、ワークロード用のストレージシステムの作成、最適化、管理、コスト削減の検討、組み込みのInfrastructure-as-Codeコパイロットを使用したプラットフォーム間の自動化、およびWorkload
+    Factoryでのワークロードの管理を行うことができます。
+  keywords: Workload Factory, fsx, account, credentials, users, permissions, log in,
+    calculator, codebox
+  lead: Amazon FSx for NetApp ONTAPおよびOCI NetApp Storage Serviceを使用する際にワークロードを最大限に活用できるように、NetApp
+    Workload Factoryの使用を開始します。セットアップが完了すると、ワークロード向けのFSx for ONTAPファイルシステムの作成、最適化、管理、FSx
+    for ONTAPによるコスト削減の検討、プラットフォーム間の自動化に向けた組み込みのInfrastructure-as-Codeコパイロットの使用、およびWorkload
+    Factoryでのワークロードの管理を行うことができます。
+  tiles:
+  - title: はじめに
+    links:
+    - title: リリース ノート
+      url: "/whats-new.html"
+    - title: NetApp Workload Factoryについて学ぶ
+      url: "/setup/learn-about-workload-factory.html"
+    - title: クイック スタート
+      url: "/setup/quick-start.html"
+    - title: サインアップしてログイン
+      url: "/setup/sign-up-and-log-in.html"
+  - title: 権限
+    links:
+    - title: Amazon FSx for NetApp ONTAPの権限
+      url: "/fsx-storage/permissions-reference-fsx.html"
+    - title: OCI NetApp ストレージサービスの権限
+      url: "/oci/permissions-oci.html"
+  - title: ご利用のクラウド プロバイダで Workload Factory を使用する
+    links:
+    - title: Amazon FSx for NetApp ONTAP
+      url: "/fsx-storage/learn-fsx-ontap.html"
+    - title: Google Cloud NetApp Volumes
+      url: "/gcnv/learn-netapp-volumes.html"
+    - title: OCI NetAppストレージサービス
+      url: "/oci/learn-about-oci.html"
+  - title: Workload Factoryの管理
+    links:
+    - title: 通知を設定する
+      url: "/admin/configure-notifications.html"
+    - title: AI機能の管理
+      url: "/admin/manage-genai-features.html"
+    - title: Codeboxを使用してタスクを自動化します
+      url: "/admin/use-codebox.html"
+  - title: 適切に設計されたワークロード
+    links:
+    - title: 適切に設計されたワークロードについて学習する
+      url: "/admin/well-architected-workloads.html"
+    - title: 適切に設計されたFSx for ONTAPワークロードを実装する
+      url: "/fsx-storage/improve-configurations.html"
+    - title: 適切に設計されたGoogle Cloud NetApp Volumesワークロードを実装する
+      url: "/gcnv/improve-configurations.html"
+  - title: ナレッジとサポート
+    links:
+    - title: サポートに登録
+      url: "/register-support.html"
+    - title: ヘルプを表示
+      url: "/get-help.html"
+  - title: ブログとコミュニティ
+    links:
+    - title: NetApp Console
+      url: https://www.netapp.com/console
+    - title: NetApp Data Services
+      url: https://www.netapp.com/data-services/
+    - title: NetAppコミュニティ
+      url: https://community.netapp.com/

@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/capture-vm-configurations.html 
+keywords: vm workloads, capture vm details 
+summary: 移行アドバイザーのVMコレクタースクリプトまたはRVToolsを使用して、現在のVM構成を取得できます。最も正確なプランを作成するために、VM構成データとパフォーマンスデータの両方を収集する移行アドバイザーのVMコレクタースクリプトを使用することをお勧めします。 
+---
+= VMwareワークロードを使用してVMware Cloudに移行する前に、VM構成をキャプチャしてください
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+移行アドバイザーのVMコレクタースクリプトまたはRVToolsを使用して、現在のVM構成を取得できます。最も正確なプランを作成するために、VM構成データとパフォーマンスデータの両方を収集する移行アドバイザーのVMコレクタースクリプトを使用することをお勧めします。
+
+[role="tabbed-block"]
+====
+.マイグレーションアドバイザーVMコレクタースクリプトを使用する
+--
+NetAppマイグレーションアドバイザーVMコレクタスクリプトは、RVToolsが収集するものと同様に、お客様のvCenterからVM構成情報を収集しますが、現在のVMパフォーマンスデータを取得して、実際の読み取り/書き込みIOPSおよびスループットの統計情報を提供します。
+
+CodeboxウィンドウからMigration advisor VMコレクタスクリプトをコピーするには、Migration advisorを起動する必要があります。
+
+.開始する前に
+コレクタースクリプトを実行するシステムは、以下の要件を満たしている必要があります：
+
+* Microsoft PowerShell 7.0以上がインストールされている必要があります。PowerShellをインストールする必要がある場合は、 https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.4["Microsoft PowerShell ドキュメント"^]を参照してください。
+* VMware PowerCLIがインストールされている必要があります。PowerCLIをインストールする必要がある場合は、 https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-F02D0C2D-B226-4908-9E5C-2E783D41FE2D.html["VMware PowerCLI のドキュメント"^]を参照してください。
+* SSL証明書の検証は無効にする必要があります。
+* PowerShellは、署名されていないスクリプトの実行を許可する必要があります。
+
+
+VMから長期的な統計（日次統計）を取得する予定がある場合は、vSphere管理コンソール（VMware管理環境）で統計レベル3以上を有効にしておく必要があります。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]を選択し、*ワークロード* > *VMware* を選択します。
++
+計画センターが表示されます。
+
+. VMware メニューから *評価と計画* を選択し、次に *VMware Cloud on AWS への移行* を選択します。
++
+VMware移行アドバイザーのメイン ページが表示されます。
+
+. *VMCの計画と作成* を選択します。
+. *Let's start!* を選択します。チェックボックスを選択すると、このページを次回以降表示しないように設定できます。
+. 「新しいデプロイメントプランを作成する」を選択し、「移行アドバイザーVMwareデータコレクターを使用する」オプションを選択して、「次へ」を選択します。
++
+「VMware Cloud on AWSへの移行準備」ページが表示されます。
+
+. Codeboxウィンドウで、image:button-download-codebox.png["ダウンロードボタン"]を選択してMigration advisor VMコレクタースクリプト（「list-vms.ps1」という名前）をターゲットシステムに保存するか、image:button-copy-codebox.png["コピーボタン"]を選択してスクリプトをコピーし、適切なシステムに貼り付けます。
+. 現在稼働中の仮想マシンの構成を取得するには、以下の手順に従ってください：
++
+.. データコレクターをダウンロードした、PowerShellおよびPowerCLIがインストールされているシステムにログインします。
+.. 以下のコマンドを実行して、VMware vCenter サーバに接続します：
++
+[source, console]
+----
+Connect-VIServer -server <server_IP>
+----
++
+<server_IP>をVMwareサーバーのIPアドレスまたはホスト名に置き換えてください。
+
+.. ダウンロードしたデータ収集スクリプトを実行し、VM統計情報の収集オプションとして「日次」または「時間次」を指定してください。
++
+[source, console]
+----
+./list-vms.ps1 -isLongTermDataCollectionEnabled <true | false>
+----
++
+パラメータの意味は次のとおりです。
+
++
+*** *true* 過去24時間のIOPSとスループットデータを5分間隔で収集します
+*** *false* は、過去 1 時間の IOPS とスループットのデータを 20 秒間隔で収集します。
+
+
+
+
+
+
+.結果
+このスクリプトは、現在の作業ディレクトリに `list-vms-yyyy-MM-dd-HH-mm-ss.csv`という名前のCSVファイルを出力します。CSVファイルには、すべてのVMとそのプロパティ、およびIOPSとスループットデータの一覧が含まれています。
+
+--
+.RVToolsソフトウェアを使用する
+--
+RVToolsは、VCenterおよびESXサーバ（5.xから8.0）と連携して、VMware仮想環境に関する情報を取得するWindowsアプリケーションです。VM、CPU、メモリ、ディスク、クラスタ、ESXホスト、データストアなどに関する情報を収集します。この情報をxlsxファイルにエクスポートして、移行アドバイザーで使用できます。
+
+link:https://www.dell.com/en-us/shop/vmware/sl/rvtools["RVToolsの詳細"^]
+
+.手順
+. link:https://www.dell.com/en-us/shop/vmware/sl/rvtools["RVToolsのウェブサイト"^] にRVTools 4.4.2以降をダウンロードしてインストールします。
+. RVToolsを起動し、対象のVCenter Serverにログインします。
++
+これにより、そのVCenter Serverに関する情報が取得されます。
+
+. VMwareの情報をxlsxまたはxlsファイルにエクスポートします。
++
+詳細については、link:https://www.dell.com/en-us/shop/vmware/sl/rvtools["リソースセクションのRVToolsドキュメント"^] の「コマンドラインパラメータ」の章を参照してください。
+
+
+
+.結果
+結果を含むxlsxまたはxlsファイルは、作業ディレクトリに保存されます。
+
+--
+====
+.次の手順
+link:launch-onboarding-advisor.html["移行アドバイザーを使用して、VMware Cloud on AWS のデプロイメントプランを作成します"]。

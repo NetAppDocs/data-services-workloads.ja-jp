@@ -1,0 +1,372 @@
+---
+settings:
+  name: Workload Factory for NetApp Console
+  internal:
+    pdf_enabled: true
+    termcheck_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  release_notes_autogen:
+    release_notes_repo: console-relnotes
+  langs: ja-jp,us-en,de-de,es-es,fr-fr,it-it,pt-br,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: NetApp Workload Factory コンソール
+    url: "/index.html"
+  - title: リリース ノート
+    entries:
+    - title: 新機能
+      url: "/whats-new.html"
+    - title: Workload FactoryにおけるFSx for ONTAPの既知の制限事項
+      url: "/known-limitations.html"
+  - title: はじめに
+    entries:
+    - title: NetApp ConsoleでのWorkload Factoryについて
+      url: "/setup/learn-about-workload-factory.html"
+    - title: クイック スタート
+      url: "/setup/quick-start.html"
+    - title: Workload Factoryにサインアップしてログインする
+      url: "/setup/sign-up-and-log-in.html"
+    - title: リンクについて
+      url: "/setup/links-overview.html"
+    - title: 権限について学ぶ
+      url: "/setup/learn-about-permissions.html"
+  - title: Amazon FSx for NetApp ONTAP
+    entries:
+    - title: ストレージワークロードにFSx for ONTAPを使用する
+      entries:
+      - title: FSx for ONTAPについて
+        url: "/fsx-storage/learn-fsx-ontap.html"
+      - title: コスト削減効果の確認
+        url: "/fsx-storage/explore-savings.html"
+      - title: ストレージリソースを作成する
+        entries:
+        - title: FSx for ONTAPファイルシステムを作成または検出する
+          url: "/fsx-storage/create-discover-systems.html"
+        - title: ストレージVMを作成する
+          url: "/fsx-storage/create-storage-vm.html"
+        - title: ボリュームの作成
+          url: "/fsx-storage/create-volume.html"
+        - title: igroupの作成
+          url: "/fsx-storage/create-igroup.html"
+        - title: ブロックデバイスを作成する
+          url: "/fsx-storage/create-block-device.html"
+      - title: リンクを使用してファイルシステムに接続する
+        url: "/fsx-storage/create-link.html"
+      - title: キャッシュボリュームを検出して表示する
+        url: "/fsx-storage/discover-cache-volumes.html"
+      - title: データにアクセスする
+        url: "/fsx-storage/access-data.html"
+    - title: データの保護
+      entries:
+      - title: データ保護の概要
+        url: "/fsx-storage/data-protection-overview.html"
+      - title: スナップショットを使用してデータを保護する
+        entries:
+        - title: スナップショットを使用してデータを保護する
+          url: "/fsx-storage/use-snapshots.html"
+        - title: スナップショットポリシーの管理
+          url: "/fsx-storage/manage-snapshot-policy.html"
+        - title: スナップショットの管理
+          url: "/fsx-storage/manage-snapshots.html"
+      - title: オブジェクトストレージへのバックアップを使用する
+        url: "/fsx-storage/use-backups.html"
+      - title: データの保護にレプリケーションを使用する
+        entries:
+        - title: データを複製する
+          url: "/fsx-storage/create-replication.html"
+        - title: オンプレミスの ONTAP データを FSx for ONTAP にレプリケートする
+          url: "/fsx-storage/use-onprem-data.html"
+        - title: ストレージVMを別のファイルシステムに複製する
+          url: "/fsx-storage/replicate-svm-to-file-system.html"
+        - title: レプリケーションの遅延を追跡する
+          url: "/fsx-storage/track-replication-delays.html"
+        - title: レプリケーション関係の管理
+          url: "/fsx-storage/manage-replication.html"
+      - title: 自律型ランサムウェア対策でデータを保護
+        url: "/fsx-storage/ransomware-protection.html"
+      - title: ボリュームをクローニングする
+        url: "/fsx-storage/clone-volume.html"
+      - title: データを保護するためのcyber vaultを作成する
+        url: "/fsx-storage/create-cyber-vault.html"
+    - title: Workload Factory で FSx for ONTAP を管理する
+      entries:
+      - title: FSx for ONTAPのEMSイベントを分析する
+        url: "/fsx-storage/analyze-events.html"
+      - title: ファイルシステムのベストプラクティスを導入する
+        entries:
+        - title: FSx for ONTAP の構成分析
+          url: "/fsx-storage/configuration-analysis.html"
+        - title: 適切に設計されたファイルシステム構成を実装する
+          url: "/fsx-storage/improve-configurations.html"
+        - title: カスタムルール
+          entries:
+          - title: カスタムルールについて
+            url: "/fsx-storage/learn-custom-rules.html"
+          - title: カスタムルールを作成する
+            url: "/fsx-storage/create-custom-rule.html"
+          - title: カスタムルールの管理
+            url: "/fsx-storage/manage-custom-rules.html"
+      - title: FSx for ONTAP のコストを追跡および分析する
+        url: "/fsx-storage/track-costs.html"
+      - title: ボリュームの管理
+        entries:
+        - title: ボリューム容量の管理
+          url: "/fsx-storage/manage-volume-capacity.html"
+        - title: ボリュームレイテンシしきい値を設定する
+          url: "/fsx-storage/set-volume-latency-thresholds.html"
+        - title: ボリューム設定を管理する
+          url: "/fsx-storage/manage-volume-settings.html"
+        - title: キャッシュボリュームを管理する
+          url: "/fsx-storage/manage-cache-volumes.html"
+        - title: 階層化ポリシーを変更する
+          url: "/fsx-storage/change-tiering-policy.html"
+        - title: NFS エクスポート ポリシーを管理する
+          url: "/fsx-storage/manage-nfs-export-policy.html"
+        - title: SMB/CIFS共有の管理
+          url: "/fsx-storage/manage-cifs-share.html"
+        - title: S3アクセスポイントを管理する
+          entries:
+          - title: S3アクセスポイントを作成して接続する
+            url: "/fsx-storage/create-s3-access-points.html"
+          - title: S3アクセスポイントを管理する
+            url: "/fsx-storage/manage-s3-access-points.html"
+          - title: ジャーナルテーブルのインフラストラクチャをセットアップする
+            url: "/fsx-storage/setup-journal-table.html"
+        - title: クローンボリュームを分割する
+          url: "/fsx-storage/split-cloned-volume.html"
+        - title: ボリュームを削除する
+          url: "/fsx-storage/delete-volume.html"
+      - title: ブロックストレージを管理する
+        entries:
+        - title: ブロックストレージを管理する
+          url: "/fsx-storage/manage-block-storage.html"
+        - title: ブロックデバイスにタグを適用する
+          url: "/fsx-storage/apply-block-device-tags.html"
+      - title: ファイルシステムの管理
+        entries:
+        - title: ファイルシステムの容量を調整する
+          url: "/fsx-storage/adjust-file-system-capacity.html"
+        - title: ファイルシステム設定の管理
+          url: "/fsx-storage/manage-file-system-settings.html"
+        - title: ファイルシステムのIOPSをプロビジョニングする
+          url: "/fsx-storage/provision-iops.html"
+        - title: ファイルシステムを削除する
+          url: "/fsx-storage/delete-file-system.html"
+      - title: ストレージVMの管理
+        entries:
+        - title: ストレージVM設定の管理
+          url: "/fsx-storage/manage-svm-settings.html"
+        - title: ストレージVMの削除
+          url: "/fsx-storage/delete-svm.html"
+    - title: データベースワークロードにFSx for ONTAPを使用する
+      entries:
+      - title: Workload Factory for Databasesについて学ぶ
+        url: "/fsx-databases/learn-about-databases.html"
+      - title: データベース向けWorkload Factoryのクイックスタート
+        url: "/fsx-databases/quick-start-databases.html"
+      - title: コスト削減効果の確認
+        url: "/fsx-databases/explore-savings-databases.html"
+      - title: データベースリソースを作成する
+        entries:
+        - title: Microsoft SQL Serverの作成
+          url: "/fsx-databases/create-sql-database-server.html"
+        - title: PostgreSQLサーバーを作成する
+          url: "/fsx-databases/create-postgresql-server.html"
+        - title: データベースを作成する
+          url: "/fsx-databases/create-sql-database.html"
+        - title: サンドボックスクローンを作成する
+          url: "/fsx-databases/create-sandbox-clone.html"
+      - title: リソースを管理する
+        entries:
+        - title: リソース管理
+          url: "/fsx-databases/manage-resources.html"
+        - title: リソースを登録する
+          url: "/fsx-databases/register-instance.html"
+        - title: データベースクローンを管理する
+          url: "/fsx-databases/manage-clones.html"
+        - title: リソースの登録解除
+          url: "/fsx-databases/deregister-instance.html"
+      - title: データベースリソースの保護、監視、最適化
+        entries:
+        - title: エラーログを分析する
+          url: "/fsx-databases/analyze-error-logs.html"
+        - title: 構成に関するベストプラクティスを実装する
+          entries:
+          - title: データベースの構成分析
+            url: "/fsx-databases/optimize-overview.html"
+          - title: 適切に設計されたデータベース構成を実装する
+            url: "/fsx-databases/optimize-configurations.html"
+        - title: SQL Serverデータベースリソースを保護する
+          url: "/fsx-databases/protect-sql-server.html"
+    - title: EDAワークロードにFSx for ONTAPを使用する
+      entries:
+      - title: EDA向けNetApp Workload Factoryについて学ぶ
+        url: "/fsx-eda/learn-eda.html"
+      - title: クイック スタート
+        url: "/fsx-eda/quick-start-eda.html"
+      - title: 要件
+        url: "/fsx-eda/requirements.html"
+      - title: EDAストレージの概要
+        entries:
+        - title: 概要ダッシュボードについて
+          url: "/fsx-eda/learn-overview-dashboard.html"
+        - title: 概要ダッシュボードを有効にする
+          url: "/fsx-eda/task-activate-overview-dashboard.html"
+        - title: 概要ダッシュボードを使用する
+          url: "/fsx-eda/task-use-overview-dashboard.html"
+      - title: プロジェクト使用状況分析
+        entries:
+        - title: プロジェクトダッシュボードについて
+          url: "/fsx-eda/learn-project-dashboard.html"
+        - title: プロジェクトダッシュボードを設定する
+          url: "/fsx-eda/task-configure-project-dashboard.html"
+        - title: プロジェクトダッシュボードを使用する
+          url: "/fsx-eda/task-use-project-dashboard.html"
+      - title: Perforceとの連携を使用する
+        entries:
+        - title: Perforceとの連携について学ぶ
+          url: "/fsx-eda/learn-eda-workloads.html"
+        - title: プロジェクトを管理する
+          url: "/fsx-eda/manage-projects.html"
+        - title: プロジェクトバージョンの管理
+          url: "/fsx-eda/version-projects.html"
+        - title: ワークスペースを作成する
+          url: "/fsx-eda/create-workspaces.html"
+        - title: Perforceとの統合
+          url: "/fsx-eda/integrate-perforce.html"
+    - title: VMwareワークロードにFSx for ONTAPを使用する
+      entries:
+      - title: VMware向けNetApp Workload Factoryについて学ぶ
+        url: "/fsx-vmware/learn-about-vmware-workloads.html"
+      - title: Amazon EVSへの移行のクイックスタート
+        url: "/fsx-vmware/quick-start-evs.html"
+      - title: Amazon EC2への移行のクイックスタート
+        url: "/fsx-vmware/quick-start-native.html"
+      - title: VMware Cloud on AWSへの移行のクイックスタート
+        url: "/fsx-vmware/quick-start-vmware.html"
+      - title: Google Cloud VMware Engine への移行のクイックスタート
+        url: "/fsx-vmware/quick-start-gcve.html"
+      - title: VMwareプランニングセンターをご覧ください
+        url: "/fsx-vmware/explore-planning-center.html"
+      - title: VMwareプランニングセンターを使用する
+        entries:
+        - title: VMインベントリデータをアップロードする
+          url: "/fsx-vmware/upload-vm-inventory.html"
+        - title: Amazon Elastic VMware Serviceへの移行
+          entries:
+          - title: コスト削減効果の確認
+            url: "/fsx-vmware/calculate-evs-savings.html"
+          - title: 手動でデプロイメントプランを作成する
+            url: "/fsx-vmware/launch-migration-advisor-evs-manual.html"
+          - title: 移行アドバイザーを使用してデプロイメントプランを作成する
+            url: "/fsx-vmware/launch-migration-advisor-evs.html"
+          - title: 推奨されるFSx for ONTAPファイルシステムをデプロイします
+            url: "/fsx-vmware/deploy-fsx-file-system-evs.html"
+        - title: Google Cloud VMware Engine への移行
+          entries:
+          - title: 移行アドバイザーを使用してデプロイメントプランを作成する
+            url: "/fsx-vmware/launch-migration-advisor-gcve.html"
+        - title: Amazon EC2への移行
+          entries:
+          - title: 移行アドバイザーを使用してデプロイメントプランを作成する
+            url: "/fsx-vmware/launch-onboarding-advisor-native.html"
+          - title: 推奨されるFSx for ONTAPファイルシステムをデプロイします
+            url: "/fsx-vmware/deploy-fsx-file-system-native.html"
+        - title: VMware Cloud on AWSへの移行
+          entries:
+          - title: 移行アドバイザーを使用してデプロイメントプランを作成する
+            url: "/fsx-vmware/launch-onboarding-advisor.html"
+          - title: 推奨されるFSx for ONTAPファイルシステムをデプロイします
+            url: "/fsx-vmware/deploy-fsx-file-system.html"
+          - title: FSx for ONTAP を VMware Cloud on AWS に接続
+            url: "/fsx-vmware/connect-sddc-to-fsx.html"
+          - title: データを新しいインフラストラクチャに移行します
+            url: "/fsx-vmware/migrate-data.html"
+        - title: FSx for ONTAPでVMwareワークロードを最適化する
+          entries:
+          - title: EVS構成の構成分析
+            url: "/fsx-vmware/configuration-analysis.html"
+          - title: 適切に設計されたEVS構成を実装する
+            url: "/fsx-vmware/view-evs-well-architected.html"
+    - title: 参照先
+      entries:
+      - title: FSx for ONTAP のパフォーマンス
+        url: "/fsx-storage/performance-reference.html"
+      - title: FSx for ONTAPのセキュリティ
+        url: "/fsx-storage/security-reference.html"
+  - title: Google Cloud NetApp Volumes
+    entries:
+    - title: Google Cloud NetApp Volumesについて
+      url: "/gcnv/learn-netapp-volumes.html"
+    - title: Google Cloud NetApp Volumes のクイックスタート
+      url: "/gcnv/quick-start-gcnv.html"
+    - title: Google Cloud NetApp Volumes のセットアップ
+      url: "/gcnv/set-up.html"
+    - title: Google Cloud NetApp Volumesのロールを割り当てる
+      url: "/gcnv/add-roles.html"
+    - title: Google Cloud NetApp Volumes 認証情報を追加
+      url: "/gcnv/add-credentials.html"
+    - title: Google Cloud NetApp Volumes の構成分析
+      url: "/gcnv/configuration-analysis.html"
+    - title: ストレージプール構成を改善する
+      url: "/gcnv/improve-configurations.html"
+  - title: OCI NetAppストレージサービス
+    entries:
+    - title: OCI NetAppストレージサービスについて
+      url: "/oci/learn-about-oci.html"
+    - title: OCI NetApp ストレージサービスのクイックスタート
+      url: "/oci/quick-start-oci.html"
+    - title: OCI認証情報を追加する
+      url: "/oci/add-credentials.html"
+    - title: OCIストレージシステムの検出
+      url: "/oci/create-discover-systems.html"
+    - title: OCIストレージシステムに接続する
+      url: "/oci/create-link.html"
+    - title: OCI NetApp ストレージサービスの権限リファレンス
+      url: "/oci/permissions-oci.html"
+  - title: Workload Factoryの管理
+    entries:
+    - title: 適切に設計されたワークロードを構築および運用する
+      url: "/admin/well-architected-workloads.html"
+    - title: 通知を設定する
+      url: "/admin/configure-notifications.html"
+    - title: Trackerを使用して運用状況を監視する
+      url: "/admin/monitor-operations.html"
+    - title: リンクを管理する
+      url: "/admin/manage-links.html"
+    - title: FSx for ONTAPのAI機能を管理する
+      url: "/admin/manage-genai-features.html"
+    - title: FSx for ON
+      entries:
+      - title: FSx for ONTAPのカスタムダッシュボードについて
+        url: "/admin/learn-custom-dashboards-fsx.html"
+      - title: FSx for ONTAP用のカスタムダッシュボードを作成
+        url: "/admin/create-custom-dashboard-fsx.html"
+      - title: FSx for ONTAPのカスタムダッシュボードを管理する
+        url: "/admin/manage-custom-dashboards-fsx.html"
+      - title: FSx for ONTAP のカスタムダッシュボードのトラブルシューティング
+        url: "/admin/troubleshoot-custom-dashboards-fsx.html"
+    - title: Codeboxを使用してタスクを自動化します
+      entries:
+      - title: Codeboxについて学ぶ
+        url: "/admin/codebox-automation.html"
+      - title: Codeboxを使用してコードを生成する
+        url: "/admin/use-codebox.html"
+    - title: CloudShellを使用する
+      url: "/admin/use-cloudshell.html"
+    - title: クレデンシャルを削除
+      url: "/admin/manage-credentials.html"
+  - title: ナレッジとサポート
+    entries:
+    - title: サポートに登録
+      url: "/register-support.html"
+    - title: ヘルプを表示
+      url: "/get-help.html"
+  - title: 法律上の表示
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

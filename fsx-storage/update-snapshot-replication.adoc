@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/update-snapshot-replication.html 
+keywords: update snapshot data, replication 
+summary: レプリケーション関係にあるソースボリュームとターゲットボリューム間で転送されるSnapshotデータを、いつでも手動で更新できます。 
+---
+= NetApp Workload Factory でレプリケーションスナップショットデータを更新する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+レプリケーション関係には設定されたレプリケーションスケジュールがありますが、NetApp Workload Factoryでは、ソースボリュームとターゲットボリューム間で転送されるスナップショットデータをいつでも手動で更新できます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP* から、更新するファイルシステムのアクションメニューを選択し、*管理*を選択します。
+. ファイルシステムの概要から、*レプリケーション関係*タブを選択します。
+. レプリケーション関係タブで、更新するレプリケーション関係のアクションメニューを選択します。
+. *今すぐ更新*を選択します。
+. 更新ダイアログで、*今すぐ更新*を選択します。
+

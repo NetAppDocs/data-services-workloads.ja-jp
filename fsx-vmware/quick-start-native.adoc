@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/quick-start-native.html 
+keywords: quick start 
+summary: VMware移行アドバイザーを使用して、Amazon FSx for ONTAPを外部NFSデータストアとして使用し、現在のインフラストラクチャをAmazon EC2に移行する手順を開始します。 
+---
+= VMwareワークロード移行アドバイザーを使用したAmazon EC2への移行のクイックスタート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware移行アドバイザーを使用して、Amazon FSx for ONTAPを外部NFSデータストアとして使用し、現在のインフラストラクチャをAmazon EC2に移行する手順を開始します。
+
+始める前に、link:../fsx-storage/permissions-reference-fsx.html["FSx for ONTAP の NetApp Workload Factory 向け権限"^]について理解しておく必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"] Workload Factoryにログインする
+[role="quick-margin-para"]
+link:../setup/sign-up-and-log-in.html["Workload Factoryでアカウントを設定する"^]して、NetApp Consoleにログインする必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]資格情報と権限を追加する
+[role="quick-margin-para"]
+ニーズに合わせてlink:../fsx-storage/permissions-reference-fsx.html["許可ポリシー"]を選択してください。
+
+[role="quick-margin-para"]
+権限を付与しない場合は、Workload Factory for Databasesを使用して、部分的に完成したコードサンプルをコピーすることができます。
+
+[role="quick-margin-para"]
+権限を付与する場合は、データベースやAIなどのワークロード機能の選択、および必要な権限に対するIAMポリシーの作成を含むlink:../fsx-storage/add-credentials.html["アカウントに認証情報を手動で追加する"]必要があります。
+
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["資格情報と権限を追加する方法を確認する"^]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] VMインベントリデータをアップロードする
+[role="quick-margin-para"]
+プランニングセンターを使用して、現在のVM環境に関するインベントリの詳細をアップロードできます。データコレクタースクリプト、RVTools、またはNetApp Data Infrastructure Insightsを使用して、現在のVM構成を取得し、そのデータをプランニングセンターにアップロードします。
+
+[role="quick-margin-para"]
+link:upload-vm-inventory.html["VMインベントリデータのアップロード方法"^]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4"] VMware移行アドバイザーを使用してデプロイメントプランを作成します
+[role="quick-margin-para"]
+VMware移行アドバイザーを起動し、外部NFSデータストアとしてAmazon FSx for ONTAPファイルシステムを使用してAmazon EC2インフラストラクチャに移行するVMを選択します。プランを保存する前に、いくつか修正を加えることができます。
+
+[role="quick-margin-para"]
+link:launch-onboarding-advisor-native.html["VMware移行アドバイザーを使用してデプロイメントプランを作成する方法を学習します"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 推奨されるFSx for ONTAPファイルシステムをデプロイします
+[role="quick-margin-para"]
+Amazon EC2インフラ内のVMにデータストアを提供する、新しいFSx for ONTAPファイルシステムをデプロイします。
+
+[role="quick-margin-para"]
+link:deploy-fsx-file-system-native.html["新しいFSx for ONTAPファイルシステムをデプロイする方法について説明します。"]。

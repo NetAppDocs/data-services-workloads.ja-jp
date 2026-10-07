@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: oci/quick-start-oci.html 
+keywords: Oracle Cloud Infrastructure NetApp Storage Service, oci nss, netapp, quick, get started, install, deploy, setup, launch, requirements, prerequisites, credentials, permissions, policy 
+summary: Oracle Cloud Infrastructure NetApp ストレージサービスの利用を、NetApp Workload Factory にてわずか数ステップで開始できます。 
+---
+= NetApp Workload FactoryでのOracle Cloud Infrastructure NetApp ストレージサービスのクイックスタート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Oracle Cloud Infrastructure NetApp ストレージサービス（OCI NSS）の利用を開始するには、資格情報と権限を追加し、必要に応じてリンクを作成し、ストレージシステムを作成または検出します。
+
+開始するには、以下の手順に従ってください。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"] 資格情報と権限を追加する
+[role="quick-margin-para"]
+link:add-credentials.html["アカウントに認証情報を追加する"]。これには、ワークロード機能の選択と、必要な権限に対するIAMポリシーの作成が含まれます。
+
+[role="quick-margin-para"]
+デフォルトのlink:permissions-oci.html["ビュー、計画、分析"]許可ポリシーを選択します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]リンクを作成する
+[role="quick-margin-para"]
+この手順は任意です。NetApp Consoleから一部の管理タスクを実行するには、NetApp Workload Factoryリンクが必要です。_link_は、OCI Functionsを利用して、OCI NSSシステムとの信頼関係と接続を確立します。
+
+[role="quick-margin-list"]
+* link:../setup/links-overview.html["OCI NSS管理にコンソールエージェントまたはリンクが必要になる場合について"]
+* link:create-link.html["リンクの作成方法を学ぶ"^]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] OCI NetApp ストレージサービスシステムを検出または追加する
+[role="quick-margin-para"]
+Workload FactoryでOCI NSSリソースの管理を開始するために、ストレージプールを検出します。link:https://console.netapp.com["NetApp Console"^]で、*ストレージ*、*管理*、*Discoverable systems*の順に選択します。link:create-discover-systems.html["OCI NSSストレージシステムを検出する方法について説明します"]。
+
+.次の手順
+ストレージインベントリにストレージプールがあれば、OCI NSSリソースの管理を開始できます。

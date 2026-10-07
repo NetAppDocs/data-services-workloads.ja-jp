@@ -1,0 +1,255 @@
+---
+sidebar: sidebar 
+permalink: oci/create-link.html 
+keywords: connect, connection, link, associate link, create link, authenticate link, oci nss 
+summary: リンクを作成して関連付けることで、NetApp Workload FactoryアカウントとOracle Cloud Infrastructure NetApp Storage Serviceストレージシステム間の信頼関係と接続性を提供できます。 
+---
+= リンクを使用してOracle Cloud Infrastructure NetApp Storage Serviceストレージシステムに接続する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+高度なストレージ管理操作を実行するには、NetApp Workload FactoryアカウントとOracle Cloud Infrastructure NetApp ストレージサービス（OCI NSS）システム間の接続をセットアップします。このプロセスでは、リンクを作成してストレージシステムに関連付けます。リンクの関連付けにより、OCI APIでは利用できない特定の機能をOCI NSSシステムから直接監視および管理できるようになります。
+
+link:../setup/links-overview.html["リンクの詳細"]。
+
+
+
+[[about-this-task]]
+== タスク概要
+
+Workload Factory の _link_ は、テナント内の OCI Functions アプリケーションです。Workload Factory はこれを使用して、OCI NSS ストレージプール上の ONTAP システムと通信します（HTTPS 443 および SSH 22）。
+
+リンクはOCI Functionsを使用して、イベントに応じてコードを実行し、そのコードに必要なコンピューティングリソースを自動的に管理します。作成したリンクはお客様のNetAppアカウントの一部であり、Oracle Cloud Infrastructureアカウントに関連付けられています。
+
+Terraformを使用してリンク（または関数）をデプロイし、その後、Workload Factoryに関数のOCIDを登録します。
+
+このスタックは、お客様のテナント内で、お客様のOCIユーザーを使用して実行されます。これは、テナント間の認証情報共有に関するポリシーではありません。そのポリシーは、認証情報を追加する際にテナントのルートに配置するものであり、リンクを作成するために再度作成する必要はありません。
+
+
+
+[[what-terraform-creates]]
+=== Terraformが作成するもの
+
+[cols="1,1"]
+|===
+| リソース | 名前の例 
+
+
+| Functionsアプリケーション | `netapp-wf-app-<suffix>` 
+
+
+| 機能 | `netapp-wf-function-<suffix>` 
+
+
+| ロググループ + 関数呼び出しログ | `netapp-wf-link-logs-<suffix>` 
+
+
+| 動的グループ + vault-readポリシー | *Local OCI Vault Authentication*を有効にした場合のみ(`netapp-functions-dg`、テナンシで共有） 
+|===
+
+
+[[create-a-new-link]]
+== 新しいリンクを作成する
+
+OCI NSSシステムを定義する際に、アカウント内にリンクを作成できます。そのリンクをそのストレージシステムに使用し、他のOCI NSSシステムにも使用できます。後からストレージシステムにリンクを関連付けることもできます。
+
+リンクには認証が必要です。Workload Factoryの認証情報サービスに保存されている認証情報、またはOCI Vaultに保存されている認証情報を使用して、リンクを認証できます。リンクごとにサポートされる認証方法は1つのみです。例えば、OCI Vaultを使用したリンク認証を選択した場合、後から認証方法を変更することはできません。
+
+
+NOTE: コンソールエージェントを使用する場合、OCI Vaultはサポートされません。
+
+.開始する前に
+* テナントにWorkload Factoryの認証情報を追加しました。
+* ストレージプールが存在するテナンシとリージョンのOCI Consoleにサインインできます。
+* ネットワーキング：
++
+** ONTAP管理LIFに到達できるVCN内の**プライベートサブネット**
+** Oracle Services Network内のすべての \<Region\> サービスへのルートを持つ**サービスゲートウェイ**（関数イメージをプルするために必要）
+
+
+* スタックをデプロイするグループに対して、IAMポリシーを作成します。link:permissions-oci.html["OCI NSS の権限"] の詳細をご覧ください。
++
+グループにスタックと関数を作成する権限を付与します。 `<deploy-group>`と `<compartment-name>`をお客様の値に置き換えます。 `any-user`ではなく、名前付きグループを使用します。
+
++
+[listing]
+----
+Allow group <deploy-group> to manage orm-stacks in compartment <compartment-name>
+Allow group <deploy-group> to manage orm-jobs in compartment <compartment-name>
+Allow group <deploy-group> to manage functions-family in compartment <compartment-name>
+Allow group <deploy-group> to manage log-groups in compartment <compartment-name>
+Allow group <deploy-group> to use virtual-network-family in compartment <compartment-name>
+----
++
+**ローカルOCI Vault認証**を有効にする場合は、以下を追加してください：
+
++
+[listing]
+----
+Allow group <deploy-group> to manage dynamic-groups in tenancy
+Allow group <deploy-group> to manage policies in compartment <compartment-name>
+----
++
+その後、スタックは動的グループ `netapp-functions-dg`を作成（または再利用）し、関数がVaultのシークレットを読み取れるようにします。マッチングルール：
+
++
+[listing]
+----
+ALL {resource.type = 'fnfunc', resource.compartment.id = '<compartment-ocid>'}
+----
++
+関数とシークレットが存在するコンパートメントのVaultポリシー：
+
++
+[listing]
+----
+Allow dynamic-group netapp-functions-dg to read secret-bundles in compartment <compartment-name>
+Allow dynamic-group netapp-functions-dg to use keys in compartment <compartment-name>
+----
+
+
+.手順
+OCI CLIまたはOCI Terraformを使用して、Workload Factory内にリンクを作成し、登録します。
+
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*管理* > *リンク* を選択します。
+. リンクページで、*リンクを作成して関連付ける* > *OCI NetApp ストレージサービス* を選択します。
+. 「リンクの追加」ダイアログの「詳細」欄に、以下の情報を入力してください：
++
+.. *リンク名*：このリンクに使用する名前を入力してください。アカウント内で名前は一意である必要があります。
+.. *OCI Vault*：オプション。Workload FactoryがOCI VaultからONTAPのアクセス認証情報を安全に取得できるようにします。
++
+リンク展開スタックは、OCI Functionsアクセス許可ポリシーに以下のデフォルトのOCI VaultシークレットOCID正規表現を追加します： `ocid1.vaultsecret.oc1.iad.<unique_id>.ONTAPSecret*`。
+
++
+デフォルトの正規表現に合わせてシークレットを作成するか、Terraform構成ファイルの正規表現を更新してシークレットのOCIDに一致させることができます。
+
+.. *タグ*：必要に応じて、このリンクに関連付けるタグを最大50個追加して、リソースをより簡単に分類できます。例えば、このリンクがOCI NSSストレージシステムで使用されていることを示すタグを追加することができます。
+.. *リンク登録*：Workload Factoryコンソールの指示に従ってリンクを登録してください。リンク登録は、OCI Terraform環境から行われます。手順については、CodeboxからOCI Terraformを選択してください。
+.. *リンクの関連付け*：このリンクに関連付ける OCI NSS ストレージ システムを選択し、ユーザー名とパスワードを入力します。
+.. *リンク権限*：ユーザーグループがリンクを作成するために必要な権限を指定します。
++
+.リンクに必要な権限
+[source, text]
+----
+Allow group to manage orm-stacks in compartment id
+Allow group to manage orm-jobs in compartment id
+Allow group to manage dynamic-groups in tenancy
+Allow group to manage policies in compartment id
+Allow group to manage functions-family in compartment id
+Allow group to manage log-groups in compartment id
+Allow group to use virtual-network-family in compartment id
+----
+
+
+. 「リンクの追加」ダイアログの「場所」欄に、以下の情報を入力してください：
++
+.. *OCIテナント*：OCIテナントを入力します。
+.. *コンパートメント*：コンパートメントを入力します。
+.. *Region*：リージョンを選択します。
+.. *サブネット*：サブネットを選択してください。
+.. *ネットワークセキュリティグループ*：セキュリティグループを入力してください。
++
+Workload Factoryは、選択されたOCI NSSシステムに基づいて、OCIアカウント、場所、およびセキュリティグループを自動的に取得します。
+
+
+
+. *追加*を選択します。
++
+リンク作成状況はイベントページで確認できます。所要時間は5分以内です。
+
+. Workload Factoryのインターフェースに戻ると、そのリンクがOCI NSSストレージシステムに関連付けられていることが確認できます。
+
+
+
+
+[[deploy-the-terraform-stack-in-oci-resource-manager]]
+== OCIリソースマネージャーにTerraformスタックをデプロイする
+
+.手順
+. Codeboxで、*OCI Terraform*を選択します。
+. *Redirect to OCI Resource Manager*を選択します。
+. ダイアログで、*続行*を選択します。
+. ストレージプールを含むOCIテナントにサインインします。
+. コンパートメント、リージョン、および変数を確認します（Workload Factoryから事前入力されています）。
+. *作成*を選択します。適用ジョブが成功するまで待ちます。
+. ジョブの *出力* を開いてコピーします `function_ocid`。
+
+
+
+
+[[register-the-function-in-workload-factory]]
+== Workload Factoryに機能を登録する
+
+.手順
+. 「リンクを追加」ページに戻ります。
+. *リンク登録*の下に、関数OCIDを貼り付けます(`ocid1.fnfunc.oc1...`）。
+. *追加*を選択します。
+
+
+
+
+[[other-ways-to-apply-the-same-template]]
+== 同じテンプレートを適用するその他の方法
+
+これらは、CodeboxのResource Managerを使用していない場合にのみ使用してください。
+
+**Terraform CLI**
+
+. フォルダを作成します。
+. Codebox (`main.tf`）からそのフォルダに**OCI Terraform**をコピーまたはダウンロードします。
+. フォルダから：
++
+[listing]
+----
+terraform init
+terraform plan
+terraform apply
+----
+. apply出力から `function_ocid`をコピーし、[関数の登録](#3-register-the-function-in-workload-factory)に進みます。
+
+
+**OCI CLI**
+
+Codebox の **OCI CLI** タブを使用して zip ファイルをダウンロードし、リソースマネージャスタックを作成してから、plan を実行し、ジョブを適用します。
+
+.結果
+リンクは*リンク*リストに表示されます。
+
+機能を削除するには、Workload Factoryのリンクを削除してから、Resource Managerスタックを破棄します（または `terraform destroy`を実行します）。
+
+.結果
+リンクは*リンク*リストに表示されます。
+
+機能を削除するには、Workload Factoryのリンクを削除してから、Resource Managerスタックを破棄します（または `terraform destroy`を実行します）。
+
+
+
+[[associate-an-existing-link-with-an-oci-netapp-storage-service-system]]
+== 既存のリンクをOCI NetAppストレージサービスシステムに関連付ける
+
+リンクを作成したら、1つ以上のOCI NetApp Storage Serviceシステムに関連付けます。
+
+.手順
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *ストレージ* を選択します。
+. *OCI NetApp Storage Service* > *インベントリ* を選択します。
+. リンクを関連付けるストレージプールのアクションメニューを選択し、次に *リンクを関連付ける* を選択します。
+. ネットワーク識別子（サブネット名またはOCIDとCIDR）を確認してください。
+. *既存のリンクを関連付ける*を選択します。
+. リンク名を選択してください。
+. 認証方法を選択してください：
++
+** *Workload Factory*：ONTAP管理者のユーザー名とパスワードを入力します。
+** *OCI シークレット管理 - OCI Vault キー*：Vault サポート付きでリンク機能がデプロイされている場合に使用します。VaultシークレットのOCIDを入力してください。
+
+
+. 「適用」を選択します。
+
+
+.結果
+Workload Factoryは、そのリンクをOCI NSSシステムと関連付けます。高度なONTAP操作を実行できます。
+
+.関連情報
+link:../setup/links-overview.html#when-a-link-is-required["リンクの詳細"]。

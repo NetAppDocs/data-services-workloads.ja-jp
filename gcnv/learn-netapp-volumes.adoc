@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: gcnv/learn-netapp-volumes.html 
+keywords: google cloud netapp volumes, cost, price, features, google cloud netapp volumes features, gcnv, supported regions, google regions, google cloud netapp volumes regions 
+summary: Google Cloud NetApp Volumes を使用すると、企業はクラウド向けにリファクタリングする必要なく、パフォーマンス重視でレイテンシの影響を受けやすいコアなビジネス クリティカル アプリケーションを Google 上に移行して実行できます。 
+---
+= Google Cloud NetApp Volumesについて
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloud NetApp Volumesは、高度なデータ管理機能と拡張性に優れたハイパフォーマンスを提供する、完全に管理されたクラウドベース データのストレージ サービスです。
+
+NetApp Volumesは、デプロイ時間の短縮、ワークロードとアプリケーションの管理、オンプレミスストレージのパフォーマンスと機能を維持しながらワークロードをクラウドに移行するのに役立ちます。
+
+
+
+[[features]]
+== 機能
+
+* エンタープライズアプリケーションをより高速かつ効率的に実行します。
+* クラウドストレージのコストを最大90%削減します。
+* 稼働時間、可用性、セキュリティに関する要件を満たしています。
+* NFS、SMB、およびマルチプロトコル環境をサポートします。
+
+
+
+
+[[cost]]
+== コスト
+
+Google Cloud NetApp Volumes によって作成されたボリュームは、NetApp Console 経由ではなく、サービスのサブスクリプションに対して課金されます。
+
+Google Cloud NetApp Volumes のリージョンまたはボリュームを NetApp Console から検出するのに料金はかかりません。
+
+
+
+[[supported-regions]]
+== サポートされているリージョン
+
+https://cloud.google.com/netapp/volumes/docs/discover/service-levels#supported_regions["サポートされているGoogle Cloud NetApp Volumesリージョンを表示する"^]
+
+
+
+[[getting-help]]
+== 支援を受ける
+
+技術サポートが必要な場合は、Google Cloudポータルからリクエストを送信してください。Google Cloud サブスクリプションと、*Storage* の下にある *Google Cloud NetApp Volumes* サービスを選択してください。必要な情報を入力してください。
+
+Google Cloud NetApp Volumes に関する一般的なご質問については、NetApp の Google Cloud チーム（gcinfo@netapp.com）までメールでお問い合わせください。
+
+クラウドボリュームに関連する技術的な問題については、Google Cloud Console からテクニカルサポートケースを作成できます。詳細については、link:https://cloud.google.com/netapp/volumes/docs/support["サポートの取得"^]を参照してください。
+
+
+
+[[related-links]]
+== 関連リンク
+
+* https://cloud.google.com/netapp/volumes/docs/discover/overview["Google Cloud NetApp Volumes のドキュメント"^]
+* https://docs.netapp.com/us-en/data-services-copy-sync/index.html["NetApp Console Copy and Syncに関するドキュメント"^]
+

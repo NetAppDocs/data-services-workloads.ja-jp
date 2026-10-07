@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/analyze-error-logs.html 
+keywords: analyze error logs, errors, error severity, Microsoft SQL Server error logs, Oracle database error logs, smart analysis, Agentic AI 
+summary: Workload Factory for Databases内のエラーログを分析します。 
+---
+= データベース向け NetApp Workload Factory のエラーログを分析する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+スマートエラーログアナライザを使用してMicrosoft SQL ServerおよびOracleデータベースのエラーログを自動的に解釈することで、問題を迅速に特定して解決できます。Agentic AIベースの分析には、Amazon Bedrockとの統合が必要です。
+
+
+
+[[about-this-task]]
+== タスク概要
+
+エラーログの分析と修復は、SQL ServerインスタンスとOracleデータベースの健全性とパフォーマンスの維持に役立ちます。エラーログを効果的に解釈するには、綿密な分析と専門知識が必要です。手動による監視、エラー検出、根本原因分析は、時間がかかり、エラーが発生しやすくなります。これらの課題は、問題解決の遅延、ダウンタイムの増加、および業務効率の低下につながる可能性があります。スマートエラーログアナライザーは、以下の主要な利点により、これらの課題に対処します：
+
+* スマートなグループ化：エラーを固有性、深刻度、カテゴリ別にインテリジェントに統合し、トラブルシューティングプロセスを簡素化することで、より迅速かつ効果的な解決を実現します。
+* AIを活用した調査：AIを活用してエラーを事前に分析し、深い専門知識を必要とせずに問題の特定を迅速化するための明確で実用的な洞察を提供します。
+* エラー情報の充実化：エラーログに外部参照を追加することで、状況に応じた明確な情報を提供し、理解と意思決定を向上させます。
+* ベストプラクティスによる修復：FSx for ONTAP上で実行されるSQL Serverワークロード向けにカスタマイズされた修復の推奨事項を提供し、あらゆるスキルレベルのユーザーが自信を持って問題を解決できるようにします。
+
+
+エラーログアナライザーを使用することで、高度なAI分析の恩恵を受けながら、環境を完全に制御できます。
+
+エラーログアナライザーを使用するには、Amazon Bedrockをアクティブ化し、Workload Factoryが使用するモデルを選択し、Amazon Bedrockに接続するためのプライベートエンドポイントを作成し、権限を追加し、エンタープライズライセンスを作成する必要があります。
+
+link:https://aws.amazon.com/bedrock/pricing/["Amazon Bedrockの価格設定"^]
+
+
+NOTE: アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、AI分析を使用できなくなります。管理者に連絡するか、link:../admin/manage-genai-features.html["AI管理について学ぶ"^]。
+
+
+
+[[data-privacy-and-security]]
+=== データプライバシーとセキュリティ
+
+この機能は、以下の対策によりデータのプライバシーとセキュリティを確保します：
+
+.データ主権
+ログデータと集計データはAWSアカウント内に保持され、プライベートVPCエンドポイント（Amazon Bedrock）を介して通信されるため、インターネット上に公開されることはありません。
+
+.AIトレーニングなし
+顧客データは、モデルの学習や改善には使用されません。Amazon Bedrockはログをリアルタイムで処理しますが、お客様のデータに基づいて学習は行いません。結果は参照用としてのみ、お客様の環境に保存されます。詳細については、link:https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html["Amazon Bedrockのデータ保護に関するドキュメント"^]を参照してください。
+
+
+
+[[before-you-begin]]
+== 開始する前に
+
+エラーログアナライザーを使用するには、以下の前提条件を満たす必要があります：
+
+* Workload Factoryで新しいデータベースホストを作成するには、AWSアカウントでlink:../fsx-storage/add-credentials.html["_閲覧、計画、分析_の権限を付与する"^]する必要があります。
+* link:../fsx-databases/register-instance.html["リソースを登録する"^] Workload Factory内。
+* 以下の前提条件も満たす必要があります。ログエラーを分析する手順の一環として、これらの前提条件を完了するように求められます。
++
+** *Amazon Bedrockの有効化*
++
+Amazon Bedrock は、Workload Factory の SQL Server または Oracle ホスト上で実行される AI エージェントが Bedrock とシームレスに接続し、特定されたエラーログから AI ベースのインサイトを取得するために必要です。
+
+** *ネットワーキング*
++
+Amazon Bedrock VPCエンドポイントは、SQL ServerまたはOracleホストとAmazon Bedrock API間のプライベートな通信を保証し、パブリックインターネットへの露出を排除します。Amazon Bedrock VPCエンドポイントがSQL ServerまたはOracleホストのサブネットに関連付けられていることを確認してください（例：vpce-050cb2f33a1380ffd）。
+
+** *AWS IAMの権限*
++
+SQL ServerまたはOracleホストに関連付けられたEC2インスタンスプロファイルロール、およびWorkload Factoryに関連付けられたAWS認証情報には、以下の権限が必要です。
+
++
+*** 「bedrock:InvokeModel」権限を持つEC2インスタンスプロファイルロール
++
+この権限により、対応するSQL ServerまたはOracleホスト上のEC2インスタンスは、Bedrockモデルを呼び出して、エラーの事前調査と修復に関するガイダンスを提供できるようになります。このプロファイルにより、カスタマイズされたインサイトを得るための安全なAIアクセスも保証されます。
+
+*** Workload Factory に関連付けられた AWS 認証情報：「bedrock:GetFoundationModelAvailability」および「bedrock:ListInferenceProfiles」権限
++
+これらの権限は、SQL ServerまたはOracleホストのリージョンにおけるモデルの可用性と構成を検証し、リージョン固有の信頼性の高いパフォーマンスを保証します。
+
+
+
+** *Oracleユーザー権限*
++
+以下の権限により、拡張診断アラートへの読み取りアクセスが許可され、ログからエラー/トレースの詳細を抽出して、AIを活用したパターン検出と修復が可能になります： `V$DIAG_ALERT_EXT`。この権限はOracleデータベースの場合にのみ必要です。
+
+
+
+
+
+
+
+[[analyze-error-logs]]
+== エラーログを分析する
+
+Workload Factory コンソールを使用して、SQL Server のエラーログを分析します。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースメニューから、*インベントリ*を選択します。
+. インベントリで、データベースエンジンタイプとして *Microsoft SQL Server* または *Oracle* を選択します。
+. 「インスタンス」タブから、分析する特定のSQL ServerインスタンスまたはOracleデータベースを見つけて、メニューから*エラーの調査*を選択します。
+. 「エラー調査」タブから、コンソールに表示される以下の前提条件を完了してください：
++
+** Amazon Bedrock
+** ネットワーク：Amazon Bedrock のプライベートエンドポイント
+** EC2インスタンスプロファイルロールの権限
+** Workload Database Management（wlmdb）に関連付けられた認証情報
+
+
+. 前提条件を満たしている場合は、*今すぐ調査*を選択してエラーログアナライザーを使用し、SQL Serverのエラーログに関する洞察を得てください。
++
+スキャン後、エラーがコンソールに表示され、Smart error log analyzerが検出した問題を包括的に確認できます。
+
+. フィルターを使用して、重大度、期間、エラーコードなどの基準、またはコンピューティング、ストレージ、ネットワーク、セキュリティなどのインフラストラクチャ関連のタグに基づいて、表示されるエラーを絞り込むことができます。
+. 元のエラーメッセージ、AIによる説明、エラーを解決するための推奨される対処手順など、エラーの詳細な情報を確認してください。
+

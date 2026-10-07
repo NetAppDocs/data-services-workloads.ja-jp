@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/access-data.html 
+keywords: access data, mount point, mount volumes, mount clients, on-premises 
+summary: NASクライアント用にボリュームをマウントし、SANクライアント用にiSCSI LUNをマウントすることで、オンプレミスからFSx for ONTAPファイルシステムにアクセスできます。 
+---
+= FSx for ONTAPファイルシステムデータにアクセスする
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NASクライアント用にボリュームをマウントし、SANクライアント用にiSCSI LUNをマウントすることで、オンプレミスからFSx for ONTAPファイルシステムにアクセスできます。
+
+Amazon FSx for NetApp ONTAPドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html["データへのアクセス"^]には、データへのアクセス方法に関するトピックが参考として記載されています。
+
+NetApp Workload Factoryでボリュームのマウントポイントを取得することもできます。
+
+
+
+[[get-mount-point-for-volumes-in-netapp-workload-factory]]
+== NetApp Workload Factoryでボリュームのマウントポイントを取得する
+
+ボリュームのマウントポイントを取得し、CIFS共有またはNFSクライアントに共有をマウントします。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *ボリュームエクスプローラ* > *FSx for ONTAP* を選択します。
+. ボリュームのアクションメニューを選択し、*基本アクション*、*マウントコマンドの表示*の順に選択します。
+. マウントコマンドダイアログで、*コピー*を選択して、NFSマウントポイントまたはCIFS共有のいずれかのコマンドをコピーします。コピーしたコマンドをターミナルに入力します。
+. 「閉じる」を選択します。
+
+
+
+
+[[connect-to-nas-clients]]
+== NASクライアントに接続する
+
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-linux-client.html["Linuxクライアントにボリュームをマウントする"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-windows-client.html["Windowsクライアントにボリュームをマウントする"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-mac-client.html["macOSクライアントにボリュームをマウントする"^]
+
+
+
+
+[[connect-to-san-clients]]
+== SANクライアントに接続する
+
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/mount-iscsi-luns-linux.html["LinuxクライアントにiSCSI LUNをマウントする"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/mount-iscsi-windows.html["WindowsクライアントにiSCSI LUNをマウントする"^]
+

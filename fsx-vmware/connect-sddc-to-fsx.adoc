@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/connect-sddc-to-fsx.html 
+keywords: vm workloads, fsx for ontap, sddc, vmware cloud on aws 
+summary: FSx for ONTAP ファイルシステムをデプロイした後、そのシステムを VMware Cloud on AWS インフラストラクチャに接続する必要があります。SDDC は、VPC ピアリング機能を使用してネットワーク接続を外部 NFS ストレージボリュームに拡張することで、FSx for ONTAP ファイルシステムに接続するためのネットワークオプションを提供します。 
+---
+= FSx for ONTAPファイルシステムをVMware Cloud on AWSに接続します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FSx for ONTAP ファイルシステムをデプロイした後、そのシステムを VMware Cloud on AWS インフラストラクチャに接続する必要があります。Software-Defined Data Center（SDDC）は、VPC ピアリング機能を使用してネットワーク接続を外部 NFS ストレージボリュームに拡張することで、FSx for ONTAP ファイルシステムに接続するためのネットワークオプションを提供します。
+
+https://vmc.techzone.vmware.com/fsx-guide?check_logged_in=1#amazon-vpc-peering["詳細については、Amazon VPCピアリングのドキュメントを参照してください"^]
+
+次の図は、VPCピアリングを使用して単一のアベイラビリティゾーン（AZ）のSDDCクラスタをFSx for ONTAPのシングルAZ構成に接続する方法を示しています。
+
+image:diagram-vpc-connect-vmware-fsx.png["シングルAZ SDDCクラスタをFSx for ONTAPシングルAZ環境に接続するためのVPCピアリングの使用方法を示す図"]

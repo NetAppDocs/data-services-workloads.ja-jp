@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/quick-start-gcve.html 
+keywords: quick start, gcve, google cloud vmware engine, gcnv, google cloud netapp volumes 
+summary: VMware 移行アドバイザーを利用して、Google Cloud NetApp Volumes を外部 NFS データストアとして使用し、現在のインフラストラクチャを Google Cloud VMware Engine に移行しましょう。 
+---
+= VMware ワークロード移行アドバイザーを使用した Google Cloud VMware Engine への移行のクイックスタート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware 移行アドバイザーを利用して、Google Cloud NetApp Volumes を外部 NFS データストアとして使用し、現在のインフラストラクチャを Google Cloud VMware Engine に移行しましょう。
+
+始める前に、link:../fsx-storage/permissions-reference-fsx.html["FSx for ONTAP の NetApp Workload Factory 向け権限"^]について理解しておく必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"] Workload Factoryにログインする
+[role="quick-margin-para"]
+link:../setup/sign-up-and-log-in.html["Workload Factoryでアカウントを設定する"^]して、NetApp Consoleにログインする必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]資格情報と権限を追加する
+[role="quick-margin-para"]
+ニーズに合わせてlink:../fsx-storage/permissions-reference-fsx.html["許可ポリシー"]を選択してください。
+
+[role="quick-margin-para"]
+権限を付与しない場合は、Workload Factory for VMware を使用して、部分的に完了したコードサンプルをコピーできます。
+
+[role="quick-margin-para"]
+権限を付与することを選択した場合は、Google Cloud NetApp Volumesリソース、VPC構成、およびGoogle Cloud VMware Engineデータストア接続の表示と管理に必要な権限を持つGCPサービスアカウントの提供を含むlink:../fsx-storage/add-credentials.html["アカウントに認証情報を手動で追加する"]必要があります。
+
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["資格情報と権限を追加する方法を確認する"^]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] VMインベントリデータをアップロードする
+[role="quick-margin-para"]
+プランニングセンターを使用して、現在のVM環境に関するインベントリの詳細をアップロードできます。データコレクタースクリプト、RVTools、またはNetApp Data Infrastructure Insightsを使用して、現在のVM構成を取得し、そのデータをプランニングセンターにアップロードします。
+
+[role="quick-margin-para"]
+link:upload-vm-inventory.html["VMインベントリデータのアップロード方法"^]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4"] VMware移行アドバイザーを使用してデプロイメントプランを作成します
+[role="quick-margin-para"]
+VMware 移行アドバイザーを起動し、Google Cloud NetApp Volumes を外部 NFS データストアとして使用して Google Cloud VMware Engine インフラストラクチャ上に作成する VM 環境を構成します。
+
+[role="quick-margin-para"]
+link:launch-migration-advisor-gcve.html["VMware移行アドバイザーを使用してデプロイメントプランを作成する方法を学習します"]。

@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: setup/learn-about-workload-factory.html 
+keywords: overview, concepts, features, use case, workloads, how Workload Factory works, Amazon FSx for NetApp ONTAP, Google Cloud NetApp Volumes, Oracle Cloud Infrastructure NetApp Storage Service 
+summary: NetApp Workload Factoryは、Amazon FSx for NetApp ONTAP、Google Cloud NetApp Volumes、およびOracle Cloud Infrastructure NetApp Storage Serviceを使用してワークロードを最適化できるように設計された、強力なライフサイクル管理プラットフォームです。 
+---
+= NetApp Workload Factoryについて学ぶ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factoryは、Amazon FSx for NetApp ONTAP、Google Cloud NetApp Volumes、およびOracle Cloud Infrastructure NetApp Storage Serviceを使用してワークロードを最適化できるように設計された、強力なライフサイクル管理プラットフォームです。
+
+_ワークロード_とは、ビジネス目標を達成するために設計された、リソース、コード、サービス、またはアプリケーションの組み合わせを指します。これは、顧客向けアプリケーションからバックエンドプロセスまで、あらゆるものを指す可能性があります。ワークロードは、単一のAWSアカウント内のリソースの一部に関わる場合もあれば、複数のアカウントにまたがる場合もあります。
+
+
+
+[[features]]
+== 機能
+
+Workload Factoryプラットフォームは、以下の主要な機能を提供します。
+
+柔軟で低コストなストレージ:: クラウド上のストレージシステムを検出、導入、管理します。ご利用のクラウド ストレージ プロバイダは、一貫したハイブリッドクラウド体験を提供するネイティブなマネージドサービスに、ONTAPのフル機能を提供します。
+オンプレミスのvSphere環境をVMware Cloud on AWSに移行:: VMware Cloud on AWS移行アドバイザーを使用すると、オンプレミスのvSphere環境における現在の仮想マシン構成を分析し、VMware Cloud on AWSに推奨されるVMレイアウトをデプロイする計画を作成して、カスタマイズされたAmazon FSx for NetApp ONTAPファイルシステムを外部データストアとして使用できます。
+データベースライフサイクル管理:: Amazon FSx for NetApp ONTAPを使用してデータベースワークロードを検出し、コスト削減を分析します。SQL ServerデータベースをFSx for ONTAPストレージに移行する際に、ストレージとアプリケーションのメリットを活用します。ベンダーのベストプラクティスを実装したSQL Server、データベース、データベースクローンを導入します。Infrastructure as Codeコパイロットを使用して運用を自動化します。SQL Server環境を継続的に監視および最適化して、パフォーマンス、可用性、保護、コスト効率を向上させます。
+
+
+Ask Me AIアシスタント:: ストレージシステムの管理や運用について、AIアシスタントに質問してみましょう。モデルコンテキストプロトコル（MCP）を使用することで、Ask Meは外部環境と安全に連携し、APIツールにクエリを実行して、お客様固有のストレージ環境に合わせた応答を提供します。
+
+
+
+NOTE: アカウント管理者は、AI機能をオンまたはオフに切り替えることができます。管理者がこれらの機能を無効にした場合、Ask Me AIアシスタントは利用できなくなります。link:../admin/manage-genai-features.html["AI機能の管理について"]。
+
+
+
+[[supported-cloud-providers]]
+== サポートされているクラウド プロバイダ
+
+Workload Factoryを使用すると、Amazon FSx for NetApp ONTAP、Google Cloud NetApp Volumes、およびOracle Cloud Infrastructure NetApp Storage Service（OCI NSS）でクラウド ストレージを管理し、ワークロード機能を使用できます。
+
+
+
+[[security]]
+== セキュリティ
+
+NetApp Workload Factoryのセキュリティは、NetAppにとって最優先事項です。NetApp Workload Factoryはlink:https://trust.netapp.com/["SOC2 Type 1準拠、SOC2 Type 2準拠、およびHIPAA準拠"^]を取得しています。
+
+
+
+[[cost]]
+== コスト
+
+Workload Factoryは無料で利用できます。クラウド プロバイダにお支払いいただく費用は、導入予定のストレージサービスとワークロードサービスによって異なります。これには、ストレージシステム、インフラ、サービスなどの費用が含まれます。
+
+
+
+[[how-workload-factory-works]]
+== Workload Factoryの仕組み
+
+Workload Factoryには、SaaSレイヤを通じて提供されるWebベースのコンソール、アカウント、クラウド環境へのアクセスを制御する権限ポリシー、Workload Factoryとクラウドアカウント間の接続などが含まれます。
+
+
+
+[[software-as-a-service]]
+=== サービスとしてのソフトウェア
+
+Workload Factoryはlink:https://console.netapp.com["NetApp Console"^]からアクセスできます。このSaaS環境により、最新機能がリリースされると自動的にアクセスできるだけでなく、Workload Factoryのアカウントやリンク間を簡単に切り替えることができます。
+
+
+
+[[sign-up-and-access-management]]
+=== サインアップとアクセス管理
+
+NetApp Consoleを使用するには、NetApp Support Siteのクレデンシャルでサインアップするか、NetApp Consoleのログインを作成する必要があります。最初のユーザーが組織管理者となり、ユーザーアカウントと権限を管理します。役割を更新したり、管理者を追加したりするのは後からでも可能です。
+
+* link:sign-up-and-log-in.html["NetApp Consoleへのサインアップおよびログイン方法について説明します。"]
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["NetApp ConsoleのIDアクセス管理について"^]
+
+
+
+
+[[permissions]]
+=== 権限
+
+Workload Factoryは、柔軟なアクセス許可ポリシーを提供し、クラウド環境へのアクセスをきめ細かく制御し、ITポリシーに基づいてWorkload Factoryへの信頼度を段階的に割り当てることができます。
+
+link:learn-about-permissions.html["Workload Factoryの権限ポリシーについて詳しくはこちらをご覧ください"]
+
+
+
+[[codebox-automation]]
+=== Codebox自動化
+
+Codeboxは、開発者やDevOpsエンジニアがWorkload Factoryでサポートされるあらゆる操作を実行するために必要なコードを生成するのを支援する、Infrastructure as Code（IaC）コパイロットです。コード形式には、Workload Factory REST API、クラウド プロバイダのCLI、Terraformなどがあります。
+
+Codeboxは、実行準備のための明確な道筋を示すとともに、将来の迅速な再利用を可能にする自動化カタログを提供します。
+
+Codeboxペインには、特定のジョブフロー操作によって生成され、グラフィカルウィザードや対話型チャットインターフェースと対応するIaCが表示されます。Codeboxは、ナビゲーションや分析を容易にするためのカラーコーディングと検索をサポートしていますが、編集はできません。Automation Catalogへのコピーまたは保存のみが可能です。
+
+link:../admin/codebox-automation.html["Codeboxについて詳しくはこちらをご覧ください"]
+
+
+
+[[well-architected-workloads]]
+=== 適切に設計されたワークロード
+
+Workload Factoryは、AWS Well-Architected Frameworkに準拠した、信頼性が高く、安全で、効率的で、対費用効果の高いストレージおよびデータベース構成の維持と運用を支援します。Workload Factoryは、FSx for ONTAPファイルシステム、SQL Server、およびOracleデータベースの導入環境を毎日スキャンして、潜在的な設定ミスに関するインサイトを提供し、問題を解決するための手動または自動のアクションを推奨します。
+
+link:../admin/well-architected-workloads.html["適切に設計されたワークロードについて詳しくはこちらをご覧ください"]
+
+
+
+[[tools-to-use-netapp-workload-factory]]
+== NetApp Workload Factoryを使用するためのツール
+
+NetApp Workload Factoryは、以下のツールで使用できます：
+
+* *NetApp Console*：NetApp Consoleはハイブリッドインターフェース環境を提供するため、Workload Factoryを他のNetAppデータサービスと併用できます。
+* *Ask Me*：Ask Me AIアシスタントを使用して質問し、NetApp Consoleから離れることなくWorkload Factoryについてさらに詳しく知ることができます。
+* *CloudShell CLI*：Workload FactoryにはCloudShell CLIが含まれており、単一のブラウザベースのCLIから複数のアカウントにわたるAWSおよびNetApp環境を管理および運用できます。
+* *REST API*：Workload Factory REST APIを使用して、ストレージシステムやその他のリソースをデプロイおよび管理します。
+* *NetApp Terraform provider*：Terraformを使用して、Workload FactoryのNetApp Consoleで生成されたインフラストラクチャワークフローを構築および管理します。
+
+
+
+
+[[rest-apis]]
+=== REST API
+
+Workload Factoryを使用すると、特定のワークロードに合わせてクラウドストレージシステムを最適化、自動化、運用できます。各ワークロードは、関連付けられたREST APIを公開します。これらのワークロードとAPIを総合的に活用することで、ストレージシステムの管理に利用できる、柔軟で拡張性の高い開発プラットフォームが構築されます。
+
+Workload FactoryのREST APIを使用するメリットはいくつかあります：
+
+* これらのAPIは、RESTテクノロジーと最新のベストプラクティスに基づいて設計されています。主要技術にはHTTPとJSONが含まれます。
+* Workload Factoryの認証は、OAuth2標準に基づいています。NetAppはAuth0サービスの実装に依存しています。
+* Workload FactoryのWebベースのコンソールは同じコアREST APIを使用するため、2つのアクセスパス間で一貫性が保たれています。
+
+
+link:https://console.workloads.netapp.com/api-doc["Workload Factory REST APIドキュメントを表示"^]

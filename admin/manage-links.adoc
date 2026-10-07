@@ -1,0 +1,182 @@
+---
+sidebar: sidebar 
+permalink: admin/manage-links.html 
+keywords: links, accounts, lambda, creating, associating, disassociating, deleting, editing 
+summary: NetApp Workload Factory では、アカウントに関連付けられたリンクの表示、リンク認証のパスワードの更新、およびリンクの削除を行うことができます。 
+---
+= NetApp Workload Factory のリンクを管理する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workload Factoryアカウントに関連付けられているリンクを管理します。FSx for ONTAPファイルシステムまたはOCI NetApp Storage Service（OCI NSS）システムに関連付けられているリンクを表示したり、リンク認証に使用するパスワードを指定したり、NetApp Consoleからリンクを削除したりできます。
+
+link:../setup/links-overview.html["リンクの詳細をご確認ください。"]
+
+
+
+[[view-the-links-associated-with-your-account]]
+== アカウントに関連付けられたリンクを表示する
+
+現在お客様のアカウントに関連付けられているリンクを表示できます。
+
+.手順
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*管理* > *リンク* を選択します。
++
+既存のリンクは「リンク」ページに表示されます。
+
+. リンクに関連付けられているストレージシステムを表示するには、関連リソースセクションの*表示*ボタンを選択します。
+. リンクの Amazon Resource Name（ARN）が必要な場合は、ARNフィールドの横にある「コピー」アイコンを選択してください。
+
+
+
+
+[[edit-a-link]]
+== リンクを編集する
+
+NetApp Consoleからリンクを編集することはできません。リンクを変更する必要がある場合は、新しいリンクを作成し、そのリンクをストレージシステムに関連付ける必要があります。
+
+
+NOTE: クラウド プロバイダのコンソールを使用して、AWS LambdaまたはOracle Cloud Functionsのネットワーク構成（VPC、サブネット、セキュリティ グループなど）を編集できます。変更はリンクやFunctions管理UIに反映されますが、これらの変更はAWS LambdaまたはOracle Cloud FunctionsとONTAP間の接続に問題を引き起こす可能性があるため、推奨されません。
+
+
+
+[[authenticate-a-link]]
+== リンクを認証する
+
+Workload Factoryの認証情報に管理者ユーザーのパスワードを入力するか、AWS Secrets ManagerまたはOracle Vaultのシークレットを使用してリンクを認証します。
+
+* AWS Secrets Manager の場合、リンクを FSx for ONTAP ファイルシステムに接続するには、シークレット名または AWS Secrets Manager シークレット ARN のいずれかを指定します。
++
+
+NOTE: コンソールエージェントを使用する場合、AWS Secrets Managerはサポートされていません。
+
+* Oracle Vaultの場合、リンクをOCI NetAApp Storage Serviceシステムに接続するために、VaultシークレットOCIDを指定してください。
+
+
+
+NOTE: リンクごとにサポートされる認証方法は1つのみです。例えば、AWS Secrets Manager を使用したリンク認証を選択した場合、後から認証方法を変更することはできません。
+
+[role="tabbed-block"]
+====
+.Amazon FSx for NetApp ONTAP
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP* で、リンクを関連付けるファイルシステムのアクションメニューを選択し、*管理* を選択します。
+. ファイルシステムの概要画面で、*リンクを認証する*を選択します。
+. 「認証リンク」ページで、認証モードを選択します。
++
+** *Workload Factory*：パスワードを2回入力してください。
+** *AWS Secrets Manager*：シークレットARNを入力してください。
+
+
+. 「適用」を選択します。
+
+
+--
+.OCI NetAppストレージサービス
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *OCI NetApp ストレージサービス* を選択します。
+. *OCI NetApp ストレージサービス*から、リンクを関連付けるストレージプールのアクションメニューを選択し、次に*管理*を選択します。
+. ストレージプールの概要で、*リンクを認証する*を選択します。
+. 「認証リンク」ページで、認証モードを選択します。
++
+** *Workload Factory*：パスワードを2回入力してください。
+** *OCI Vault*：シークレットのOCIDを入力してください。
+
+
+. 「適用」を選択します。
+
+
+--
+====
+.結果
+リンクは認証済みで、高度なONTAP操作を実行できます
+
+
+
+[[update-the-password-for-link-authentication]]
+== リンク認証のパスワードを更新する
+
+管理者パスワードが無効な場合は、パスワードを更新してストレージシステムへのリンクを接続してください。
+
+[role="tabbed-block"]
+====
+.Amazon FSx for NetApp ONTAP
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP* で、リンクを関連付けるファイルシステムのアクションメニューを選択し、*管理* を選択します。
+. ファイルシステムの概要画面で、*パスワードの更新*を選択します。
+. 認証リンクページで、新しいパスワードを2回入力してください。
+. 「適用」を選択します。
+
+
+--
+.OCI NetAppストレージサービス
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *OCI NetApp ストレージサービス* を選択します。
+. *OCI NetApp ストレージサービス*から、リンクを関連付けるストレージプールのアクションメニューを選択し、次に*管理*を選択します。
+. ストレージプールの概要で、*パスワードの更新*を選択します。
+. 認証リンクページで、新しいパスワードを2回入力してください。
+. 「適用」を選択します。
+
+
+--
+====
+.結果
+パスワードが更新され、リンクがストレージシステムに接続されました。
+
+
+
+[[remove-a-link]]
+== リンクを削除する
+
+環境内で不要になったリンクは削除できます。リンクが削除されると、そのリンクを使用していたストレージシステムやその他のリソースは、一部の機能を使用できなくなります。
+
+リンクはWorkload Factoryからのみ削除され、お客様のAWS環境やOracle環境からは削除されないことに注意してください。
+
+* FSx for ONTAPの場合、Workload Factoryでリンクを削除した後、AWSアカウントからLambda関数を削除する必要があります。
+* OCI NetApp Storage Service の場合、Workload Factory でリンクを削除したあと、OCI アカウントから Function インスタンスを削除する必要があります。
+
+
+[role="tabbed-block"]
+====
+.Amazon FSx for NetApp ONTAP
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*管理* > *リンク* を選択します。
++
+既存のリンクは「リンク」ページに表示されます。
+
+. リンクページから、削除するリンクのアクションメニューを選択し、*削除*を選択します。
+. よろしければ、もう一度 *Remove* を選択してください。
+
+
+AWSドキュメントを参照してlink:https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-awscli.html#with-userapp-walkthrough-custom-events-delete-function["Lambda関数を削除する"]。
+
+--
+.OCI NetAppストレージサービス
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*管理* > *リンク* を選択します。
++
+既存のリンクは「リンク」ページに表示されます。
+
+. リンクページから、削除するリンクのアクションメニューを選択し、*削除*を選択します。
+. よろしければ、もう一度 *Remove* を選択してください。
+
+
+--
+====

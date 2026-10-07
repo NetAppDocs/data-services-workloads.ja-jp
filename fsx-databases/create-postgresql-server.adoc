@@ -1,0 +1,284 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/create-postgresql-server.html 
+keywords: create, server, PostgreSQL, deploy, host, deploy a database host, database host 
+summary: データベース向けNetApp Workload Factory内で新しいPostgreSQL SQLサーバを作成します。 
+---
+= データベース向け NetApp Workload Factory で PostgreSQL サーバーを作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory for Databasesで新しいPostgreSQLサーバ、またはデータベースホストを作成するには、FSx for ONTAPファイルシステムの導入とActive Directoryのリソースが必要です。
+
+
+
+[[about-this-task]]
+== タスク概要
+
+Workload FactoryからPostgreSQLサーバを作成する前に、データベースホスト構成で利用可能なストレージ導入タイプ、Workload Factoryの運用モード、およびこの操作を完了するための要件について確認してください。
+
+.FSx for ONTAPファイルシステムの導入
+新しいPostgreSQLサーバを作成するには、ストレージバックエンドとしてFSx for ONTAPファイルシステムが必要です。既存のFSx for ONTAPファイルシステムを使用するか、新しいファイルシステムを作成できます。既存のFSx for ONTAPファイルシステムをデータベース サーバのストレージバックエンドとして選択した場合、PostgreSQLワークロード用に新しいストレージVMが作成されます。
+
++ FSx for ONTAPファイルシステムには、2つのPostgreSQLサーバ導入モデルがあります：_高可用性（HA）_または_シングルインスタンス_。選択したFSx for ONTAP導入モデルに応じて、FSx for ONTAPファイルシステムに作成されるリソースが異なります。
+
+* *高可用性（HA）導入*：HA導入用に新しいFSx for ONTAPファイルシステムが選択された場合、マルチアベイラビリティゾーンのFSx for NetApp ONTAPファイルシステムが導入されます。HA導入では、データ、ログ、およびtempdbファイル用に個別のボリュームとLUNが作成されます。Windowsクラスタのクォーラムまたはウィットネスディスク用に、追加のボリュームとLUNが作成されます。HA導入では、プライマリPostgreSQLサーバーとセカンダリPostgreSQLサーバー間でストリーミングレプリケーションが構成されます。
+* *シングルインスタンス展開*：新しいPostgreSQLサーバが作成されると、単一アベイラビリティゾーンのFSx for ONTAPファイルシステムが作成されます。さらに、データファイル、ログファイル、およびtempdbファイル用に個別のボリュームとLUNが作成されます。
+
+
+
+
+[[before-you-begin]]
+== 開始する前に
+
+workload factoryで新しいデータベースホストを作成するには、AWSアカウントにlink:../fsx-storage/add-credentials.html["_データベースホストの作成_権限を付与する"^]が必要です。
+
+
+
+[[create-a-postgresql-server]]
+== PostgreSQLサーバを作成する
+
+_Automate_モードの権限を使用してworkload factoryでこのタスクを完了するには、_Quick create_または_Advanced create_デプロイモードを使用できます。Codeboxで利用可能な以下のツールを使用することもできます：REST API、AWS CLI、AWS CloudFormation、Terraform。link:../admin/use-codebox.html#how-to-use-codebox["Codeboxを使用した自動化の方法について学習します"^]。
+
+
+NOTE: CodeboxからTerraformを使用する場合、コピーまたはダウンロードしたコードでは `fsxadmin`および `vsadmin`のパスワードが非表示になります。コードを実行する際に、パスワードを再入力する必要があります。_Automate_モードの権限に加えて、ユーザアカウントに次の権限を含める必要があります： `iam:TagRole`および `iam:TagInstanceProfile`。link:../admin/use-codebox.html#use-terraform-from-codebox["CodeboxでTerraformの使い方を学びましょう"^]。
+
+[role="tabbed-block"]
+====
+.クイック作成
+--
+
+NOTE: _Quick create_では、HAがデフォルトのデプロイメントモデル、Windows 2016がデフォルトのWindowsバージョン、SQL 2019 Standard EditionがデフォルトのSQLバージョンとなっています。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースの概要から、*ホストのデプロイ*を選択し、メニューから*PostgreSQL Server*を選択します。
+. *クイック作成*を選択します。
+. *Landing zone*で、以下を指定します：
++
+.. *AWS認証情報*：新しいデータベースホストをデプロイするための自動化権限を持つAWS認証情報を選択してください。
++
+_データベースホストの作成_権限を持つAWS認証情報を使用すると、workload factory内でお客様のAWSアカウントから新しいデータベースホストをWorkload Factoryがデプロイおよび管理できるようになります。
+
++
+_view, planning, and analysis_ 権限を持つAWS認証情報を使用すると、Workload FactoryはAWS CloudFormationコンソールで使用するためのCloudFormationテンプレートを生成できます。
+
++
+Workload FactoryにAWS認証情報が関連付けられておらず、Workload Factoryで新しいサーバを作成する場合は、*オプション1*に従って認証情報ページに移動してください。データベースワークロードに必要な認証情報と_データベースホスト作成_権限を手動で追加します。
+
++
+Workload Factoryで新しいサーバの作成フォームに入力し、AWS CloudFormationでの導入用の完全なYAMLファイルテンプレートをダウンロードできるようにする場合は、AWS CloudFormation内で新しいサーバを作成するために必要な権限を確保するために、*オプション2*に従ってください。データベースワークロードに必要なクレデンシャルと_表示、計画、分析_の権限を手動で追加します。
+
++
+オプションとして、Codeboxから部分的に完成したYAMLファイルテンプレートをダウンロードすることで、認証情報や権限を一切必要とせずに、Workload Factoryの外部でスタックを作成できます。YAMLファイルをダウンロードするには、Codeboxのドロップダウンから *CloudFormation* を選択します。
+
+.. *リージョンとVPC*：リージョンとVPCネットワークを選択してください。
++
+既存のインターフェースエンドポイントのセキュリティグループが、選択したサブネットに対してHTTPS（443）プロトコルへのアクセスを許可していることを確認してください。
+
++
+AWS サービス インターフェイス エンドポイント（SQS、FSx、EC2、CloudWatch、CloudFormation、SSM）および S3 ゲートウェイ エンドポイントは、見つからない場合はデプロイ中に作成されます。
+
++
+VPC DNS属性 `EnableDnsSupport`および `EnableDnsHostnames`がまだ `true`に設定されていない場合、エンドポイントアドレス解決を有効にするために変更されます。
+
+.. *アベイラビリティゾーン*：アベイラビリティゾーンとサブネットを選択します。
++
+
+NOTE: HA展開は、マルチアベイラビリティゾーン（MAZ）のFSx for ONTAP構成でのみサポートされます。
+
++
+高可用性を確保するためには、サブネット間で同じルーティングテーブルを共有すべきではありません。
+
++
+... *クラスタ構成 - ノード 1* フィールドで、*可用性ゾーン* ドロップダウンメニューから MAZ FSx for ONTAP 構成のプライマリ可用性ゾーンを選択し、*サブネット* ドロップダウンメニューからプライマリ可用性ゾーンのサブネットを選択します。
+... *Cluster configuration - Node 2*フィールドで、*Availability zone*ドロップダウンメニューからMAZ FSx for ONTAP構成のセカンダリ可用性ゾーンを選択し、*Subnet*ドロップダウンメニューからセカンダリ可用性ゾーンのサブネットを選択します。
+
+
+
+
+. 「アプリケーション設定」で、「データベース認証情報」のユーザー名とパスワードを入力します。
+. 「接続」で、インスタンスに安全に接続するためのキーペアを選択します。
+. *インフラストラクチャ設定*で、以下の情報を提供してください：
++
+.. *FSx for ONTAPシステム*：新しいFSx for ONTAPファイルシステムを作成するか、既存のFSx for ONTAPファイルシステムを使用します。
++
+... *新しいFSx for ONTAPの作成*：ユーザー名とパスワードを入力してください。
++
+GovCloudアカウントの場合は、FSx for ONTAPクレデンシャルのAWS SSMパラメータARN値を次の形式で入力します： `{fsx:{"username":"fsxadmin","password":"pass"}}`。AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
++
+新しいFSx for ONTAPファイルシステムでは、インストール時間が30分以上長くなる場合があります。
+
+... *既存のFSx for ONTAPを選択*：ドロップダウンメニューからFSx for ONTAPの名前を選択し、ファイルシステムのユーザ名とパスワードを入力します。
++
+既存のFSx for ONTAPファイルシステムについては、以下の点を確認してください：
+
++
+**** FSx for ONTAPにアタッチされたルーティンググループにより、サブネットへのルートを導入に使用できるようになります。
+**** セキュリティグループは、導入に使用されるサブネットからのトラフィック、具体的にはHTTPS（443）およびiSCSI（3260）TCPポートを許可します。
+
+
+
+
+.. *データドライブのサイズ*：データドライブの容量を入力し、容量の単位を選択してください。
+
+
+. 概要：
++
+.. *プレビューデフォルト*：Quick createが設定したデフォルトの構成を確認します。
+.. *概算費用*：表示されているリソースを導入した場合に発生する可能性のある料金の概算を示します。
+
+
+. *作成*をクリックします。
++
+または、これらのデフォルト設定を今すぐ変更する場合は、「Advanced create」を使用してデータベース サーバを作成します。
+
++
+後でホストをデプロイするために、*設定を保存*を選択することもできます。
+
+
+
+--
+.高度な作成
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースの概要から、*ホストのデプロイ*を選択し、メニューから*PostgreSQL Server*を選択します。
+. *詳細作成*を選択してください。
+. *デプロイメントモデル*で、*スタンドアロンインスタンス*または*高可用性（HA）*を選択します。
+. *Landing zone*で、以下を指定します：
++
+.. *AWS認証情報*：新しいデータベースホストをデプロイするための自動化権限を持つAWS認証情報を選択してください。
++
+_データベースホストの作成_権限を持つAWS認証情報を使用すると、workload factory内でお客様のAWSアカウントから新しいデータベースホストをWorkload Factoryがデプロイおよび管理できるようになります。
+
++
+_view, planning, and analysis_ 権限を持つAWS認証情報を使用すると、Workload FactoryはAWS CloudFormationコンソールで使用するためのCloudFormationテンプレートを生成できます。
+
++
+Workload FactoryにAWS認証情報が関連付けられておらず、Workload Factoryで新しいサーバを作成する場合は、*オプション1*に従って認証情報ページに移動してください。データベースワークロードに必要な認証情報と_データベースホスト作成_権限を手動で追加します。
+
++
+Workload Factoryで新しいサーバの作成フォームに入力し、AWS CloudFormationでの導入用の完全なYAMLファイルテンプレートをダウンロードできるようにする場合は、AWS CloudFormation内で新しいサーバを作成するために必要な権限を確保するために、*オプション2*に従ってください。データベースワークロードに必要なクレデンシャルと_表示、計画、分析_の権限を手動で追加します。
+
++
+オプションとして、Codeboxから部分的に完成したYAMLファイルテンプレートをダウンロードすることで、認証情報や権限を一切必要とせずに、Workload Factoryの外部でスタックを作成できます。YAMLファイルをダウンロードするには、Codeboxのドロップダウンから *CloudFormation* を選択します。
+
+.. *リージョンとVPC*：リージョンとVPCネットワークを選択してください。
++
+既存のインターフェースエンドポイントのセキュリティグループが、選択したサブネットに対してHTTPS（443）プロトコルへのアクセスを許可していることを確認してください。
+
++
+AWSサービスインターフェイスエンドポイント（SQS、FSx、EC2、CloudWatch、Cloud Formation、SSM）およびS3ゲートウェイエンドポイントは、見つからない場合はデプロイ中に作成されます。
+
++
+VPC DNS属性 `EnableDnsSupport`および `EnableDnsHostnames`は、まだ `true`に設定されていない場合、エンドポイントアドレス解決を有効にするように変更されます。
+
+.. *アベイラビリティゾーン*：アベイラビリティゾーンとサブネットを選択します。
++
+*シングルインスタンス展開の場合*
+
++
+*クラスタ構成 - ノード 1*フィールドで、*可用性ゾーン*ドロップダウンメニューから可用性ゾーンを選択し、*サブネット*ドロップダウンメニューからサブネットを選択します。
+
++
+*HA構成の場合*
+
++
+... *クラスタ構成 - ノード 1* フィールドで、*可用性ゾーン* ドロップダウンメニューから MAZ FSx for ONTAP 構成のプライマリ可用性ゾーンを選択し、*サブネット* ドロップダウンメニューからプライマリ可用性ゾーンのサブネットを選択します。
+... *Cluster configuration - Node 2*フィールドで、*Availability zone*ドロップダウンメニューからMAZ FSx for ONTAP構成のセカンダリ可用性ゾーンを選択し、*Subnet*ドロップダウンメニューからセカンダリ可用性ゾーンのサブネットを選択します。
+
+
+.. *セキュリティグループ*：PostgreSQLに必要なポートとプロトコルを許可するために、ワークロードセキュリティグループが作成されます。さらに、1つまたは複数のセキュリティグループを選択することもできます。
+
+
+. 「アプリケーション設定」で、以下の情報を入力してください：
++
+.. ドロップダウンメニューから *オペレーティングシステム* を選択します。
+.. ドロップダウンメニューから*PostgreSQLバージョン*を選択します。
+.. *データベース サーバ名*：データベースクラスタ名を入力してください。
+.. *データベース認証情報*：新しいサービスアカウントのユーザ名とパスワードを入力するか、Active Directoryの既存のサービスアカウントの認証情報を使用します。
++
+GovCloudアカウントの場合は、認証情報のAWS SSMパラメータARN値を次の形式で入力してください： `{fsx:{"username":"fsxadmin","password":"pass"}}`AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
+
+
+. 「接続」で、インスタンスに安全に接続するためのキーペアを選択します。
+. *インフラストラクチャ設定*で、以下の情報を提供してください：
++
+.. *DBインスタンスタイプ*：ドロップダウンメニューからデータベースインスタンスタイプを選択してください。
+.. *FSx for ONTAPシステム*：新しいFSx for ONTAPファイルシステムを作成するか、既存のFSx for ONTAPファイルシステムを使用します。
++
+... *新しいFSx for ONTAPの作成*：ユーザー名とパスワードを入力してください。
++
+GovCloudアカウントの場合は、FSx for ONTAPクレデンシャルのAWS SSMパラメータARN値を次の形式で入力します： `{fsx:{"username":"fsxadmin","password":"pass"}}`。AWS SSM パラメータのタイプは「Secure String」で、名前の形式は次のようになります `/netapp/wlmdb/<anyname>`。SSM パラメータの取得方法については、link:https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-ssm.html["AWS GovCloudドキュメント"^]を参照してください。
+
++
+新しいFSx for ONTAPファイルシステムでは、インストール時間が30分以上長くなる場合があります。
+
+... *既存のFSx for ONTAPを選択*：ドロップダウンメニューからFSx for ONTAPの名前を選択し、ファイルシステムのユーザ名とパスワードを入力します。
++
+既存のFSx for ONTAPファイルシステムについては、以下の点を確認してください：
+
++
+**** FSx for ONTAPにアタッチされたルーティンググループにより、サブネットへのルートを導入に使用できるようになります。
+**** セキュリティグループは、導入に使用されるサブネットからのトラフィック、具体的にはHTTPS（443）およびiSCSI（3260）TCPポートを許可します。
+
+
+
+
+.. *Snapshotポリシー*：デフォルトで有効になっています。スナップショットは毎日取得され、保持期間は7日間です。
++
+スナップショットは、PostgreSQLワークロード用に作成されたボリュームに割り当てられます。
+
+.. *データドライブのサイズ*：データドライブの容量を入力し、容量の単位を選択してください。
+.. *プロビジョニングされたIOPS*：*自動*または*ユーザプロビジョニング*を選択してください。*ユーザプロビジョニング*を選択した場合は、IOPS値を入力してください。
+.. *スループット容量*：ドロップダウンメニューからスループット容量を選択してください。
++
+地域によっては、4 GBpsのスループット容量を選択できる場合があります。4 GBpsのスループット容量をプロビジョニングするには、FSx for ONTAPファイルシステムを最低5,120 GiBのSSDストレージ容量と160,000 SSD IOPSで構成する必要があります。
+
+.. *暗号化*：アカウント内のキー、または別のアカウントのキーを選択してください。別のアカウントの暗号化キーのARNを入力する必要があります。
++
+FSx for ONTAPカスタム暗号化キーは、サービスへの適用性に基づいて一覧表示されません。適切なFSx暗号化キーを選択してください。FSx以外の暗号化キーを使用すると、サーバの作成に失敗します。
+
++
+AWSマネージドキーは、サービスへの適用性に基づいてフィルタリングされます。
+
+.. *タグ*：オプションで、最大40個のタグを追加できます。
+.. *Simple Notification Service*：オプションで、ドロップダウンメニューからPostgreSQL用のSNSトピックを選択することで、この構成に対してSimple Notification Service（SNS）を有効にできます。
++
+... Simple Notification Serviceを有効にします。
+... ドロップダウンメニューからARNを選択してください。
+
+
+.. *CloudWatch監視*：オプションで、CloudWatch監視を有効にできます。
++
+障害発生時のデバッグ用にCloudWatchを有効にすることをお勧めします。AWS CloudFormationコンソールに表示されるイベントは概要であり、根本原因は特定されません。すべての詳細ログは、EC2インスタンスの `C:\cfn\logs`フォルダに保存されます。
+
++
+CloudWatchでは、スタックの名前でロググループが作成されます。すべての検証ノードとSQLノードのログストリームが、ロググループの下に表示されます。CloudWatchはスクリプトの進行状況を表示し、デプロイが失敗したかどうか、およびいつ失敗したかを把握するのに役立つ情報を提供します。
+
+.. *リソースのロールバック*：この機能は現在サポートされていません。
+
+
+. サマリ
++
+.. *概算費用*：表示されているリソースを導入した場合に発生する可能性のある料金の概算を示します。
+
+
+. *作成*をクリックして、新しいデータベースホストをデプロイします。
++
+または、設定を保存することもできます。
+
+
+
+--
+====
+.次の手順
+デプロイ済みのPostgreSQLサーバー上で、ユーザー、リモートアクセス、およびデータベースを手動で設定できます。

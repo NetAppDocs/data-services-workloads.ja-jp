@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/version-projects.html 
+keywords: snapshot, clone, project, protect, API, version, versions, versioning 
+summary: スナップショットとクローンを使用して、EDAプロジェクトのバージョンを管理します。 
+---
+= Workload Factory for EDAプロジェクトのバージョンを管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workload Factoryから直接オンデマンドスナップショットとクローンを作成することで、EDAプロジェクトのさまざまなバージョンを操作できます。プロジェクトのスナップショットとクローンは、プロジェクト作成時に関連付けられていたファイルシステムに保存されます。 https://console.workloads.netapp.com/api-doc["Workload Factory REST API"^]を使用してスナップショットとクローンを管理することもできます。
+
+
+
+[[create-a-snapshot-of-a-project]]
+== プロジェクトのスナップショットを作成する
+
+以下の手順に従うことで、プロジェクトのスナップショットを作成できます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] で、*ワークロード* > *EDA* を選択します。
+. *CI/CD*を選択します。
+. 「プロジェクトページへ移動」を選択します。
+. プロジェクトページで、スナップショットを作成するプロジェクトのimage:icon-action.png["オプションボタン"]を選択します。
+. 表示されたメニューで、*スナップショットを作成*を選択します。
+. 「スナップショットの作成」ダイアログで、スナップショットの名前を選択し、「作成」を選択します。
+
+
+
+
+[[create-a-clone-of-a-project]]
+== プロジェクトのクローンを作成する
+
+以下の手順に従って、スナップショットからEDAプロジェクトをクローンしてください。クローンを作成すると、クローンを格納するための新しい編集可能なボリュームが作成されます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] で、*ワークロード* > *EDA* を選択します。
+. *CI/CD*を選択します。
+. 「プロジェクトページへ移動」を選択します。
+. プロジェクトページで、クローンを作成するプロジェクトのimage:icon-action.png["オプションボタン"]を選択します。
+. 表示されたメニューで、*クローンを作成*を選択します。
+. 「クローンの作成」ダイアログで、以下の操作を行います：
++
+.. クローンの名前を入力してください。
++
+クローンのデフォルト名は、プロジェクト名に現在の日時を末尾に追加したものです。
+
+.. クローン作成のベースとして使用するスナップショットを選択してください。
+.. 「作成」を選択します。
+
+
+
+
+.結果
+Workload Factoryはプロジェクトの新しいクローンを作成し、そのクローンはプロジェクトページに新しいプロジェクトとして表示されます。

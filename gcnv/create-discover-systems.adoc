@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: gcnv/create-discover-systems.html 
+keywords: Google Cloud NetApp Volumes, gcnv, volumes, create system, delete system, access key, secret key, region, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
+summary: クラウド ストレージ システムを作成または検出して、NetApp Consoleからボリュームや追加のデータサービスを追加および管理します。 
+---
+= NetApp ConsoleでGoogle Cloud NetApp Volumesシステムを作成または検出する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloud NetApp Volumesシステムを検出し、NetApp Consoleからボリュームと追加のデータサービスを管理します。
+
+
+
+[[discover-an-existing-cloud-storage-system]]
+== 既存のクラウドストレージシステムを検出する
+
+Discoverable systemsページからストレージシステムを検出します。
+
+.開始する前に
+Workload Factory で Google Cloud NetApp Volumes の認証情報を入力してください。
+
+.タスク概要
+クラウドストレージシステムは、アカウント内で一度だけ検出でき、1つのワークスペースにのみ関連付けることができます。ストレージシステムは後で削除して、別のワークスペースに再関連付けすることができます。
+
+.手順
+. NetApp Consoleメニューから、*ストレージ*、*管理*、*Discoverable systems*の順に選択します。
+. 検出されたクラウドストレージシステムの数が表示されます。*検出*を選択します。
+. 1つ以上のストレージシステムを選択し、*検出*を選択してシステムページに追加します。
+
+
+[NOTE]
+====
+* 名前のないストレージシステムを選択した場合、システムの名前を入力するよう求められます。
+* コンソールから管理に必要な認証情報を持たないストレージシステムを選択した場合、必要な権限を持つ認証情報を選択するよう促されます。
+
+
+====
+.結果
+コンソールは、検出されたシステムを「システム」ページに表示します。ストレージシステムは、NetApp Consoleのワークロードからの管理、ONTAP System Managerの使用、またはクラウド プロバイダのストレージ管理ツールの使用など、さまざまな方法で管理できます。

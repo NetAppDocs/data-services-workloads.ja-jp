@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-svm-settings.html 
+keywords: edit storage vm settings, vm tags, svm tags, storage vm settings, storage vm password, svm password 
+summary: ストレージVMのタグをいつでも追加、更新、または削除できます。 
+---
+= NetApp Workload Factory でストレージ VM 設定を管理する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージ VM の設定を NetApp Workload Factory で管理します。ストレージ VM の Active Directory を設定および更新したり、ストレージ VM のパスワードを更新したり、ストレージ VM のタグを管理したりできます。
+
+
+
+[[configure-and-update-ad-for-a-storage-vm-in-netapp-workload-factory]]
+== NetApp Workload Factory でストレージ VM の AD を設定および更新する
+
+NetApp Workload Factory の FSx for ONTAP ファイルシステム内のストレージVMの Active Directory を構成および更新します。
+
+ストレージVMのActive Directoryの設定と更新についても、同様の手順が適用されます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、更新するストレージVMを含むファイルシステムのアクションメニューを選択し、*管理*を選択します。
+. ファイルシステムの概要で、Storage VMの下にある*管理*を選択します。
+. ストレージVMの管理画面から、Active Directoryを構成するストレージVMのアクションメニューを選択し、*基本アクション* > *AD構成の管理*を選択します。
+. 「AD構成の管理」ページで、以下の情報を入力してください：
++
+.. *参加するActive Directoryドメイン*：Active Directoryの完全修飾ドメイン名（FQDN）を入力してください。
+.. *DNS IPアドレス*：カンマで区切って最大3つのIPアドレスを入力してください。
+.. *SMBサーバーのNetBIOS名*：ストレージVM用に作成するActive DirectoryコンピューターオブジェクトのSMBサーバーのNetBIOS名を入力します。これは、Active DirectoryにおけるこのSVMの名前です。
+.. *ユーザー名*：既存のActive Directoryに登録されているサービスアカウントのユーザー名を入力してください。
++
+ドメインの接頭辞や接尾辞は含めないでください。 `EXAMPLE\ADMIN`には、 `ADMIN`を使用します。
+
+.. *パスワード*：サービスアカウントのパスワードを入力してください。
+.. *組織単位（OU）*：組織単位を入力してください。
++
+OUとは、ファイルシステムを参加させたい組織単位の識別パス名のことです。
+
+.. *委任された管理者グループ*：必要に応じて、委任されたファイルシステム管理者グループを入力します。
++
+委任管理者グループとは、Active Directory内でファイルシステムを管理できるグループの名前です。
+
++
+AWS Managed Microsoft AD を使用している場合は、AWS Delegated FSx Administrators、AWS Delegated Administrators、またはOU への権限を委任したカスタムグループなどのグループを指定する必要があります。
+
++
+自己管理型のADに接続する場合は、AD内のグループ名を使用してください。デフォルトのグループは `Domain Admins`です。
+
+
+
+. 「適用」を選択します。
+
+
+
+
+[[manage-storage-vm-tags]]
+== ストレージVMタグの管理
+
+タグは、リソースを分類するのに役立ちます。NetApp Workload Factoryでは、ストレージVMのタグをいつでも追加、編集、削除できます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、更新するストレージVMを含むファイルシステムのアクションメニューを選択し、*管理*を選択します。
+. ファイルシステムの概要で、Storage VMの下にある*管理*を選択します。
+. ストレージ VM の管理画面から、タグを編集するストレージ VM のアクション メニューを選択し、*基本アクション* > *ストレージ VM タグの編集* を選択します。
+. ストレージVMタグの編集ページで、タグの追加、編集、または削除を行います。
++
+ストレージVMに適用できるタグの最大数は50個です。
+
+. 「適用」を選択します。
+
+
+
+
+[[reset-the-storage-vm-password-in-netapp-workload-factory]]
+== NetApp Workload FactoryでストレージVMのパスワードをリセットする
+
+必要に応じて、NetApp Workload FactoryのストレージVMのパスワードをリセットします。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、パスワードをリセットするストレージVMを含むファイルシステムのアクションメニューを選択し、*管理*を選択します。
+. ファイルシステムの概要で、Storage VMの下にある*管理*を選択します。
+. ストレージVMの管理画面から、パスワードをリセットするストレージVMのアクションメニューを選択し、*基本アクション* > *パスワードのリセット*を選択します。
+. パスワードリセットダイアログで、以下の情報を入力してください：
++
+.. *新しいパスワード*：ストレージVMの新しいパスワードを入力してください。
+.. *パスワードの確認*：確認のため、新しいパスワードをもう一度入力してください。
+
+
+

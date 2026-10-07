@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/deregister-instance.html 
+keywords: Microsoft SQL Server instance, PostgreSQL server instance, Oracle database, deregister instance, unregister instance, remove instance 
+summary: Workload Factoryコンソールからリソースをデプロイまたは監視する必要がなくなった場合は、リソースの登録を解除してください。 
+---
+= NetApp Workload Factory for Databases でリソースの登録を解除する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory コンソールからリソースをデプロイまたは監視する必要がなくなった場合は、Microsoft SQL Server インスタンスや Oracle データベースなどのリソースの登録を解除します。リソースの登録を解除すると、インスタンスによって使用されている FSx for ONTAP ストレージ容量も削除されます。
+
+リソースを再度登録できます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースメニューから、*インベントリ*を選択します。
+. インベントリで、エンジンタイプを選択します：*Microsoft SQL Server*、*Oracle*、または*PostgreSQL*。
+. 登録を解除したいリソースを見つけて、アクションメニューを選択し、次に *登録解除* を選択します。
+

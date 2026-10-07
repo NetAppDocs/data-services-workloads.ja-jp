@@ -1,0 +1,169 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/adjust-file-system-capacity.html 
+keywords: adjust capacity, elastic file system capacity, increase file system capacity, increase FSx capacity, decrease file system capacity, decrease FSx capacity 
+summary: アクティブなワーキングセットが変化するプロジェクトベースのワークロードのニーズに合わせて、FSx for ONTAPファイルシステムのSSDストレージ容量を手動で調整します。 
+---
+= NetApp Workload Factory でファイルシステムの容量を調整する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FSx for ONTAP ファイルシステムのソリッドステートドライブ （SSD） ストレージ容量を調整して、NetApp Workload Factory でさまざまなアクティブなワーキングセットを持つワークロードのニーズに対応します。使用量が設定したしきい値を超えた場合は手動で容量を増やし、ワーキングセットを使用していない場合は容量を減らしてコストを削減してください。または、自動容量管理を有効にすることで、Workload Factory がニーズの変化に応じてストレージを段階的に追加し、手動監視の負担を軽減できます。
+
+
+NOTE: SSDのストレージ容量の削減は、第2世代ファイルシステムでのみサポートされています。
+
+
+
+[[adjust-file-system-capacity-manually]]
+== ファイルシステムの容量を手動で調整する
+
+柔軟なファイルシステム容量を使用すると、ワークロードのニーズに合わせてファイルシステムの容量を動的に調整できます。
+
+.タスク概要
+ファイルシステムの容量を変更すると、FSx for ONTAP ファイルシステムの IOPS に影響します。
+
+ファイルシステムに対して自動的にlink:provision-iops.html["プロビジョニングIOPS"]すると、SSD容量が1 GiB増減するごとに、IOPSは3 IOPSずつ増減します。
+
+手動でlink:provision-iops.html["プロビジョニングIOPS"]する場合は、ファイルシステムの容量増加に対応するために、IOPSの割り当てを増やす必要がある場合があります。
+
+SSDストレージ容量の制限については、AWS FSx for NetApp ONTAPドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/limits.html["クォータ"^]を参照してください。
+
+.開始する前に
+ファイルシステムの容量を調整するには、まず<<自動容量管理とinode管理を有効にする,自動容量管理を無効にする>>を実行する必要があります。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *ストレージ* を選択します。
+. ダッシュボードから、*SSD容量の調整*を選択します。
+. 容量を調整するファイルシステムを選択し、「続行」を選択します。
+. SSD容量の調整ダイアログで、*プロビジョニング済み容量*に数値を入力します。
+. 割り当てられた容量の単位を選択してください。
+. 「適用」を選択します。
+
+
+
+
+[[enable-automatic-capacity-and-inode-management]]
+== 自動容量管理とinode管理を有効にする
+
+容量と inode 管理を有効にすると、NetApp Workload Factory は、時間の経過とともに容量のニーズが変化するに従って、FSx for ONTAP ファイルシステムの増分ストレージと inode （ファイル）をボリュームに自動的に追加します。これらの機能により、容量や inode を手動で監視する必要がなくなります。
+
+これらの機能を管理できるアカウントは1つだけです。
+
+
+
+[[enable-automatic-capacity-management-and-capacity-notifications]]
+=== 自動容量管理と容量通知を有効にする
+
+FSx for ONTAP ファイルシステムの最大サイズ制限まで増分ストレージを自動的に追加するために、自動容量管理を有効にします。ファイルシステムが一定の容量しきい値に達したときにアラートを受け取るように通知を設定します。
+
+.タスク概要
+Workload Factory は、30分ごとに FSx for ONTAP ファイルシステムをスキャンして、増分ストレージを追加する必要があるかどうかを確認します。
+
+すべてのFSx for ONTAPファイルシステムのSSDストレージ容量の最大値は524,288 GiBです。クォータの増加をリクエストするには、AWS FSx for NetApp ONTAPドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/limits.html["クォータ"^]を参照してください。
+
+.開始する前に
+始める前に、以下の点を考慮してください：
+
+* このタスクを完了するには、Workload Factory でlink:add-credentials.html["_表示、計画、分析_権限ポリシーで認証情報を付与する"^]する必要があります。
+* ストレージ容量の増加に合わせてボリュームinodeが増加するようにするには、リンクを関連付ける必要があります。link:create-link.html["既存のリンクを関連付ける方法、または新しいリンクを作成して関連付ける方法を学びます"^]。リンクが関連付けられたら、この操作に戻ります。
+* AWSではSSD容量の拡張の間に最低6時間のクールダウン期間が設けられているため、データ移行中はこの機能を有効にしないでください。この制限により調整が遅れる可能性があるため、それに応じて計画を立ててください。
+
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *ストレージ* を選択します。
+. ストレージメニューから、*インベントリ*を選択します。
+. 「インベントリ」から、自動容量を有効にするファイルシステムを選択します。
++
+選択したファイルシステムのスループットとSSD容量の両方を表示する*Elasticity*グラフを探します。
+
+. *SSD*を選択し、次に*管理*を選択します。
+. 容量管理方法を選択してください。オプションは、増分モードと適応モードです。
++
+** *増分*：しきい値で容量を一定量ずつ増加させます。
++
+*** *しきい値*：Workload Factory通知サービスからの通知をトリガーするために、しきい値を増分増加よりも低く設定します。デフォルト値は70%です。
++
+しきい値設定は、link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Workload Factory通知サービスを有効にしました"^]場合にのみ使用できます。
+
+*** *段階的増加*：FSx for ONTAP ファイルシステムの最大増加率を入力します。デフォルト値は80%です。
++
+これは、Workload Factory が容量を増やすジョブをトリガーするしきい値です。たとえば、ファイル システムの容量が 80% に達すると、Workload Factory は容量を増加させます。
+
+
+
+** *適応型*：履歴データに基づいて容量を予測し、変更します。
++
+*** *ルックバック*：分析期間を時間単位で設定して、容量予測のためにどれだけの履歴データを考慮するかを決定します。デフォルトは120時間です。
+*** *事前に計画を立てましょう*：実際に容量が必要になる前に容量を増やすことができるよう、バッファ時間を時間単位で設定してください。デフォルトは48時間です。
+
+
+
+
+. *自動容量管理を有効にする*を選択し、認証情報の_表示、計画、分析_権限を付与します。
++
+または、この機能を無効にしてください。ファイルシステムの容量を増やす必要がある場合は、まず自動容量管理を無効にする必要があります。
+
+. *容量通知を有効にする*を選択すると、設定したしきい値に容量が達したとき、およびWorkload Factoryが自動的に容量を増加させたときに通知が有効になります。デフォルト値は70%です。
++
+容量通知設定は、link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Workload Factory通知サービスを有効にしました"^]また、自動容量管理が有効になっている場合にのみ使用できます。
+
+. 「適用」を選択します。
+
+
+.結果
+追加の容量が必要かどうかを判断するために、ファイル システム スキャンが 30 分ごとに実行されます。
+
+
+
+[[enable-automatic-inode-management-for-a-file-system]]
+=== ファイルシステムの自動inode管理を有効にする
+
+自動 inode 管理を有効にして、ボリュームあたりの inode（ファイル）の数を許容制限まで増やします。
+
+.タスク概要
+Workload Factory は、FSx for ONTAP ファイルシステムを 30 分ごとにスキャンして、使用可能なボリューム inode を確認し、増分 inode を追加する必要があるかどうかをチェックします。カウントは、自動 inode 管理のしきい値に基づいて増加します。
+
+
+NOTE: *Terraformユーザーの方へ*：Terraformには、すべての操作をTerraform内で完了する必要があるという制限があります。Terraformではinode管理はサポートされていませんが、Workload Factoryコンソールで自動inode管理を有効にすることができます。
+
+.開始する前に
+始める前に、以下の点を考慮してください：
+
+* ボリュームinodeを自動的に管理するには、リンクを関連付ける必要があります。link:create-link.html["既存のリンクを関連付ける方法、または新しいリンクを作成して関連付ける方法を学びます"^]。リンクが関連付けられたら、この操作に戻ります。
+* 自動inode管理は、Workload Factory通知サービスからの通知をトリガーする_警告しきい値_を使用して設定できます。この機能を使用するには、まずlink:../admin/configure-notifications.html["Workload Factory通知サービスを有効にする"^]する必要があります。
+* このタスクを完了するには、Workload Factory でlink:add-credentials.html["_表示、計画、分析_権限ポリシーで認証情報を付与する"^]する必要があります。
+
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. FSx for ONTAPページから、*インベントリ*を選択します。
+. *インベントリ*で、自動inode管理を有効にするファイルシステムのアクションメニューを選択します。
+. 「管理」を選択します。
+. 情報の下にある、*自動inode管理*の横にある鉛筆アイコンを選択します。マウスカーソルを*自動inode管理*の行の上に置くと、ドロップダウン矢印の横に鉛筆アイコンが表示されます。
+. *自動inode管理*ダイアログで、以下の情報を入力してください：
++
+.. *認証情報*：ドロップダウンメニューから _Automate_ 権限を持つ認証情報を選択してください。
+.. *自動inode管理を有効にする*には、「有効にする」ボタンを選択してください。
++
+または、この機能を無効にしてください。iノード数を増やす必要がある場合は、まず自動iノード管理を無効にする必要があります。
+
+.. *警告しきい値*：警告しきい値をしきい値の増加値よりも低く設定すると、Workload Factory通知サービスから通知がトリガーされます。デフォルト値は70%です。
++
+警告しきい値の設定は、link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Workload Factory通知サービスを有効にしました"^]場合にのみ使用できます。
+
+.. *しきい値の増加*：ボリュームあたりのinode（ファイル）数の最大増加率を入力してください。デフォルト値は80%です。
+.. *段階的増加*：iノード（ファイル）の数を段階的に増加させる割合を入力してください。デフォルト値は10%です。
+
+
+. 「適用」を選択します。
+
+
+.結果
+ファイルシステムのスキャンは30分ごとに実行され、ボリュームごとにinode（ファイル）を追加する必要があるかどうかを判断します。

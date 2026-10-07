@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-s3-access-points.html 
+keywords: S3, s3, access points, manage access points, change access points, update access points, modify access points 
+summary: NetApp Workload Factory でボリュームの S3 アクセス ポイントを管理します。 
+---
+= NetApp Workload FactoryでボリュームのS3アクセスポイントを管理する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload FactoryでボリュームのS3アクセスポイントの詳細を更新するか、S3アクセスポイントを削除します。
+
+アクセスポイントの*インベントリテーブル*を有効または無効にすることもできます。インベントリテーブルは、S3アクセスポイントからアクセス可能なすべてのオブジェクトのメタデータを生成し、AWS S3リクエストのコストが発生します。詳細については、link:https://aws.amazon.com/s3/pricing/["Amazon S3 価格設定ドキュメント"^]を参照してください。
+
+
+
+[[edit-the-s3-access-points-for-a-volume]]
+== ボリュームのS3アクセスポイントを編集する
+
+NetApp Workload Factory でボリュームの S3 アクセスポイントを編集します。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]から、*ワークロード* > *ストレージ* > *ボリュームエクスプローラー*を選択します。
+. S3アクセスポイントを編集するボリュームのアクションメニューを選択し、*詳細アクション*、*S3アクセスポイントの管理*の順に選択します。
+. *S3 アクセスポイントの管理*画面でアクションメニューを選択し、*アクセスポイントの編集*を選択します。
+. 更新を行い、* Apply * を選択します。
++
+ジャーナルテーブル機能のインフラストラクチャを設定するには、S3アクセスポイントのネットワーク構成として*Internet*を選択する必要があります。link:setup-journal-table.html["NetApp Workload Factoryのジャーナルテーブルインフラストラクチャを設定する方法について説明します"]。
+
+
+
+
+
+[[view-s3-access-point-details-for-a-volume]]
+== ボリュームのS3アクセスポイントの詳細を表示します
+
+S3アクセスポイントの詳細情報（エイリアス、ARN、S3 URIなど）を表示します。インベントリテーブルとジャーナルテーブルを有効にすると、S3アクセスポイント全体におけるユーザーアクセスイベントとオブジェクト操作のメタデータと監査ログを表示できます。
+
+.タスク概要
+ボリューム上でインベントリテーブルが有効になっている場合、そのボリュームに接続されている既存のS3アクセスポイントのアクセスポイント、インベントリテーブル、およびテーブルバケットの詳細を表示できます。このシステムは、AWSマネジメントコンソールのインベントリテーブルへのリンクも提供します。
+
+ジャーナルテーブルが有効になっている場合、Workload Factoryはアクセスポイントに関するログをテーブル形式で生成し、参照できるようにします。このテーブルには、CloudTrailイベント、トレイル（AWSアクティビティの記録）、CloudTrailフィルター、CloudWatchロググループなどが含まれます。
+
+アクセス ポイントの詳細をコピーして、他のアプリケーションで使用できます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]から、*ワークロード* > *ストレージ* > *ボリュームエクスプローラー*を選択します。
+. 詳細を表示したいボリュームのアクションメニューを選択し、次に*高度なアクション*を選択し、最後に*詳細を表示*を選択します。
++
+詳細は、*アクセスポイント*、*インベントリテーブル*、*ジャーナルテーブル*、*テーブルバケット*の4つのタブに表示されます。
+
+. 在庫テーブルまたはジャーナルテーブルのステータスが有効になっているが、 `get:Object`権限がない場合は、ダイアログの指示に従って必要な権限を追加してください。
+. ジャーナルテーブルのステータスが保留中の場合は、CloudTrail ARNを指定して、ジャーナルテーブルを作成されたインフラストラクチャに接続する必要があります。AWS CLIまたはAWS管理コンソールを使用してCloudFormationスタックを導入する手順に従い、Workload Factoryコンソールに戻ってCloudTrail ARNを入力してください。
+
+
+
+
+[[delete-the-s3-access-points-for-a-volume-in-netapp-workload-factory]]
+== NetApp Workload Factory でボリュームの S3 アクセスポイントを削除します
+
+NetApp Workload Factoryでボリュームから既存のS3アクセスポイントを削除します。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]から、*ワークロード* > *ストレージ* > *ボリュームエクスプローラー*を選択します。
+. S3アクセスポイントを管理するボリュームのアクションメニューを選択し、*詳細アクション*、*S3アクセスポイントの管理*の順に選択します。
+. 削除する S3 アクセス ポイントのアクション メニューを選択し、* Delete * を選択します。
+. *S3 アクセス ポイントの削除* ダイアログで、*削除* を選択して、ボリュームから S3 アクセス ポイントを削除します。
++
+Workload Factoryはインベントリテーブルやジャーナルテーブルを削除しませんが、AWSマネジメントコンソールから手動で削除することは可能です。
+
+
+
+.関連情報
+* link:setup-journal-table.html["ジャーナルテーブルのインフラストラクチャをセットアップする"]
+

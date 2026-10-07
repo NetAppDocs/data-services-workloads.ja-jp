@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/quick-start-eda.html 
+keywords: requirements, permissions, eda, builders, quick start, electronic design automation 
+summary: 環境のセットアップ、監視ダッシュボードの有効化、レイテンシ分析の設定を行って、Workload Factory for EDAの使用を開始します。 
+---
+= Workload Factory for EDA のクイックスタート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workload Factory for EDA を使い始めるには、環境をセットアップし、監視ダッシュボードを有効にし、EDA ワークロードの FSx for ONTAP パフォーマンスを最適化するためのレイテンシ分析を設定します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"] Workload Factoryにログインする
+[role="quick-margin-para"]
+NetApp Consoleにlink:../setup/sign-up-and-log-in.html["サインアップしてログインする"]する必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"]EDAワークロードの資格情報と権限を追加する
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["アカウントに認証情報を手動で追加する"]（EDAワークロード機能の選択を含む）、およびlink:../fsx-storage/permissions-reference-fsx.html["必要な権限のIAMポリシーを作成する"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]EDA要件を満たすように環境をセットアップする
+[role="quick-margin-para"]
+NFS共有として構成されたボリュームを少なくとも1つ含む、デプロイおよび検出済みのFSx for ONTAPファイルシステムが必要です。
+
+[role="quick-margin-para"]
+link:requirements.html["EDAの要件について詳しくはこちらをご覧ください"^]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4"] 概要ダッシュボードを有効にする
+[role="quick-margin-para"]
+概要ダッシュボードを有効にして、FSx for ONTAP クラスタの健全性、容量、スループットを監視します。同意プロンプトを承認して、Workload Factory が CloudWatch メトリックの収集を開始できるようにします。
+
+[role="quick-margin-para"]
+link:task-activate-overview-dashboard.html["概要ダッシュボードをアクティブ化する方法を学ぶ"^]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]プロジェクトダッシュボードを設定する
+[role="quick-margin-para"]
+プロジェクトダッシュボードを設定して、システムの状態、パフォーマンス、ストレージの使用状況を監視することで、EDA環境を効果的に最適化できます。
+
+[role="quick-margin-para"]
+link:task-configure-project-dashboard.html["プロジェクトダッシュボードの設定方法を学びましょう"^]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]FSx for ONTAP レイテンシ分析の設定
+[role="quick-margin-para"]
+シミュレーションの実行時間に影響が出る前に、パフォーマンスの問題を事前に特定して解決するために、遅延しきい値を設定します。警告アラートと重大アラートを設定し、メールまたは SNS 通知を設定してリアルタイムアラートを受信し、自動化された基本分析を活用して、必要に応じて複雑なシナリオ向けに AI 分析を使用します。
+
+[role="quick-margin-para"]
+link:task-configure-latency-monitoring.html["レイテンシ監視の設定方法を確認する"^]。イベントが検出されたら、インタラクティブグラフを使用してlink:task-analyze-latency-trends.html["レイテンシの傾向を分析する"^]できます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["セブン"] 他のサービスとの統合
+[role="quick-margin-para"]
+Workload Factory REST APIを使用して、EDAをサービスポータルやPerforce Helix Coreなどの他のサービスと統合します。
+
+[role="quick-margin-para"]
+link:integrate-perforce.html["EDAとPerforceを統合する方法について説明します"^]。
+
+
+
+[[whats-next]]
+== 次の手順
+
+* link:task-configure-latency-monitoring.html["FSx for ONTAP のレイテンシー監視を設定する"]
+* link:task-configure-project-dashboard.html["プロジェクトダッシュボードを設定する"]
+* link:learn-eda-workloads.html["EDA ワークロードについて学ぶ"]
+* link:../get-help.html["EDAに関するサポートを受ける"]
+

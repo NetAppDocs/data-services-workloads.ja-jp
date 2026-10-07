@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/create-workspaces.html 
+keywords: manage, workspace, snapshot, project 
+summary: NetApp Workload Factory for EDAのワークスペースは、プロジェクトのスナップショットを基に作成された、Perforceによるプロジェクトの表現です。EDAプロジェクトの一部としてワークスペースを作成できます。 
+---
+= EDAワークスペースを作成する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory for EDAのワークスペースは、特定の時点におけるプロジェクトのPerforce表現です。ワークスペースは、プロジェクトのスナップショットを基に作成されます。EDAプロジェクト内で新しいワークスペースを作成できます。Perforce UIからワークスペースを作成できます。
+
+.開始する前に
+EDAがPerforce Helix Visual Clientに統合されていることを確認してください。詳細については、link:integrate-perforce.html["EDAとPerforceを統合する"^]を参照してください。
+
+.手順
+. Perforceにログインしてください。
+. Perforceメニューで、*表示* > *WF*を選択します。
++
+Workload Factoryのログイン画面がPerforce UI内に表示されます。
+
+. いずれかの方法でログインしてくださいlink:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["コンソールエクスペリエンス"^]。
+. メニューimage:workloads-menu-icon.png["ハンバーガー メニュー アイコンは、storage、eda、ai、databases、vmware、administration などのワークロードに移動するために使用されます。"]を選択し、*EDA*を選択します。
+. *CI/CD*を選択します。
+. 「プロジェクトの作成」を選択し、次に「ワークスペースの作成」を選択します。
+. 「ワークスペースプロジェクトの作成」ページで、以下の情報を入力してください：
++
+.. ワークスペースのベースとして使用するスナップショットを選択してください。
+.. ワークスペースの名前を入力してください。
+.. 必要に応じて、ワークスペースを登録するためのユーザー識別子を入力してください。この識別子は、このワークスペースを使用する開発者のPerforceユーザーIDと一致する必要があります。
+
+
+. 「作成」を選択します。
+
+
+.結果
+ワークスペースが作成され、ワークスペースページのワークスペース一覧に表示されます。

@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: setup/learn-about-permissions.html 
+keywords: permissions, actions 
+summary: NetApp Workload Factoryの機能とサービスを使用するには、Workload Factoryがクラウド環境で操作を実行できるように権限を付与する必要があります。 
+---
+= NetApp Workload Factoryの権限
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factoryの機能とサービスを使用するには、Workload Factoryがクラウド環境で操作を実行できるように権限を付与する必要があります。
+
+
+
+[[why-use-permissions]]
+== 権限を使用する理由
+
+権限を付与すると、Workload Factoryは、クラウド プロバイダアカウント内のリソースとプロセスを管理する権限を持つポリシーをインスタンスにアタッチします。これにより、Workload Factoryは、ストレージ環境の検出から、ストレージ管理におけるボリュームなどのクラウド リソースのデプロイまで、さまざまな操作を実行できるようになります。
+
+たとえば、FSx for ONTAPデータベースワークロードの場合、Workload Factoryに必要な権限が付与されると、指定されたアカウントとリージョン内のすべてのEC2インスタンスをスキャンし、すべてのWindowsベースのマシンをフィルタリングします。AWS Systems Manager（SSM）エージェントがホストにインストールされて実行されており、System Managerのネットワークが正しく構成されている場合、Workload FactoryはWindowsマシンにアクセスして、SQL Serverソフトウェアがインストールされているかどうかを確認できます。
+
+
+
+[[how-permissions-are-used]]
+== 権限の使用方法
+
+Workload Factoryは、特定のタスクを実行するために権限を使用します。権限は、一連の権限ポリシーにまとめられています。権限ポリシーはlink:../admin/codebox-automation.html["コードボックス"]に表示され、コピー可能なJSONです。各クラウド プロバイダは、そのクラウド環境の特定の要件と機能に合わせて調整された独自の権限ポリシーセットを備えています。このドキュメントでは、各クラウド プロバイダの権限リファレンスを提供します。
+
+
+
+[[permission-references-by-cloud-provider]]
+=== クラウド プロバイダ別の権限リファレンス
+
+ご利用のクラウド プロバイダの権限要件については、以下のページを参照してください：
+
+* link:../fsx-storage/permissions-reference-fsx.html["Amazon FSx for NetApp ONTAP"]
+* link:../oci/permissions-oci.html["OCI NetAppストレージサービス"]
+

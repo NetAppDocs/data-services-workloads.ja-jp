@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/calculate-evs-savings.html 
+keywords: vm workloads, deploy fsx, deploy storage for vms, evs, savings, calculate, tco, regions 
+summary: Amazon EVSとFSx for ONTAPを使用することでどれだけ節約できるかを計算します。 
+---
+= NetApp Workload Factory を使用して Amazon Elastic VMware Service のコスト削減を検討する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMwareワークロードをAmazon Elastic VMware Service（EVS）に移行することで得られる潜在的なコスト削減効果について検討してみましょう。この計算ツールを使用すると、ストレージとしてAmazon FSx for NetApp ONTAPを使用した場合と使用しない場合での、Amazon EVSの利用コストを比較できます。
+
+削減額計算ツールによって、最も対費用効果の高いストレージがFSx for ONTAPであると判断された場合、詳細な評価を作成して、使用前に確認できる移行計画を取得できます。その後、Codeboxを使用してInfrastructure-as-Codeテンプレートを生成できます。
+
+
+
+[[explore-savings-for-evs-environments]]
+== EVS環境における節約効果を探る
+
+Amazon EVS環境への移行を計画している場合、以下の手順に従って潜在的なコスト削減効果を検討してください。
+
+
+NOTE: 先に進む前に、節約額計算ツールの下部にある免責事項をご確認いただき、価格見積もりの算出方法について理解を深めてください。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]を選択し、*ワークロード* > *VMware* を選択します。
++
+計画センターが表示されます。
+
+. VMwareメニューから、*Explore savings*を選択します。削減額計算ツールが表示されます。
++
+*環境設定*ペインでは、EVSの展開リージョンを選択し、それに応じてTCOと節約額の予測を調整できます。
+
+. *リージョン*ドロップダウンリストから、節約額を計算するEVS展開リージョンを選択します。
+. 必要に応じて以下のスライダーを調整し、選択した値に対するリアルタイムの削減額の計算結果を確認してください。キーボードを使用している場合は、矢印キーを使用して微調整を行うことができます：
++
+** *必要な物理CPU（数）*
+** *必要な物理メモリ容量（GiB）*
+** *必要なVMストレージ容量（TiB）*
+
+
+. *EVS料金プラン*で、現在ご利用のプランを選択してください。
+. 次のいずれかを実行します。
++
+** Amazon EVS環境向けに移行アドバイザーを使用してlink:launch-migration-advisor-evs-manual.html["展開計画を作成する"]するには、*Plan EVS migration*を選択します。
+** TCO計算ツールを閉じるには、「閉じる」を選択してください。
+
+
+

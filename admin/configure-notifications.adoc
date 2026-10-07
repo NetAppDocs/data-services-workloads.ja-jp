@@ -1,0 +1,254 @@
+---
+sidebar: sidebar 
+permalink: admin/configure-notifications.html 
+keywords: amazon, sns, notification, topic, notifications, notifications service, alerts, email, email notifications, console notifications, filter, filtering 
+summary: 特定の種類のイベントが発生したときに、個人または別のアプリケーションに通知を送信するようにNetApp Workload Factoryを設定できます。 
+---
+= NetApp Workload Factoryの通知を設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory通知サービスを設定して、NetApp Consoleでアラートとして通知を送信したり、アカウントに関連付けられている任意のメールアドレスやAmazon SNSトピックに送信したりできます。アラートとして送信される通知は、Consoleエージェントまたはリンクがデプロイされている場合にNetApp Consoleに表示されます。Workload FactoryがAmazon SNSトピックに通知を発行すると、そのトピックのサブスクライバー（ユーザーや他のアプリケーションなど）は、そのトピック用に設定されたエンドポイント（電子メールやSMSメッセージなど）で通知を受信します。
+
+
+
+[[configure-workload-factory-notifications]]
+== Workload Factory の通知を設定する
+
+Workload Factory の通知は、NetApp Console または Workload Factory コンソールを使用して設定できます。
+
+通知を受け取るためのオプションは次のとおりです：
+
+
+
+[[netapp-console]]
+=== NetApp Console
+
+* *通知*：Workload Factory を設定して、NetApp Console のベルアイコンの下に表示される通知を送信します。
+* *メール*：NetApp Consoleでメール通知を有効にすると、Amazon SNSの設定を必要とせずに、アカウントに関連付けられた任意のメールアドレスに通知を受信できます。
+* *Amazon SNS*：Amazon SNS トピックに通知を送信するように Workload Factory を設定します。
+
+
+
+
+[[workload-factory-console]]
+=== Workload Factoryコンソール
+
+* *メール*：Amazon SNSの設定を必要とせずに、アカウントに関連付けられている任意のメールアドレスに通知を受信するには、Workload Factoryコンソールでメール通知を有効にします。
+* *Amazon SNS*：Workload Factory コンソールを使用して、Amazon SNS トピックに通知を送信するように Workload Factory を設定します。
+
+
+
+IMPORTANT: NetApp Consoleで通知を設定すると、通知配信の所有権が移管され、Workload Factoryコンソールの通知オプションは無効になり、読み取り専用モードで表示されます。ツールチップには、通知はNetApp Consoleから管理されると記載されています。その後、通知はNetApp Consoleからのみ管理できます。
+
+.開始する前に
+以下の前提条件は、Amazon SNS通知を設定する場合にのみ適用されます。
+
+* Amazon SNSの設定とAmazon SNSトピックの作成には、Amazon SNSコンソールまたはAWS CLIのいずれかを使用する必要があります。
+* Workload Factoryは*Standard*トピックタイプをサポートしていることに注意してください。このタイプのトピックでは、通知が受信順に購読者に送信されることが保証されないため、重要な通知や緊急の通知がある場合は注意が必要です。
+
+
+[role="tabbed-block"]
+====
+.NetApp Consoleからの通知を設定する
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. NetApp Consoleメニューから、*ワークロード*、*管理*、*通知設定*の順に選択します。
+. 通知設定ページで、以下の通知タイプのうち1つ以上を有効にします：
++
+.. *NetApp Console通知*：*NetApp Console通知を有効にする*を選択して、Workload FactoryがNetApp Consoleで通知を送信するように設定します。
+.. *Eメール通知*：*Eメール通知を有効にする*を選択すると、Workload Factoryがアカウントに関連付けられている任意のEメールアドレスに通知を送信するように設定されます。
+.. *Amazon SNS通知*：*SNS通知を有効にする*を選択し、Amazon SNSコンソールからAmazon SNSを設定するための手順に従ってください。
++
+トピックを作成したら、トピックARNをコピーして、「通知設定」ページの「SNSトピックARN」フィールドに入力します。
+
+
+
+. テスト通知を送信して設定を確認したら、*適用*を選択してください。
+
+
+--
+[[wf-console-email-notifications]]
+.Workload Factoryコンソールから通知を設定する
+--
+.手順
+. link:https://console.workloads.netapp.com["Workload Factoryコンソール"^]にログインします。
+. Workload Factory コンソールのメニューから、*ワークロード*、*管理*、*通知設定* の順に選択します。
+. 以下の通知タイプのうち、1つ以上を有効にしてください：
++
+** *メール通知*：*メール通知を有効にする*を選択してください。アカウントに関連付けられているメールアドレスはすべて読み取り専用モードで表示されます。
+** *Amazon SNS通知*：*SNS通知を有効にする*を選択し、Amazon SNSコンソールからAmazon SNSを設定するための手順に従ってください。
++
+テスト通知を送信して設定を確認したら、*適用*を選択してください。
+
+
+
+
+
+--
+====
+
+
+[[subscribe-to-the-amazon-sns-topic]]
+== Amazon SNSトピックにサブスクライブする
+
+Workload Factoryからトピックに通知を送信するように設定したら、Amazon SNSドキュメントの https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["確認方法"]に従ってトピックをサブスクライブし、Workload Factoryからの通知を受信できるようにします。
+
+
+
+[[filter-notifications]]
+== 通知をフィルタリングする
+
+通知にフィルターを適用することで、不要な通知トラフィックを削減し、特定のユーザーに特定の種類の通知を配信することができます。Amazon SNS ポリシーを使用して SNS 通知を設定し、NetApp Console の通知設定を使用することでこれを実現できます。
+
+
+
+[[filter-amazon-sns-notifications]]
+=== Amazon SNS通知をフィルタリングする
+
+Amazon SNSのトピックをサブスクライブすると、デフォルトでそのトピックに公開されたすべての通知を受信します。トピックからの特定の通知のみを受信したい場合は、フィルタポリシーを使用して受信する通知を制御できます。フィルタポリシーにより、Amazon SNSはフィルタポリシーに一致する通知のみをサブスクライバーに配信します。
+
+Amazon SNSの通知は、以下の条件でフィルタリングできます：
+
+[cols="3*"]
+|===
+| 説明 | フィルタポリシーフィールド名 | 可能な値 
+
+
+| リソースタイプ | `resourceType`  a| 
+* `DB`
+* `Microsoft SQL Server host`
+* `PostgreSQL Server host`
+
+
+
+
+| ワークロード | `workload` | `WLMDB` 
+
+
+| 優先度 | `priority`  a| 
+* `Success`
+* `Info`
+* `Recommendation`
+* `Warning`
+* `Error`
+* `Critical`
+
+
+
+
+| 通知タイプ | `notificationType`  a| 
+* `Deployment`
+* `Well-architected`
+
+
+|===
+.手順
+. Amazon SNSコンソールで、SNSトピックのサブスクリプションの詳細を編集します。
+. *購読フィルターポリシー*領域で、*メッセージ属性*でフィルターするように選択します。
+. *サブスクリプションフィルターポリシー*オプションを有効にしてください。
+. *JSONエディタ*ボックスにJSONフィルタポリシーを入力してください。
++
+例えば、次のJSONフィルタポリシーは、WLMDBワークロードに関連し、優先度が成功またはエラーであり、Well-architectedステータスの詳細を提供するMicrosoft SQL Serverリソースからの通知を受け入れます：
+
++
+[source, json]
+----
+{
+  "accountId": [
+    "account-a"
+  ],
+  "resourceType": [
+    "Microsoft SQL Server host"
+  ],
+  "workload": [
+    "WLMDB"
+  ],
+  "priority": [
+    "Success",
+    "Error"
+  ],
+  "notificationType": [
+    "Well-architected"
+  ]
+}
+----
+. 「変更を保存」を選択します。
+
+
+その他のフィルタポリシーの例については、 https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html["Amazon SNSのフィルタポリシー例"^]を参照してください。
+
+フィルタポリシーの作成に関する詳細については、 https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html["Amazon SNS ドキュメント"^]を参照してください。
+
+
+
+[[filter-notifications-in-netapp-console]]
+=== NetApp Console で通知をフィルタリング
+
+NetApp Consoleの通知設定を使用して、コンソールで受信する通知を重大度レベル（Critical、Info、Warningなど）でフィルタリングできます。
+
+コンソールでの通知のフィルタリングの詳細については、 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications["NetApp Console のドキュメント"^]を参照してください。
+
+
+
+[[notification-types-and-messages]]
+== 通知の種類とメッセージ
+
+Workload Factory は、以下のイベントについて通知を送信します：
+
+[cols="6*"]
+|===
+| イベント | 説明 | 通知タイプ | 重大度 | ワークロード | リソースタイプ 
+
+
+| お客様のアカウント内の一部のデータベースインスタンスは、適切に設計されていません | お客様のアカウント内のすべてのMicrosoft SQL Serverインスタンスについて、構造上の問題がないか分析されました。このイベントの説明には、適切に設計されたインスタンスの数と最適化されていないインスタンスの数が記載されています。Workload Factoryコンソールのデータベースインベントリで、適切に設計されたステータスの結果と推奨事項を確認してください。 | 優れた設計 | 推奨事項 | データベース | Microsoft SQL Serverインスタンス 
+
+
+| Microsoft SQL Server/PostgreSQLサーバーのデプロイに成功しました | Microsoft SQL ServerまたはPostgreSQLホストの展開が成功しました。詳細については、ジョブ監視に移動してください。 | 導入 | 成功 | データベース | FSx for ONTAP、DBホスト 
+
+
+| Microsoft SQL Server/PostgreSQLサーバーのデプロイに失敗しました | Microsoft SQL ServerまたはPostgreSQLホストの展開に失敗しました。詳細については、ジョブ監視に移動してください。 | 導入 | エラー | データベース | FSx for ONTAP、DBホスト 
+
+
+| レプリケーション関係の作成に失敗しました | SnapMirrorレプリケーション関係の作成に失敗しました。詳細については、Trackerをご覧ください。 | レプリケーション | 重大 | 一般ストレージ | FSx for ONTAP 
+
+
+| FSx for ONTAPの作成失敗 | FSx for ONTAPファイルシステムの作成プロセスが失敗しました。詳細については、Trackerをご覧ください。 | FSx for ONTAPファイルシステムアクション | 重大 | 一般ストレージ | FSx for ONTAP 
+
+
+| SSD容量またはinodeの自動増加の成功 | 最近の自動容量管理アップデート中に、FSx for ONTAPファイルシステムはSSD容量またはボリュームinodeを正常に増加させました。詳細については、Trackerをご覧ください。 | 容量管理 | 成功 | 一般ストレージ | FSx for ONTAPファイル 
+
+
+| SSD容量またはinodeの自動拡張の失敗 | 最近の自動容量管理の更新中に、FSx for ONTAPファイルシステムがSSD容量またはボリュームinodeの増加に失敗しました。詳細については、Trackerをご覧ください。 | 容量管理 | 重大 | 一般ストレージ | FSx for ONTAPファイルシステム 
+
+
+| FSx for ONTAP の問題が検出されました | すべてのFSx for ONTAPファイルシステムは、Well-Architectedの問題について分析されました。スキャンで1つ以上の問題が検出されました。詳細については、Workload FactoryコンソールのストレージダッシュボードからWell-Architected分析を確認してください。 | 適切に設計された分析 | 推奨事項 | 一般ストレージ | FSx for ONTAPファイルシステム 
+
+
+| FSx for ONTAPの自動容量管理イベント | FSx for ONTAPファイルシステムのSSDパフォーマンスティアが、警告しきい値の容量/割合の合計に達しました。 | 容量管理 | 警告 | 一般ストレージ | FSx for ONTAPファイルシステム 
+
+
+| FSx for ONTAP の自動 inode 管理イベント | FSx for ONTAPボリュームのinode数が警告しきい値（カウント／パーセンテージ合計）に達しました。 | 容量管理 | 警告 | 一般ストレージ | FSx for ONTAPファイルシステム 
+
+
+| FSx for ONTAPファイルシステムで疑わしいボリュームアクティビティが検出されました | NetApp Autonomous Ransomware Protection with AI（ARP/AI）が、不審なボリュームアクティビティを検出しました。 | ランサムウェア対策 | 重大 | 一般ストレージ | FSx for ONTAPファイルシステム 
+
+
+| レイテンシしきい値超過が検出されました | FSx for ONTAP クラスターの 1 つ以上のボリュームがレイテンシしきい値を超えました。 | パフォーマンス監視 | 警告 | EDA | FSx for ONTAPファイルシステム 
+
+
+| 月次コストレポート | お客様のアカウントの月間コスト概要。支出傾向、異常な変動、FSx for ONTAP ファイルシステムの最適な節約機会が表示されます。 | コストレポート | 推奨事項 | 一般ストレージ | FSx for ONTAPファイルシステム 
+
+
+| レプリケーション遅延 | レプリケーションに予想以上に時間がかかっています。 | レプリケーション | 重大 | 一般ストレージ | FSx for ONTAPファイルシステム 
+
+
+| カスタムダッシュボードの作成に成功しました | カスタムダッシュボードが正常に作成され、表示できるようになりました。 | カスタムダッシュボード | 成功 | 一般ストレージ | Workload Factory アカウント 
+
+
+| カスタムダッシュボードの作成に失敗しました | Workload Factory は、お客様のカスタムダッシュボードを作成できませんでした。ダッシュボードをもう一度作成してみてください。 | カスタムダッシュボード | エラー | 一般ストレージ | Workload Factory アカウント 
+|===

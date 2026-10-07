@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: gcnv/add-roles.html 
+keywords: setup, set up, add role, requirements, permissions, google cloud netapp volumes, gcnv, bluexp. netapp console,assign 
+summary: NetApp Consoleでは、メンバーに適切なロールを割り当てる必要があります。 
+---
+= Google Cloud NetApp Volumesのロールを割り当てる
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloud NetApp Volumes の使用を開始するには、NetApp Console でメンバーに適切なロールを割り当てる必要があります。詳細については、link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["すべてのサービスに対するNetApp Consoleアクセスロールについて"^] を参照してください。
+
+
+
+[[assign-roles-to-the-service-account-member]]
+== サービスアカウントメンバーに役割を割り当てる
+
+.  https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["NetApp Console"^]にログインします。
+. *管理*を選択し、次に*IDとアクセス*を選択します。
+. 役割を割り当てるメンバーの横にあるアクションメニューimage:screenshot_gallery_options.gif["3つの点が描かれたアイコン。"]を選択し、「役割を追加」を選択します。
+. 役割を追加するには、ダイアログボックスの手順を実行してください：
++
+.. フォルダーまたはプロジェクトを選択：メンバーに権限を付与するリソース階層のレベルを選択します。
++
+フォルダを選択すると、メンバーはそのフォルダ内のすべてに対するアクセス権を持ちます。
+
+.. 「カテゴリ」ドロップダウンメニューから「アプリケーション」ロールカテゴリを選択します。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["アクセスロールについて"^]。
+.. *Role*ドロップダウンから、選択したフォルダーまたはプロジェクトに関連付けられているリソースに対する権限をメンバーに付与する役割を選択してください。
++
+*Important:* 以下のいずれか、または両方のロールを追加する必要があります：
+
++
+*** _Google Cloud NetApp Volumes 管理者_ または
+*** _Google Cloud NetApp Volumes ビューア_
+
+
+.. ロールの追加：組織内の追加のフォルダやプロジェクトへのアクセス権を付与する場合は、「ロールの追加」を選択し、別のフォルダ、プロジェクト、またはロールカテゴリを指定してから、ロールカテゴリと対応するロールを選択します。
+
+
+. 「新しいロールを追加」を選択します。
+
+
+.次の手順
+link:create-discover-systems.html["Google Cloud NetApp Volumes システムを追加する"]。

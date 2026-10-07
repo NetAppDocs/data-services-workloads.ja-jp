@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/quick-start-databases.html 
+keywords: requirements, setup, quick start, getting started, getting started with databases, getting started with workload factory for databases 
+summary: Infrastructure-as-Codeスニペットの使用、ホストの検出、リソースの管理などを行うには、データベース向けNetApp Workload Factoryの使用を開始してください。 
+---
+= データベース向けNetApp Workload Factoryのクイックスタート
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+データベース向け NetApp Workload Factory を使用すると、_表示、計画、分析_ の権限ですぐに利用を開始できます。Workload Factory を使用してホストの検出やリソースの管理などを行う場合は、いくつかの手順で利用を開始できます。
+
+データベースを使用するには、AWSアカウントが必要です。
+
+開始するには、以下の手順に従ってください。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]NetApp Workload Factoryにログイン
+[role="quick-margin-para"]
+link:../setup/sign-up-and-log-in.html["サインアップ"^]して、NetApp Consoleにログインする必要があります。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"] データベース ワークロードの資格情報と権限を追加する
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["アカウントに認証情報を手動で追加する"^]これには、データベース ワークロード機能を選択し、ニーズに合わせてlink:../fsx-storage/permissions-reference-fsx.html["許可ポリシー"^]を選択することが含まれます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"]リソースの検出または展開
+[role="quick-margin-para"]
+認証情報とIAMポリシーを使用すると、インベントリ内の既存のデータベース リソースを検出したり、link:create-sql-database-server.html["Microsoft SQL Serverを展開する"]またはlink:create-postgresql-server.html["PostgreSQLサーバーをデプロイする"]できます。インベントリは、リソースを管理するための統一されたインターフェースを提供します。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4"] コスト削減の機会を探る
+[role="quick-margin-para"]
+オンプレミス、またはAmazon Elastic Block Store（EBS）やFSx for Windows File Serverのストレージを使用してAWS上でデータベースを稼働している場合、link:explore-savings-databases.html["Exploreの削減額計算ツールを使用する"]してコストを分析し、効果的に移行を計画できます。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 適切に設計されたデータベース構成を実装する
+[role="quick-margin-para"]
+Workload Factory for Databasesは、Well-Architectedダッシュボードから、Amazon FSx for NetApp ONTAPストレージ上のMicrosoft SQL ServerおよびOracleの導入を定期的に分析します。データベースリソースのWell-Architectedダッシュボードから問題のトラブルシューティングを行うには、まずlink:register-instance.html["インスタンスを登録する"]する必要があります。
+
+[role="quick-margin-para"]
+インスタンスの登録後、適切に設計されたステータスを表示し、Workload Factoryでlink:optimize-configurations.html["適切に設計されたデータベース構成を実装する"]するためのアクションを実行できます。
+
+.次の手順
+データベースインベントリのFSx for ONTAPファイルシステムストレージにリソースを登録すると、link:create-sql-database.html["ユーザーデータベースを作成する"]またはlink:create-sandbox-clone.html["ホストをクローンしてサンドボックスを作成します"]を実行できます。

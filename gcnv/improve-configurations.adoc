@@ -1,0 +1,132 @@
+---
+sidebar: sidebar 
+permalink: gcnv/improve-configurations.html 
+keywords: improve configurations, optimize configurations, implement best practices, well-architected storage pool, Google Cloud NetApp Volumes, GCNV 
+summary: ワークロードファクトリーは、Google Cloud NetApp Volumes の構成をスキャンし、運用上の卓越性を実現するためのインサイトと推奨事項を提供します。 
+---
+= 適切に設計された Google Cloud NetApp Volumes の構成を実装する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+構成分析のインサイトと推奨事項を活用して、NetApp を使用し、Google Cloud ストレージ上で稼働する Google Cloud NetApp Volumes ストレージプールのベストプラクティスを実装します。適切に設計された状態を簡単に確認したり、構成上の問題点を把握したり、信頼性、セキュリティ、パフォーマンス、コストの面で最適化されていないストレージプールのアーキテクチャを改善するための推奨事項を入手したりできます。
+
+link:configuration-analysis.html["構成分析とWell-Architectedステータスについて説明します。"]
+
+
+
+[[about-this-task]]
+== タスク概要
+
+NetAppは、Google Cloud における NetApp Volumes ストレージプールのデプロイメントを毎日分析します。日々の分析では、ウェルアーキテクチャのステータス、および構成上の問題を理解してストレージプールがベストプラクティスに準拠するための洞察と推奨事項が提供されます。
+
+日々の分析が完了すると、ダッシュボードには、適切に設計されたリソースの総数、クリティカル状態にあるリソースの数、および警告状態にあるリソースの数が表示されます。構成は、信頼性、運用効率、コスト最適化、パフォーマンス効率、セキュリティという、適切に設計されたフレームワークの柱となる要素に基づいて分類されます。ダッシュボードには、すべての構成、それらの構成の適切なアーキテクチャの状態、重要度、カテゴリ、リソースの種類（ボリュームまたはストレージプール）、影響を受けるリソース、および構成が最適化されていない場合に推奨事項を表示するオプションを一覧表示する表も含まれています。
+
+
+
+[[before-you-begin]]
+== 開始する前に
+
+* link:https://console.netapp.com/add-working-environment/choose-type["Google Cloud NetApp Volumes ストレージプールを追加する"]して NetApp Console にログインし、Well-Architected のステータスと構成上の問題に関する推奨事項を確認する必要があります。
+
+
+
+
+[[view-recommendations-for-configuration-issues]]
+== 設定に関する問題の推奨事項を表示する
+
+日々の分析が完了すると、設定上の問題に関する推奨事項を確認できます。推奨事項では、最適な設定方法と、最適化されていない設定による潜在的なリスクについて説明します。推奨事項をCSVファイルでダウンロードすることもできます。
+
+.手順
+. link:https://console.netapp.com/home["NetApp Console"^]にログインします。
+. NetApp Console メニューから「ワークロード」を選択し、次に「Well-architected」を選択します。
+. Well-architectedダッシュボードから、任意の構成の *View* を選択してください。
++
+必要に応じて、すべての構成に関する推奨事項をCSVファイルでダウンロードできます。
+
+. 推奨事項を確認してください。
+
+
+
+
+[[dismiss-a-configuration-analysis]]
+== 構成分析を却下する
+
+Google Cloud NetApp Volumes ストレージプールまたは選択したボリュームの構成分析を停止します。必要に応じて分析を再開できます。
+
+[role="tabbed-block"]
+====
+.ストレージプールの構成分析を破棄する
+--
+.手順
+. link:https://console.netapp.com/home["NetApp Console"^]にログインします。
+. NetApp Console メニューから「ワークロード」を選択し、次に「Well-architected」を選択します。
+. Well-architectedダッシュボードから、任意の構成の *View* を選択してください。
+. ［構成］で、環境に適用されない構成を特定し、［*無視*］を選択します。
+. 「設定を閉じる」ダイアログで「*閉じる*」を選択すると、設定分析が停止します。
+
+
+--
+.ボリュームの構成分析を破棄する
+--
+.手順
+. link:https://console.netapp.com/home["NetApp Console"^]にログインします。
+. NetApp Console メニューから「ワークロード」を選択し、次に「Well-architected」を選択します。
+. Well-architectedダッシュボードから、任意の構成の *View* を選択してください。
+. 「構成」で、選択したボリュームに対して無視する構成を特定し、*表示*を選択します。
+. 構成分析から除外するボリュームを特定します。
++
+** 1つのボリュームの場合：アクションメニューを選択し、次に「ボリュームを無視」を選択します。
+** 複数のボリュームの場合：ボリュームを選択し、「Bulk action」の横にある「Dismiss」を選択します。
+
+
+. 構成の分析を停止するには、*Dismiss* を選択してください。
+. 「ボリュームの非表示」ダイアログで、「非表示」を選択して確定します。
+
+
+--
+====
+.結果
+ストレージプールまたは選択されたボリュームの構成分析が停止します。
+
+分析はいつでも再アクティブ化できます。
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== 却下された構成分析を再アクティブ化する
+
+一度破棄した構成分析は、いつでも再アクティブ化できます。再アクティブ化する構成を1つ以上選択できます。
+
+[role="tabbed-block"]
+====
+.ストレージプールの構成分析を再アクティブ化する
+--
+.手順
+. link:https://console.netapp.com/home["NetApp Console"^]にログインします。
+. NetApp Console メニューから「ワークロード」を選択し、次に「Well-architected」を選択します。
+. *無視された構成* を選択します。
+. 再アクティブ化する構成を特定し、*再アクティブ化*を選択してください。
+
+
+--
+.ボリュームの構成分析を再アクティブ化する
+--
+.手順
+. link:https://console.netapp.com/home["NetApp Console"^]にログインします。
+. NetApp Console メニューから「ワークロード」を選択し、次に「Well-architected」を選択します。
+. *無視された構成* を選択します。
+. 構成分析から、再アクティブ化するボリュームを特定します。
++
+** 1 つのボリュームの場合：アクション メニューを選択し、*ボリュームの再アクティブ化*を選択します。
+** 複数のボリュームの場合：ボリュームを選択し、「一括操作」の横にある「再アクティブ化」を選択します。
+
+
+
+
+--
+====
+.結果
+システムは構成分析を再開します。新たな分析は毎日実行されます。

@@ -1,0 +1,321 @@
+---
+sidebar: sidebar 
+permalink: known-limitations.html 
+keywords: limitations, fsx, ontap 
+summary: 今回のリリースでサポートされていない、または今回のリリースでは正常に機能しないプラットフォーム、デバイス、機能が記載されています。 
+---
+= NetApp Workload Factory の FSx for ONTAP ワークロードに関する既知の制限事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+今回のリリースでサポートされていない、または今回のリリースでは正常に機能しないプラットフォーム、デバイス、機能が記載されています。以下の制限事項は、NetApp Workload Factory における Amazon FSx for NetApp ONTAP に特有のものです。これらの制限事項をよく確認してください。
+
+
+
+[[known-limitations-of-fsx-for-ontap-storage-workloads]]
+== FSx for ONTAPストレージワークロードの既知の制限事項
+
+
+
+[[region-support]]
+=== 地域サポート
+
+以下の AWS リージョンはサポートされていません：
+
+* 中国地域
+* シークレットクラウド
+* Top Secret Cloud
+
+
+
+
+[[adding-ha-pairs-limitations]]
+=== HAペア追加の制限事項
+
+* この操作には約30分かかる場合があります。
+* HAペアを追加すると、以下の操作が制限されます：HAペアの追加、IOPSのプロビジョニング、SSD容量の増加、スループット容量の更新。
+
+
+
+
+[[throughput-capacity-region-support]]
+=== スループット容量のリージョンサポート
+
+
+
+==== スケールアップ展開
+
+スケールアップ構成は、すべてのリージョンで最大2 GB/sまでサポートされています。以下のリージョンは、スケールアップ展開において最大4 GB/sのスループット容量をサポートします：米国東部（オハイオ）リージョン、米国東部（バージニア北部）リージョン、米国西部（オレゴン）リージョン、およびヨーロッパ（アイルランド）。
+
+
+
+==== スケールアウト展開
+
+以下の地域では、スケールアウト展開において最大6 GB/sのスループット容量がサポートされます：米国東部（バージニア州北部およびオハイオ州）、米国西部（カリフォルニア州北部およびオレゴン州）、欧州（フランクフルト、アイルランド、ストックホルム）、アジア太平洋地域（シンガポールおよびシドニー）。
+
+
+
+[[capacity-management]]
+=== 容量管理
+
+* ボリュームの自動拡張機能は現在、iSCSIプロトコルではサポートされていません。
+* 自動容量管理機能稼働中の場合、手動での容量増加は許可されません。
+* 自動容量管理機能の無効化は、有効化に使用したのと同じ権限でのみ可能です。
+* 自動容量管理が有効になっている場合、ストレージ容量の増加に合わせてボリュームinodeが増加するようにするためのリンクが必要です。
+
+
+
+
+[[storage-vms]]
+=== Storage VM
+
+ストレージVMの数は、SKUごとに制限されています。Workload Factoryでは、制限を超えるストレージVMの作成はサポートされていません。^1^
+
+ファイルシステムあたりのSVMの最大数については、AWSドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html#max-svms["FSx for ONTAPストレージ仮想マシンの管理"^]を参照してください。
+
+
+
+[[iscsi-protocol-support]]
+=== iSCSIプロトコルのサポート
+
+* iSCSIプロトコルは、FlexVolボリュームでのみ利用可能です。^1^
+* iSCSIボリュームでは、ボリュームサイズの縮小はサポートされていません。
+
+
+
+
+[[data-protection]]
+=== データ保護
+
+* スナップショットは削除できません。
+* ファイルシステムをレプリケートすると、ファイルシステム内のすべてのボリュームが同じレプリケーションポリシーを使用します。
+* 長期保持レプリケーション関係の場合、復元に利用できるのは最新のスナップショットのみです。
+* 不変スナップショットでは、以下の機能はサポートされていません：
++
+** 整合性グループ
+** FabricPool
+** FlexCacheボリューム
+** SMTape
+** SnapMirrorアクティブ同期
+** -schedule パラメータを使用したSnapMirrorポリシー規則
+** SnapMirror Synchronous
+** SVMデータの移動（ソース クラスタからデスティネーション クラスタにSVMを移行または再配置する場合に使用）
+
+
+
+
+
+
+[[storage-savings-calculator]]
+=== ストレージ節約計算ツール
+
+ストレージ節約計算ツールは、以下の構成についてはコスト削減額を計算しません：
+
+* FSx for Windows File Server：HDD ストレージタイプ
+* Elastic Block Store（EBS）：st1、sc1、および標準ボリュームタイプ
+* Elastic File System (EFS)：バーストスループットモード
+
+
+
+
+[[aws-secrets-manager-support]]
+=== AWS Secrets Managerのサポート
+
+コンソールエージェントを使用する場合、AWS Secrets Managerはサポートされていません。
+
+
+
+[[amazon-s3-access-points-limitation]]
+=== Amazon S3アクセスポイントの制限
+
+ストレージVMあたりのS3アクセスポイント数の上限は4,000です。
+
+
+
+[[limitations-for-storage-vm-migration-replication]]
+=== ストレージVM移行レプリケーションの制限事項
+
+* Workload Factoryは、第1世代と第2世代のFSx for ONTAPファイルシステム間でのストレージVMの移行レプリケーションをサポートしていません。
+* S3アクセスポイントまたはONTAP S3設定（vserver上のobject-store-server、バケット、ユーザー、グループ、ポリシーなど）を含むボリュームでは、カットオーバーレプリケーションはサポートされていません。
+
+
+注：
+
+. 環境 Amazon FSx for NetApp ONTAP
+
+
+
+
+[[known-limitations-of-fsx-for-ontap-database-workloads]]
+== FSx for ONTAPデータベースワークロードの既知の制限事項
+
+
+
+[[instance-detection-support]]
+=== インスタンス検出のサポート
+
+Workload Factoryは、Amazon Linuxオペレーティングシステム上でのみ実行されているPostgreSQLインスタンスと、Red Hat Enterprise Linux上でのみ実行されているOracleインスタンスの検出をサポートしています。
+
+
+
+[[ami-image-version-support]]
+=== AMIイメージバージョンのサポート
+
+各SQLバージョンにつき、AMIイメージの最新版または改訂版を最大4つまで表示します。最新の4バージョンより古いAMIイメージからのインストールは許可していません。
+
+
+
+[[custom-ami]]
+=== カスタムAMI
+
+カスタムAMIを使用したデプロイメントでは、インストールメディアがイメージ内に含まれていることが前提となります。これは、FCIの設定において以下の理由から必要となります：
+
+* FCIクラスタを形成するためにアンインストールして再構成する
+* スタンドアロン展開用にイメージに設定されている照合順序以外の照合順序を選択する場合
+
+
+デプロイメントの一環として、Workload Factoryは複数のMicrosoft SQL Serverインスタンスを含むカスタムAMIをインストールしません。デプロイメントの一環として、デフォルトのMicrosoft SQL Serverインスタンスのみが選択され、構成されます。
+
+
+
+[[roll-back-and-retry-for-failed-deployments]]
+=== デプロイが失敗した場合はロールバックして再試行する
+
+Workload Factoryでは、デプロイ失敗時のロールバックと再試行はサポートされていません。AWSのCloudFormationコンソールから、失敗したスタックをロールバックまたは再試行できます。
+
+
+
+[[active-directory-and-dns-resource-rollback]]
+=== Active DirectoryとDNSリソースのロールバック
+
+AWSのCloudFormationコンソールからテストまたは失敗したデプロイメントをロールバックした場合、以下のDNSリソースはActive DirectoryおよびDNSから削除されません：
+
+* SQLデプロイメントの各ノードの管理IPアドレスへ
+* FCIの場合のEC2インスタンスの予約済みセカンダリIPアドレスへのWindowsクラスタ名
+* FCI 内の両方の EC2 インスタンスから 2 つの予約済み IP アドレスへの SQL FCI 名
+
+
+これらのエントリは手動で削除するか、ドメインが古いエントリを削除するまで待つ必要があります。
+
+
+
+[[always-on-availability-groups-configuration-support]]
+=== Always On可用性グループ構成のサポート
+
+Workload Factoryでは、Always On可用性グループの構成管理はサポートされていません。
+
+
+
+[[custom-encryption-keys]]
+=== カスタム暗号化キー
+
+FSx for ONTAPのカスタム暗号化キーは、サービスへの適用性に基づいてリスト化されているわけではありません。適切なキーを選択する必要があります。AWSマネージドキーは、サービスへの適用性に基づいてフィルタリングされます。
+
+
+
+[[cloudformation-template]]
+=== CloudFormationテンプレート
+
+ダウンロードまたはコピーされたCodebox生成CloudFormationテンプレート（YAMLファイル）の保持期間は7日間に制限されています。
+
+
+
+[[sandbox-support]]
+=== サンドボックスのサポート
+
+データベース サーバから作成できるサンドボックスクローンの最大数は90です。
+
+
+
+[[microsoft-sql-server-detection-and-management]]
+=== Microsoft SQL Serverの検出と管理
+
+Microsoft SQL Serverの検出結果は保存されません。Workload Factoryでデータベースにアクセスするたびに、Microsoft SQL Serverの検出が再度実行され、リージョン内のSQLインストールが特定されます。
+
+
+
+[[explore-savings]]
+=== コスト削減効果の確認
+
+インベントリタブに表示される各Microsoft SQLインスタンスの推定コストは、SQLインスタンスをホストするボリュームではなく、FSx for ONTAPファイルシステムレベルで計算されます。
+
+
+
+[[multiple-fsx-for-ontap-file-systems]]
+=== 複数のFSx for ONTAPファイルシステム
+
+Workload Factoryは、複数のFSx for ONTAPファイルシステムを使用するMicrosoft SQL Serverの構成の作成または保存をサポートしていません。1つのFSx for ONTAPファイルシステム構成の導入のみがサポートされています。
+
+
+
+[[optimization-limitations]]
+=== 最適化の制限
+
+
+
+==== コンピューティングリソースの最適化
+
+特定のインスタンスタイプに変更すると、ネットワーク構成がリセットされ、最適化中にノード接続障害が発生し、ジョブが失敗する可能性があります。DNS設定とiSCSIセッションの確認および更新には、手動での介入が必要になる場合があります。EC2のサイズ変更制限に関する詳細については、link:https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resize-limitations.html["Amazon Elastic Compute Cloud のドキュメント"^]を参照してください。
+
+
+
+==== ONTAPおよびOSの構成の最適化
+
+ONTAP設定およびOS設定では、複数の SQL Server インスタンスの一括最適化はサポートされていません。
+
+
+
+==== 最適化のためのオペレーティングシステムパッチ評価
+
+最適化を目的としたオペレーティングシステムのパッチ評価は、プライベートネットワークでは機能しない場合があります。この評価はAWS Patch Managerに依存しています。プライベートネットワーク内のWindows EC2インスタンスにパッチを適用する方法については、AWS Cloud Operations Blog link:https://aws.amazon.com/blogs/mt/how-to-patch-windows-ec2-instances-in-private-subnets-using-aws-systems-manager/["AWS Systems Managerを使用してプライベートサブネット内のWindows EC2インスタンスにパッチを適用する方法"^] を参照してください。
+
+
+
+==== クロスリージョンレプリケーション評価
+
+* ターゲットのFSx for ONTAPファイルシステムが別のAWSアカウントにある場合、最適化評価ではクロスリージョンレプリケーション（CRR）が使用されているかどうかを判断できません。
+* Workload Factoryは、ソースFSx for ONTAPファイルシステムのCRR構成のみを評価します。
+
+
+
+
+[[on-premises-savings-calculation]]
+=== オンプレミスでの節約額の計算
+
+Microsoft SQL Serverオンプレミスストレージのボリュームサイズのコストと節約率の計算は考慮されていません。
+
+
+
+[[database-host-authentication-when-exploring-savings]]
+=== 節約を探索する際のデータベースホスト認証
+
+権限が制限されている場合、認証が成功した後でも、explore savingsページでデータが読み込まれないことがあります。
+
+
+
+[[integration-with-netapp-backup-and-recovery]]
+=== NetApp Backup and Recoveryとの統合
+
+保護のためにホストをNetApp Backup and Recoveryに追加した後、データベースの検出が失敗する場合があります。
+
+
+
+[[registering-oracle-on-suse-linux-enterprise-server-12]]
+=== SUSE Linux Enterprise Server 12 への Oracle の登録
+
+SUSE Linux Enterprise Server 12にOracle Databaseを登録する際、Workload FactoryはPythonの依存関係をインストールしません。必要なPythonのバージョンを手動で設定する必要があります。Workload Factoryは最低でもバージョン3.6が必要ですが、バージョン3.11を推奨します。
+
+
+
+[[known-limitations-for-eda-workloads]]
+== EDAワークロードの既知の制限事項
+
+
+
+[[operator-permissions-required]]
+=== オペレーター権限が必要です
+
+NetApp Workload Factory for EDAが正しく機能するには、オペレータ権限が必要です。

@@ -1,0 +1,238 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/optimize-configurations.html 
+keywords: optimize, configuration, storage, compute, application, resiliency assessment, scan, optimization, Microsoft SQL Server, host, instance, FSx for ONTAP 
+summary: NetApp Workload Factory for Databasesは、Microsoft SQL Serverの構成をスキャンし、運用上の卓越性を達成するためのインサイトと推奨事項を提供します。 
+---
+= NetApp Workload Factoryで適切に設計されたデータベース構成を実装する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+構成分析の洞察と推奨事項を活用して、NetApp Workload Factoryを使用してMicrosoft SQL ServerとOracleのデータベース構成のベストプラクティスを実装します。Well-Architectedのステータスを簡単に確認し、データベース構成の問題を把握し、信頼性、セキュリティ、効率、パフォーマンス、コストが最適化されていない構成を修正できます。
+
+不要なアラートや不正確な結果を避けるため、ご自身の環境に適用されない構成の分析は無視することもできます。
+
+link:optimize-overview.html["Workload Factoryにおける構成分析と適切なアーキテクチャの状態について説明します。"]
+
+
+
+[[about-this-task]]
+== タスク概要
+
+Workload Factory はデータベース構成を毎日分析します。毎日の分析により、適切に設計されたステータス、洞察、推奨事項が提供されます。
+
+AWSアカウントに「表示」「計画」「分析」の権限を付与すると、多くの推奨事項が利用可能になります。「操作および修復」の権限を付与すると、すべての推奨事項が利用可能になり、構成上の問題を自動的に修正してベストプラクティスに準拠させることができます。
+
+Workload Factoryコンソール内のデータベースインベントリまたはWell-architectedダッシュボードから、問題の確認と修正を行うことができます。データベース構成の要件はさまざまであるため、お使いのデータベース環境に適用されない特定の構成の分析を無視することができます。これにより、不要なアラートや不正確な最適化結果を回避できます。
+
+オプションとして、クレデンシャルを保存したりリソースを登録したりすることなく、データベース構成のベストプラクティスを確認するための1回限りの評価を実行できます。
+
+また、組織の標準とNetAppのベストプラクティスに照らして環境を検証するために、平易な言葉でカスタムルールを作成することもできます。ドライランでルールをテストし、各環境で実行するようにスケジュールを設定します。link:../fsx-storage/learn-custom-rules.html["カスタムルールについて詳しくはこちらをご覧ください。"^]
+
+.分析対象
+Workload Factory は、以下の構成の適切なアーキテクチャの状態を分析します：
+
+Microsoft SQL Serverインスタンスの場合：
+
+* ストレージサイジング：ストレージ階層、ファイルシステムの余裕、ログドライブサイズ、TempDBドライブサイズが含まれます
+* ストレージレイアウト：ユーザーデータファイルの配置、ログファイルの配置、およびTempDBの配置が含まれます
+* ストレージ構成：容量管理、シンプロビジョニング、階層化ポリシー、スナップショット、Microsoft Multipath I/O（MPIO）ステータス、および MPIO タイムアウト設定が含まれます
+* コンピューティング：適切なサイジング、オペレーティングシステムのパッチ、受信側スケーリング（RSS）、TCPオフロード、MTUアライメントなどのネットワークアダプタ設定が含まれます
+* アプリケーション：Microsoft SQL Serverライセンス、Microsoft SQL Serverパッチ、およびMAXDOP設定が含まれます
+* 回復力：ローカルスナップショット、バックアップ構成、リージョン間レプリケーション（CRR）、Microsoft SQL High Availability、クローンクリーンアップが含まれます。
+* クローン：Workload Factory内外で作成され、60日以上経過したクローン（サンドボックス）を更新および削除するオプションが含まれます。
+
+
+Oracleデータベースの場合：
+
+* ストレージサイズ設定：スワップ領域の割り当てとファイルシステムの余裕容量を含む
+* ストレージ構成：容量管理、シンプロビジョニング、階層化ポリシー、Snapshot、ストレージ効率化、Automatic Storage Management（ASM）の有無にかかわらずNFSまたはiSCSIを使用した導入のオペレーティングシステム構成（Microsoft Multipath I/O（MPIO）のステータスと設定を含む）、および次のdNFS設定：dNFSの有効化、dNFSの一貫したIP解決、dNFS構成ファイル、およびdNFS `nosharecache`
+* ストレージレイアウト：リドゥログの配置、一時テーブルスペースの配置、データファイルの配置、アーカイブログの配置、制御ファイルの配置、バイナリの配置、ASMディスクグループのLUN数などが含まれます。
+* コンピューティング：オペレーティング システムのパッチを含む
+* アプリケーション：Oracle Critical Patch Updatesを含む
+* 回復力：リージョン間レプリケーション（CRR）、アプリケーション整合性スナップショット、バックアップ構成、クローンクリーンアップが含まれます
+
+
+Oracle の Well-Architected 分析では、構成が他の構成に依存している場合に通知し、リンクされた構成を最適化するためのアクションをリストします。
+
+
+
+[[perform-a-one-time-assessment-of-your-configurations]]
+== 設定の 1 回限りの評価を実行します
+
+認証情報を保存したりリソースを登録したりすることなく、1回限りの評価を実行して、Microsoft SQL ServerインスタンスまたはOracleデータベースの適切なアーキテクチャステータスを確認します。
+
+スクリプトは複数回実行して結果をアップロードできます。Workload Factoryは、アップロードのたびに、適切に設計されたステータスとインサイトを更新します。
+
+各設定について、現在の値と推奨値を確認できます。
+
+[role="tabbed-block"]
+====
+.Microsoft SQL Serverインスタンス
+--
+.手順
+. いずれかの方法でログインしてくださいlink:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["コンソールエクスペリエンス"^]。
+. メニューimage:workloads-menu-icon.png["ハンバーガー メニュー アイコンは、storage、eda、ai、databases、vmware、administration などのワークロードに移動するために使用されます。"]を選択します。次に、*データベース*を選択します。
+. *Inventory*で、エンジンタイプとして*SQL Server*を選択します。
+. *One-time assessment* > *Learn about assessment* を選択します。1回限りの評価に関する情報を確認します。
+. *Download script*を選択します。
++
+.. スクリプトを Microsoft SQL Server ホストにコピーします。
+.. PowerShellでスクリプトを実行します。1つのスクリプトですべてのインスタンスからメタデータを収集します。
+
+
+. *1回限りの評価* > *アップロード*を選択します。ファイルを見つけて、Workload Factoryコンソールにアップロードします。
+. 任意の構成に対する推奨事項を表示します。Workload Factoryは、構成が最適化されていない場合に起こりうる問題点と、ベストプラクティスを推奨事項に含めています。
+
+
+--
+.Oracleデータベース
+--
+.手順
+. いずれかの方法でログインしてくださいlink:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["コンソールエクスペリエンス"^]。
+. メニューimage:workloads-menu-icon.png["ハンバーガー メニュー アイコンは、storage、eda、ai、databases、vmware、administration などのワークロードに移動するために使用されます。"]を選択します。次に、*データベース*を選択します。
+. *Inventory*で、エンジンタイプとして*Oracle*を選択します。
+. *One-time assessment* > *Learn about assessment* を選択します。1回限りの評価に関する情報を確認します。
+. *Download script*を選択します。
++
+.. PythonスクリプトをOracleデータベースホストにコピーします。
+.. 適切なシェルでスクリプトを実行してください。1つのスクリプトで、すべてのデータベースからメタデータを収集します。
+
+
+. *1回限りの評価* > *アップロード*を選択します。ファイルを見つけて、Workload Factoryコンソールにアップロードします。
+. 任意の構成に対する推奨事項を表示します。Workload Factoryは、構成が最適化されていない場合に起こりうる問題点と、ベストプラクティスを推奨事項に含めています。
+
+
+--
+====
+
+
+[[perform-an-on-demand-assessment]]
+== オンデマンド評価を実行する
+
+AWS アカウントで _操作と修復_ の権限を付与すると、Oracle データベースのオンデマンド評価を実行できます。この評価を実行するために、リソースを登録する必要はありません。
+
+.手順
+. いずれかの方法でログインしてくださいlink:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["コンソールエクスペリエンス"^]。
+. メニューimage:workloads-menu-icon.png["ハンバーガー メニュー アイコンは、storage、eda、ai、databases、vmware、administration などのワークロードに移動するために使用されます。"]を選択します。次に、*データベース*を選択します。
+. *Inventory*で、エンジンタイプとして*Oracle*を選択します。
+. 「表示と修正」を選択します。
+. 「Well-architected」ステータスタブで、*今すぐ分析*を選択します。
+. 任意の構成に対する推奨事項を表示します。Workload Factoryは、構成が最適化されていない場合に起こりうる問題点と、ベストプラクティスを推奨事項に含めています。
+
+
+
+
+[[before-you-begin-fixing-dismissing-and-re-activating-configurations]]
+== 構成の修正、却下、再有効化を始める前に
+
+以下の要件は、データベース環境の継続的な評価と設定上の問題の自動修正に必要です。これらの要件は、1回限りの評価には必要ありません。
+
+* AWS アカウントでlink:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["操作および修復の権限を付与する"^]する必要があります。
+* リソースをWorkload Factoryに登録し、ストレージタイプはFSx for ONTAPである必要があります。link:register-instance.html["リソースの登録方法について説明します。"]
+* 設定または構成を修正する前に、各推奨事項を確認してください。RSSとMAXDOPについては、本番環境を変更する前に推奨設定をテストしてパフォーマンスを確認してください。
+
+
+
+
+[[fix-a-configuration-issue]]
+== 設定の問題を修正する
+
+FSx for ONTAPストレージ上で稼働するSQL ServerまたはOracle環境の構成の問題を修正します。
+
+
+NOTE: 設定を修正すると、ダウンタイムやサービスの中断が発生する可能性があります。設定を修正する前に、推奨事項をよく確認してください。
+
+.手順
+. いずれかの方法でログインしてくださいlink:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["コンソールエクスペリエンス"^]。
+. メニューimage:workloads-menu-icon.png["ハンバーガー メニュー アイコンは、storage、eda、ai、databases、vmware、administration などのワークロードに移動するために使用されます。"]を選択します。次に、*データベース*を選択します。
+. *インベントリ*で、エンジンタイプを選択します：Microsoft SQL ServerまたはOracle。
+. 特定の構成に合わせて修正するリソースを選択してください。
++
+** Microsoft SQL Server を選択した場合は、*インスタンス* タブを選択します。
+** Oracleを選択した場合は、*データベース*タブを選択してください。
+
+
+. インスタンスの構成上の問題を表示するには、*表示と修正*を選択してください。
+. インスタンスの「Well-architected」ステータスページで、分析結果を確認してください。
++
+設定に関する問題は、カテゴリ、サブカテゴリ、ステータス、重要度、タグで絞り込むことができます。
+
++
+調査結果のレポートをダウンロードするには、* Export PDF * を選択します。
+
+. ドロップダウン矢印を選択すると、各構成に対する推奨事項が表示されます。推奨事項には、ベストプラクティス、最適化されていない構成の潜在的な落とし穴、および重要な考慮事項が含まれます。推奨事項をよく確認してください。
+. オプションが利用可能な場合は、選択して構成の問題を*表示および修正*してください。
++
+「すべて選択」がデフォルトですが、修正する特定のリソースを選択することもできます。
+
++
+.. クローンクリーンアップを除くすべての構成については、推奨事項の詳細を確認し、問題の修正による影響を確認してください。一部の修復作業では、ダウンタイムやサービスの中断が発生する可能性があります。
+.. クローンのクリーンアップを行うには、更新または削除するクローンされたデータベース（サンドボックス）を選択します。
++
+*** クローンを更新すると、クローンは元のデータベースと同期されます。更新は、Workload Factoryで作成されたクローンでのみ利用可能です。
+*** クローンを削除すると、完全に削除され、ストレージ容量が解放され、コストが削減されます。Workload Factoryの内外で作成されたクローンを削除できます。
+
+
+
+
+. 設定の問題を修正するには、*続行*を選択してください。
+
+
+.結果
+Workload Factory が問題の修正を開始します。操作のステータスを確認するには、*ジョブ監視*タブを選択します。
+
+
+
+[[dismiss-the-analysis-of-database-configurations]]
+== データベース構成の分析を閉じる
+
+データベース環境に適用されない特定のデータベース構成の分析を無視して、不要なアラートや不正確な最適化結果を回避します。無視した構成分析はいつでも再アクティブ化できます。
+
+.手順
+. いずれかの方法でログインしてくださいlink:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["コンソールエクスペリエンス"^]。
+. メニューimage:workloads-menu-icon.png["ハンバーガー メニュー アイコンは、storage、eda、ai、databases、vmware、administration などのワークロードに移動するために使用されます。"]を選択します。次に、*データベース*を選択します。
+. データベースメニューから、*インベントリ*を選択します。
+. インベントリで、データベースエンジンタイプを選択します：*Microsoft SQL Server* または *Oracle*。
+. 延期する構成の SQL Server インスタンスまたは Oracle データベースに移動し、アクションメニューを選択して、*Well-architected* を選択します。
+. Well-architected分析ページで、延期する構成までスクロールダウンし、アクションメニューを選択してから、*閉じる*を選択します。
+. 無視設定ダイアログで、*無視*オプションを選択し、さらに*無視*を選択して無視を確定します。
+
+
+.結果
+Workload Factory は構成分析を停止します。
+
+分析はいつでも再アクティブ化できます。この構成は、全体的な最適化スコアに含まれなくなりました。
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== 却下された構成分析を再アクティブ化する
+
+一度破棄した構成分析は、いつでも再アクティブ化できます。再アクティブ化する構成を1つ以上選択できます。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *データベース* を選択します。
+. データベースメニューから、*インベントリ*を選択します。
+. インベントリで、データベースエンジンタイプを選択します：*Microsoft SQL Server* または *Oracle*。
+. 延期する構成の SQL Server インスタンスまたは Oracle データベースに移動し、アクションメニューを選択して、*Well-architected* を選択します。
+. Well-architected分析ページで、*却下された構成*を選択すると、却下された構成のみが表示されます。
+. 延期または却下された構成の構成分析を再開するには、*再アクティブ化*を選択してください。
+
+
+.結果
+Workload Factoryは構成分析を再開し、今後は毎日実行します。
+
+
+
+[[related-information]]
+== 関連情報
+
+* link:optimize-overview.html["Workload Factory におけるデータベース リソースの構成分析とウェルアーキテクテッドステータスについて説明します。"]
+* link:../fsx-storage/create-link.html["リンクを使用してFSx for ONTAPファイルシステムに接続する"^]
+* link:../fsx-storage/learn-custom-rules.html["カスタムルールについて"^]
+

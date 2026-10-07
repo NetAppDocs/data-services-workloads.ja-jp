@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/discover-cache-volumes.html 
+keywords: discover cache volume, FlexCache technology, ONTAP FlexCache, FSx for ONTAP volume 
+summary: NetApp Workload Factoryコンソールから移動することなく、キャッシュ関係に関連付けられたキャッシュボリュームを検出して表示します。 
+---
+= NetApp Workload Factoryでキャッシュボリュームを検出する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factoryコンソールから移動することなく、キャッシュ関係に関連付けられている_キャッシュ_ボリュームを検出して表示します。キャッシュ関係は、ONTAP FlexCache関係とも呼ばれます。Workload Factoryは、FlexCacheテクノロジを使用して既存のキャッシュ関係を検出します。これは、データアクセスを高速化し、読み取りが集中するワークロード（特にクライアントが同じデータに繰り返しアクセスする必要がある場合）のWANレイテンシ、帯域幅、およびコストを削減する、NetApp ONTAPのリモートキャッシュ機能です。
+
+link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-flexcache.html["FlexCacheを使用したデータの複製について、詳細をご確認ください。"^]
+
+.タスク概要
+キャッシュの関係性を検出するには、リンク関連付けが必要です。
+
+1つのFSx for ONTAPファイルシステムと1つのCloud Volumes ONTAPシステムなど、2つのONTAPシステム上のボリューム間にキャッシュ関係を構築できます。キャッシュ関係は、単一のFSx for ONTAPファイルシステム内のボリューム間にも構築できます。
+
+.開始する前に
+始める前に、以下の点を考慮してください。
+
+* ファイルシステム上のキャッシュ関係を検出するには、リンクを関連付ける必要があります。link:create-link.html["既存のリンクを関連付ける方法、または新しいリンクを作成して関連付ける方法を学びます"^]。リンクが関連付けられたら、この操作に戻ります。
+* 既存のキャッシュ関係が必要です。
+
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、*キャッシュ関係*タブを選択します。
+. キャッシュボリュームは表に表示されます。この表には、各キャッシュボリュームに関する以下の情報が含まれています：
++
+** *オリジンクラスタ*：FlexCache関係のオリジン（またはソース）クラスタ。
+** *オリジンボリューム*：FlexCache関係のオリジン（またはソース）ボリューム。
+** *オリジンストレージVM*：ボリュームのオリジン、つまりソースとなるストレージVM。
+** *キャッシュボリューム*：FlexCache関係のキャッシュ（またはターゲット）ボリューム。
+** *キャッシュストレージVM*：ボリュームのキャッシュ、またはターゲットとなるストレージVM。
+** *ステータス*：FlexCache関係のステータス。
+** *キャッシュの利用可能なストレージ*：キャッシュボリュームで利用可能なストレージ容量。
+** *キャッシュファイルシステム*：キャッシュボリュームのファイルシステム。
+** *書き込みモード*：FlexCache関係の書き込みモード。
+** *DRキャッシュ*：FlexCache関係が災害復旧（DR）キャッシュであるかどうかを示します。
+** *エクスポートポリシー*：キャッシュボリュームのエクスポートポリシー。
+
+
+
+
+.関連情報
+link:manage-cache-volumes.html["キャッシュボリュームを管理する"^]

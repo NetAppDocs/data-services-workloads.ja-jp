@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/create-storage-vm.html 
+keywords: create storage VM, create svm 
+summary: NetApp Workload Factoryでワークロードにストレージおよびデータサービスを提供するためのFSx for ONTAPストレージVM（SVM）を作成できます。 
+---
+= FSx for ONTAPファイルシステム用のストレージVMを作成します
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factoryのワークロードでストレージやデータサービスに仮想的にアクセスするために、FSx for ONTAPファイルシステム用のストレージVM（SVM）を作成します。
+
+.タスク概要
+ストレージVMは、Workload Factory Storage内の各ワークロードのデータにアクセスするために使用できる、分離されたファイルサーバーです。各SVMは、データの管理とアクセスを行うための独自の管理者認証情報とエンドポイントを持っています。
+
+SVMを使用すると、FSx for ONTAPでデータにアクセスする際、クライアントやワークステーションは、SVMのエンドポイント（IPアドレス）を使用して、SVMがホストするボリューム、CIFS/SMB共有、またはiSCSI LUNをマウントします。
+
+.開始する前に
+ファイルシステムごとにサポートされているストレージVMの数を確認してください。ファイルシステムあたりのSVMの最大数については、AWSドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html#max-svms["FSx for ONTAPストレージ仮想マシンの管理"^]を参照してください。
+
+
+
+[[create-a-storage-vm]]
+== ストレージVMを作成する
+
+Workload FactoryコンソールからストレージVMを作成できます。Codeboxで利用できる以下のツールも使用できます：REST API、CloudFormation、Terraform。link:../admin/use-codebox.html#how-to-use-codebox["Codeboxを使用した自動化の方法について学習します"^]。
+
+
+NOTE: CodeboxからTerraformを使用する場合、コピーまたはダウンロードしたコードでは `fsxadmin`および `vsadmin`のパスワードが非表示になります。コードを実行する際には、パスワードを再入力する必要があります。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、ファイルシステムのアクションメニューを選択し、*管理*を選択します。
+. ファイルシステムの概要で、ストレージVMの下にある*ストレージVMの作成*を選択します。
+. 「ストレージVMの作成」ページで、「ストレージVMの構成」の下に、以下の情報を入力します：
++
+.. *名前*：ストレージVMの名前を入力してください。
+.. *ストレージVMの認証情報*：このストレージVMの `vsadmin`ユーザーのパスワードを指定するか、ファイルシステムの `fsxadmin`ユーザーの認証情報を使用します。
+.. *ルートボリュームのセキュリティスタイル*：データにアクセスするクライアントの種類に応じて、ルートボリュームのセキュリティスタイルを選択します。UNIX（Linuxクライアント）、NTFS（Windowsクライアント）、または混在です。
+.. *タグ*：オプションで、最大50個のタグを追加できます。
+
+
+. 「作成」を選択します。
+

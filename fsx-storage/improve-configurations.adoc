@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/improve-configurations.html 
+keywords: implement best practices, well-architected file system, Amazon FSx for NetApp ONTAP, FSx for ONTAP 
+summary: Workload Factory は Amazon FSx for NetApp ONTAP の構成をスキャンし、運用上の卓越性を達成するためのインサイトと推奨事項を提供します。 
+---
+= 適切に設計された FSx for ONTAP ファイルシステム構成を実装する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workload Factory を使用して、FSx for ONTAP ファイルシステムのベストプラクティスを実装します。適切に設計されたシステムの状態を簡単に確認し、構成上の問題点を把握し、問題を修正することで、信頼性、セキュリティ、効率性、パフォーマンス、コストの面で最適化されていないシステムのアーキテクチャを改善できます。
+
+link:configuration-analysis.html["構成分析とWell-Architectedステータスについて説明します。"]
+
+
+
+[[about-this-task]]
+== タスク概要
+
+Workload Factory は、Amazon FSx for NetApp ONTAP ファイルシステムのデプロイ構成を毎日分析します。
+
+ストレージ構成の要件は様々であるため、ご自身のストレージ環境に当てはまらない特定の構成の分析は省略しても構いません。
+
+リンク接続により、Workload Factory はパフォーマンス、データ保護、および構成に関する問題をスキャンできます。link:create-link.html["リンクを使用してFSx for ONTAPファイルシステムに接続する"]ファイルシステムリソースの最も包括的な分析を行うために。
+
+.分析対象
+Workload Factory は、FSx for ONTAP ファイルシステムの以下の構成について、適切なアーキテクチャ状態を分析します：
+
+* 信頼性：ボリュームバックアップ、スナップショットポリシー、リージョン間レプリケーション、SSD容量の余裕、レプリケーションポリシーラベル、ファイルオブジェクト容量
+* セキュリティ：ランサムウェア対策（ARP/AI）および不正なiSCSIボリュームアクセス
+* 運用上の卓越性：自動容量管理、ボリュームファイル容量の余裕、FlexCache書き込みモード、FlexCacheレプリカサイズ、ホストから見える容量レポート、OSタイプ、ブロックデバイススペース管理、シンプロビジョニング
+* コスト最適化：コールドデータ階層化、ストレージ効率、バックアップ有効期限、スナップショット有効期限、非アクティブなブロックデバイス、過剰プロビジョニングされた SSD 容量、および非アクティブな NAS ボリューム
+* パフォーマンス効率：FlexGroup ボリュームのリバランスと FlexVol ボリュームのリバランス
+
+
+
+
+[[before-you-begin]]
+== 開始する前に
+
+* AWS アカウントでlink:add-credentials.html["操作および修復の権限を付与する"]する必要があります。
+* link:create-link.html["リンクを使用してFSx for ONTAPファイルシステムに接続する"]ファイルシステムリソースの最も包括的な分析を行うために。
+
+
+
+
+[[fix-a-configuration-issue]]
+== 設定の問題を修正する
+
+FSx for ONTAP ファイルシステム、またはファイルシステム内の選択されたボリュームの構成の問題を修正できます。修正する構成を1つ以上選択できます。
+
+修復作業は、インスタンスのダウンタイムやサービスの中断を引き起こす可能性があります。設定上の問題を修正する前に、各推奨事項を注意深く確認してください。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*Workloads* > *Well-architected* > *FSx for ONTAP* を選択します。
+. 任意の設定で「表示と修正」を選択します。推奨事項をよく確認してください。
++
+この推奨事項では、ベストプラクティスと最適化されていない設定における潜在的な問題点について説明しています。
+
+. リソースを選択し、*Fix* を選択してください。
++
+一部の修正操作は特定の操作に対してのみ利用可能であり、複数のリソースに対して常に利用できるとは限りません。例えば、単一のボリュームの構成は修正できても、複数のボリュームの構成は修正できない場合があります。
+
+. インスタンスのダウンタイムやサービスの中断など、この修正による影響を把握するために、アクション項目を確認してください。
+. Workload Factory に推奨される変更を適用する場合は、「修正」を選択してください。
+
+
+.結果
+修復プロセスが開始されます。アカウント設定メニューを選択し、次に*Tracker*を選択すると、操作のステータスが表示されます。
+
+
+
+[[dismiss-a-configuration-analysis]]
+== 構成分析を却下する
+
+1つまたは複数のリソースの構成分析を無期限に停止します。必要に応じて分析を再開できます。
+
+1 つ以上の FSx for ONTAP ファイルシステムまたはボリュームの構成分析を停止するには、閉じます。分析はいつでも再開できます。
+
+[role="tabbed-block"]
+====
+.構成の構成分析を却下する
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*Workloads* > *Well-architected* > *FSx for ONTAP* を選択します。
+. 「構成」の項目で、ご自身の環境に適用されない構成を特定してください。
+. image:icon-action.png["アクションメニューアイコン"]を選択し、*閉じる*を選択します。
+. [構成の却下] ダイアログで、[*却下*] を選択して構成の分析を停止します。
+
+
+--
+.リソースの構成分析を破棄する
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*Workloads* > *Well-architected* > *FSx for ONTAP* を選択します。
+. FSx for ONTAP の適切に設計されたダッシュボードで、「構成」の下から、ご自身の環境に適用されない構成を選択してください。
+. 設定ページで、設定分析から除外するリソースを選択します。
++
+** 1 つのリソースの場合：image:icon-action.png["アクションメニューアイコン"] を選択し、*Dismiss* を選択します。
+** 複数のリソースの場合：リソースを選択し、「一括操作」の横にある「閉じる」を選択します。
+
+
+. 「リソースの非表示」ダイアログで、「非表示」を選択して分析を停止します。
+
+
+--
+====
+.結果
+Workload Factoryは、選択された構成の構成分析を停止します。
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== 却下された構成分析を再アクティブ化する
+
+一度破棄した構成分析は、いつでも再アクティブ化できます。再アクティブ化する構成またはリソースを1つ以上選択できます。
+
+[role="tabbed-block"]
+====
+.構成の構成分析を再アクティブ化する
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*Workloads* > *Well-architected* > *FSx for ONTAP* を選択します。
+. *無視された構成* を選択します。
+. 再アクティブ化する構成を特定し、*再アクティブ化*を選択してください。
+
+
+--
+.リソースの構成分析を再アクティブ化する
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*Workloads* > *Well-architected* > *FSx for ONTAP* を選択します。
+. FSx for ONTAP の適切に設計されたダッシュボードで、「構成」の下から、ご自身の環境に適用されない構成を選択してください。
+. 設定ページで、*破棄された設定*を選択します。
+. 再アクティブ化するリソースを選択してください。
++
+** 1 つのリソースの場合：image:icon-action.png["アクションメニューアイコン"] を選択し、「再アクティブ化」を選択します。
+** 複数のリソースの場合：リソースを選択し、「一括操作」の横にある「再アクティブ化」を選択します。
+
+
+
+
+--
+====
+.結果
+Workload Factoryは構成分析を再開し、毎日新しい分析を実行します。

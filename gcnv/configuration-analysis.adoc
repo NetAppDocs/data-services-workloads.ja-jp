@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: gcnv/configuration-analysis.html 
+keywords: configuration issues, issues, improve, analyze, storage configuration, recommendation, recommendations 
+summary: NetApp Console は、ストレージシステムの構成を定期的に分析し、構成上の問題がないかどうかを判断します。 
+---
+= Google Cloud NetApp Volumes の構成分析
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Console のよく設計されたダッシュボードは、ストレージシステムの構成を定期的に分析し、構成上の問題がないかどうかを判断します。問題が検出されると、ダッシュボードには問題の内容が表示され、ストレージシステムが最高のパフォーマンス、コスト効率、およびベストプラクティスへの準拠を達成するために何を変更する必要があるかが説明されます。
+
+主な機能は次のとおりです：
+
+* 日次構成分析
+* NetApp ONTAPストレージシステムおよびパートナーストレージプロバイダーに対する自動ベストプラクティス検証
+* プロアクティブな可観測性
+* 洞察から行動へ
+
+
+
+
+[[analysis-requirements]]
+== 分析要件
+
+ストレージプールの完全な分析を行うには、以下の手順を実行する必要があります。
+
+* link:create-discover-systems.html["Google Cloud NetApp Volumes システムを NetApp Console に追加する"^]。
+* Google Cloud アカウントで、_表示、計画、分析_ の権限を付与してください。
++
+link:add-credentials.html["Google Cloud アカウントに権限を付与する方法を説明します"^]
+
+
+
+
+
+[[best-practices-and-recommendations-for-storage-workloads]]
+== ストレージワークロードに関するベストプラクティスと推奨事項
+
+Workload Factory は、ストレージおよび ONTAP のベストプラクティスと Google Cloud Well-Architected Framework に基づいて、ストレージ構成を評価します。評価では、改善点も提案されます。
+
+適切に設計された分析では、構成をフレームワークの次の柱、すなわち_信頼性_と_運用上の卓越性_に分類します。
+
+
+
+[[reliability]]
+=== 信頼性
+
+信頼性とは、障害が発生した場合でも、ワークロードが意図された機能を正確かつ一貫して実行することを保証するものです。
+
+* *Snapshotポリシー*
++
+効率的なバックアップと迅速なリストアのために、ローカルSnapshotをスケジュール設定してください。Snapshotは、ボリュームのポイントインタイムイメージを瞬時に作成します。
+
+* *SSDキャパシティのヘッドルーム*
++
+Workload Factoryは、SSD層の使用率を80%以下に抑えることを推奨しています。ワークロードによっては、追加の容量余裕と低い利用率目標が必要となる場合があります。使用量が推奨される余裕を超えると、特に容量を適時に拡張しない場合は、パフォーマンスの低下やサービスの問題が発生するリスクが高まります。1つまたは複数のストレージプールに対してこれを無効にし、必要に応じて後で再度有効にすることができます。
+
+
+
+
+
+[[operational-excellence]]
+=== 運用の卓越性
+
+運用上の卓越性とは、最適なアーキテクチャとビジネス価値を提供することに重点を置くものです。
+
+* *ボリューム容量のヘッドルーム*
++
+Workload Factory は、容量不足のリスクを軽減するために、ボリューム使用率を80%未満に抑えることを推奨しています。ボリュームが予想以上に速く増加した場合、迅速に拡張する必要が生じる可能性があります。これは、特に急激または断続的な増加が発生した場合に、アプリケーションへの影響リスクを高める可能性があります。シンプロビジョニングと自動容量管理を使用すると、このリスクは低減されます。1つまたは複数のボリュームに対して無効化し、必要に応じて後で再度有効化することができます。
+
+
+
+.次の手順
+link:improve-configurations.html["適切に設計された Google Cloud NetApp Volumes の構成を実装する"]

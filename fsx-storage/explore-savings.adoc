@@ -1,0 +1,215 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/explore-savings.html 
+keywords: cost, savings, compare costs, EBS, EFS, FSx for Windows file servers FSx for ONTAP 
+summary: Amazon Elastic Block Store（EBS）ストレージ、Elastic File System（EFS）、およびFSx for Windows File Serversのストレージワークロードについて、AWS FSx for NetApp ONTAPと比較した場合のコスト削減効果をご確認ください。 
+---
+= NetApp Workload FactoryでFSx for ONTAPによるコスト削減を検討する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Amazon Elastic Block Store（EBS）、Elastic File System（EFS）、および FSx for Windows File Server を使用するストレージワークロードについて、FSx for NetApp ONTAP と比較した場合のコスト削減効果をご確認ください。
+
+NetApp Workload Factoryには、Amazonストレージ環境とFSx for ONTAPを比較するためのストレージ節約計算ツールが含まれています。AWS認証情報を提供するかどうかにかかわらず、コスト削減の可能性を探ることができ、ストレージ環境の構成設定をカスタマイズすることも可能です。AWS認証情報を入力すると、例えばAmazon Elastic Block Storeのインスタンスを1つ以上選択でき、Workload Factoryが自動的に比較を行います。手動または自動のいずれの場合でも、この計算ツールは、お客様のストレージニーズに対して最も低コストなストレージサービスを決定します。
+
+ストレージ計算ツールが、最も対費用効果の高いストレージはFSx for ONTAPであると判断した場合、Workload Factoryに付与する権限に関係なく、FSx for ONTAP構成を作成または保存し、Codeboxを使用してInfrastructure-as-Codeテンプレートを生成できます。
+
+
+
+[[calculator-options]]
+== 計算ツールオプション
+
+お客様のシステムとFSx for ONTAPのコスト比較を行うための計算ツールには、Amazonストレージ環境向けのカスタマイズと自動検出の2つのオプションが用意されています。
+
+カスタマイズによるコスト削減の可能性を探る：ユースケース、リージョン、ボリュームまたはファイルシステムの数、ストレージ容量、スナップショットの頻度、スナップショットごとに変更される量、プロビジョニングされたIOPS、スループットなど、ストレージ環境の構成設定を指定できます。
+
+検出されたストレージ環境におけるコスト削減効果を検証：Workload Factoryは既存のAWSストレージ環境と連携し、詳細情報を計算ツールに取り込んで自動的に比較を行います。自動モードを使用するには、自動化権限を付与する必要があります。ユースケースは変更できますが、その他の詳細はすべて計算時に自動的に決定されます。
+
+さらに、link:add-credentials.html["AWS認証情報を追加する"^]して、計算ツールの分析精度を向上させることができます。*既存のリソースに基づいて節約額を計算する*を選択します。認証情報の追加ページにリダイレクトされます。認証情報を追加したら、FSx for ONTAPと比較する既存のリソースを選択し、*節約額を確認する*を選択します。
+
+
+
+[[explore-savings-via-customization]]
+== カスタマイズによる節約方法を探る
+
+選択したストレージのタブの手順に従ってください。
+
+[role="tabbed-block"]
+====
+.Amazon Elastic Block Store (EBS)
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP* から、*節約を探す* を選択し、*Amazon Elastic Block Store (EBS)* タブを選択します。
+. ストレージ節約計算ツールに、以下の詳細情報を入力してください：
++
+.. *ユースケース*：必須。ドロップダウンメニューからユースケースを選択してください。選択したユースケースによって、比較対象となるFSx for ONTAPファイルシステムの特性が決定されます。
+.. *リージョン*：任意。ドロップダウンメニューからEBS設定のリージョンを選択します。
+.. *EBSボリュームタイプの選択*：オプション。構成で使用するEBSボリュームタイプを選択します。
+.. *ボリューム数*：任意。EBS構成のボリューム数を入力します。
+.. *ボリュームあたりのストレージ容量（TiB）*：オプション。ボリュームあたりのストレージ容量をTiB単位で入力してください。
+.. *スナップショットの頻度*：オプション。EBS構成のスナップショットの頻度を選択します。
+.. *スナップショットごとに変更された量（GiB）*：オプション。スナップショットの保存専用です。スナップショットごとに変更された量をGiB単位で入力してください。
+.. *ボリュームごとのプロビジョニング済みIOPS*：オプション。gp3、io1、およびio2ボリュームの場合。ボリュームごとにプロビジョニングされたIOPSを入力してください。
+.. *スループット（MiB/s）*：オプション。gp3ボリュームのみ対象。ボリュームあたりのスループットをMiB/s単位で入力してください。
+
+
+
+
+--
+.Amazon FSx for Windows File Server
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP* から、*節約を探す* を選択し、*Amazon Elastic Block Store (EBS)* タブを選択します。
+. ストレージ節約計算ツールに、以下の詳細情報を入力してください：
++
+.. *ユースケース*：必須。ドロップダウンメニューからユースケースを選択してください。選択したユースケースによって、比較対象となるFSx for ONTAPファイルシステムの特性が決定されます。
+.. *リージョン*：任意。ドロップダウンメニューから、FSx for Windows File Serverの構成に使用するリージョンを選択してください。
+.. *展開タイプ*：任意。*単一アベイラビリティゾーン*または*複数アベイラビリティゾーン*を選択してください。
+.. *ストレージタイプ*：デフォルトではSSDストレージタイプが選択されています。
+.. *ストレージ容量（TiB）*：オプション。構成に必要なストレージ容量を入力してください。
+.. *重複排除による節約率（%）*：オプション。重複排除によって期待される容量削減の割合を入力します。
+.. *スナップショットの頻度*：オプション。設定に合わせてスナップショットの頻度を選択してください。
+.. *スナップショットごとに変更された量（GiB）*：オプション。スナップショットの保存専用です。スナップショットごとに変更された量をGiB単位で入力してください。
+.. *プロビジョニング済みSSD IOPS*：オプション。プロビジョニング済みSSD IOPSを入力してください。
+.. *スループット（MiB/s）*：オプション。スループットをMiB/s単位で入力してください。
+
+
+
+
+--
+.Amazon Elastic File System (EFS)
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP* から、*節約を探す* を選択し、*Amazon Elastic Block Store (EBS)* タブを選択します。
+. ストレージ節約計算ツールに、以下の詳細情報を入力してください：
++
+.. *ユースケース*：必須。ドロップダウンメニューからユースケースを選択してください。選択したユースケースによって、比較対象となるFSx for ONTAPファイルシステムの特性が決定されます。
+.. *リージョン*：任意。ドロップダウンメニューから、FSx for Windows File Serverの構成に使用するリージョンを選択してください。
+.. *ファイルシステムの種類*：オプション。*地域*または*単一ゾーン*を選択してください。
+.. *ストレージ容量（TiB）*：オプション。EFS構成のストレージ容量を入力してください。
+.. *頻繁にアクセスされるデータ（%）*：任意。頻繁にアクセスされるデータの割合を入力してください。
+.. *スループットモード*：オプション。*プロビジョニング済みスループット*または*エラスティックスループット*を選択します。
+.. *スループット（MiB/s）*：オプション。スループットをMiB/s単位で入力してください。
+
+
+
+
+--
+====
+ストレージシステムの構成に関する詳細情報を入力したら、ページに表示される計算結果と推奨事項を確認してください。
+
+さらに、ページの一番下までスクロールし、次のいずれかを選択してレポートを表示します：
+
+* *PDFをエクスポート*
+* *メールで送信*
+* *計算結果を表示*
+
+
+FSx for ONTAPに切り替えるには、<<FSx for ONTAPファイルシステムをデプロイする,FSx for ONTAPファイルシステムをデプロイする>>の手順に従ってください。
+
+
+
+[[explore-savings-for-detected-storage-environments]]
+== 検出されたストレージ環境における節約効果を検証する
+
+.開始する前に
+Workload FactoryがAWSアカウント内のAmazon Elastic Block Store（EBS）、Elastic File System（EFS）、およびFSx for Windows File Serverストレージ環境を検出できるようにするには、AWSアカウントでlink:add-credentials.html["_閲覧、計画、分析_の権限を付与する"^]するようにしてください。
+
+
+NOTE: この計算機オプションでは、EBSスナップショットとFSx for Windows File Serverのシャドウコピーの計算はサポートされていません。カスタマイズによる節約を検討する際には、EBSおよびFSx for Windows File Serverのスナップショットの詳細を指定できます。
+
+選択したストレージのタブの手順に従ってください。
+
+[role="tabbed-block"]
+====
+.Amazon Elastic Block Store (EBS)
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、*Explore savings*を選択し、次に*Amazon Elastic Block Store（EBS）*タブを選択します。
+. *Elastic Block Store（EBS）*タブで、FSx for ONTAPと比較するインスタンスを選択し、*Explore savings*を選択します。
+. ストレージ節約計算ツールが表示されます。選択したインスタンスに基づいて、以下のストレージシステム特性が事前に入力されています：
++
+.. *ユースケース*：設定のユースケース。必要に応じてユースケースを変更できます。
+.. *選択されたボリューム*：EBS構成内のボリューム数
+.. *総ストレージ容量（TiB）*：ボリュームあたりのストレージ容量（TiB）
+.. *プロビジョニングされた合計IOPS*：gp3、io1、およびio2ボリュームの場合
+.. *総スループット（MiB/秒）*：gp3ボリュームのみ
+
+
+
+
+--
+.Amazon FSx for Windows File Server
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、*Explore savings*を選択し、次に*Amazon FSx for Windows File Server*タブを選択します。
+. *Amazon FSx for Windows File Server* タブで、FSx for ONTAP と比較するインスタンスを選択し、*節約情報を見る* を選択します。
+. ストレージ節約計算ツールが表示されます。選択したインスタンスのデプロイメントタイプに基づいて、以下のストレージシステム特性が事前に入力されています：
++
+.. *ユースケース*：設定のユースケース。必要に応じてユースケースを変更できます。
+.. *選択されたファイルシステム*
+.. *総ストレージ容量（TiB）*
+.. *プロビジョニング済みSSD IOPS*
+.. *スループット（MiB/s）*
+
+
+
+
+--
+.Amazon Elastic File System (EFS)
+--
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *FSx for ONTAP* を選択します。
+. *FSx for ONTAP*から、*Explore savings*を選択し、次に*Amazon Elastic File System (EFS)*タブを選択します。
+. *Elastic File System（EFS）*タブで、FSx for ONTAPと比較するインスタンスを選択し、*Explore savings*を選択します。
+. ストレージ節約計算ツールが表示されます。選択したインスタンスに基づいて、以下のストレージシステム特性が事前に入力されています：
++
+.. *ユースケース*：設定のユースケース。必要に応じてユースケースを変更できます。
+.. *ファイルシステムの総数*
+.. *総ストレージ容量（TiB）*
+.. *総プロビジョニングスループット（MiB/秒）*
+.. *総エラスティックスループット - 読み取り（GiB）*
+.. *総エラスティックスループット - 書き込み（GiB）*
+
+
+
+
+--
+====
+ストレージシステムの構成に関する詳細情報を入力したら、ページに表示される計算結果と推奨事項を確認してください。
+
+さらに、ページの一番下までスクロールし、次のいずれかを選択してレポートを表示します：
+
+* *PDFをエクスポート*
+* *メールで送信*
+* *計算結果を表示*
+
+
+
+
+[[deploy-fsx-for-ontap-file-systems]]
+== FSx for ONTAPファイルシステムをデプロイする
+
+コスト削減を実現するために FSx for ONTAP に切り替える場合は、*作成*を選択して FSx for ONTAP ファイルシステムの作成ウィザードからファイルシステムを直接作成するか、*保存*を選択して推奨構成を後で使用するために保存してください。
+
+展開方法:: _ファイルシステム作成_権限があれば、Workload Factoryから直接FSx for ONTAPファイルシステムをデプロイできます。Codeboxウィンドウからコンテンツをコピーして、Codeboxのいずれかの方法を使用してシステムをデプロイすることもできます。
++
+--
+_表示、計画、分析_の権限がある場合、Codeboxウィンドウからコンテンツをコピーし、いずれかのCodeboxメソッドを使用してFSx for ONTAPファイルシステムをデプロイできます。
+
+--
+

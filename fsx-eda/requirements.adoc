@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/requirements.html 
+keywords: Builders, FSx, project, projects. eda, electronic design automation, requirements, setup, Workload Factory 
+summary: EDA向けにNetApp Workload Factoryの使用を開始する前に、NetApp Workload FactoryとAWSが適切にセットアップされていることを確認してください。これには、AWSログイン認証情報、導入済みのFSx for ONTAPファイルシステムなどが含まれます。 
+---
+= EDA 要件に対応した Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+EDA向けにNetApp Workload Factoryを使用する前に、NetApp Workload FactoryとAWSが適切にセットアップされていることを確認してください。これには、AWSログイン認証情報や、導入済みのFSx for ONTAPファイルシステムなどが含まれます。
+
+Workload Factoryのログインとアカウント:: link:../setup/sign-up-and-log-in.html["NetApp Consoleにサインアップしてログインします。"]する必要があります
+AWS認証情報と権限:: 読み取り / 書き込み権限を持つAWS認証情報をWorkload Factoryに追加する必要があります。つまり、EDAではWorkload Factoryを_読み取り / 書き込み_モードで使用することになります。
+
+
+現時点では、_Basic_モードおよび_Read-only_モードの権限はサポートされていません。
+
+
+NOTE: レイテンシー監視機能を使用するには、AWS 認証情報も必要です。この機能は、ボリュームパフォーマンス分析のために CloudWatch メトリクスを収集します。レイテンシーイベントの通知を受け取るには、Workload Factory の設定で通知設定を構成してください。複雑なレイテンシーシナリオに対するオプションの AI 分析は、NetApp マネージド AI 分析が有効になっている場合に利用できます。link:learn-latency-monitoring.html["レイテンシ監視について学ぶ"]。
+
+link:../fsx-storage/add-credentials.html["Workload FactoryにAWS認証情報を追加する方法について説明します。"]
+
+FSx for ONTAPファイルシステム:: 最低でも1つのFSx for ONTAPファイルシステムが必要です：
++
+--
+* EDAは、お客様が作成したプロジェクトやワークスペースを保存するためにファイルシステムを使用します。
++
+このFSx for ONTAPファイルシステムは、FlexVolボリュームを使用する必要があります。FlexGroupボリュームはサポートされていません。
+
+* AWS FSx for ONTAPファイルシステムが配置されているAWSリージョン、VPC、サブネットを把握しておく必要があります。
+* ファイルシステムには、以下の構成を持つボリュームが少なくとも1つ必要です：
++
+** ボリュームはNFS共有として構成する必要があります。
+** ファイルシステムはリンクで構成されている必要があります。link:../setup/links-overview.html["リンクの詳細"]。
+
+
+* このデプロイメントに含まれる AWS リソースに適用するタグのキーと値のペアを検討する必要があります（オプション）。
++
+link:../fsx-storage/create-discover-systems.html["FSx for ONTAP ファイルシステムを検出または作成する方法について説明します。"]
+
+
+
+--
+
