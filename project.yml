@@ -320,7 +320,7 @@ sidebar:
     - title: OCI NetApp ストレージサービスのクイックスタート
       url: "/oci/quick-start-oci.html"
     - title: OCI認証情報を追加する
-      url: "/oci/add-credentials.html"
+      url: "/oci/add-credentials-oci.html"
     - title: OCIストレージシステムの検出
       url: "/oci/create-discover-systems.html"
     - title: OCIストレージシステムに接続する

@@ -17,7 +17,7 @@ Oracle Cloud Infrastructure NetApp ストレージサービス（OCI NSS）の�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"] 資格情報と権限を追加する
 [role="quick-margin-para"]
-link:add-credentials.html["アカウントに認証情報を追加する"]。これには、ワークロード機能の選択と、必要な権限に対するIAMポリシーの作成が含まれます。
+link:add-credentials-oci.html["アカウントに認証情報を追加する"]。これには、ワークロード機能の選択と、必要な権限に対するIAMポリシーの作成が含まれます。
 
 [role="quick-margin-para"]
 デフォルトのlink:permissions-oci.html["ビュー、計画、分析"]許可ポリシーを選択します。
