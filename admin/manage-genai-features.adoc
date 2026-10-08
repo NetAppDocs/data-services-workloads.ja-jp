@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: admin/manage-genai-features.html 
-keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration 
+keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, administration 
 summary: Workload FactoryにおけるBedrockベースのAI機能へのアクセスを制御します。AI機能をオフにするか、NetAppマネージドAWS Bedrockを使用できます。 
 ---
-= NetApp Workload Factory で FSx for ONTAP の AI 機能を管理する
+= NetApp Workload FactoryのAI機能の管理
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: Workload FactoryにおけるBedrockベースのAI機能へのアクセ�
 
 
 [role="lead"]
-Workload Factory の FSx for ONTAP の AI 機能へのアクセスを制御します。AI 機能をオフにするか、NetApp が管理する AWS Bedrock を使用できます。
+Workload FactoryにおけるAI機能へのアクセスを制御します。AI 機能をオフにするか、NetApp が管理する AWS Bedrock を使用できます。
 
 
 
 [[about-ai-features]]
 == AI機能について
 
-Workload Factory には、Ask Me、カスタムダッシュボード、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させる AI 搭載機能が多数含まれています。
+Workload Factoryには、Ask Me、AIエージェント、カスタムダッシュボード、ルールビルダー、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させるAI搭載機能が多数含まれています。
 
 Workload Factoryの管理者であれば、AI設定ページでこれらの機能におけるAIの使用方法を制御できます。
 
@@ -41,7 +41,7 @@ NetAppマネージド Bedrock （推奨）:: NetApp が管理する AWS Bedrock 
 
 
 --
-GenAI機能オフ:: すべてのAI機能をオフにします。ユーザーは、Ask Me、アナライザー、カスタムダッシュボード、ルールビルダー、その他のAI搭載ツールを使用できなくなります。
+GenAI機能オフ:: すべてのAI機能をオフにします。ユーザーは、Ask Me、AI エージェント、アナライザー、カスタムダッシュボード、ルールビルダー、その他の AI 搭載ツールを使用できなくなります。
 
 
 
@@ -59,7 +59,7 @@ GenAI機能オフ:: すべてのAI機能をオフにします。ユーザーは�
 
 .手順
 . link:https://console.netapp.com["NetApp Console"^]にログインします。
-. NetApp Consoleメニューから、*ワークロード* > *管理* > *AI設定*を選択します。
+. メニューから「管理」を選択し、次に「AI設定」を選択します。
 . 「AI設定」ページで、希望する設定を選択してください：
 +
 ** *NetApp が管理する Bedrock （推奨）*：NetApp が管理する AWS Bedrock を使用します。
@@ -136,7 +136,7 @@ AIの設定を変更すると、アクティブなAIセッションはすべて�
 == 関連情報
 
 * link:../setup/learn-about-workload-factory.html["Workload Factoryの機能について"]
-* link:learn-custom-dashboards-fsx.html["カスタムダッシュボードについて"]
+* link:../admin/learn-custom-dashboards-fsx.html["カスタムダッシュボードについて"]
 * link:../fsx-storage/add-credentials.html["AWS認証情報を追加する"]
 * link:../fsx-storage/permissions-reference-fsx.html["権限リファレンス"]
 

@@ -339,6 +339,12 @@ sidebar:
       url: "/admin/manage-links.html"
     - title: FSx for ONTAPのAI機能を管理する
       url: "/admin/manage-genai-features.html"
+    - title: Workload Factory AIOps
+      entries:
+      - title: AIエージェントについて学ぶ
+        url: "/admin/learn-agent.html"
+      - title: AIエージェントの設定を管理する
+        url: "/admin/manage-agent-settings.html"
     - title: FSx for ON
       entries:
       - title: FSx for ONTAPのカスタムダッシュボードについて

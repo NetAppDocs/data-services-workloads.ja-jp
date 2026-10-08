@@ -60,8 +60,8 @@ Workload Factory は、AWS 認証情報にリンクされているすべての F
 
 ダッシュボードを有効化すると、以下の操作が可能になります：
 
-* link:task-use-overview-dashboard.html["概要ダッシュボードを使用する"]クラスタの健全性と容量を監視
-* link:task-use-overview-dashboard.html#change-ssd-management-mode["SSD容量管理モードを有効にして構成する"]（Recommend、Automate、またはNone）
-* link:task-use-overview-dashboard.html#change-throughput-management-mode["スループット管理モードを有効にして構成する"]（Recommend、Automate、またはNone）
+* link:../fsx-eda/task-use-overview-dashboard.html["概要ダッシュボードを使用する"]クラスタの健全性と容量を監視
+* link:../fsx-eda/task-use-overview-dashboard.html#change-ssd-management-mode["SSD容量管理モードを有効にして構成する"]（Recommend、Automate、またはNone）
+* link:../fsx-eda/task-use-overview-dashboard.html#change-throughput-management-mode["スループット管理モードを有効にして構成する"]（Recommend、Automate、またはNone）
 * 特定のリージョンまたはAWSアカウントに絞り込むためのフィルターを設定します
 

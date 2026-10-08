@@ -38,6 +38,8 @@ indexpage:
     links:
     - title: 通知を設定する
       url: "/admin/configure-notifications.html"
+    - title: AIエージェント
+      url: "/admin/learn-agent.html"
     - title: AI機能の管理
       url: "/admin/manage-genai-features.html"
     - title: Codeboxを使用してタスクを自動化します

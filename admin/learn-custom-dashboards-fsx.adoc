@@ -4,7 +4,7 @@ permalink: admin/learn-custom-dashboards-fsx.html
 keywords: custom dashboards, dashboards, personalized dashboards, AI dashboards, operational visibility, workload monitoring 
 summary: あらかじめ定義されたビューに縛られることなく、ワークロードと優先順位に合わせてカスタマイズされたAI搭載ダッシュボードを作成し、運用の可視性を向上させることができます。 
 ---
-= NetApp Workload FactoryのFSx for ONTAP向けカスタムダッシュボードについて
+= NetApp Workload Factory のカスタムダッシュボードについて学ぶ
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -18,7 +18,7 @@ summary: あらかじめ定義されたビューに縛られることなく、�
 Workload Factoryアカウントのすべてのユーザーは、すべてのカスタムダッシュボードを閲覧できます。この共有設定により、チームは組織全体で連携し、同じ運用情報を共有できるようになります。
 
 
-NOTE: アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、ダッシュボードを作成できなくなります。管理者に連絡するか、link:manage-genai-features.html["AI管理について学ぶ"]。
+NOTE: アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、ダッシュボードの作成や編集ができなくなります。管理者に連絡するか、link:../admin/manage-genai-features.html["AI管理について学ぶ"]。
 
 
 
@@ -47,6 +47,11 @@ Workload Factoryのユーザーは、多くのワークロード、環境、お�
 * 追跡および表示する必要のあるルールまたは要件
 
 
+カタログからダッシュボードを編集し、ダッシュボード名、説明、カテゴリ、または監視リクエストを更新してから、改訂版を保存するかどうかを決定できます。
+
+
+NOTE: ダッシュボードを編集できるのは、ダッシュボードの作成者のみです。編集中は、保存するまで他のユーザーは変更内容を確認できません。
+
 
 
 [[view-and-share-dashboards]]
@@ -60,7 +65,7 @@ Workload Factoryのユーザーは、多くのワークロード、環境、お�
 
 各ダッシュボードカードには、そのダッシュボードが非公開か公開かが表示されるため、どのダッシュボードが共有されているかをすぐに確認できます。
 
-link:manage-custom-dashboards-fsx.html#change-dashboard-visibility["ダッシュボードの表示設定を変更する方法を説明します"]。
+link:../admin/manage-custom-dashboards-fsx.html#change-dashboard-visibility["ダッシュボードの表示設定を変更する方法を説明します"]。
 
 
 
@@ -85,7 +90,7 @@ link:../fsx-storage/add-credentials.html["AWS認証情報を追加し、IAM権�
 
 Workload Factory は、FSx for ONTAP ファイルシステムに接続するためのリンクを必要とします。リンクは、Workload Factory と 1 つ以上の FSx for ONTAP ファイルシステムとの間に信頼関係と接続性を確立します。これにより、Amazon FSx for ONTAP API では利用できない特定のファイルシステム機能を、ONTAP REST API 呼び出しを通じて直接監視および管理できます。
 
-link:../fsx-storage/create-link.html["リンクの作成方法を学ぶ"^]。
+link:../fsx-storage/create-link.html["リンクの作成方法を学ぶ"]。
 
 
 
@@ -134,7 +139,7 @@ Workload Factory のデモアカウントをご利用の場合は、あらかじ
 [[next-steps]]
 == 次の手順
 
-* link:create-custom-dashboard-fsx.html["カスタムダッシュボードを作成する"]
-* link:manage-custom-dashboards-fsx.html["カスタムダッシュボードを管理する"]
-* link:troubleshoot-custom-dashboards-fsx.html["カスタムダッシュボードのトラブルシューティング"]
+* link:../admin/create-custom-dashboard-fsx.html["カスタムダッシュボードを作成する"]
+* link:../admin/manage-custom-dashboards-fsx.html["カスタムダッシュボードを管理する"]
+* link:../admin/troubleshoot-custom-dashboards-fsx.html["カスタムダッシュボードのトラブルシューティング"]
 

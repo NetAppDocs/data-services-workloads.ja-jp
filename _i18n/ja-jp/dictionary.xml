@@ -277,9 +277,7 @@
   <block id="5af1607522ddad534f7fc3e5976684e5" category="paragraph">作成後、ダッシュボードを更新すると最新のデータが表示されます。</block>
   <block id="a8f8e9b8eb3f376a4b560c169094087e" category="paragraph">カスタムダッシュボードは設計上読み取り専用であり、ストレージやワークロードの設定を変更することはできませんのでご注意ください。</block>
   <block id="21b694dc2503eab08ab245a8bcfe9f1c" category="inline-link-macro">AI管理について学ぶ</block>
-  <block id="1981f9412416cf6cd4df691ce6b82265" category="admonition">アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、ダッシュボードを作成できなくなります。管理者に連絡するか、<block ref="51cc9b1bceb3cdf8e5a226d8fb6d37eb" category="inline-link-macro-rx"></block>。</block>
   <block id="1490f3908001d2cdf7587ba480973340" category="section-title">ダッシュボードを作成する</block>
-  <block id="1589e8533c432499ad85efd268dd750c" category="list-text">NetApp Consoleメニューから、*ワークロード* &gt; *ワークロードの概要* &gt; *カスタムダッシュボード*を選択します。</block>
   <block id="f1dcf9e30698fcfe356b412b3f1f523c" category="paragraph">これが初めてのダッシュボードの場合は、開始に役立つサンプルプロンプトが表示された空白の画面が表示されます。「プロンプトをコピー」を選択すると、サンプルプロンプトがAIダイアログのテキストボックスにコピーされます。</block>
   <block id="2e752336fdbff2abb5e9bf262bd0dbdd" category="list-text">「新しいダッシュボードを作成」を選択します。</block>
   <block id="28d14a36109f19e020789b18ad010e52" category="list-text">AIダイアログで、監視したい内容を説明してください。</block>
@@ -292,9 +290,7 @@
   <block id="871affa3441567ce8c578a244f4fa377" category="paragraph">ダッシュボードを作成中です。少々お時間をいただく場合がございます。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
   <block id="fa2935cab9052ead8bda54e043c876e7" category="inline-link-macro">ダッシュボードの表示設定を変更する方法を説明します</block>
-  <block id="5ea00850c689f7da39c4db94cd187857" category="paragraph">お客様専用のダッシュボードが作成され、ダッシュボードカタログに追加されました。デフォルトでは、ダッシュボードは非公開で、お客様のみに表示されます。Workload Factoryアカウント内の他のユーザーと共有したい場合は、公開設定を「公開」に変更できます。<block ref="289ea80c835498b9548bdc48b7cf5ae9" category="inline-link-macro-rx"></block>。</block>
   <block id="863d814c29385fa8ebfd13bc1c1c7e96" category="inline-link-macro">通知の設定について</block>
-  <block id="c9db1966c96002c79c43ee5507b95b7c" category="paragraph">ダッシュボードの準備が整うと通知が届きます。作成できない場合は、再試行するためのリンクが記載された通知が届きます。<block ref="19fa6c73a4251f43a74dc700e68a79f1" category="inline-link-macro-rx"></block>。</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">次の手順</block>
   <block id="fb3b6f147b0a44a08f4c961dc053571e" category="paragraph">作成後、以下のことが可能です：</block>
   <block id="86d47ec5cc124c99638dc3c2f21c96e0" category="list-text">ダッシュボードの公開範囲を変更して、チームと共有する</block>
@@ -302,11 +298,8 @@
   <block id="7bff2130a08698224667671d85a34ed4" category="list-text">不要になったダッシュボードを削除する</block>
   <block id="ed5184af3d39b3e314759db5b95ba675" category="list-text">ダッシュボードの詳細（作成者や最終更新日時など）を表示します</block>
   <block id="d10995cac5dfc264a5da7f4abec9025d" category="inline-link-macro">カスタムダッシュボードを管理する</block>
-  <block id="c6b1282f7bfcab2471a26abec56e02af" category="list-text"><block ref="c6b1282f7bfcab2471a26abec56e02af" category="inline-link-macro-rx"></block></block>
   <block id="1703fc0755f2533bd9d727fa0298c500" category="inline-link-macro">カスタムダッシュボードのトラブルシューティング</block>
-  <block id="42f7b5e86648dfe662db00ae0b30eae7" category="list-text"><block ref="42f7b5e86648dfe662db00ae0b30eae7" category="inline-link-macro-rx"></block></block>
   <block id="b765164d0d63341925efe41eda98a9b0" category="summary">あらかじめ定義されたビューに縛られることなく、ワークロードと優先順位に合わせてカスタマイズされたAI搭載ダッシュボードを作成し、運用の可視性を向上させることができます。</block>
-  <block id="71a8c05eab4e4008080f227b779ca449" category="doc">NetApp Workload FactoryのFSx for ONTAP向けカスタムダッシュボードについて</block>
   <block id="7eb72e0c632d43245022c759c6dabf4f" category="paragraph">クラウドおよびストレージ管理者にとって、カスタムダッシュボードは、管理するシステムとワークロードを明確に把握するのに役立ちます。あらかじめ用意されたレイアウトに限定されることなく、自分の仕事内容、優先順位、ビジネス目標に合ったビューを構築し、カスタマイズすることができます。</block>
   <block id="959c71c7e92856ead7b3a708f6c721c2" category="paragraph">カスタムダッシュボードは、AIを使用してWorkload Factory環境のパーソナライズされたビューを作成します。監視したい内容を平易な言葉で説明するだけで、システムがニーズに基づいて自動的にビジュアルチャートを作成します。</block>
   <block id="f1e11e6b7c8b037c77a4a7c91acba439" category="paragraph">Workload Factoryアカウントのすべてのユーザーは、すべてのカスタムダッシュボードを閲覧できます。この共有設定により、チームは組織全体で連携し、同じ運用情報を共有できるようになります。</block>
@@ -328,7 +321,6 @@
   <block id="7341b20ff1ddefe079f968d8d4436714" category="list-text">*プライベートダッシュボード*：これらのダッシュボードはあなただけが閲覧できます。個人的なモニタリング、テスト、または進行中の作業にご利用ください。</block>
   <block id="71c6aa9812ec2db21553218b51c3d261" category="list-text">*公開ダッシュボード*：Workload Factoryアカウントのすべてのユーザーがこれらのダッシュボードを閲覧できます。これらを使用して監視ビューを共有し、チーム内でワークロード、優先順位、およびビジネス目標の認識を統一してください。</block>
   <block id="0f72bd1a783a9d1e54bd0e1af11e9b72" category="paragraph">各ダッシュボードカードには、そのダッシュボードが非公開か公開かが表示されるため、どのダッシュボードが共有されているかをすぐに確認できます。</block>
-  <block id="f3cf67ccb99f00593ef15c799619319e" category="paragraph"><block ref="289ea80c835498b9548bdc48b7cf5ae9" category="inline-link-macro-rx"></block>。</block>
   <block id="18b34a0dd090bb7f1f01f6f3d0d42c52" category="section-title">考慮事項と制限事項</block>
   <block id="97911b3c54a4e826b34c1f79026316c5" category="section-title">AWS認証情報と権限</block>
   <block id="6344c74fd8e5c3678a14327105887b61" category="paragraph">カスタムダッシュボードを作成または表示するには、監視対象のリソースに対する適切なAWS IAM権限が必要です。Workload Factoryアカウントが、ダッシュボードで使用されるデータソースへの読み取りアクセス権を持っていることを確認してください。</block>
@@ -338,7 +330,6 @@
   <block id="d65de0ffa05b31f0beebf22d3e28dbde" category="section-title">FSx for ONTAP へのリンク</block>
   <block id="ee01e7a77a5b8f6475723b4e66eca889" category="paragraph">Workload Factory は、FSx for ONTAP ファイルシステムに接続するためのリンクを必要とします。リンクは、Workload Factory と 1 つ以上の FSx for ONTAP ファイルシステムとの間に信頼関係と接続性を確立します。これにより、Amazon FSx for ONTAP API では利用できない特定のファイルシステム機能を、ONTAP REST API 呼び出しを通じて直接監視および管理できます。</block>
   <block id="68cd2ca9724f378c0a2815415eeecfbd" category="inline-link-macro">リンクの作成方法を学ぶ</block>
-  <block id="232e3bd00f6c8f524e871620adb4285f" category="paragraph"><block ref="09d2f2e6f3fb5ec04917bb58f408754d" category="inline-link-macro-rx"></block>。</block>
   <block id="edc83c82b6a6439e121df7b8dfc618e7" category="section-title">読み取り専用設計</block>
   <block id="9596530d51115869eabe2f1148109fcb" category="paragraph">カスタムダッシュボードは読み取り専用です。ストレージやワークロードの設定を変更することはできません。これにより、誤って設定を変更することなく、システムを監視できます。</block>
   <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">制限事項</block>
@@ -356,9 +347,7 @@
   <block id="489342efbcb2cab8832e0e763b340653" category="list-text">ARPはすべてのボリュームで有効にする必要があります。」</block>
   <block id="cce78dc6ebbec7385a01f2146d6d01c8" category="section-title">次の手順</block>
   <block id="dfc2a77d9b383cd28cba1a1e99f9a378" category="inline-link-macro">カスタムダッシュボードを作成する</block>
-  <block id="0d31ec9338481ac9d70aba81ed6a3dcd" category="list-text"><block ref="0d31ec9338481ac9d70aba81ed6a3dcd" category="inline-link-macro-rx"></block></block>
   <block id="62403e3fa28afe128e2c0e15bf0333f7" category="inline-link-macro">カスタムダッシュボードを管理する</block>
-  <block id="ecb7db8454bf763909a485516115aa9b" category="list-text"><block ref="ecb7db8454bf763909a485516115aa9b" category="inline-link-macro-rx"></block></block>
   <block id="adf67e3c15ea92cdb089cbb8d3dced6b" category="summary">認証情報が不要になった場合は、NetApp Workload Factoryから削除できます。FSx for ONTAPファイルシステムに関連付けられていない認証情報のみを削除できます。</block>
   <block id="b088f0038dd9646dd61cd1cf0cae1489" category="doc">NetApp Workload Factoryから認証情報を削除する</block>
   <block id="2f13edc244ce3aa63a739bc5418cd67f" category="paragraph">認証情報が不要になった場合は、Workload Factoryから削除できます。FSx for ONTAPファイルシステムに関連付けられていない認証情報のみを削除できます。</block>
@@ -369,7 +358,6 @@
   <block id="90b29202abc7a1c38c887ae166296c46" category="summary">Workload Factory のダッシュボードカタログにアクセスして、カスタムダッシュボードの表示、更新、削除を行います。</block>
   <block id="526aa50fb911c91291e959f7543639b0" category="doc">NetApp Workload Factoryでカスタムダッシュボードを管理する</block>
   <block id="3ba405e1d72777e360f3b281ce3ba5b9" category="paragraph">ダッシュボードカタログからカスタムダッシュボードを管理できます。そこから、詳細の表示、ダッシュボードの共有、データの更新、不要になったダッシュボードの削除などを行うことができます。</block>
-  <block id="4765f204e5de83ae87fec00c7c5b7589" category="paragraph">ダッシュボードカタログから、カスタムダッシュボードを表示および管理できます。プライベートダッシュボードはお客様のみ閲覧できますが、パブリックダッシュボードはWorkload Factoryアカウントのすべてのユーザーが閲覧できます。各ダッシュボードには、作成者名、作成日、公開設定（非公開または公開）などの基本的な詳細情報が表示されます。</block>
   <block id="a83695a886882e5b4baf753ee607f66f" category="paragraph">カスタムダッシュボードは読み取り専用です。ストレージやワークロードの設定を変更することはできません。</block>
   <block id="76fc0fde7a5041f5e2df3b114841202c" category="paragraph">Workload Factoryアカウントには、少なくとも1つのカスタムダッシュボードが必要です。</block>
   <block id="19f40b5f5943ee4953075403d9783061" category="section-title">ダッシュボードカタログにアクセスする</block>
@@ -385,7 +373,6 @@
   <block id="7e3cce2609a225eafd019dfc30a9437a" category="paragraph">ダッシュボードは即座に更新されます。ダッシュボードカード上の表示状態ラベルには、現在のステータスが表示されます。</block>
   <block id="9e3f16aef1d22400bdae48c5cb77b00f" category="section-title">ダッシュボードのデータを更新する</block>
   <block id="4e424a1ad37782627141d4d50f79b586" category="paragraph">ダッシュボードを開くと、ダッシュボードのデータが読み込まれます。最新の情報を確認するには、更新してください。</block>
-  <block id="6835e72df37e141c78401ea8d4bfcf90" category="paragraph">ダッシュボードはワークロードからデータを再読み込みします。最終更新時刻は、データが更新された日時を示すように変更されます。</block>
   <block id="74ee9feffcb1603b7eeb47c099c0e5a5" category="section-title">ダッシュボードを削除する</block>
   <block id="e54360b7371199d6607f76cd1ae6ad17" category="paragraph">不要になったダッシュボードは削除してください。この操作は永続的なものであり、元に戻すことはできません。</block>
   <block id="3325f3a5c13a73bb87ed2dabebb0b6a3" category="list-text">「カスタムダッシュボード」ページで、削除するダッシュボードを見つけます。</block>
@@ -393,12 +380,8 @@
   <block id="b26a5fa549c938ffb56d20623c3f69c0" category="list-text">削除を確認します。</block>
   <block id="22e8351c82677bcc78bd23d6fb170bc8" category="paragraph">ダッシュボードはWorkload Factoryアカウントから完全に削除され、すべてのユーザーがアクセスできなくなります。</block>
   <block id="9537d9160ef701530bdd875698475957" category="inline-link-macro">追加のカスタムダッシュボードを作成する</block>
-  <block id="955c1a1cd93a476dfbcc96e2d337dabc" category="list-text"><block ref="955c1a1cd93a476dfbcc96e2d337dabc" category="inline-link-macro-rx"></block></block>
   <block id="f7b22a19823cae9bc6664fece0b96115" category="summary">Workload FactoryにおけるBedrockベースのAI機能へのアクセスを制御します。AI機能をオフにするか、NetAppマネージドAWS Bedrockを使用できます。</block>
-  <block id="1aaa6ae8dc8943b938e73e20b3d28d07" category="doc">NetApp Workload Factory で FSx for ONTAP の AI 機能を管理する</block>
-  <block id="85c7bc155798813a7f9165f8ac043607" category="paragraph">Workload Factory の FSx for ONTAP の AI 機能へのアクセスを制御します。AI 機能をオフにするか、NetApp が管理する AWS Bedrock を使用できます。</block>
   <block id="00e95115c994386ef85f1864db952bca" category="section-title">AI機能について</block>
-  <block id="5a41793d075495dfb423bb395a189adf" category="paragraph">Workload Factory には、Ask Me、カスタムダッシュボード、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させる AI 搭載機能が多数含まれています。</block>
   <block id="46918c8c585299e7a785eed266de3f97" category="paragraph">Workload Factoryの管理者であれば、AI設定ページでこれらの機能におけるAIの使用方法を制御できます。</block>
   <block id="50f33d14f129e4548c1c270fd6725a78" category="section-title">構成オプション</block>
   <block id="5787d906b76d8323ff398ce17924ceda" category="paragraph">以下の設定オプションから選択してください：</block>
@@ -408,10 +391,8 @@
   <block id="9a0258efc499c889c5f1af73bbaf4364" category="list-text">月間利用クレジットは組織全体で共有されます</block>
   <block id="2c8b8060f9331f918beb8261403785ec" category="list-text">AWSの追加設定は不要です。</block>
   <block id="1ee78c04d8b078adcb0fca6be60af5a2" category="list-text">GenAI機能オフ</block>
-  <block id="8828805c938d7fc1a48fbf3585c37b14" category="list-text">すべてのAI機能をオフにします。ユーザーは、Ask Me、アナライザー、カスタムダッシュボード、ルールビルダー、その他のAI搭載ツールを使用できなくなります。</block>
   <block id="396640080b08108896efb48796063406" category="list-text">アカウント管理者がAI機能を設定することをお勧めします。</block>
   <block id="6b7af6c72f84f0f7380106617c11be78" category="section-title">AI機能の設定</block>
-  <block id="0b9ce81b2ccc278e75862730529db903" category="list-text">NetApp Consoleメニューから、*ワークロード* &gt; *管理* &gt; *AI設定*を選択します。</block>
   <block id="ef1f959eefc1f11cf2aec294261e066f" category="list-text">「AI設定」ページで、希望する設定を選択してください：</block>
   <block id="7530dc640ec2dd92a9e70b8484867369" category="list-text">*NetApp が管理する Bedrock （推奨）*：NetApp が管理する AWS Bedrock を使用します。</block>
   <block id="053d266af64b45b2a2fbc0eeccc99297" category="list-text">*Gen AI機能オフ*：すべてのAI機能をオフにします。</block>
@@ -440,7 +421,6 @@
   <block id="686efa14a6d0381010005caff3820d5a" category="inline-link-macro">Workload Factoryの機能について</block>
   <block id="15776a498e04d3e0bd78a1478d9c287a" category="list-text"><block ref="15776a498e04d3e0bd78a1478d9c287a" category="inline-link-macro-rx"></block></block>
   <block id="1d37f129240a0035a4c1f8d424382c89" category="inline-link-macro">カスタムダッシュボードについて</block>
-  <block id="d117d4fd605dbd7dc4026e925fc36ba0" category="list-text"><block ref="d117d4fd605dbd7dc4026e925fc36ba0" category="inline-link-macro-rx"></block></block>
   <block id="196a1b1d4d7eff75b0b7bc0f6fa282e7" category="inline-link-macro">AWS認証情報を追加する</block>
   <block id="8feef39480c2e9a61121221ad1a6e6fc" category="list-text"><block ref="8feef39480c2e9a61121221ad1a6e6fc" category="inline-link-macro-rx"></block></block>
   <block id="b8646f09ea34b75c077cfea12f75617b" category="inline-link-macro">権限リファレンス</block>
@@ -541,15 +521,12 @@
   <block id="0687519296941b7aa068cbc5e70a1c22" category="paragraph">**原因：** システムはリクエストを理解できなかったか、プロンプトからビジュアライゼーションを作成できませんでした。</block>
   <block id="83b9aaf1b6b5ef7884e24699dc7f7511" category="paragraph">**解決策：** 次のことを試してください：</block>
   <block id="894b21673f7a949e53a381985a55de87" category="list-text">監視したい内容について、より明確な詳細を盛り込んでリクエストを書き直してください。</block>
-  <block id="1a5b38b4e731948856a46b57ba7acacb" category="list-text"><block ref="0d31ec9338481ac9d70aba81ed6a3dcd" category="inline-link-macro-rx"></block>のサンプルプロンプトのいずれかから始めてください。</block>
   <block id="6e8565abed03ed302a07467257865757" category="list-text">複雑な監視ニーズを、よりシンプルな複数のダッシュボードに分割します。</block>
   <block id="28ceb1134c8420a708d78605ab459972" category="list-text">追跡したいワークロード、メトリクス、期間、またはディメンションを指定してください。</block>
   <block id="7b0923a8ddaa6864688d6afeed5bde9f" category="section-title">ダッシュボードのデータ読み込みに失敗しました</block>
   <block id="6cf9da3bc18ab877793e971ea5fdf80d" category="paragraph">**問題：** ダッシュボードは作成されましたが、データの読み込み時にエラーが表示されます。</block>
   <block id="423c766e8a7076c3dd890fe7460b5785" category="paragraph">**原因：**これは通常、権限の問題またはデータソースが利用できないために発生します。</block>
   <block id="6342c16a39a9eb2f31fa733eb76963b7" category="paragraph">**解決策：**</block>
-  <block id="5c7f8468c6375df4cef5ecb5f18b113c" category="list-text">**権限を確認してください：** ワークロードファクトリーアカウントに、ダッシュボードで使用されるワークロードとリソースへの読み取りアクセス権があることを確認してください。権限要件については、<block ref="85406e0d04c8df1dc17be4dd86713ac5" category="inline-link-macro-rx"></block>を参照してください。</block>
-  <block id="9f91001f68a6708181c9064ef06f2a03" category="list-text">**認証情報の確認：** AWS認証情報が有効であり、有効期限が切れていないことを確認してください。詳細については、<block ref="8feef39480c2e9a61121221ad1a6e6fc" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="a82708a710bdc7f66cc4d1b5721a359c" category="section-title">ダッシュボードが読み込まれない、または読み込みが遅い</block>
   <block id="7b8a6ade8ac0e93d1993c6d3ee222a27" category="paragraph">**問題：** ダッシュボードの読み込みが遅い、または一部のウィジェットが表示されない。</block>
   <block id="c66f626cb62bfd00b1514c2f1a4ec699" category="paragraph">**原因：** 読み込みが遅い原因としては、ネットワークの問題、大量のデータ、または一時的なサービス遅延などが考えられます。</block>
@@ -565,7 +542,6 @@
   <block id="62ad02c42e5e548dcaf80a64c2d0eefd" category="list-text">必要に応じて、元の要件に基づいてダッシュボードを再作成してください。</block>
   <block id="1e2b52bc0d9b39d605af8ef1990be5ab" category="paragraph">Workload Factoryアカウントのすべてのユーザーは、カスタムダッシュボードを表示および削除できます。共有ダッシュボードを管理する際は、チームと連携してください。</block>
   <block id="e2a43aebbf3f114c3e1dfc54b469c13e" category="section-title">追加ヘルプ</block>
-  <block id="40c027613b25b5acd817da4656c22bd8" category="paragraph">カスタムダッシュボードで引き続き問題が発生する場合は、NetAppサポートへの連絡方法については<block ref="12b3578a80c78dee4be855cedba97ff4" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="c61544abe563251eb7477b6292b382e4" category="summary">CloudShell を使用すると、NetApp Workload Factory ユーザーインターフェイスのどこからでも AWS または ONTAP CLI コマンドを発行できます。</block>
   <block id="2cc12a89b9145b8d67b684667bcb6e3e" category="doc">NetApp Workload Factory で CloudShell を使用する</block>
   <block id="bdd3829c4c5d30727b854efad6656ed4" category="paragraph">NetApp Workload Factory コンソールのどこからでも AWS または ONTAP CLI コマンドを実行するには、CloudShell を開きます。</block>
@@ -1921,7 +1897,6 @@
   <block id="9c26918e454ba2268c8c93c41218c570" category="list-text">複数のクラスタ全体でパフォーマンス指標を追跡</block>
   <block id="ff552e5da914068f0d9d4064c2f6fb85" category="list-text">リンク設定ステータスの確認（関連リンク列） - 接続の有効性は毎日検証されます</block>
   <block id="88b77b6c01adce036032ab7bf374a7a9" category="list-text">パラメータを一括更新する複数のクラスタを選択してください</block>
-  <block id="94e78450902ff8802101a87715f2120e" category="paragraph">ファイルシステムを選択すると、クラスタ情報、SSD容量値、SSD Capacity Over Timeグラフなど、クラスタの詳細が表示されます。</block>
   <block id="c6e9c9061d9167583226901e02ffb03e" category="section-title">SSD容量管理</block>
   <block id="f8ea6e988f609d0e7b256e12ea4d4718" category="section-title">管理モード</block>
   <block id="7ae10da71cdf204162f214a176b66232" category="list-text">通知のみ（推奨モード）</block>
@@ -1955,15 +1930,12 @@
   <block id="622a5b145e5cdfd92b8124baf3f8e5d7" category="list-text">*最小遅延時間（ミリ秒）*（デフォルト：10 ms）</block>
   <block id="4067af77fe7df9f9047c8c4eeb9490b5" category="list-text">*最大スループットSKU*（デフォルト：なし）</block>
   <block id="e4612c732ae1c64db60c83cb8cae8381" category="section-title">ファイルシステムの柔軟性に関する推奨事項</block>
-  <block id="cc8b8287cb9875fcd93e6deecaaa1c10" category="paragraph">Workload Factory が自動化モードまたは推奨モードの場合、ONTAP ファイルシステム用の各 FSx を自動的にチェックし、容量推奨アルゴリズムを実行します。システムは定期的にスキャンを行い、SSD の容量やスループットを調整する必要があるかどうかを確認します。</block>
   <block id="1f9c155d60450baccee27bca630b6497" category="paragraph">推奨事項が特定された場合：</block>
   <block id="c3a8bcc1273489aff39484b64fd9efe7" category="list-text">Workload Factoryの通知設定に基づいて、即座に通知が届きます。</block>
   <block id="1c5b8d97751372161e201f333f1b4f62" category="list-text">クラスターテーブルをフィルタリングして、推奨事項のあるファイルシステムを特定します。</block>
   <block id="a3eb814e72de4d40c0767efe37beafe1" category="list-text">インターフェースには、現在有効な推奨事項があるファイルシステムの総数が表示されます。</block>
   <block id="68c65b2650d813b072f0481727b3e600" category="paragraph">推奨事項では、提案された変更とその理由について説明しています。例：_ファイルシステムSSDの使用パターンに基づいて、SSDのサイズを増やすことを推奨します。_</block>
-  <block id="7c3b540ce616a2a72155e6240f74714c" category="paragraph">ストレージ容量に関するイベント（推奨事項、容量増加の成功、警告アラート、容量チェックまたは容量増加操作中のエラーなど）について通知が送信されます。エラー通知には、権限不足、ファイルシステムの更新が既に進行中、最近のストレージ変更後のAWS待機期間、最大容量への到達、またはCloudWatchデータの利用不可など、原因が説明されています。</block>
   <block id="fa0b4e3f4266abe4ec93e3058cfcd2aa" category="section-title">容量に関する決定ポイントについて</block>
-  <block id="1b07a2acaea0fa364496ba3afb977975" category="paragraph">SSD使用状況グラフは、システムが容量に関する推奨事項を提示したり、自動的なアクションを実行したりした時点を示します。これらのマーカーは、容量管理アルゴリズムが時間の経過とともにどのように動作したかを示しています。</block>
   <block id="c27f88e562f3ed3c4000570673348297" category="list-text">*推奨事項の決定ポイント*</block>
   <block id="25dc82340ec038ecbda8ab79823e242a" category="list-text">システムがSSDの容量追加が必要であることを検出した際に表示されます。容量が増加されていない場合、これらのポイントは30分ごとに表示される可能性があります。グラフには、可能な限り各決定ポイントが表示されます。選択した時間範囲が密集しすぎている場合、ポイントはグループ化されます。</block>
   <block id="153ea1a28a0f56dba57777e1680e1f76" category="list-text">*自動化の意思決定ポイント*</block>
@@ -2165,11 +2137,8 @@
   <block id="ee58964f46df645da6108475c6d86f30" category="list-text">ダッシュボードをアクティブ化し、メトリックの収集を開始するには、* Activate * を選択します。</block>
   <block id="7b76cd809591b8cb2b82a5d96bf92502" category="paragraph">Workload Factory は、AWS 認証情報にリンクされているすべての FSx for ONTAP ファイルシステムの CloudWatch メトリクスの収集を開始します。メトリクスが利用可能になると、ダッシュボードに反映されます。データ収集が進行中の間は、通知が表示されます。</block>
   <block id="b7b10c1304f383232f064dc193d3492b" category="paragraph">ダッシュボードを有効化すると、以下の操作が可能になります：</block>
-  <block id="84dbb7b1eccc71ff5f71a7198ff13b68" category="list-text"><block ref="2cfa6ed38cd9b96055529b98595c7f05" category="inline-link-macro-rx"></block>クラスタの健全性と容量を監視</block>
   <block id="2733df4f5d332cf0fbf7a918cce60410" category="inline-link-macro">SSD容量管理モードを有効にして構成する</block>
-  <block id="806c2769f2f8cebfc3e1fb594f627f17" category="list-text"><block ref="4f6b89d6de6199c28054a07fffc78ba6" category="inline-link-macro-rx"></block>（Recommend、Automate、またはNone）</block>
   <block id="c3bb386a8cfadc37852e3ce68761e026" category="inline-link-macro">スループット管理モードを有効にして構成する</block>
-  <block id="ef059ce8f7b1372dd14393349e748478" category="list-text"><block ref="5d06130fa1ae401255bccec02e322846" category="inline-link-macro-rx"></block>（Recommend、Automate、またはNone）</block>
   <block id="f872ab9156293273da8e58555b68ca2e" category="list-text">特定のリージョンまたはAWSアカウントに絞り込むためのフィルターを設定します</block>
   <block id="94865ed9933801afc860536ada02e496" category="summary">FSx for ONTAP ボリュームのパフォーマンスの問題を見つけるために、レイテンシーイベントを表示および分析します。基本的な分析と、必要に応じて AI 分析を使用して、根本原因と推奨される修正策を特定します。</block>
   <block id="7c7708c4a86b73bb59e5e08ced5293bf" category="doc">Workload Factory for EDAにおけるレイテンシーの問題を分析する</block>
@@ -2333,8 +2302,6 @@
   <block id="c71e0da6508887a77f334a554ab5495a" category="summary">概要ダッシュボードを使用して、クラスターの状態を監視し、容量に関する推奨事項を表示し、SSD とスループットの設定を管理し、FSx for ONTAP ファイルシステム全体のパフォーマンス傾向を分析します。</block>
   <block id="79181b2c6ed46060150e77e4602bc886" category="doc">Workload Factory for EDA の概要ダッシュボードを使用する</block>
   <block id="4c3cb97ad8dafb44b4527de840549941" category="paragraph">概要ダッシュボードを使用して、FSx for ONTAP ファイルシステムの健全性と容量を確認します。データをフィルタリングしたり、容量に関する推奨事項を確認したり、SSD とスループットの設定を調整したり、パフォーマンスの傾向を分析したりすることで、ボリュームの配置場所や容量を拡張するタイミングを決定するのに役立ちます。</block>
-  <block id="f4d32e19fbe53c2c3a060145a3cb089e" category="inline-link-macro">概要ダッシュボードをアクティブ化しました</block>
-  <block id="b989d81a69fe7883dca4d1012f53d338" category="paragraph">ファイルシステムを監視するために使用する前に、<block ref="38c0848a99095f730ae7166b7cd5884e" category="inline-link-macro-rx"></block>を実行しておく必要があります。</block>
   <block id="26949f06981e97a3e3cda29668de2aff" category="section-title">ダッシュボードをフィルタリングする</block>
   <block id="3add6a53fd27e48c56df398ecbb78292" category="paragraph">ダッシュボード上部のフィルターを使用して、特定のファイルシステムを表示できます。フィルターは、レイテンシー、使用率、ONTAP イベントセクション、およびクラスターテーブルに適用されます。</block>
   <block id="e8f3159a468f02961bca7416aa632c34" category="list-text">利用可能なフィルタを使用して、表示を絞り込みます。</block>
@@ -2352,7 +2319,6 @@
   <block id="45cd3072594a40004f1648f957b11b4f" category="list-text">レイテンシイベントを表示するには：</block>
   <block id="9bab24fe4c951c13841b658922a21a8b" category="list-text">*Review*を選択して*Latency*タブに移動します</block>
   <block id="d88a1f1774fe796edce9fbdb30450768" category="list-text">レイテンシ監視が設定されていない場合は、*Configure* を選択してレイテンシのしきい値を設定してください</block>
-  <block id="3fc40acdeffa85e640e04decb4a3c8a1" category="paragraph">レイテンシ監視の詳細については、<block ref="9fa375caf288330dba08fd0144ac3746" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="fc28c48860928b711f31c63cbbeac8d0" category="list-text">FSx for ONTAP ファイルシステムの ONTAP イベントを表示するには、*Review* を選択します。</block>
   <block id="b89294c44923d00aeca4413b78b17341" category="inline-link-macro">ONTAP CLI ドキュメント</block>
   <block id="1c9d8ee06541dbbb5c46a2f2dcb0188e" category="paragraph">ONTAP イベントビューカードには、カテゴリ別（容量、可用性と保護、セキュリティとその他）の EMS イベント数が表示されます。監視対象の EMS イベントの全リストについては、<block ref="95232132a00f2412cfd89d25359e73da" category="inline-link-macro-rx"></block>を参照してください。</block>
@@ -2369,9 +2335,6 @@
   <block id="37b5b20fd94de2275a255ae79e7ac8f0" category="list-text">推奨事項を適用するには、推奨事項メッセージに記載されているガイダンスに従ってください。</block>
   <block id="95138c66b91ee03084dfba9068536d5e" category="section-title">SSD管理モードを変更する</block>
   <block id="5b9d5469c481b2fd86bb70731779a54a" category="paragraph">各ファイルシステムについて、SSD容量の管理方法を選択します。手動による推奨設定を受け取るか、自動スケーリングを許可するかを選択できます。</block>
-  <block id="6d8ccfb06da581a2d86feacefa3b4869" category="inline-image-macro">アクションメニューアイコン</block>
-  <block id="c9eecdb0eb0ca75174ea4d40e628f365" category="list-text">Clustersテーブルでファイルシステム名を確認します。その横にある<block ref="db26b5e8c520e1d883813594c799d7f7" category="inline-image-macro-rx" type="image"></block>を開き、*Change SSD capacity management*を選択します。</block>
-  <block id="c7ac58faf1984cf107f3421908d2207c" category="list-text">「SSD容量管理を有効にする」を選択し、「適用」を選択します。</block>
   <block id="b689124bbd04a08329d8f616990fa06d" category="list-text">お好みのモードを選択してください：</block>
   <block id="da35cbad278570472c076b6042a5b528" category="list-text">SSD容量管理パラメータを設定します：</block>
   <block id="166c4a53ef8fc50b9b03ca91c1c677bc" category="list-text">*しきい値（％）*：推奨事項をトリガーするSSD使用率</block>
@@ -2382,40 +2345,16 @@
   <block id="86161e58ce8677bff58de719cb9f29a8" category="paragraph">各ファイルシステムについて、スループットの増加をどのように管理するかを選択してください。</block>
   <block id="441fc54d05bba2a603a05c500cf068c7" category="list-text">*概要*タブで、「クラスタ」テーブルから1つ以上のファイルシステムを選択します。</block>
   <block id="0231f044766e71e4fe49a62ba8e8bbbe" category="list-text">「スループット管理の変更」を選択します。</block>
-  <block id="652aab445f49bb41fa3e8774b5719cf2" category="list-text">*スループット管理を有効にする*を選択し、次に*適用*を選択します。</block>
-  <block id="16393cf33b95f8ff007d76d513b875d7" category="list-text">ダイアログで、スループット管理パラメータを設定します：</block>
   <block id="083678f0efe5919237188ee0ee5d0b90" category="list-text">*評価期間（時間）*：スループットパターンを分析する期間</block>
   <block id="ed38b15c549d9cd41a86a3787f5fee23" category="list-text">*違反指標（％）*：違反を判断するためのパーセンテージしきい値</block>
-  <block id="5e1e1daa7e6d115a54180e147895003e" category="list-text">*連続違反期間（時間）*：措置が講じられるまでの連続違反の期間</block>
   <block id="91455d18a42b79b1a34df0d97bfbaffd" category="list-text">*最小レイテンシ（ms）*：スループット増加を決定するために使用されるレイテンシのしきい値</block>
   <block id="0a2daf37cc4cac8c9a3da95290e9a399" category="list-text">*最大スループット（SKU）*：許可される最大スループット SKU</block>
   <block id="6b482ace535080820ca5dea3bb557cb6" category="paragraph">選択されたファイルシステムは、直ちに新しいスループットモードに切り替わります。</block>
-  <block id="be76a5f710c434b57d7bb9106913548d" category="section-title">一括編集管理パラメータ</block>
-  <block id="399db4c92643ea16a6e10865b34f5b4f" category="paragraph">複数のファイルシステムの設定を一度に変更することで、クラスター全体に同じ設定を適用できます。</block>
-  <block id="cc009bfb1b3b40af528a54a164d8b953" category="list-text">*Overview* タブから、表内で編集したいファイルシステムを選択します。</block>
-  <block id="8cd7391e66f29fd726ffdf9a59961f54" category="admonition">個々のファイルシステムを選択することも、ヘッダーのチェックボックスを使用して表示されているすべてのファイルシステムを選択することもできます。</block>
-  <block id="93343e8a72e86eb0283fa9c6fb77b48b" category="list-text">表の上にある「SSD容量管理の変更」または「スループット管理の変更」を選択します。</block>
-  <block id="b97c770bb654f2ef0b93eb759a99c159" category="list-text">お好みのモードを選択してください。</block>
-  <block id="a707a072d0b2b11d2c3e5a2160f9cd48" category="list-text">編集ダイアログで、必要に応じてパラメータを調整してください。</block>
-  <block id="43c2e4748a7a87eb44a6cb86329b0750" category="paragraph">各パラメータフィールドには、その目的と有効範囲を説明するツールチップが含まれています。このダイアログには、選択内容に基づいた現在の値またはデフォルト値が表示されます。</block>
-  <block id="3f254e874f94d9cc6daffdbea2c76012" category="list-text">*適用*を選択すると、選択したすべてのファイルシステムに変更が適用されます。</block>
-  <block id="80c68bda2149e685b2c9d4a63c1abe0b" category="paragraph">選択されたすべてのファイルシステムのパラメータが更新されます。推奨モードまたは自動化モードのファイルシステムは、新しいパラメータを分析および意思決定に即座に使用します。</block>
   <block id="84a7874f129070a914f70dd3d70a6716" category="section-title">容量の傾向と意思決定ポイントを分析する</block>
   <block id="65bd457971cf8d44b2a0e065d040b668" category="paragraph">SSD使用状況グラフを使用して、ストレージ使用量が時間とともにどのように変化するかを確認し、パターンを見つけてください。</block>
   <block id="4dbca2bab9fb0222adee0d079e0d2127" category="paragraph">グラフ上の決定点は、次の時点を示します：</block>
   <block id="232af3ec8ca37d39f0b49ddb6c81830a" category="list-text">*推奨決定ポイント*：容量推奨アルゴリズムにより、追加のSSD容量が必要であることが判明しました。</block>
   <block id="adcae559988943cef6bf4b9ce78904b2" category="list-text">*自動化の決定ポイント*：自動化システムはSSD容量を増やそうとしました。これらのポイントは、その操作が成功したか失敗したかを示しています。</block>
-  <block id="322cceacdd52c951c88a1d93df7f0dd8" category="list-text">「概要」タブから、表のファイルシステム名を選択します。</block>
-  <block id="c7967065af6ac7703ee14f60f2812ccb" category="list-text">SSD使用状況グラフで過去の容量推移を確認してください。</block>
-  <block id="6f6089a81e1a8064861733b4969654d6" category="list-text">異なる期間を選択して、さまざまな期間における容量の動作を確認できます。</block>
-  <block id="8d33ce28efafbfe7600930c556bcfd55" category="list-text">グラフ上の決定ポイントにカーソルを合わせると、特定の時点における推奨事項や自動化アクションの詳細が表示されます。</block>
-  <block id="4d43a6d1e695bf0a99e5bc33d3ca3fda" category="list-text">グラフから得られる知見を活用して、次のことを行います。</block>
-  <block id="8aa0b0a22cf225f503177c8f1de7df3c" category="list-text">容量調整がどのくらいの頻度で必要になるかを理解する</block>
-  <block id="dc036d0aefd6c43f7e0e90f879128e16" category="list-text">自動化モードと推奨モードのどちらがワークロードパターンに適しているかを評価してください。</block>
-  <block id="274e06045627d8934cd9bb52e8c64f53" category="list-text">繰り返し発生する容量制約を特定する</block>
-  <block id="38e979158d55ae25a36aba4d97b0a8b4" category="list-text">成長傾向に基づいて将来の容量ニーズを計画する</block>
-  <block id="2814ccd9bf1ef1faffa5931e29ee7f74" category="list-text">自動化の失敗に関するトラブルシューティング</block>
-  <block id="aaf7b326d4aad005d3ebd721670545d4" category="paragraph">一般的な障害原因には次のものがあります：AWSの権限が不十分、ファイルシステムの更新がすでに進行中、過去6時間以内にストレージが変更された、SSDの最大容量に達した、またはCloudWatchの指標が利用できない。</block>
   <block id="e307894bdae8efc4f4fdacf666cf2573" category="section-title">クラスタテーブルを使用する</block>
   <block id="27e86a81d2f78cd7f4181479163bbbeb" category="paragraph">クラスターテーブルには、パフォーマンスおよび使用状況のメトリクスとともに、各 FSx for ONTAP ファイルシステムの詳細ビューが表示されます。</block>
   <block id="88dc1144edaa697995919551780b6e93" category="list-text">* Overview * タブから、クラスタテーブルを確認します。</block>
@@ -2435,7 +2374,6 @@
   <block id="7780e54da604364e93f91b1ab2a73f3e" category="list-text">**意思決定ポイントを確認する**：容量グラフ上の意思決定ポイントを確認して、システムがどのように意思決定を行っているかを把握し、設定がニーズに合っていることを確認してください。</block>
   <block id="88a7c4b8bd498e193a117097af5581b1" category="list-text">**一括編集**: 多数のファイルシステムを管理する場合は、一括編集を使用して設定の一貫性を維持してください。</block>
   <block id="526ad94042b150fca39290f6bef86a67" category="inline-link-macro">概要ダッシュボードについて</block>
-  <block id="91b5f8f96066d41fb5057458a69d5f81" category="list-text"><block ref="91b5f8f96066d41fb5057458a69d5f81" category="inline-link-macro-rx"></block></block>
   <block id="1fa1c236c7c4e85b71969a980c4956d3" category="summary">プロジェクトダッシュボードを使用して、ストレージの使用状況を監視し、プロジェクトまたはチームごとにデータをフィルタリングし、ボリュームのパフォーマンスを分析してリソース割り当てを最適化します。</block>
   <block id="dcc687e70127f35861ac1fa0778b7f6a" category="doc">Workload Factory for EDA のプロジェクトダッシュボードを使用します</block>
   <block id="0828a499bedded78f0e58a1aaac8fc54" category="paragraph">プロジェクトダッシュボードを使用して、FSx for ONTAP ファイルシステムとボリューム全体のストレージ使用状況を追跡します。プロジェクト、チーム、またはアプリケーションでデータを絞り込みます。全体的なパフォーマンスとボリュームごとのパフォーマンスの両方を確認することで、キャパシティ計画の策定やリソースの効率的な活用に役立てることができます。</block>
@@ -2940,38 +2878,16 @@
   <block id="3b40a61896ac7bb071b70913553072f1" category="inline-link-macro">FSx for ONTAP ファイルシステムのブロックストレージを管理する</block>
   <block id="a0e2ae9ee4d99470514827717a4caba4" category="paragraph"><block ref="a0e2ae9ee4d99470514827717a4caba4" category="inline-link-macro-rx"></block></block>
   <block id="502e4764bf709decaf10769de6bc6d35" category="summary">自然言語を使用してカスタムアーキテクチャルールを作成し、FSx for ONTAP の組織標準を適用します。</block>
-  <block id="4049afdb7ff78ea7ac28f61f9f797fd8" category="doc">NetApp Workload Factoryでカスタムルールを作成する</block>
-  <block id="5043959279a8a7130fead37731434f76" category="paragraph">平易な言葉で記述することで、カスタムルールを作成できます。NetApp Workload FactoryのAIルールビルダーは、リクエストをFSx for ONTAPリソースをチェックする検証済みのルールに変換します。</block>
-  <block id="4a43e7c1c8d139e6a6dad318b5a9cefb" category="paragraph">ルール作成プロセスでは、ルールの定義、AIによる解釈の確認、定期的な評価のスケジュール設定前の結果チェックといった手順を順を追って説明します。すべての手順においてお客様が主導権を持ちます。システムはお客様のプロンプトに基づいてルールを提案しますが、お客様が確認するまで処理は進みません。</block>
-  <block id="350427d39e7ed0f683e8f1c404ec8d1d" category="admonition">アカウント管理者がAI機能を無効にしている場合、カスタムルールを作成することはできません。管理者に連絡するか、<block ref="ba4e701e567767978f2b4fc32c409de8" category="inline-link-macro-rx"></block>。</block>
-  <block id="1c3732fbe04e93a2e86e149b248e9fd0" category="paragraph">カスタムルールには以下の制限が適用されます：</block>
-  <block id="f49daa2f924ab7cc9649449db3950201" category="list-text">自動修正機能は利用できません。提供されたガイダンスに従って、準拠していないリソースをご自身で修正してください。</block>
-  <block id="7c7854f0cd9e8cf85ade395e732f419d" category="list-text">各ルールは、1種類のリソースのみをチェックできます。複数のリソースタイプをチェックするには、それぞれ別のルールを作成してください。</block>
-  <block id="a2dac8d044c9463b44de62bfef46ffc3" category="list-text">過剰なスキャンを避けるため、最短の評価間隔は1時間です。</block>
-  <block id="fa79d87dc9bd4ce86b2fe88eb0b009f8" category="list-text">ルールは読み取り専用であり、環境に変更を加えることはできません。</block>
   <block id="2090e30be5c37fb6b5aa40aa26a83dea" category="section-title">カスタムルールの例</block>
-  <block id="d272586227e521ec436cb6d107bc72ba" category="paragraph">以下の例は、一般的なカスタムルールを示しています。</block>
-  <block id="ee7f53b205e43e7a5017510113ca16f8" category="list-text">*生産量保護*</block>
   <block id="31ba253c12166670e96f9fc69476b594" category="list-text">「タグ『Prod』が付いているすべてのボリュームには、スナップショットポリシーがインストールされている必要があります」</block>
   <block id="6136cd3669246561542587bb4d5eac4c" category="paragraph">このルールは、会社の要件に従って本番環境のボリュームを保護するためのスナップショットを自動的に作成します。</block>
-  <block id="d806e9e618419f7699287ac2bf68844c" category="list-text">*アーカイブボリュームの階層化*</block>
   <block id="654b13cdd2897fd4260df3602f80ebbf" category="list-text">「『Archive』タグが付いたすべてのボリュームには、階層化ポリシーを『All』に設定する必要があります」</block>
   <block id="3756e2c2d7cd023d9845fbb763b174a9" category="paragraph">このルールは、アーカイブされたデータをより安価なストレージに自動的に移動することで、コストを削減します。</block>
-  <block id="e3ea153fbcf2ab9a530ac273d13d87b1" category="list-text">*ファイルシステム命名規則*</block>
   <block id="269acf14c942e18c7f92dabf12bccaf5" category="list-text">「すべてのファイルシステムは、命名規則 'fsx-{environment}-{application}' に従う必要があります」</block>
   <block id="bf0fa31d0a55270b5b0783d82f5a26b2" category="paragraph">このルールは、ファイルシステムが組織の命名規則に準拠していることを検証し、管理とコスト配分を容易にします。</block>
   <block id="aa5bf59269969e22f1e91f0116790d69" category="paragraph">カスタムルールを作成して実行する前に、以下のものを用意してください：</block>
-  <block id="45be4c4082a75641f5cf09a1154f1a35" category="list-text">AWS認証情報を読み取り専用アクセスで設定しました。<block ref="0c8d805d1564d3a241abc10cd617ddd7" category="inline-link-macro-rx"></block>。</block>
-  <block id="b03a5834e0c7d0443ad6e81c5dbc0c80" category="inline-link-macro">Workload FactoryにONTAP認証情報を追加する</block>
-  <block id="b32bd70485f5cd4564a8bb64cad83248" category="list-text">閲覧権限を持つ ONTAP 認証情報があります。<block ref="8c5843ad463a4380d4aee234d9c63357" category="inline-link-macro-rx"></block>。</block>
-  <block id="26857cd503604f9b1af321699f33fd88" category="inline-link-macro">リンクを作成して関連付ける</block>
-  <block id="70926b3739e479d17c8fa7038918d40e" category="inline-link-macro">Consoleエージェントをデプロイする</block>
-  <block id="c451917ff78847232a6e9ad1a2e5ce75" category="list-text">クラウド ストレージ システムへの接続が、リンクまたはConsoleエージェントで構成されていること。<block ref="f19f5082e51b44f6df48e1dc4b4843cb" category="inline-link-macro-rx"></block> または <block ref="c0b60e44058ef23cb425372e66b4c6eb" category="inline-link-macro-rx"></block>。</block>
   <block id="fadf874162a190084750a51220f07180" category="list-text">カスタムルールの作成には、NetApp の Bedrock AI サービスが使用されることを理解しています。</block>
   <block id="536d32f8526dd0faea40f78af4cad034" category="section-title">ルールを作成します。</block>
-  <block id="8359d1f482d547a2e4629ea9efc70b35" category="paragraph">ルールビルダーを使用して、平易な言葉で独自のベストプラクティスルールを作成してください。これらのルールは、すべてのリソースに対してチェックされます。</block>
-  <block id="5c831e6d1d52edfcb0f3153ac4d08fc8" category="list-text">メニュー <block ref="d0893c56792da060977c8f5dd5abb05a" category="inline-image-macro-rx" type="image"></block> から、*ワークロード* &gt; *Well-architected* を選択します。</block>
-  <block id="9e0430dcbcdaff60b125b83d5a4885ff" category="list-text">「Well-architected」メニューから「Rule builder」を選択します。</block>
   <block id="3f87c61ee7c070ec896e14d55b132e25" category="paragraph">ルールビルダーを開くと、カスタムルールを作成するのに役立つサンプルプロンプトが表示されます。「プロンプトをコピー」を選択すると、サンプルプロンプトがAIダイアログのテキストボックスにコピーされます。</block>
   <block id="ab99baf0da39867076eea6e470865275" category="list-text">「ルールを作成」フィールドに、ルールの説明を自然言語で入力してください。以下の点について、できるだけ具体的に説明してください。</block>
   <block id="d8eefaf38d3f8455541df01bc5d6831b" category="list-text">チェックしているリソースの種類（ファイルシステム、ボリューム、またはキャッシュ）。</block>
@@ -2983,47 +2899,17 @@
   <block id="15fc6fdd1dd9d66889237c7e8a75d290" category="paragraph">AIがあなたの入力内容を分析し、ルール定義を生成します。</block>
   <block id="1c88936123899b4423b51efeb098f008" category="section-title">AIの解釈を確認する</block>
   <block id="28ea3f4811ef4cb7fc2b7f08d6fce5a7" category="paragraph">ルールビルダーには以下が表示されます：</block>
-  <block id="ac95e11bdbe6b7951bc4176d753eecdb" category="list-text">*解析結果*：AIが平易な言葉であなたの指示をどのように理解したか。</block>
-  <block id="7754266bb34a8d80acb7e15270b99ec3" category="list-text">*ルール定義*：リソースタイプ、条件ロジック、評価基準を含む構造化されたルール。</block>
-  <block id="7c2fe3e0d58f228cda5f45d633432f17" category="list-text">*理由*：AIがあなたのプロンプトをこのように解釈した理由。</block>
-  <block id="76aee06db0fa09e15fccb38736a4bcf7" category="list-text">*信頼度指標*：システムが解釈をどの程度確信しているかを示します。</block>
   <block id="f89784f298e9f6255c6acd2f32b4051a" category="list-text">解釈内容を確認し、意図した内容と一致しているかどうか確認してください。</block>
-  <block id="c0a47630db46adfc611696cbc6259777" category="paragraph">ルール定義が正しいことを確認してください。解釈が不明確または間違っている場合、システムは次のような質問をする場合があります。* どのリソースをチェックする必要がありますか？* コンプライアンスを定義する値または制限は何ですか？* このルールはどのくらいの頻度で実行すべきですか？</block>
   <block id="f7dd96479a94850934674d003fe54f52" category="list-text">すべての質問に回答したら、*Continue* を選択してルールを作成してください。</block>
   <block id="66178252f08edeeeeda7bfc5ebf5227b" category="section-title">ルールをテストする</block>
-  <block id="0362b2cfbfe0db96dc282024dbd64841" category="paragraph">ルールをスケジュールする前に、一度テストを実行して、どのリソースに影響するかを確認してください。</block>
   <block id="e0924f9cecf28912d6b59208f0ee9242" category="list-text">「ルールの検証」を選択します。</block>
   <block id="87d68b4e906936ea67c73d25fddbb199" category="paragraph">システムは、対象となるすべてのリソースを、お客様のルールロジックに基づいて評価します。</block>
   <block id="6ad0887ee719e958ea66bc1d5ca7ed60" category="list-text">検証結果を確認します。</block>
-  <block id="0c1a6881568187ba2218c2798723b963" category="list-text">*評価済みリソース*：チェックされたリソースの総数</block>
-  <block id="4b5e8fb3a43e71540bec48dd1195e60d" category="list-text">*準拠*：ルール基準を満たすリソース</block>
-  <block id="149dc40e624cd47605b5908752da1597" category="list-text">*非準拠*：基準を満たしていないリソース</block>
-  <block id="222d82b8b5728640234e4566d39a549c" category="list-text">*評価失敗*：評価できなかったリソース（エラーの詳細を含む）</block>
-  <block id="6844f9bfd3027da2003f968152f2a47a" category="list-text">一部のリソースの評価に失敗した場合は、エラーの原因を確認してください。</block>
-  <block id="277990b13713bd5d1349cb0637866450" category="list-text">*AWS認証情報エラー*：特定のリソースに対して読み取り専用権限が不十分な場合があります</block>
-  <block id="1bb9a202a6c7284b2727618b6b42d1bf" category="list-text">*接続エラー*：リンクまたはエージェントが特定のファイルシステム用に構成されていない可能性があります</block>
-  <block id="6601c2de36f9d2c2a63a21c9170e4bae" category="list-text">*ONTAP権限エラー*：閲覧ユーザーには特定のリソースへのアクセス権がない可能性があります</block>
   <block id="24a910eeb4468fa91fa54136e064eb5d" category="section-title">ルールを保存またはスケジュールする</block>
-  <block id="8c7715e49e638258c4536fec9aff1f6e" category="paragraph">ルールをテストした後、下書きとして保存するか、定期的に実行するように設定できます。</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">次のいずれかを実行します。</block>
-  <block id="8c080127194fcaf624649c3bab095baa" category="list-text">定期的な評価をスケジュールするには、評価頻度（最小1時間、デフォルト24時間）を設定し、*スケジュール*を選択します。このルールは有効になっており、定義されたスケジュールに従って実行されます。</block>
-  <block id="988a89425a3c56162fa9fed77217603a" category="list-text">スケジュールを設定せずに保存するには、「下書きとして保存」を選択してください。ルールは保存されますが、スケジュールされるまでは評価されません。</block>
-  <block id="f3448dd91675f24e9473969b2f303b47" category="list-text">ルールを破棄するには、「破棄」を選択してルールの作成をキャンセルし、最初からやり直してください。</block>
-  <block id="8e89c0ba0d3b83aea36ecc1be4cfe4fb" category="paragraph">お客様のカスタムルールが作成され、ルールカタログに登録されました。スケジュールを設定すると、指定された頻度でFSx for ONTAPリソースをチェックします。</block>
   <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">トラブルシューティング</block>
-  <block id="ad7ea03a306fd66841c171a6885f7b14" category="list-text">利用可能なファイルシステムがありません</block>
-  <block id="9f6cf15e71e56dca004ae4af5511fdc6" category="list-text">AWS 認証情報を設定し、環境に少なくとも 1 つの FSx for ONTAP ファイルシステムがあることを確認してください。ルールビルダーは、ルールを適用するためにファイルシステムを必要とします。</block>
-  <block id="15a9422f3948ed951664141901f605d9" category="list-text">信頼性の低い解釈</block>
-  <block id="d901db1e2096f8ef858f5f7e7e04f829" category="list-text">さらなる情報が必要です。質問に回答するか、リソースの種類、制限、条件について明確な詳細を盛り込んでプロンプトを書き直してください。</block>
-  <block id="ce332e562b5422b101c4ea54a309f0c9" category="list-text">部分的な検証失敗</block>
-  <block id="a4bffcd84e8416b02d243a51aa82cb84" category="list-text">どのリソースが失敗したか、そしてその理由を確認してください。よくある原因としては、リンクやエージェントの設定が欠落している、あるいは権限が不足しているなどが挙げられます。問題を修正してから、再度検証してください。</block>
-  <block id="7720c57b7119d10e920558f513246c98" category="list-text">曖昧なプロンプト</block>
-  <block id="57aa8a34f1c34817409a7bb0fcc62dde" category="list-text">確認したい内容をもっと具体的に教えてください。リソースの種類、条件、およびしきい値を含めてください。参考として、プロンプトの例文をご覧ください。</block>
-  <block id="319de2ebfe72521f2551d5fa11e01fd5" category="list-text">ルールは複数のリソースタイプを対象としています</block>
-  <block id="9614a11d3defd26388181526016cb85d" category="list-text">リソースの種類ごとに個別のルールを作成してください。ルールごとにサポートされるリソースタイプは1種類のみです。</block>
   <block id="3f710cadb0123c693533da68aaf5b596" category="section-title">次のステップ</block>
   <block id="79d32aa7b3e52f3c6db178577378b427" category="inline-link-macro">カスタムルールの管理</block>
-  <block id="f571cd95e32f7c421382198bc0dd0eae" category="paragraph"><block ref="f571cd95e32f7c421382198bc0dd0eae" category="inline-link-macro-rx"></block></block>
   <block id="7335bfe9e44aaa30f676443b169c4028" category="summary">NetApp cyber vaultと、ランサムウェアやサイバー脅威からデータを保護するためのcyber vaultアーキテクチャを実装する方法について説明します。</block>
   <block id="08d70d11ddeec80d88a5f51591578656" category="doc">サイバーボールトでFSx for ONTAPのデータを保護する</block>
   <block id="c20c451e413ebde26a765cbbc0c15afc" category="paragraph">cyber vaultボリュームとは、データのバックアップコピーを保存するために使用される、隔離された安全なストレージの場所であり、ランサムウェア攻撃やその他のサイバー脅威からデータを保護します。vaultの作成の一環として、cyber vaultボリュームを作成し、すべてのクライアントプロトコルを無効にし、ソースボリュームとcyber vaultボリューム間のレプリケーション関係を設定して、cyber vaultボリューム上に不変のスナップショットを作成します。</block>
@@ -3596,44 +3482,13 @@
   <block id="90bf65e5861f1213fc5134e7f7138cc3" category="paragraph">Workload Factoryは構成分析を再開し、毎日新しい分析を実行します。</block>
   <block id="05becc6908f11b950a10c1285ad8e610" category="summary">NetApp のベストプラクティスとともに組織の標準を適用するための独自のアーキテクチャルールを定義および管理する方法について説明します。</block>
   <block id="ce6ef2ffcadf69c1dc27dcb9da2d801d" category="doc">NetApp Console のカスタムルールについて</block>
-  <block id="b01cf57846bbc28ff99c21c4bc5bf95e" category="paragraph">カスタムルールを使用すると、独自のアーキテクチャ標準と NetApp のベストプラクティスを、Well-architected ダッシュボードで設定、チェック、および適用できます。</block>
-  <block id="1bf27748c4595ac68f24c9ca81ac41bf" category="paragraph">ルールビルダーを使用すると、平易な言葉で独自のベストプラクティスルールを作成できます。これらのルールは、すべてのリソースに対してチェックされます。</block>
-  <block id="a14942c110e79e05bc4f2c080b767a9b" category="paragraph">カスタムルールは、組織の基準、リスク制限、運用要件などを遵守させるのに役立ちます。これらは、一般的なベンダールールでは十分にカバーできない場合があります。</block>
-  <block id="002c98034b4e47541ee4b33aac974174" category="admonition">アカウント管理者がAI機能を無効にしている場合、ルールビルダーは利用できず、カスタムルールを作成することはできません。<block ref="16a6e53f632272dd159a18488d3ece68" category="inline-link-macro-rx"></block>。</block>
   <block id="2d5a2d8915799663f0b12f296909b0d7" category="section-title">カスタムルールの仕組み</block>
-  <block id="d269a3644b7db5fd4dd7893dafcb7c46" category="paragraph">カスタムルールは、AIを活用したプロセスによって、平易な言葉で書かれた指示を明確で構造化されたルールに変換します。AIは翻訳者および校正者として機能します。ルールを提案し、リクエストをどのように理解したかを説明し、ルールを保存またはスケジュールする前に承認を求めます。</block>
-  <block id="2798be4150461330610447e77c4b94bc" category="paragraph">このプロセスにより、以下のことが保証されます：</block>
-  <block id="878df2e7c1f458ab6c7a2aa10a79a91d" category="list-text">ルールロジックは明確に定義され、エラーチェックも実施されています。</block>
-  <block id="2de539a5ac80425a29aa3efc4546d6bd" category="list-text">自由形式のコードは実行されません</block>
-  <block id="a279bdea3d93ab7f5ebfed278530b951" category="list-text">ルールを承認する前に、何が評価されるのかを正確に確認できます</block>
-  <block id="da7a7207ece80c733dd995304be2e71b" category="section-title">ルール定義モデル</block>
-  <block id="bac8c4aaf2611263b9e58729fcd77b06" category="paragraph">各カスタムルールは、以下のコンポーネントで構成されます。</block>
-  <block id="a4257b70dd090b12a16890a8df21a097" category="list-text">ルール名</block>
-  <block id="c183586d821a9b142dd656b18e6abd05" category="list-text">ルールにユーザーが定義する名前。</block>
-  <block id="33d8c05440f61966e844b1f1f9bdfdbc" category="list-text">この規則が組織にとって重要である理由。</block>
-  <block id="34b13a905e7f65d5c27af25f75b92e1a" category="list-text">評価対象のFSxリソース（ファイルシステム、ボリューム、またはキャッシュ）。現在、ルールごとにリソースの種類は1つだけです。</block>
-  <block id="ffaac1794c6af94dc7e1b21a4c194523" category="list-text">スケジューラ</block>
-  <block id="7689948dd9ffc86e8e4279d74f40440a" category="list-text">ルールの評価頻度（最小1時間、デフォルト24時間）。</block>
-  <block id="eef94a037f518dee839a80817e6c370d" category="list-text">条件ロジック</block>
-  <block id="3ec042014c07c06e08f1132a2736a67b" category="list-text">確認すべき具体的な基準。</block>
-  <block id="69971bc4f2fcec5885c890771737ab96" category="list-text">評価範囲</block>
-  <block id="f9352c661007f5c20648b8667e3e2c2e" category="list-text">どのリソースが評価されるか（対象となるすべてのリソース）。</block>
-  <block id="383f1fcec1ec1cc242da70cbe9e75353" category="list-text">修復ロジック</block>
-  <block id="fa89a084a4db5e99f8289cf816f86093" category="list-text">非準拠リソースへの対処方法に関する手動ガイダンス。</block>
   <block id="3414a9edc41238183f8bcc3192e49adf" category="section-title">ルールライフサイクル</block>
   <block id="990ef24c1b7e8a2bf1d9ad948d75e88c" category="paragraph">カスタムルールは、以下の状態を経て進行します。</block>
   <block id="f03ab16cd58372c77ba45a3d9a5a1cb9" category="list-text">ドラフト</block>
-  <block id="7edfa45546f16ea439072c85ed022ded" category="list-text">ルールが作成されています。評価は行われません。</block>
-  <block id="a42abfa6ff4f9bd0c4d682a01cec4455" category="list-text">ドライラン</block>
-  <block id="df76323d34c18ca92f80a38fd9da8d33" category="list-text">影響を受けるリソースを事前に把握するための、一度限りの評価。スケジュール設定前の検証に使用されます。</block>
-  <block id="9c039c6e29eb59991bbe3702d2de1aed" category="list-text">スケジュール済み（有効）</block>
-  <block id="12401e69cfee8012efd57dfa07ccda49" category="list-text">ルールは有効であり、定義されたスケジュールに従って実行されます。</block>
   <block id="b9f5c797ebbf55adccdd8539a65a0241" category="list-text">Disabled</block>
-  <block id="9bfd2521cfb729dd925cf45079242073" category="list-text">ルールは一時停止されていますが、削除されていません。再度有効化できます。</block>
   <block id="5fe6005bf6e415c950c011fb65f12b8f" category="list-text">削除済み</block>
-  <block id="82ec5f7cc11035152c40e48c55c05b0d" category="list-text">ルールは永久に削除されました。</block>
   <block id="cff2e3f5566a6d8510f1c58ca5513eb3" category="inline-link-macro">カスタムルールを作成する</block>
-  <block id="385442535e80145b437f6d2ceb94114a" category="paragraph"><block ref="385442535e80145b437f6d2ceb94114a" category="inline-link-macro-rx"></block></block>
   <block id="a6ea8698bb0a2a5be6c2039333230f0d" category="summary">Amazon FSx for NetApp ONTAPは、お客様がWorkload Factory内のワークロードのストレージバックエンドとしてファイルシステムを起動および実行できるようにする、フルマネージドサービスです。</block>
   <block id="cf48e68a514aaa28472879638d1a7d1f" category="doc">Amazon FSx for NetApp ONTAP（NetApp Workload Factory）について</block>
   <block id="e09c57ba3be0669d8a1f0b37718a2e2f" category="paragraph">Amazon FSx for NetApp ONTAPは、高度なデータ管理機能と高い拡張性を備えたパフォーマンスを提供する、フルマネージドのクラウドベース データストレージサービスです。FSx for ONTAPを使用すると、NetApp Workload Factory内のすべてのワークロードのストレージバックエンドとしてファイルシステムを作成および管理できます。</block>
@@ -3807,9 +3662,6 @@
   <block id="dd3ba3038bdde3ca3d4a9a2397052b60" category="list-text">SMB/CIFS共有の管理ページで、SMB/CIFS共有のアクションメニューを選択し、*削除*を選択します。</block>
   <block id="dc782d3e46ef3bd4b9ae294af16366b0" category="paragraph">SMB/CIFS共有を削除すると、その共有は利用できなくなり、マウントしようとするユーザーはアクセスできなくなります。</block>
   <block id="73d6e57b628ed920f4ce69e52d8df9d7" category="list-text">SMB/CIFS共有の削除ダイアログで、*削除*を選択して削除を確定します。</block>
-  <block id="2f7453885ba13ef684e6cd780fb74164" category="summary">ルールカタログから、カスタムアーキテクチャルールを表示、有効化、無効化、および削除します。</block>
-  <block id="8514e73d9c66f38925285d9bebb2a243" category="doc">NetApp Workload Factoryのカスタムルールを管理する</block>
-  <block id="0a7f0abf34857702447ced5ee72899a5" category="paragraph">ルールカタログは、すべてのカスタムルールを管理できる場所です。各ルールの詳細を確認したり、結果をチェックしたり、ルールの有効/無効を切り替えたりできます。</block>
   <block id="d8bb2214730133a5475bf68bf933cdeb" category="section-title">ルールカタログを表示する</block>
   <block id="12dc6c12cd959eea202fab9d01a2ef04" category="paragraph">ルールカタログには、作成したすべてのルール、そのステータス、スケジュール、および最新の結果が表示されます。</block>
   <block id="e1cf2ece0db166d8b4c6b87f20794e11" category="inline-image-macro">ハンバーガーメニューアイコン</block>
@@ -3822,17 +3674,7 @@
   <block id="f4e2484ce7f636995f87d4460bb472cf" category="list-text">各実行の結果を確認するには、**「詳細を表示」**を選択してください。</block>
   <block id="13b595cf2341f5678ff3130cc1287485" category="paragraph">一部の項目でチェックが失敗した場合は、エラーメッセージを読んで理由を確認してください。よくある原因としては、接続の問題、権限の不足、またはリンクが設定されていないことなどが挙げられます。</block>
   <block id="12a0a2265c24db72f6aaae801b9ef08e" category="section-title">カスタムルールを編集する</block>
-  <block id="116b3452f6f173fec30f1c3fdc6abf00" category="paragraph">ルールのロジック、スケジュール、その他の設定はいつでも変更できます。ルールを編集すると、ルールビルダーが開き、そのルールの現在の設定が表示されます。</block>
   <block id="c581903f7e0dde27bf4a83cc84f27b43" category="list-text">ルール一覧で、編集したいルールをクリックします。</block>
-  <block id="4a1938d0e423380a1497b6177cf5dc1c" category="list-text">*編集*をクリックします。</block>
-  <block id="98e7c69fc0402a63a6188811c74d5241" category="paragraph">ルールがドラフトモードに切り替わり、ルールビルダーが開きます。</block>
-  <block id="33866fc7f5559365b0589d4a8bc41091" category="list-text">ルールプロンプトを編集するか、会話機能を使ってルールを改善してください。</block>
-  <block id="d9f6e2c38d2693ba00ab2675a59dd016" category="list-text">AIによる最新の解釈とルール定義を確認してください。</block>
-  <block id="7f377d9cf47a3f190040ea3efc10335f" category="paragraph">システムは、API呼び出しやロジックなど、現在のルールからの変更点を表示します。</block>
-  <block id="1e953a8680ae41072abb4bd1012ad3b4" category="list-text">変更内容に応じて、以下のいずれかの操作を行ってください：</block>
-  <block id="531b7098c8d3a0630df416551c1eabcf" category="list-text">軽微な変更を行った場合は、*保存*をクリックしてルールを更新してください。</block>
-  <block id="30a70c42d21ecc5c129ccf20f303ec75" category="list-text">大幅な変更を行った場合は、*ルールの検証*をクリックして変更をテストし、*スケジュール*をクリックしてルールを保存してスケジュールするか、*下書きとして保存*をクリックしてスケジュールせずに保存してください。</block>
-  <block id="c4201ee0fd07b804ee782357c70d2e27" category="list-text">変更を破棄するには、*以前のバージョンに戻す*をクリックします。ルールは元の定義に戻り、編集モードを終了します。</block>
   <block id="c5ef40517475cde4aa83a5451658e49f" category="summary">ファイルシステムのFSx for ONTAPファイルシステムタグは、いつでも追加、更新、または削除できます。</block>
   <block id="3dd4ca2c61c588825f3e69d7851510b5" category="doc">NetApp Workload FactoryでFSx for ONTAPファイル システム設定を管理する</block>
   <block id="f120bfb32fdc034593c753c46a030312" category="section-title">FSx for ONTAP ファイルシステムタグを管理する</block>
@@ -5998,20 +5840,10 @@
   <block id="4783fc8cfe1d67f67a21a8d696efba01" category="list-text"><block ref="4783fc8cfe1d67f67a21a8d696efba01" category="inline-link-rx"></block></block>
   <block id="691c4c4e7aae91b9ba1765ff8bbe5163" category="inline-link">NetApp Console Copy and Syncに関するドキュメント</block>
   <block id="1b49be3f67267d403496193d78233d91" category="list-text"><block ref="1b49be3f67267d403496193d78233d91" category="inline-link-rx"></block></block>
-  <block id="7c9227c0b3486490a4814fe5ca042183" category="summary">Google Cloud を設定してからシステムを作成し、Google Cloud NetApp Volumes の使用を開始します。</block>
   <block id="b0aa4fa8dc6511816bb58aa5617d1ee5" category="doc">Google Cloud NetApp Volumes のクイックスタート</block>
-  <block id="a213ab2be24278e031afba73382d0cf1" category="paragraph">Google Cloud を設定してからシステムを作成して、Google Cloud NetApp Volumes の使用を開始します。</block>
-  <block id="15adadcc8bf8dcb5404e0fe11af44772" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="313399230f51e71d885069f73138c41a" category="inline-link-macro-rx"></block></block>
-  <block id="91b07957ce4b7cb970c3aaa153fddf0c" category="paragraph">Googleでサービスアカウントを作成してください。</block>
   <block id="c14bbe70b91bf5d6b061027d2a7d5c35" category="inline-link-macro">役割を割り当てる</block>
-  <block id="a8028c06a9224ed3ab0f9316a3fb7bc7" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="e1bc4ca4196f069d6cfddda77094a4ac" category="inline-link-macro-rx"></block></block>
-  <block id="e1f998e938cc77602c685ea4489861e5" category="paragraph">Google Cloud NetApp Volumes の利用を開始するには、適切な権限と、Google Cloud NetApp Volumes 管理者または Google Cloud NetApp 閲覧者のロールが割り当てられている必要があります。</block>
-  <block id="1082b67e395cc89d61a139c7ce68374f" category="inline-image-macro">Google Cloud NetApp Volumes ロールのスクリーンショット。</block>
-  <block id="c1718ab208b6eab475574a990a36a0b8" category="paragraph"><block ref="c1718ab208b6eab475574a990a36a0b8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="aaea90d2749395beb16f5340fe5cc964" category="paragraph">NetApp Consoleから、メンバーに適切なロールを割り当てます。</block>
   <block id="770e6e1d37ec8e564116ac215a622e66" category="inline-link-macro">システムを追加する</block>
-  <block id="7e68ee8ea5a2fb297454d49c5a880f4b" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="3c542c966df5afd0ff43e76a8b69feae" category="inline-link-macro-rx"></block></block>
-  <block id="05c5a25d7a79c44ec89bb64914a00a71" category="paragraph">NetApp Consoleから、*システムの追加*、*Google Cloud Platform*、*Google Cloud NetApp Volumes*、*Discover*の順にクリックします。サービスアカウントとGoogle Cloudプロジェクトの詳細を指定します。</block>
   <block id="19e4ef4e4ed4623b5e0397bb68bc60c0" category="summary">NetApp Consoleには、Google Cloudサービスアカウントを通じたGoogle Cloud NetApp Volumes APIへのアクセスと適切な権限が必要です。</block>
   <block id="f0eefed66af669fe08a145bb3c570ac3" category="paragraph">NetApp Consoleを使用するには、Google Cloudサービスアカウントを通じて適切な権限を付与する必要があります。</block>
   <block id="bc50bdbbe9eebcafb5a89e4937b64930" category="paragraph">以下のタスクを完了して、NetApp ConsoleからGoogle Cloudプロジェクトにアクセスできるようにします。</block>
@@ -6814,4 +6646,269 @@
   <block id="9a90fd93ba397d5f48de07251acc1808" category="list-text">レイテンシーイベントの構成要素の内訳</block>
   <block id="1df7d27de080cb3c4560fbfcb9b950a2" category="inline-link-macro">NetApp Console 用 Workload Factory ドキュメント</block>
   <block id="865cb26d81d670b59ffd115deff750d1" category="paragraph"><block ref="865cb26d81d670b59ffd115deff750d1" category="inline-link-macro-rx"></block></block>
+  <block id="12e6f15d6e11849eda04741c878ee336" category="admonition">アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、ダッシュボードを作成できなくなります。管理者に連絡するか、<block ref="55cc8ba0b3cffc5a9d61e1691feb56d9" category="inline-link-macro-rx"></block>。</block>
+  <block id="2e73b76e7b232c5b1f77e0a5880d5ad5" category="list-text">メニュー <block ref="d1917ed039a7bd34b3d1373e5ffc5ece" category="inline-image-macro-rx" type="image"></block> を選択し、*ワークロードの概要* &gt; *カスタムダッシュボード* を選択します。</block>
+  <block id="3fc036b2c292290b8cd3e3dd22515be4" category="paragraph">お客様専用のダッシュボードが作成され、ダッシュボードカタログに追加されました。デフォルトでは、ダッシュボードは非公開で、お客様のみに表示されます。Workload Factoryアカウント内の他のユーザーと共有したい場合は、公開設定を「公開」に変更できます。<block ref="7f05a2d9425c37de5e57a44940ff0962" category="inline-link-macro-rx"></block>。</block>
+  <block id="e9f973e77c8ea51b19afbc2f814be860" category="paragraph">ダッシュボードの準備が整うと通知が届きます。作成できない場合は、再試行するためのリンクが記載された通知が届きます。<block ref="f2f02b956f17500aef24321ad05c7e30" category="inline-link-macro-rx"></block>。</block>
+  <block id="b2174789d5314bb12b464a8d03a18be6" category="list-text">ダッシュボードを編集して、指標、グラフ、期間など、表示内容を変更します</block>
+  <block id="126ca7c8fdb99a80b6510a42ef44ab9f" category="list-text"><block ref="126ca7c8fdb99a80b6510a42ef44ab9f" category="inline-link-macro-rx"></block></block>
+  <block id="571a6725cec558792e7b13f29f5e9d9c" category="list-text"><block ref="571a6725cec558792e7b13f29f5e9d9c" category="inline-link-macro-rx"></block></block>
+  <block id="2c8d2ace24ab724b2b9846dfbd1113fb" category="summary">Workload FactoryのAIエージェントがどのように環境を分析し、リスクやパフォーマンス改善策を特定し、お客様の承認を得てアクションを実行するのかを学びましょう。</block>
+  <block id="a4988f1624f7fc0b4eaabf35a45c6593" category="doc">NetApp Workload Factory のAIエージェントについて学ぶ</block>
+  <block id="44930f32325dbab8392ff7743e877c7e" category="paragraph">Workload Factory AIOpsはAIを活用して環境を分析し、改善策を提案します。承認すれば、設定した認証情報と権限を使用して操作を実行することもできます。</block>
+  <block id="d509ca4bf93c965b1cd7121948d79351" category="admonition">アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、エージェントを使用できなくなります。管理者に連絡するか、<block ref="55cc8ba0b3cffc5a9d61e1691feb56d9" category="inline-link-macro-rx"></block>。</block>
+  <block id="29e96b144158fa2cf3ed37b1696584a9" category="paragraph">Workload Factory アカウントに AWS 認証情報と、エージェントがアクセスするリソースに必要な IAM 権限が付与されていることを確認してください。読み取り/書き込みモードを有効にする場合は、それらの権限でサポートされている変更も許可する必要があります。</block>
+  <block id="3b8e3eff2b9d5a25eecc8e879fab9225" category="section-title">データ利用とプライバシー</block>
+  <block id="823764ac349552585c033c832c9a9119" category="paragraph">お客様のデータはAIモデルの学習には使用されません。エージェントは、お客様の認証情報を使用して標準のAWS APIを介してAWSリソースに安全にアクセスし、お客様の実際の環境に基づいて応答します。すべてのエージェント活動は、NetAppのプライバシーポリシーおよびAWSセキュリティ管理に従います。</block>
+  <block id="a9ad35f78cf699132ce97296208021d6" category="section-title">AIエージェントを使用する理由</block>
+  <block id="0dcc2bd50249549545f604062e32c8d1" category="paragraph">AIエージェントは、Workload Factoryでの作業効率向上を支援します。</block>
+  <block id="08b88087b00df48c7dcec290d2085d9d" category="list-text">お客様の環境に基づいた回答と推奨事項を入手できます。</block>
+  <block id="f41dc5b513f7a5678f949fafbb672e71" category="list-text">リスクと最適化の機会を特定します。</block>
+  <block id="45747fdf81b9f650b9ab26706866db24" category="list-text">問題のトラブルシューティングと承認されたアクションの実行を、単一のワークフローで行います。</block>
+  <block id="6fd44b1c4edd80ad7b595f1fcb4c7483" category="list-text">スケジュールされたチェックを実行し、チャット履歴で最新情報を受け取ることができます。</block>
+  <block id="54ba8fb885319acf274731794ecf9b35" category="list-text">FSx for ONTAP および Google Cloud NetApp Volumes 環境全体で作業します。</block>
+  <block id="4eeb2bca1dddd7a796d908c266d60075" category="section-title">AIエージェントにアクセスする</block>
+  <block id="e6478bab5c49062e219e1290c4442eed" category="list-text">「Ask Me」ホームページから</block>
+  <block id="b3c72178808d9fa6e9c876b76d5d1928" category="list-text">「Ask Me」ランディングページで、「Explore Agents」を選択してください。AIエージェントのサイドパネルが開き、エージェントの機能を紹介するウェルカムメッセージが表示されます。</block>
+  <block id="99b503a5e4373b0bc3054a025797d268" category="list-text">エージェントのリダイレクトリンクから</block>
+  <block id="54fd5f6787cd568e4b9880863150bb93" category="list-text">**「質問する」**機能やその他の機能を使用する際、より高度なサポートを受けるためにエージェントへリダイレクトされるリンクが表示される場合があります。</block>
+  <block id="98ff5af4adf0662fa0278d6e7332c116" category="section-title">AIエージェントの仕組み</block>
+  <block id="31fe269c620fcf2562efe2871e4398f8" category="section-title">エージェントが環境にアクセスする方法</block>
+  <block id="d6356702d2caa14ca196fe664fc1853e" category="inline-link-macro">エージェント設定</block>
+  <block id="9707c726221d376ab19585baff504e36" category="paragraph">エージェントは、現在の Workload Factory のスコープに含まれており、<block ref="282e73cd725615cc6b76a3c0f60eeeeb" category="inline-link-macro-rx"></block>で選択された認証情報によってサポートされている場合にのみリソースにアクセスできます。エージェントは、両方の制御が適用される場所でのみ動作できます。アクセスできるリソースは、AWS 認証情報に割り当てられた権限によっても異なります。デフォルトではすべての認証情報が選択されていますが、設定済みの認証情報の一部のみを選択することも可能です。</block>
+  <block id="f19cfe1072c3d3c974b0cdafbcdde1ef" category="paragraph">現在のスコープには以下が含まれます：</block>
+  <block id="676cd33769e7c44db0294ca1bdc4a818" category="list-text">*AWSアカウント*：エージェントがアクセスできるAWSアカウント。</block>
+  <block id="8f7fd41f1486852019ec1e81297e4749" category="list-text">*認証情報*：エージェントが使用できる認証情報。</block>
+  <block id="db9be091d62e76416638fd7987fac0d3" category="list-text">*リージョン*：エージェントがアクセスできる AWS リージョン。</block>
+  <block id="9ea7586a1a950d81f272e8403a8f6cbe" category="paragraph">NetApp Workload Factoryのフィルタは、表示するAWSアカウントやリージョンなど、現在のページの範囲を設定します。エージェント設定では、エージェントがその範囲内で使用できる認証情報を制御します。リソースへのアクセスは、それらの認証情報に割り当てられたIAM権限にも依存します。</block>
+  <block id="28dec2f4988032196e5673d255d3c391" category="admonition">「エージェント設定」で認証情報を選択しても、追加のAWS権限は付与されません。エージェントが分析または管理するリソースにアクセスするために必要なIAM権限が、認証情報に付与されていることを確認してください。</block>
+  <block id="54a2d462b3304eb93c5cfe391a9e67bf" category="section-title">読み取り専用モード（デフォルト）</block>
+  <block id="dd8585af3d55da47f5760a15f3d8be48" category="paragraph">デフォルトでは、エージェントは読み取り専用モードで動作します。このモードでは、以下のことが可能です。</block>
+  <block id="1b539d90e247bf7cc195a2d8096208d6" category="list-text">お客様の環境に関する質問に回答します。</block>
+  <block id="0f896edbba7d346551c186acd1309a44" category="list-text">FSx for ONTAPのファイルシステム、データベース、ワークロードを分析します。</block>
+  <block id="6705aab6526bc219af2bdc50b636aa94" category="list-text">リスク、設定ミス、および最適化の機会を特定します。</block>
+  <block id="e863933d9a2c33d982a9403853ef5c8f" category="list-text">パフォーマンス、可用性、保護、およびコスト効率を向上させるための推奨事項を提示します。</block>
+  <block id="0da32bbd416014e9a050dd9753a5f97c" category="list-text">問題のトラブルシューティングを行い、修復手順を提案します。</block>
+  <block id="5c5d131e2fde1dde32d484bb16b397d5" category="paragraph">読み取り専用モードでは、リソースを変更することはできません。書き込みアクセスが必要な操作をリクエストした場合、エージェントは制限事項を説明し、エージェントの設定へのリンクを表示します。</block>
+  <block id="c43e0775dbe854488f7416962d78486c" category="section-title">読み書きモード（オプトイン）</block>
+  <block id="a87dff151959e2568b226abf5e272ac7" category="paragraph"><block ref="282e73cd725615cc6b76a3c0f60eeeeb" category="inline-link-macro-rx"></block>で読み取り/書き込み機能を有効にすることができます。このモードでは、エージェントがサポートされている各操作について説明し、変更を行う前にお客様の承認を必要とします。</block>
+  <block id="601c01875f07f976aec59310ce582da5" category="paragraph">この承認プロセスは、Slack 統合および NetApp Console を含むすべてのエージェントエクスペリエンスに適用されます。</block>
+  <block id="dbe095e1cf28fb37bfc9bc65e6db07ec" category="section-title">AIエージェントにデータやアクティビティがない場合にユーザーが見るもの</block>
+  <block id="02a1c40d157b16f6b4bb75e05fed5d20" category="paragraph">エージェントがクレデンシャルを持っていなくても、一般的なガイダンスを提供することは可能です。ただし、お客様のリソースをレビューしたり、お客様の環境に特化したインサイトを提供したりすることはできません。</block>
+  <block id="1d85daa8d058598d6553a1e930e88b37" category="doc">NetApp Workload Factory のカスタムダッシュボードについて学ぶ</block>
+  <block id="ca4bc65d09babb8dda4e8bb6392755ee" category="admonition">アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、ダッシュボードの作成や編集ができなくなります。管理者に連絡するか、<block ref="55cc8ba0b3cffc5a9d61e1691feb56d9" category="inline-link-macro-rx"></block>。</block>
+  <block id="3dacf374ca39e9d1e2ccd73b21e8d75a" category="paragraph">カタログからダッシュボードを編集し、ダッシュボード名、説明、カテゴリ、または監視リクエストを更新してから、改訂版を保存するかどうかを決定できます。</block>
+  <block id="8f44990f66d79c05eb2b8e612e7e18b5" category="admonition">ダッシュボードを編集できるのは、ダッシュボードの作成者のみです。編集中は、保存するまで他のユーザーは変更内容を確認できません。</block>
+  <block id="6e47cea976f64eef97bd90c4f38440f6" category="paragraph"><block ref="7f05a2d9425c37de5e57a44940ff0962" category="inline-link-macro-rx"></block>。</block>
+  <block id="6535de0ace4a848cab5b62382b0150fa" category="paragraph"><block ref="5f8157906d4be6e00d0ca91a518bfa54" category="inline-link-macro-rx"></block>。</block>
+  <block id="e353446964aabeb4012c8f3074fb20a4" category="list-text"><block ref="e353446964aabeb4012c8f3074fb20a4" category="inline-link-macro-rx"></block></block>
+  <block id="b43e84f96f0b4efcf44900b53939ded4" category="list-text"><block ref="b43e84f96f0b4efcf44900b53939ded4" category="inline-link-macro-rx"></block></block>
+  <block id="40b5b336cde586af18464c8514adcf84" category="summary">動作モード、アクセス権限、カスタム指示、応答の詳細レベルなどの AI エージェント設定を行い、Workload Factory 環境でエージェントがどのように動作するかを制御します。</block>
+  <block id="c97e3b8fd990844d5f1d9fbc0c4a1a58" category="doc">NetApp Workload FactoryでAIエージェントの設定を管理する</block>
+  <block id="027abdce98c3533464664728631b1841" category="paragraph">Workload Factory環境におけるAIエージェントの動作方法を設定します。エージェントの動作方法を選択したり、使用できる認証情報を決定したり、カスタムプロンプトを追加したり、応答の詳細レベルを調整したりできます。</block>
+  <block id="9de8087bd8bdadfe4e3bb629bc47ce3b" category="list-text">アカウント管理者がエージェントの設定を行うことをお勧めします。</block>
+  <block id="127bc47c2c22a1c1b4353c48f309430d" category="list-text">読み書きモードを有効にする前に、エージェントに操作を実行させることによるセキュリティリスクを理解しておいてください。</block>
+  <block id="66116bea1fd8f0082a35b3207ff3f729" category="admonition">アカウント管理者がAI機能を無効にしている場合、AIエージェントは利用できません。<block ref="646cadbb9cfc9d23560c447c51098225" category="inline-link-macro-rx"></block>。</block>
+  <block id="a7f61a64f2ed965b18a4239b5377a37f" category="section-title">アクセスエージェントの設定</block>
+  <block id="aa9106dd7dbce448bc6eb071ef2c9112" category="list-text">以下のいずれかの方法でエージェントの設定にアクセスしてください：</block>
+  <block id="d92f9415529b85cb7482af295b940c55" category="list-text">メニューから「管理」、「設定」、「エージェント」の順に選択します。</block>
+  <block id="4eff4baef0601b15c7b18727d2be80c1" category="list-text">エージェントチャット画面から、「エージェント設定」へのリンクを選択します。</block>
+  <block id="cc565804a9c219fe2f3854136c730f29" category="section-title">エージェントの動作モードを設定する</block>
+  <block id="44d28331c753ec749031ccccf1d70880" category="paragraph">エージェントを読み取り専用モードで動作させるか、読み書きモードで動作させるかを選択してください。</block>
+  <block id="c1754028c55cdf3e2e13a700bdd9f2ab" category="paragraph">エージェントの動作モードによって、エージェントが実行できるアクションが決まります。</block>
+  <block id="a84826751ef0f28a9bca5de4cfd244cb" category="list-text">エージェントはお客様のデータを閲覧・分析することはできますが、お客様のリソースを変更することはできません。エージェントは質問に回答したり、リスクを特定したり、推奨事項を提供したり、問題のトラブルシューティングを支援したりすることができます。</block>
+  <block id="7e6277284f05e2d4cf99020f4156281c" category="list-text">読み書きモード</block>
+  <block id="08805adb79ed6abfef5a9b183fdd826a" category="list-text">エージェントは、お客様が選択した認証情報を使用して、お客様に代わって操作を実行できます。操作を実行する前に、概要を提示してお客様の承認を待ちます。お客様の承認なしにはいかなる操作も実行しません。</block>
+  <block id="6092eef047a776cf1ae032fce2fe1ff0" category="list-text">「エージェント設定」ページで、「エージェントモード」セクションに移動します。</block>
+  <block id="ae1c7cee2bb050e0f57e3431296b4490" category="list-text">動作モードを選択してください。</block>
+  <block id="9be8b23c1b30a5412be369acebac3129" category="section-title">エージェントのアクセスに使用する認証情報を選択してください。</block>
+  <block id="bed4ed0551e8d0bd53e2940df4d0dd60" category="paragraph">AWS エージェントがクラウド環境にアクセスするために使用できる認証情報を選択してください。デフォルトではすべての認証情報が選択されていますが、設定済みの認証情報の一部のみを選択することも可能です。</block>
+  <block id="ad7a6d84190cb018bcb20040ba7aa840" category="paragraph">設定済みの認証情報の中から、なし、1つ、一部、またはすべてを選択できます。認証情報を選択しない場合、エージェントは一般的な質問には回答できますが、環境内のリソースを分析することはできません。</block>
+  <block id="04320da953584028ea1a9fef64f0a0ac" category="list-text">「エージェント設定」ページで、「認証情報」セクションに移動します。</block>
+  <block id="a685a78df1473e416ec4f5dd1d5e55ca" category="list-text">*認証情報名*ドロップダウンから、エージェントが使用できる認証情報を選択します。</block>
+  <block id="4df13cb466a3becbc8b94f5c683e4d88" category="paragraph">認証情報が設定されていない場合は、Workload Factory アカウントの認証情報を追加するオプションが表示されます。</block>
+  <block id="f2ab6dda5dcaf24c6ffbc9828ce53e7e" category="section-title">Slackとの連携</block>
+  <block id="a83e309e3bc8e3235a652fcff10e1a49" category="paragraph">エージェントをSlackに接続し、Slackワークスペース内で直接エージェントとやり取りすることができます。</block>
+  <block id="47d254476d408dfbd41fb01b874a3e59" category="paragraph">Slack連携の設定方法については、Slack連携のドキュメントを参照するか、エージェントについては担当のNetApp担当者にお問い合わせください。</block>
+  <block id="66e18fcdb18961698dac90fe1128ccaf" category="section-title">カスタムプロンプトを追加する</block>
+  <block id="944ca360f82b24c3e6cdba37ae9655ff" category="paragraph">エージェントがリクエストに対応する際に従うべき、独自のガイドライン、設定、またはルールを追加できます。</block>
+  <block id="2499325dea2f4195ca3a4812ba2de0a4" category="paragraph">カスタムプロンプトは、エージェントが組織のポリシー、言語、ワークフローに従って応答できるように、応答方法をガイドするのに役立ちます。これは、すべてのエージェントのインタラクションに適用されます。</block>
+  <block id="1d0aa8e6f1b6bf319e12bda616651aff" category="paragraph">カスタムプロンプトフィールドは、デフォルトでは空になっています。カスタムプロンプトはいつでも追加、変更、削除できます。</block>
+  <block id="e72865f9318e142476270f1893312be0" category="list-text">「エージェント設定」ページで、「カスタムプロンプト」セクションに移動します。</block>
+  <block id="7e9ec3a59392a9dc66594a6c8668926e" category="list-text">テキストフィールドに、エージェント向けの独自のガイドラインを入力してください。</block>
+  <block id="f1caaeb9dcd13d22145262ee4d9928c4" category="paragraph">例えば、命名規則、推奨される応答形式、エージェントが従うべき社内ポリシーなどを定義できます。</block>
+  <block id="f28546d1f8eb515bb452998faef01dd0" category="paragraph">エージェントは、お客様のリクエストに応答する際に、カスタムプロンプトと組み込み機能の両方を使用します。</block>
+  <block id="2f618527204802cdc7e0635d88da47f9" category="paragraph">カスタムプロンプトを変更または削除するには、このページに戻り、テキストボックスを編集して*適用*を選択してください。</block>
+  <block id="87856c473606410336b82bb7e93ec084" category="section-title">詳細表示オプションを設定する</block>
+  <block id="52b5a4685cfb3e3d513b7d409b3f610c" category="paragraph">エージェントが自身の推論やツール使用についてどの程度詳細に情報を共有するかを選択してください。</block>
+  <block id="fc1633b3da679875551048103029e4c3" category="paragraph">詳細表示オプションを使用すると、エージェントがどのようにして回答を導き出したか、また情報を収集するためにどのようなツールを使用したかについての詳細情報を確認できます。</block>
+  <block id="f1a4ff7ec8fc7f3d10af7f489e6dcfbd" category="list-text">冗長な推論</block>
+  <block id="23d5becf46b121e67317963fda10fb1d" category="list-text">有効化すると、エージェントはどのようにして回答に至り、意思決定を行ったかを説明します。これにより、エージェントがなぜ特定のアクションを推奨したり、特定の結論に至ったりするのかを理解するのに役立ちます。</block>
+  <block id="c4b6900e9ca5e303fc19fb9394ea3c86" category="list-text">詳細ツールの説明</block>
+  <block id="806c4a6030ee5638bad868ac296edc46" category="list-text">有効化すると、エージェントはデータ収集と分析に使用するツールとAPIを表示します。これにより、エージェントがお客様の環境とどのように連携するかを理解するのに役立ちます。</block>
+  <block id="ba309604a791da2fbf6b620fc085c387" category="paragraph">回答を簡潔にするため、どちらのオプションもデフォルトではオフになっています。透明性を高めたい場合や、エージェントの動作をトラブルシューティングしている場合は、これらの機能を有効にしてください。</block>
+  <block id="cd9b6d5e3d6f46f09890d134dcd76b6f" category="list-text">「エージェント設定」ページで、「詳細度レベル」セクションに移動します。</block>
+  <block id="5af9190832e86a39b32955d77e972b2e" category="list-text">有効にする詳細表示オプションを選択してください。</block>
+  <block id="6ef261950960e68b5c274dbb2ad858c2" category="paragraph">ダッシュボードカタログから、カスタムダッシュボードを表示および管理できます。プライベートダッシュボードはお客様のみ閲覧できますが、パブリックダッシュボードはWorkload Factoryアカウントのすべてのユーザーが閲覧できます。各ダッシュボードには、作成者名、作成日、公開設定（プライベートまたはパブリック）などの基本的な詳細情報が表示されます。</block>
+  <block id="94ab7238c8d6eb39314e6dc172cba073" category="list-text">メニューから「Workloads Overview」を選択し、次に「Custom dashboards」を選択します。</block>
+  <block id="09716803bbab78d4545cc7210ae61d90" category="paragraph">ダッシュボードはワークロードからデータを再読み込みします。</block>
+  <block id="d2258a9653c6a977efeeb955b27c66e9" category="section-title">ダッシュボードを編集する</block>
+  <block id="4e2f12e496523d85bae4a969657d45aa" category="paragraph">ダッシュボードを編集することで、表示する指標、グラフ、期間などを変更できます。</block>
+  <block id="b13bad0dcb6df4e403e8e2af9058dfe5" category="list-text">「カスタムダッシュボード」ページで、編集するダッシュボードを見つけます。</block>
+  <block id="d431f68c965a7131bbc2f48128983c25" category="list-text">そのダッシュボードの *Actions* メニューから *Edit dashboard* を選択します。</block>
+  <block id="63f40ecf20824ff6d561a306d3a25fd1" category="list-text">AIとの対話の中で、変更したい内容を説明してください。</block>
+  <block id="3184c7e78934ef4b37ea845f1d56789a" category="paragraph">このプロセスは、新しいダッシュボードを作成するのと似ています。ダッシュボードが追跡するワークロード、指標、または期間を変更できます。</block>
+  <block id="f66306510aaf399aef8bdf649739a15e" category="list-text">変更内容を確認し、**保存**を選択してください。</block>
+  <block id="89806ea6a9ed9b0bb6cb322f912aff65" category="paragraph">ダッシュボードは変更内容に合わせて更新されます。最終更新日も更新されます。</block>
+  <block id="665b56adc96ec0ae170583f2c939549f" category="list-text"><block ref="665b56adc96ec0ae170583f2c939549f" category="inline-link-macro-rx"></block></block>
+  <block id="dbc831d32bec483a9698bd8ffbae773b" category="doc">NetApp Workload FactoryのAI機能の管理</block>
+  <block id="13bb649429b18adc1dadc0ed391c5bc2" category="paragraph">Workload FactoryにおけるAI機能へのアクセスを制御します。AI 機能をオフにするか、NetApp が管理する AWS Bedrock を使用できます。</block>
+  <block id="17f306dd010c4f9182635b5f5e336fa1" category="paragraph">Workload Factoryには、Ask Me、AIエージェント、カスタムダッシュボード、ルールビルダー、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させるAI搭載機能が多数含まれています。</block>
+  <block id="cbdbc1bacc2d0ff55d93219e225f857a" category="list-text">すべてのAI機能をオフにします。ユーザーは、Ask Me、AI エージェント、アナライザー、カスタムダッシュボード、ルールビルダー、その他の AI 搭載ツールを使用できなくなります。</block>
+  <block id="3f0879fc8845a02f07ea71a0a584847e" category="list-text">メニューから「管理」を選択し、次に「AI設定」を選択します。</block>
+  <block id="d558bf5c801444e8a41fb205b6481939" category="list-text"><block ref="d558bf5c801444e8a41fb205b6481939" category="inline-link-macro-rx"></block></block>
+  <block id="7822184101da98dc9a2f973bcc0b1e57" category="list-text"><block ref="e353446964aabeb4012c8f3074fb20a4" category="inline-link-macro-rx"></block>のサンプルプロンプトのいずれかから始めてください。</block>
+  <block id="1d66ae30886d42b24d56159b752d6ad9" category="inline-link-macro">権限要件</block>
+  <block id="f5237f85c76e5020d5a264239e68fa44" category="list-text">**権限を確認してください：** ワークロードファクトリーアカウントに、ダッシュボードで使用されるワークロードとリソースへの読み取りアクセス権があることを確認してください。<block ref="7190815f23bdebc2d96fb2bc5298d03f" category="inline-link-macro-rx"></block>を確認します。</block>
+  <block id="105342799c8c2abdc941b4b9e9d21842" category="list-text">**認証情報の確認：** AWS認証情報が有効であり、有効期限が切れていないことを確認してください。詳細については、<block ref="8feef39480c2e9a61121221ad1a6e6fc" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="5ee789356e4b622b0a26bc4b948f1f1d" category="paragraph">カスタムダッシュボードで引き続き問題が発生する場合は、NetAppサポートへの問い合わせに関する情報について<block ref="12b3578a80c78dee4be855cedba97ff4" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="05d2715aacab706b61cab6ab5eae577f" category="paragraph">ファイルシステムを選択すると、クラスタ情報、SSD容量、グラフなど、クラスタの詳細が表示されます。クラスタの詳細ビューでは、「スループット」と「SSD容量」のオプションを使用してビューを切り替えます。</block>
+  <block id="44ad493c3ed3456875890a0633967832" category="paragraph">スループットビューには、クライアントのスループットとリソース使用率が表示されます。SSD容量ビューには、SSDの使用傾向と容量に関する推奨事項が表示されます。</block>
+  <block id="0575d3bb4ddf703c8919e95c56fd6669" category="paragraph">Workload Factory が自動化モードまたは推奨モードの場合、各 FSx for ONTAP ファイルシステムを自動的にチェックし、容量変更を推奨します。定期的にシステムをスキャンし、SSD の容量やスループットを調整する必要があるかどうかを判断します。管理機能が有効になっている場合、ファイルシステムの詳細ページには、SSD の容量とスループット、過去の傾向、および推奨される調整ポイントが表示されます。</block>
+  <block id="3b39aa368232f477c3b4544b63a58a94" category="paragraph">SSD使用状況グラフは、システムが推奨する容量変更や自動調整が行われたタイミングを示します。これらの指標は、システムが時間の経過とともにどのように容量を管理してきたかを示しています。SSD容量管理がオフになっている場合、グラフには過去の使用状況のみが表示され、推奨事項や自動アクションは表示されません。</block>
+  <block id="4e7a79cbed5a3ae9b9dcf1a054cdccae" category="list-text"><block ref="c3a254114142556a33ac5d002cb96077" category="inline-link-macro-rx"></block>クラスタの健全性と容量を監視</block>
+  <block id="099c26f0b4268db2c6beff338b00f523" category="list-text"><block ref="cfa2a4e1b7a54130891d0ec0a2ab7571" category="inline-link-macro-rx"></block>（Recommend、Automate、またはNone）</block>
+  <block id="0610ec46d221095ea1a6664708b315d4" category="list-text"><block ref="9e799615dd4f243d7b7e498891d56424" category="inline-link-macro-rx"></block>（Recommend、Automate、またはNone）</block>
+  <block id="9b1d1bb5e9e50d21cba2409290825e8f" category="inline-link-macro">概要ダッシュボードをアクティブ化する</block>
+  <block id="0077ec0b7e54059f97c44de562d456b9" category="paragraph">ファイルシステムを監視するために使用する前に、<block ref="a74bf2d8f2388227184d8bdfb1fffa90" category="inline-link-macro-rx"></block>する必要があります。</block>
+  <block id="37e179077423d083a73e4ed1b7712584" category="paragraph">レイテンシ監視の詳細については、<block ref="83cf55f201b976d4d05be16a638a6c43" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="cc23b0ef8b8c73f4efb0ced4281250f3" category="list-text">クラスターテーブルでファイルシステム名を見つけて選択し、*SSD容量管理の変更*を選択します。</block>
+  <block id="66237dc10c2943c0563d26d3f0b6b230" category="list-text">*推奨*</block>
+  <block id="d9a44929e0eea557983dbb6917008a70" category="list-text">*スループット管理を有効にする* を選択します。</block>
+  <block id="1cbae666f242dee35d801763ff6c587f" category="list-text">*利用率しきい値（％）*では、推奨事項や自動化アクションをトリガーする利用率レベルを設定します。</block>
+  <block id="e920df7cb27871af178ff85a428a8b4e" category="list-text">*詳細設定*で、スループット管理パラメータを設定します：</block>
+  <block id="39122245b5363dc3871538d2ef59784e" category="list-text">*連続違反期間（時間）*：措置を講じるまでの連続違反の継続時間</block>
+  <block id="a9d111294543c201d767519d991c1b8d" category="list-text">*連続違反指標（％）*：連続違反を判断するためのパーセンテージしきい値</block>
+  <block id="d385fd0ac858ff17553d407851f64c48" category="paragraph">SSD容量管理がオフになっている場合、グラフには過去の使用状況のみが表示され、推奨事項や自動化による決定は表示されません。</block>
+  <block id="1de4de358ec9c3a1cd36180e2c13a443" category="list-text">「概要」タブから、表のファイルシステム名を選択します。クラスタの詳細ビューで、「スループット」または「SSD 容量」オプションを選択して、グラフの表示を切り替えます。</block>
+  <block id="a01346bc61a98c025144199b0893e264" category="paragraph">*スループット*を選択すると、グラフにクライアントのスループットと利用率が表示され、需要を設定されたスループットレベルとしきい値と比較できます。</block>
+  <block id="e56ecd5b4053d7385c23bb7c3422bdd5" category="paragraph">*SSD Capacity* を選択すると、グラフにはSSDの使用状況が表示され、過去の容量推移や容量決定ポイントも確認できます。</block>
+  <block id="d73906b15c9fc84c1806084ce8720a42" category="paragraph">異なる期間におけるスループットや容量の傾向を確認するには、異なる期間を選択してください。。グラフ上の決定ポイントにカーソルを合わせると、特定の時点における推奨事項や自動化アクションの詳細が表示されます。。グラフから得られる情報を活用して、以下のことを行います。* 容量調整が必要な頻度を把握する * ワークロードパターンに自動化モードと推奨モードのどちらがより適しているかを評価する * 繰り返し発生する容量制約を特定する * 成長傾向に基づいて将来の容量ニーズを計画する * 自動化の失敗をトラブルシューティングする</block>
+  <block id="d84848ea25e8f980ed30c066f0e2cab7" category="list-text"><block ref="d84848ea25e8f980ed30c066f0e2cab7" category="inline-link-macro-rx"></block></block>
+  <block id="3784e1d30d90c571998c16706c434e4f" category="list-text"><block ref="3784e1d30d90c571998c16706c434e4f" category="inline-link-macro-rx"></block></block>
+  <block id="274d09f174202ef30839bc1b86c8644b" category="list-text"><block ref="274d09f174202ef30839bc1b86c8644b" category="inline-link-macro-rx"></block></block>
+  <block id="a8f76ad42c3df15f6fbe9addd47ffe36" category="doc">NetApp Console で Workload Factory のカスタムルールを作成する</block>
+  <block id="f4014ae984242fefc2f0569e68611a2e" category="paragraph">Workload FactoryでFSx for ONTAPリソースをチェックするためのカスタムルールを作成します。ルールを平易な言葉で記述すると、AIルールビルダーがリクエストを検証済みのルールに変換します。</block>
+  <block id="4995e76cedbca110dbb7cefe85e61d77" category="paragraph">ルール設定プロセスでは、各ステップを順を追って案内します：ルールの作成、AIがルールをどのように理解したかの確認、定期的なレビューをスケジュールする前の結果の確認。お客様はプロセス全体を通して主導権を握ることができます。システムはお客様のプロンプトに基づいてルールを提案しますが、お客様が承認するまで何も実行されません。</block>
+  <block id="d87385efd143a7a589ef7be597c50809" category="admonition">アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、カスタムルールを作成または編集できなくなります。管理者に連絡するか、<block ref="ba4e701e567767978f2b4fc32c409de8" category="inline-link-macro-rx"></block>。</block>
+  <block id="5d9b02c1296ee6f0b859a2db7ccf523b" category="list-text">AWS認証情報を読み取り専用アクセスで設定しました。</block>
+  <block id="0876642abf2aedd4eb3ae76dd87f7586" category="list-text">閲覧権限を持つ ONTAP 認証情報があります。</block>
+  <block id="0e8e25fe832310f010ce2950b2110974" category="list-text">FSx for ONTAP 接続用にリンクまたはエージェントが設定されています。</block>
+  <block id="be31b56e3ba8f8ceee6d9deed7f5c112" category="list-text">メニュー <block ref="438b712f6e6afc173ce78a756adc207c" category="inline-image-macro-rx" type="image"></block> を選択し、次に ワークロード &gt; 適切に設計された &gt; ルールビルダー を選択します。</block>
+  <block id="0cd216375fd6782b45d9f84efb6f3e84" category="list-text">解析された解釈</block>
+  <block id="9d009657b96c5aad9fa21f1828b73bcf" category="list-text">AIがプロンプトを平易な言葉でどのように理解したか。</block>
+  <block id="e35d59c335e26445eed5e3cf4fc88047" category="list-text">ルール定義</block>
+  <block id="69dc0eb643b0cd391da1782b1c0156e4" category="list-text">リソースタイプ、条件ロジック、評価基準を含む構造化されたルール。</block>
+  <block id="87a222577e9c7b7a0739d92337f4fe46" category="list-text">推論</block>
+  <block id="22e3f2781979bb9f2227381c2a3c30ea" category="list-text">AIがお客様のプロンプトをこのように解釈した理由。</block>
+  <block id="6e536680660f9f562a1a4ab7cdbba4e1" category="list-text">信頼度指標</block>
+  <block id="0f1a4e7b1fc79efcfb93a1a4b715f3d0" category="list-text">システムが解釈にどれほど確信を持っているか。</block>
+  <block id="1a5f54a69b5adde0f81c2cf7d6675df3" category="list-text">ルール定義が正しいことを確認してください。解釈が不明確または誤っている場合、システムは次のような質問をする場合があります：</block>
+  <block id="1f3c02b25897cff55c5d7894bed5c157" category="list-text">どのリソースを確認すべきですか？</block>
+  <block id="2d351367dd00ae9228b6503d57500015" category="list-text">コンプライアンスを定義する値または制限は何ですか？</block>
+  <block id="d24a425ef6891cb0134794ec6897a668" category="list-text">ルールはどのくらいの頻度で実行すべきですか？</block>
+  <block id="677aeb7441cfb06ed7138c57338cfd53" category="paragraph">ルールを保存またはスケジュールする前に、テストを実行して、どのリソースに影響するかを確認してください。</block>
+  <block id="31d7cb3d933c56805e03dca75c02893d" category="list-text">評価対象リソース：チェック対象リソースの総数</block>
+  <block id="c3e6edb3feeaf77e1989872831656640" category="list-text">準拠：規則の基準を満たすリソース</block>
+  <block id="00d56e696324ec288953d4f8b2cfec0f" category="list-text">不適合：基準を満たしていないリソース</block>
+  <block id="bd86697cf08c2fc5775c698f872f3628" category="list-text">評価失敗：評価できなかったリソース（エラーの詳細を含む）</block>
+  <block id="cdac1db1869db85a5ed349854c63c6bf" category="paragraph">ルールを検証したら、下書きとして保存するか、定期的に実行するように設定できます。</block>
+  <block id="39a7241c7fb2f38f3a304dc5a7ddd33e" category="list-text">定期的な評価をスケジュールするには、評価頻度を設定し、「スケジュール」を選択してください。このルールは有効になっており、定義されたスケジュールに従って実行されます。</block>
+  <block id="9c85906f54c1b8a93d6470f07300ddfa" category="list-text">検証後にスケジュール設定せずに保存するには、*下書きとして保存*を選択してください。ルールは保存されますが、スケジュールされるまでは評価されません。</block>
+  <block id="4a5aaf656967e8a439bf519ae6b59880" category="list-text">ルールを削除するには、*削除*を選択します。</block>
+  <block id="ac896c02d18100750fc4d290b272e808" category="paragraph">お客様のカスタムルールが作成され、ルールカタログに登録されました。スケジュールを設定すると、指定された頻度でFSx for ONTAPリソースをチェックします。後でルールを編集する場合、更新版を保存する前に、システムはチャット、レビュー、承認、検証といった同じ手順を案内します。</block>
+  <block id="8bc0878ae35d7f3c225b4bac0e907504" category="paragraph"><block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
+  <block id="0ef70b60892b97d12c2eebf7686872ca" category="paragraph">カスタムルールを使用すると、優れた設計のダッシュボードで、NetAppのベストプラクティスとともに、独自のアーキテクチャ標準を設定、チェック、適用できます。</block>
+  <block id="91b90f08c0d07c5aa66b502a1d12c868" category="paragraph">ルールビルダーを使用すると、平易な言葉でカスタムルールを作成できます。これらのルールは、すべてのリソースに対してチェックされます。カスタムルールを使用すると、デフォルトのルールではカバーされない可能性のある、組織の基準、リスク制限、および運用要件を適用できます。</block>
+  <block id="60a625f073158b990bcf2ad232af27aa" category="admonition">アカウント管理者がAI機能を無効にしている場合、新しいルールを作成したり、既存のルールを編集したりすることはできません。既にスケジュールされているルールは、引き続き実行されます。<block ref="fb4375aa776b206d4ba3c7bbae1bcfb2" category="inline-link-macro-rx"></block>。</block>
+  <block id="4edc72502b9f9929e41bae938a7490c1" category="paragraph">カスタムルールはAIを活用して、平易な言葉で書かれた指示を明確で構造化されたルールに変換します。AIはリクエストを解釈してルールを提案し、指示をどのように理解したかを説明したうえで、ルールの保存またはスケジュールの前に承認を求めます。このプロセスは、以下のことを確実にします：</block>
+  <block id="0465277e228b6cf7f37c1fab3872f9cd" category="list-text">ルールは明確に定義され、エラーがないかチェックされています</block>
+  <block id="f2b92cb195f44b1f57205f66b9c1c992" category="list-text">カスタムコードは実行されません</block>
+  <block id="f6b50ace5a7da2eb893c9a1a1c3971be" category="list-text">ルールを承認する前に、評価される内容を正確に確認できます</block>
+  <block id="110a917dc178ad706edce62d767a4196" category="list-text">各カスタムルールには、評価対象のリソースタイプ、条件ロジック、重要度、評価スケジュール、および是正措置に関するガイダンスが含まれます。</block>
+  <block id="5eb43201405d6bbeac74bcd01d61e2e1" category="list-text">AWS環境への読み取り専用アクセス。カスタムルールでは、セキュリティ境界として読み取り専用権限が必要です。<block ref="1db25aada4bff8233b24c1d7b39230cd" category="inline-link-macro-rx"></block>。</block>
+  <block id="823a6e1d7fe661be55dd3af05f972b11" category="list-text">ONTAP クレデンシャル</block>
+  <block id="559e5220d6130b1d9f3af60fa24ff138" category="list-text">読み取り専用権限を持つFSxビューアユーザー。Workload Factoryは、まだ存在しない場合、各FSx for ONTAPファイルシステムに読み取り専用ユーザーを作成し、評価を実行できるようにします。</block>
+  <block id="04d1424a4b58f665f6537d166f4f9750" category="list-text">リンクまたはエージェント</block>
+  <block id="b68341d527b58582cc7cb537c3230cd8" category="inline-link-macro">リンクを使用してFSx for ONTAPファイルシステムに接続する</block>
+  <block id="d358f748048c3fa0487b8cd6d6410fb2" category="list-text">AWS APIがアクセスできない設定を確認するためにONTAPに直接接続する必要があるルールにのみ必要です。<block ref="4c7cc50e5133efc728aaa88011208eda" category="inline-link-macro-rx"></block>。</block>
+  <block id="00d54cb4ae79a42990f001ca7b1eafd2" category="list-text">ルールは問題を自動的に解決するものではありません。提供されたガイダンスに従って、準拠していないリソースをお客様ご自身で修正する必要があります。</block>
+  <block id="e0ff3e32dbc4b668a800d5b59c47613b" category="list-text">各ルールは1種類のリソースのみをチェックしますが、幅広いリソースに適用できます。たとえば、1つのルールで複数のリージョン、すべてのリージョン、または複数のアカウントのボリュームを評価できます。異なるリソースタイプを評価するには、それぞれ別のルールを作成します。</block>
+  <block id="3f84490332db2de49bed3d46ab452bb0" category="list-text">過剰なスキャンを防ぐため、ルールは1時間に最大1回実行されます。</block>
+  <block id="499ed12f9f73ef11f2d3afd859dacba5" category="list-text">ルールは環境を読み取ることしかできず、変更を加えることはできません。</block>
+  <block id="7d178946e8d76597de91865cae420fb6" category="list-text">これらの設定は、後でルールカタログから更新できます。</block>
+  <block id="b6e0b0c90cfbddfe767f137f8066d1df" category="list-text">実行中</block>
+  <block id="d4008ffe54f55490997ab0d5940aafb3" category="list-text">ルールの作成または確認。</block>
+  <block id="b75ff201f3276decaffcefb7b216622f" category="list-text">作成に失敗しました</block>
+  <block id="db78d463a1f2fbb737aa54f862bd0d4b" category="list-text">ルールを作成できませんでした。ルールを再度開いて、チャットで編集を続けることができます。</block>
+  <block id="c4e6fec5ee0f22a348768aa087f15acb" category="list-text">保存済みですが、まだスケジュール設定されていません。</block>
+  <block id="7401c14d073cd1188b475ef7f5e0cdc8" category="list-text">検証済みドラフト</block>
+  <block id="de28b803b960b2c037e1abe4d18cf9d7" category="list-text">検証に合格しました。保存またはスケジュール設定が可能です。</block>
+  <block id="b1caf7f21c1b8899e11165a6aed71af9" category="list-text">編集</block>
+  <block id="f25dfb15b911ed977033f485330ceadd" category="list-text">既存のルールのドラフトコピーを更新します。変更を保存するまで、現在スケジュールされているルールは引き続き実行されます。</block>
+  <block id="2b7dabba0077abe3732e0418b048a56b" category="list-text">スケジュール済み</block>
+  <block id="cf61937578a34d9f00c4f6dd6f175c05" category="list-text">アクティブであり、定義されたスケジュールに従って実行されます。</block>
+  <block id="ca7e0b16936fbee3bd2dd7f992b32b4d" category="list-text">一時停止中ですが、削除はされていません。再度有効化できます。</block>
+  <block id="71e78f13c09017bc4b63f46243d379b7" category="list-text">完全に削除されました。</block>
+  <block id="cc36425e424f4c30e5d1dd8b4cf78a69" category="list-text">本番ボリュームの保護</block>
+  <block id="9beacae88b6d84f519d92cf003a30d57" category="list-text">アーカイブボリュームの階層化</block>
+  <block id="ccf414cfce06645c55d0bcfd5f41608b" category="list-text">ファイルシステムの命名規則</block>
+  <block id="9b4ad9b41b7f7f63bf3258fc3894691a" category="paragraph"><block ref="a9a97108e6fef351f8c6a7a2af6f4937" category="inline-link-macro-rx"></block> <block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
+  <block id="71d671c8e1cf2aa5cf976dd7ff9d340b" category="summary">ルールカタログから、カスタムアーキテクチャルールを表示、編集、有効化、無効化、および削除できます。</block>
+  <block id="1cf051440b9604c5c57c4c6cab344202" category="doc">NetApp Console で Workload Factory のカスタムルールを管理する</block>
+  <block id="8ef292d4be46fbc351d35b26b3ce8720" category="paragraph">ルールカタログは、すべてのカスタムルールを管理できる場所です。ルールの詳細を確認したり、ルールを編集したり、結果を確認したり、ルールをスケジュールに基づいて実行するかどうかを制御したりできます。</block>
+  <block id="dbea8da43ac90f4152565d880d18e30e" category="paragraph">ルール名はいつでも変更できます。ルールの説明、リソースの種類、スケジュール、重要度、条件ロジック、評価範囲、および是正措置に関するガイダンスを編集することもできます。</block>
+  <block id="8473633d69dc94d27429c2a37902fe75" category="paragraph">ルールは、ルールカタログまたはルール詳細カードから名前を変更できます。その他のルール設定を編集するには、ルールカタログから始めてください。</block>
+  <block id="2dc19156fac0f6096a2db17a78fe0da8" category="list-text">ルール名を変更するには、カタログまたはルール詳細カードからルール名を更新してください。</block>
+  <block id="4d3a6d0da6e18e9505524b8a39ca5bf1" category="list-text">その他のルール設定を編集するには、*編集*をクリックします。</block>
+  <block id="01e52dae8e86fc149d714c3cdc94859d" category="paragraph">ルールはチャットモードで開き、その履歴全体が表示されます。</block>
+  <block id="91fa4b053658e4dedadb0d60014d7b3e" category="list-text">変更を希望する場合は、チャットでリクエストを送信するか、リクエスト内容を更新してください。</block>
+  <block id="f5500860e31d724af72a4be713c2c1e5" category="paragraph">ルールの作成が以前に失敗した場合は、そのルールから再開し、チャットでリクエストを更新できます。</block>
+  <block id="1f998f331ae48a1cf2b4056c154eff9f" category="list-text">更新された説明と変更点の概要をご確認ください。</block>
+  <block id="fc7c0f65a3d8f2f0a1da1c56bd143c30" category="paragraph">システムは、ルールを保存する前に、現在のルールからの変更点を表示します。</block>
+  <block id="023ad31a6b18fc538747a36ab488e65c" category="list-text">ルールがドラフトモードの場合は、*ルールの検証*を選択して、更新されたロジックをテストしてください。</block>
+  <block id="58b17236d18d0245f7322e360753f322" category="list-text">変更を保存するには、*保存*をクリックして現在のルールを置き換えてください。スケジュールを変更した場合は、更新後のスケジュールを保存してください。スケジュールを変更していない場合は、変更はありません。</block>
+  <block id="a91166998826b450f2fb807ba450dbc4" category="list-text">変更を破棄するには、*変更を破棄*をクリックします。ルールは以前のバージョンに戻り、編集モードを終了します。</block>
+  <block id="053ebf33b65f60110cd8e776b413ed79" category="paragraph">ルールを編集している間は、そのルールは*編集中*と表示されます。他のユーザーには引き続き現在のスケジュール済みルールが表示され、変更を保存するまではスケジュールされた実行は通常どおり継続されます。</block>
+  <block id="8c5fb02c595607ff2d6a7bffe64be464" category="section-title">ルールを一時停止する</block>
+  <block id="ad91e5fff3b8c62296713afbb3628a85" category="paragraph">ルールを削除せずに評価を停止するには、ルールを一時停止します。一時停止されたルールはカタログに残り、いつでも再開できます。</block>
+  <block id="6128c344ce68ca2256885ace5b47ff93" category="list-text">ルール一覧で、一時停止したいルールをクリックします。</block>
+  <block id="082d380473aced66fdfe341c99cda5a8" category="list-text">スケジュールされたルールを一時停止するには、「一時停止」をクリックして確認してください。ルールはスケジュールに従って実行されなくなります。</block>
+  <block id="45967b1be5307f4c7a1110294cadcd04" category="list-text">一時停止したルールを再開するには、*Resume* をクリックして確認します。ルールは定期的な評価を再開します。</block>
+  <block id="505e9a4d5d793341b92e51caeffa198f" category="section-title">カスタムルールを削除する</block>
+  <block id="106aa9d3af8dd9fe811548be7c0ab934" category="paragraph">不要になったルールは完全に削除してください。この操作は取り消すことができません。</block>
+  <block id="0aec4bb39ad4e484e24dc1510d9772d1" category="list-text">ルールカタログで、削除したいルールをクリックします。</block>
+  <block id="874db297b2254479eeb702a2d7fa8dab" category="list-text">*削除*をクリックします。</block>
+  <block id="a611c28af3d155e736c074bd926dc51b" category="list-text">ルールを完全に削除することを確認してください。</block>
+  <block id="f36dd1b2731552458a4d8983a8bec074" category="paragraph">当該ルールはカタログから削除されました。すべての評価履歴は削除されます。</block>
+  <block id="ee46de54fef48d3ea00b2c8fc06cb58b" category="section-title">簡単なテストを実行する</block>
+  <block id="bd472ca28321d77d062059272b456804" category="paragraph">次の定期実行を待つことなく、いつでもクイックテストを実行して現在のコンプライアンス状況を確認できます。</block>
+  <block id="5edd65680f750fa6f32b6e445f24fd27" category="list-text">ルールカタログで、評価したいルールをクリックします。</block>
+  <block id="ae7b417afa23cb538530e43e4b08cfff" category="list-text">*検証*をクリックします。</block>
+  <block id="b4b7ad5dbb1a5d746e0ac8936e3f4798" category="paragraph">システムは、対象となるすべてのリソースをルールロジックに基づいて評価します。</block>
+  <block id="5cb57852939f164731c4f61fcca33dac" category="list-text">結果を確認して、現在のコンプライアンス状況を把握してください。</block>
+  <block id="2cc894218e78a9699920859cc698e5d7" category="paragraph">テストは監査され、ルールの評価履歴に表示されます。</block>
+  <block id="26a1c27f638f5372654511db0a450638" category="paragraph"><block ref="26a1c27f638f5372654511db0a450638" category="inline-link-macro-rx"></block></block>
+  <block id="9a8fccbd850aa8643a89826b7a8fb208" category="summary">Google Cloud NetApp Volumes の使用を開始するには、NetApp Console のロールを割り当て、認証情報を追加して、システムを検出します。</block>
+  <block id="2999755d1730c0395dc6d69c2e4175da" category="paragraph">Google Cloud NetApp Volumes の使用を開始するには、NetApp Console ロールの割り当て、認証情報の追加、およびシステムの検出を行います。</block>
+  <block id="aa0b2ca9fbe37ff46d33ea907e58b677" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="4db55a1c8076378b257ee9e0511dd2d4" category="inline-link-macro-rx"></block></block>
+  <block id="0f391d5482822722d86585c248878517" category="inline-link-macro">クレデンシャルを追加</block>
+  <block id="6f2763cd3e02476cb119778797369b0f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="2fd3a5be9d6b1b1b584f1ac1aa0e2f8e" category="inline-link-macro-rx"></block></block>
+  <block id="77d5ddb0fb660aaf755b6ed1f614b0c5" category="paragraph">NetApp Consoleで、Google Cloud NetApp Volumesの認証情報を追加します。</block>
+  <block id="66db479b9f5558108a119367246238d1" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="8b88ff7d74af8bb26ccc5fa950b51632" category="inline-link-macro-rx"></block></block>
+  <block id="3d5dcea171c7a77f7cb0efa8c9a0cd1a" category="paragraph">NetApp Consoleで、認証情報、Google Cloudプロジェクト、およびサポートされているリージョンを使用してシステムを検出します。</block>
+  <block id="c04236280596e42d063458cddb934506" category="sidebar">AIエージェント</block>
+  <block id="737f86fc6a3bb3563670dac4c0b49585" category="sidebar">Workload Factory AIOps</block>
+  <block id="ff2cb9e669640d8f287be7fc339c4d78" category="sidebar">AIエージェントについて学ぶ</block>
+  <block id="64f2f595f7dd037774e1dbd99cb2ab7b" category="sidebar">AIエージェントの設定を管理する</block>
 </blocks>
