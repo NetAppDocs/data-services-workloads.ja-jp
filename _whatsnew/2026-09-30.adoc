@@ -15,3 +15,5 @@ Workload Factory 向け OCI NetApp Storage Service（OCI NSS）の初期リリ�
 === NetApp Console ユーザー向けの Workload Factory ドキュメント
 
 Workload Factory の詳細なドキュメントは NetApp Console で確認できます。これには、オンボーディング、システム検出、認証情報管理、リンクの作成と関連付けに関するガイドが含まれています。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/index.html["NetApp Console 用 Workload Factory ドキュメント"]

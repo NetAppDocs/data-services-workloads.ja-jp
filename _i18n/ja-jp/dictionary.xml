@@ -6812,4 +6812,6 @@
   <block id="53c306e93da69caff455d3eaa34a6b5c" category="list-text">AWS割り当てタグでフィルタリングするには、FSx for ONTAPファイルシステムにタグが割り当てられていることを確認してください。</block>
   <block id="22818134e299296b864b78dc4cca4c88" category="paragraph">CSV形式のレポートが生成され、ダウンロードできます。</block>
   <block id="9a90fd93ba397d5f48de07251acc1808" category="list-text">レイテンシーイベントの構成要素の内訳</block>
+  <block id="1df7d27de080cb3c4560fbfcb9b950a2" category="inline-link-macro">NetApp Console 用 Workload Factory ドキュメント</block>
+  <block id="865cb26d81d670b59ffd115deff750d1" category="paragraph"><block ref="865cb26d81d670b59ffd115deff750d1" category="inline-link-macro-rx"></block></block>
 </blocks>
