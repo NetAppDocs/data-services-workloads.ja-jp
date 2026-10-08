@@ -18,31 +18,9 @@ NetApp Workload Factory通知サービスを設定して、NetApp Consoleでア�
 [[configure-workload-factory-notifications]]
 == Workload Factory の通知を設定する
 
-Workload Factory の通知は、NetApp Console または Workload Factory コンソールを使用して設定できます。
+Workload Factoryの通知は、NetApp Consoleを使用して設定できます。
 
-通知を受け取るためのオプションは次のとおりです：
-
-
-
-[[netapp-console]]
-=== NetApp Console
-
-* *通知*：Workload Factory を設定して、NetApp Console のベルアイコンの下に表示される通知を送信します。
-* *メール*：NetApp Consoleでメール通知を有効にすると、Amazon SNSの設定を必要とせずに、アカウントに関連付けられた任意のメールアドレスに通知を受信できます。
-* *Amazon SNS*：Amazon SNS トピックに通知を送信するように Workload Factory を設定します。
-
-
-
-
-[[workload-factory-console]]
-=== Workload Factoryコンソール
-
-* *メール*：Amazon SNSの設定を必要とせずに、アカウントに関連付けられている任意のメールアドレスに通知を受信するには、Workload Factoryコンソールでメール通知を有効にします。
-* *Amazon SNS*：Workload Factory コンソールを使用して、Amazon SNS トピックに通知を送信するように Workload Factory を設定します。
-
-
-
-IMPORTANT: NetApp Consoleで通知を設定すると、通知配信の所有権が移管され、Workload Factoryコンソールの通知オプションは無効になり、読み取り専用モードで表示されます。ツールチップには、通知はNetApp Consoleから管理されると記載されています。その後、通知はNetApp Consoleからのみ管理できます。
+利用可能な通知オプションは次のとおりです： * *通知*：Workload Factoryを設定して、NetApp Consoleのベルアイコンの下に表示される通知を送信します。* *メール*：Amazon SNSの設定を必要とせずに、アカウントに関連付けられている任意のメールアドレスで通知を受け取るには、NetApp Consoleでメール通知を有効にします。* *Amazon SNS*：Workload Factoryを設定して、Amazon SNSトピックに通知を送信します。
 
 .開始する前に
 以下の前提条件は、Amazon SNS通知を設定する場合にのみ適用されます。
@@ -51,10 +29,6 @@ IMPORTANT: NetApp Consoleで通知を設定すると、通知配信の所有権�
 * Workload Factoryは*Standard*トピックタイプをサポートしていることに注意してください。このタイプのトピックでは、通知が受信順に購読者に送信されることが保証されないため、重要な通知や緊急の通知がある場合は注意が必要です。
 
 
-[role="tabbed-block"]
-====
-.NetApp Consoleからの通知を設定する
---
 .手順
 . link:https://console.netapp.com["NetApp Console"^]にログインします。
 . NetApp Consoleメニューから、*ワークロード*、*管理*、*通知設定*の順に選択します。
@@ -71,32 +45,12 @@ IMPORTANT: NetApp Consoleで通知を設定すると、通知配信の所有権�
 . テスト通知を送信して設定を確認したら、*適用*を選択してください。
 
 
---
-[[wf-console-email-notifications]]
-.Workload Factoryコンソールから通知を設定する
---
-.手順
-. link:https://console.workloads.netapp.com["Workload Factoryコンソール"^]にログインします。
-. Workload Factory コンソールのメニューから、*ワークロード*、*管理*、*通知設定* の順に選択します。
-. 以下の通知タイプのうち、1つ以上を有効にしてください：
-+
-** *メール通知*：*メール通知を有効にする*を選択してください。アカウントに関連付けられているメールアドレスはすべて読み取り専用モードで表示されます。
-** *Amazon SNS通知*：*SNS通知を有効にする*を選択し、Amazon SNSコンソールからAmazon SNSを設定するための手順に従ってください。
-+
-テスト通知を送信して設定を確認したら、*適用*を選択してください。
-
-
-
-
-
---
-====
 
 
 [[subscribe-to-the-amazon-sns-topic]]
 == Amazon SNSトピックにサブスクライブする
 
-Workload Factoryからトピックに通知を送信するように設定したら、Amazon SNSドキュメントの https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["確認方法"]に従ってトピックをサブスクライブし、Workload Factoryからの通知を受信できるようにします。
+NetApp Consoleがトピックに通知を送信するように設定したら、Amazon SNSドキュメントの https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["確認方法"]に従ってトピックをサブスクライブし、Workload Factoryからの通知を受け取れるようにしてください。
 
 
 

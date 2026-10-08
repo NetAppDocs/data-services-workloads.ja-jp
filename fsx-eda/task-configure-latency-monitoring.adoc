@@ -114,7 +114,7 @@ NOTE: 影響を受けるボリュームが10個を超える場合、メールに
 * *Amazon SNS*：他のシステムとの統合のために、設定済みのSNSトピックに公開されます
 
 
-通知を有効にするには、link:../admin/configure-notifications.html#wf-console-email-notifications["通知を設定する"]を参照してください。
+通知を有効にするには、link:../admin/configure-notifications.html["通知を設定する"]を参照してください。
 
 
 

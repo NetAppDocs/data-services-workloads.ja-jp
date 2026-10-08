@@ -15,6 +15,8 @@ Workload Factoryアカウントに関連付けられているリンクを管理�
 
 link:../setup/links-overview.html["リンクの詳細をご確認ください。"]
 
+ユーザーインターフェースは、より新しいリンクバージョンが利用可能になった際に自動的に通知し、アップグレード手順を提供します。
+
 
 
 [[view-the-links-associated-with-your-account]]

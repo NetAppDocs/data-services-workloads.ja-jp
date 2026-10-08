@@ -151,21 +151,11 @@
   <block id="5ba8acf00a9c87f3087344b902777a6e" category="doc">NetApp Workload Factoryの通知を設定する</block>
   <block id="ecfa38cbb07762f651b2d55730a9503d" category="paragraph">NetApp Workload Factory通知サービスを設定して、NetApp Consoleでアラートとして通知を送信したり、アカウントに関連付けられている任意のメールアドレスやAmazon SNSトピックに送信したりできます。アラートとして送信される通知は、Consoleエージェントまたはリンクがデプロイされている場合にNetApp Consoleに表示されます。Workload FactoryがAmazon SNSトピックに通知を発行すると、そのトピックのサブスクライバー（ユーザーや他のアプリケーションなど）は、そのトピック用に設定されたエンドポイント（電子メールやSMSメッセージなど）で通知を受信します。</block>
   <block id="7c1a1feb7968ed15d338ae3e7284dd4e" category="section-title">Workload Factory の通知を設定する</block>
-  <block id="4bd55d131f0ae81cc60c9fe282068a64" category="paragraph">Workload Factory の通知は、NetApp Console または Workload Factory コンソールを使用して設定できます。</block>
-  <block id="d7dcef6f1d8c5c823f847fd4c7fa8fe9" category="paragraph">通知を受け取るためのオプションは次のとおりです：</block>
   <block id="3c031b939f6ec312ee601d021e7a6644" category="section-title">NetApp Console</block>
-  <block id="cce7bd3a3721067273866ec7f3ec7b7c" category="list-text">*通知*：Workload Factory を設定して、NetApp Console のベルアイコンの下に表示される通知を送信します。</block>
-  <block id="a58c54927d168d58046b4ad29f5254fa" category="list-text">*メール*：NetApp Consoleでメール通知を有効にすると、Amazon SNSの設定を必要とせずに、アカウントに関連付けられた任意のメールアドレスに通知を受信できます。</block>
-  <block id="d7b2e59eb21ae19aa7b493f93fbcb35f" category="list-text">*Amazon SNS*：Amazon SNS トピックに通知を送信するように Workload Factory を設定します。</block>
-  <block id="8fd935558171bd50056871ef9ee7bd05" category="section-title">Workload Factoryコンソール</block>
-  <block id="e174fa0e05fb5c229301ef978773782d" category="list-text">*メール*：Amazon SNSの設定を必要とせずに、アカウントに関連付けられている任意のメールアドレスに通知を受信するには、Workload Factoryコンソールでメール通知を有効にします。</block>
-  <block id="7184b61f2058f394c7d6b104dc166242" category="list-text">*Amazon SNS*：Workload Factory コンソールを使用して、Amazon SNS トピックに通知を送信するように Workload Factory を設定します。</block>
-  <block id="150b7425bee731f53d950cb07997d3a9" category="admonition">NetApp Consoleで通知を設定すると、通知配信の所有権が移管され、Workload Factoryコンソールの通知オプションは無効になり、読み取り専用モードで表示されます。ツールチップには、通知はNetApp Consoleから管理されると記載されています。その後、通知はNetApp Consoleからのみ管理できます。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始する前に</block>
   <block id="719c05c1c99e00fa5e0edb33bb8190f6" category="paragraph">以下の前提条件は、Amazon SNS通知を設定する場合にのみ適用されます。</block>
   <block id="9ccebe6954a81c5c1f9a57ddc658596a" category="list-text">Amazon SNSの設定とAmazon SNSトピックの作成には、Amazon SNSコンソールまたはAWS CLIのいずれかを使用する必要があります。</block>
   <block id="1a7d7414c3da7bd3d69c29c1c9dc74ad" category="list-text">Workload Factoryは*Standard*トピックタイプをサポートしていることに注意してください。このタイプのトピックでは、通知が受信順に購読者に送信されることが保証されないため、重要な通知や緊急の通知がある場合は注意が必要です。</block>
-  <block id="4be7ff4e16147ce765eb61308f73beda" category="open-title">NetApp Consoleからの通知を設定する</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
   <block id="fe3e3ad90678611fd3fe6b4348fba6dc" category="list-text"><block ref="7532dfde8c533672ea63a5b546224a97" category="inline-link-macro-rx"></block>にログインします。</block>
   <block id="0a4d4130dbebdc7083cd7435e388797d" category="list-text">NetApp Consoleメニューから、*ワークロード*、*管理*、*通知設定*の順に選択します。</block>
@@ -175,14 +165,8 @@
   <block id="0d7adbc19c316fab18fa015b723496bd" category="list-text">*Amazon SNS通知*：*SNS通知を有効にする*を選択し、Amazon SNSコンソールからAmazon SNSを設定するための手順に従ってください。</block>
   <block id="a4caa02a925f9e2b61439b42ecfebb6f" category="paragraph">トピックを作成したら、トピックARNをコピーして、「通知設定」ページの「SNSトピックARN」フィールドに入力します。</block>
   <block id="2339afaee28d73e91f81e490b67a4b5c" category="list-text">テスト通知を送信して設定を確認したら、*適用*を選択してください。</block>
-  <block id="4bc45d22028e53a00f4de2c50839c911" category="open-title">Workload Factoryコンソールから通知を設定する</block>
-  <block id="219bd6a410f8c490dbc0ffbcf504910f" category="list-text"><block ref="ed002915dbbbf90a20b3d8fdf4cc2390" category="inline-link-macro-rx"></block>にログインします。</block>
-  <block id="99a1b22d5c08e1ea6e260730064a78c1" category="list-text">Workload Factory コンソールのメニューから、*ワークロード*、*管理*、*通知設定* の順に選択します。</block>
-  <block id="458f208085c8b6ec69e163ddf2378427" category="list-text">以下の通知タイプのうち、1つ以上を有効にしてください：</block>
-  <block id="622901cf56fa55473d2f9550e6422faf" category="list-text">*メール通知*：*メール通知を有効にする*を選択してください。アカウントに関連付けられているメールアドレスはすべて読み取り専用モードで表示されます。</block>
   <block id="5e5392f4dcdf5502f0937be76da274d0" category="section-title">Amazon SNSトピックにサブスクライブする</block>
   <block id="cbde2df6a7c89370edc449dc5705d30c" category="inline-link">確認方法</block>
-  <block id="48069e5c28c259c5ae7ab58ad98f2b42" category="paragraph">Workload Factoryからトピックに通知を送信するように設定したら、Amazon SNSドキュメントの<block ref="88c7b6108316e02c36e39863bedc2019" category="inline-link-rx"></block>に従ってトピックをサブスクライブし、Workload Factoryからの通知を受信できるようにします。</block>
   <block id="e457faf451b04c78c6b2c6bc25491ad1" category="section-title">通知をフィルタリングする</block>
   <block id="3bf17ee9de6360f01456d2fe35c8ff4c" category="paragraph">通知にフィルターを適用することで、不要な通知トラフィックを削減し、特定のユーザーに特定の種類の通知を配信することができます。Amazon SNS ポリシーを使用して SNS 通知を設定し、NetApp Console の通知設定を使用することでこれを実現できます。</block>
   <block id="4ccc3070ee3f76f6afb040d5f99b3bdd" category="section-title">Amazon SNS通知をフィルタリングする</block>
@@ -2312,7 +2296,6 @@
   <block id="d3ac5879c6e6d4037eeb5996a078c1eb" category="list-text">*メール*：Workload Factoryの通知設定で設定されているメールアドレスに送信されます。</block>
   <block id="521affd4c31056b034895f68689c40d6" category="list-text">*Amazon SNS*：他のシステムとの統合のために、設定済みのSNSトピックに公開されます</block>
   <block id="b113e6e3f414df97faffdf304f96cdea" category="inline-link-macro">通知を設定する</block>
-  <block id="894adf5cb0ac606f1e718c5bc998fe44" category="paragraph">通知を有効にするには、<block ref="4ab27e3456d02f7a901aae478e281703" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="01bd639bef6ec9a56687ee7ffd9f246c" category="section-title">レイテンシ設定を管理する</block>
   <block id="95ae0d98cc5a0df87238eb0392c461da" category="paragraph">設定後、しきい値はいつでも変更できます。</block>
   <block id="6fe6ef1cbd27d3257ff9500aab5f9ab9" category="list-text">*Latency* ページで、*Edit* を選択します。</block>
@@ -2823,16 +2806,13 @@
   <block id="c0aee0db2523a540ba66181f63809c8b" category="list-text">*データ保護アクション*を選択し、次に*ボリュームのクローン*を選択します。</block>
   <block id="a9056a8f8a35fa168136ae9ea8b7866d" category="list-text">「ボリュームのクローン」ダイアログで、ボリュームクローンの名前を入力します。</block>
   <block id="9de0e2b17d7e1e2da6c0ce7e9dc6e377" category="list-text">*Clone*を選択します。</block>
-  <block id="94a3e141996b9431c4516ae849425040" category="summary">NetApp Workload FactoryはAmazon FSx for NetApp ONTAPファイルシステム構成を定期的に分析し、構成上の問題がないかどうかを判断します。</block>
   <block id="94e390698b0c254e1e6b02b938689a62" category="doc">FSx for ONTAP ファイルシステムの構成分析</block>
-  <block id="eb2b721313223c7264abb769bf627d20" category="paragraph">NetApp Workload FactoryはAmazon FSx for NetApp ONTAPファイルシステム構成を定期的に分析し、構成上の問題がないかどうかを判断します。問題が検出された場合、Workload Factoryは問題点を示し、ファイルシステムストレージが最高のパフォーマンス、コスト効率、およびベストプラクティスへの準拠を達成するために何を変更する必要があるかを説明します。</block>
   <block id="1c11d2e59190fe6a4e37f1e68abafcb4" category="paragraph">主な機能は次のとおりです：</block>
   <block id="ebc3bf5de769bc75ad8e36a90a0ed695" category="list-text">日次構成分析</block>
   <block id="8c0981b34ea19373e1dcf1c3d034f097" category="list-text">自動ベストプラクティス検証</block>
   <block id="3583e4a3e4e2e122cff65b8ad9045348" category="list-text">プロアクティブな可観測性</block>
   <block id="16fcd85dc9469370b62b4b46381f8e2a" category="list-text">洞察から行動へ</block>
   <block id="7a3fc3cf12e9da54628c7311398bee5c" category="list-text">AWS Well-Architected Framework アドバイザー</block>
-  <block id="081bb4ab1716ea656b2b52715598f415" category="paragraph">日々の分析が完了すると、デプロイメントのWell-architectedダッシュボードに、構成が「最適化済み」または「最適化されていない」として表示されます。設定に関する問題はカテゴリ別に整理されており、設定に関する問題とその推奨事項の一覧も掲載されています。設定に関する問題については、推奨事項をご確認ください。Workload Factoryは一部の問題を自動的に修正できますが、その他の問題には手動での対応が必要です。この場合、Workload Factoryは、推奨される変更を実装するための詳細な手順を提供します。</block>
   <block id="8779c6393df05e1705b311d9e0f13958" category="paragraph">また、組織の標準とNetAppのベストプラクティスに照らして環境を検証するために、平易な言葉でカスタムルールを作成することもできます。ドライランでルールをテストし、各環境で実行するようにスケジュールを設定します。<block ref="02fcf2ffb8ce0690b17b03c9491ef999" category="inline-link-macro-rx"></block>。</block>
   <block id="8feb6c8d13e912657481adbe0cafebb3" category="paragraph">Workload Factory は、継続的な評価と推奨事項、および修復策を組み合わせることで、大規模なストレージ、データベース、および VMware 環境にベストプラクティスを適用します。自動化された修正機能は、人的ミスを減らし、均一な管理を確保し、ワークロードインフラストラクチャ全体でパフォーマンスと信頼性を維持します。</block>
   <block id="3f6f8b4e204fd3aa39cac35661de164d" category="section-title">分析要件</block>
@@ -2852,7 +2832,6 @@
   <block id="ca512a483bb26b1b253abc6b2cc463bd" category="list-text">*Snapshotポリシー*</block>
   <block id="6c9fff12a469dffc950e974a95a7b4a4" category="paragraph">効率的なバックアップと迅速なリストアのために、ローカルSnapshotをスケジュール設定してください。Snapshotは、ボリュームのポイントインタイムイメージを瞬時に作成します。この推奨事項はデータベース環境には適用されません。</block>
   <block id="4e3fbfcdffe2becd73a5b796de048459" category="list-text">*アプリケーション整合性Snapshot*</block>
-  <block id="8f1e17436bf3a87fccd5f9e6d1ed851e" category="paragraph">データベース環境では、NetApp SnapCenter のアプリケーション整合性スナップショットを使用して、特定の時点におけるボリュームデータの正確で信頼性の高いスナップショットを取得します。これにより、アプリがスムーズに動作し、データが安全に保たれます。SnapCenter はバックアップを容易にし、データの迅速かつ正確な復元を支援することで、ダウンタイムを削減し、最も重要なワークロードを保護します。</block>
   <block id="b34347ddf6e48f7eb5aee09d6f7b92a6" category="list-text">*リージョン間レプリケーション*</block>
   <block id="fb0db5246d7e15caadfb931bef38413c" category="paragraph">リージョン間レプリケーションにより、データが別のAWSリージョンに複製されるため、データの耐久性と可用性が向上します。災害復旧とコンプライアンスをサポートするために、リージョン間レプリケーションを設定します。</block>
   <block id="e5cdf4f9c0dda596826a91093d4f69f4" category="list-text">*SSDキャパシティのヘッドルーム*</block>
@@ -2898,7 +2877,6 @@
   <block id="c359614024935abd3712075452782fa3" category="list-text">*非アクティブなブロックデバイス*</block>
   <block id="0be251ac51e901583999154779926c3b" category="paragraph">ブロックデバイスが7日間使用されなかった場合は、コスト削減のため、ブロックデバイスのデータをアーカイブするか、使用されていないブロックデバイスを削除してください。</block>
   <block id="8611faa768b220ecb3795c6fda54fdaa" category="list-text">*SSD容量のオーバープロビジョニング*</block>
-  <block id="baae99faf5c3e54a1e7e85346ab5de9b" category="paragraph">過剰なSSD容量は、不必要なコスト増につながります。SSDの容量を減らしつつ、20%の空き容量バッファを維持します。この操作には数時間から数日かかる場合があり、その間は他のファイルシステム操作はサポートされません。</block>
   <block id="934fd3399568391e103ee0d773bf954d" category="list-text">*非アクティブなNASボリューム*</block>
   <block id="72d8d7f27cf31b02bb7df1a01b23ab49" category="paragraph">構成分析では、アクティブに使用されていない NAS ボリュームを特定し、コストを削減するためにボリュームを削除またはアーカイブすることを提案します。</block>
   <block id="8722112d28d6eea0aff9478fb61c5de7" category="section-title">パフォーマンス効率</block>
@@ -3678,7 +3656,6 @@
   <block id="4db5604b0bc72aea1fe7399b332f28cb" category="list-text">*データ階層化*：アクセス頻度の低いデータを、プライマリの高性能SSDストレージ階層からセカンダリの容量プールストレージ階層に移動することで、ストレージコストを削減できます。</block>
   <block id="83e08612242214ecb1e7db2eb93df5dc" category="section-title">Workload Factoryの追加機能</block>
   <block id="384c5c520d0877aaaaed76d75d973d99" category="list-text">*ストレージコスト比較計算ツール*：Amazon Elastic Block Store（EBS）、Elastic File System（EFS）、およびFSx for Windows File ServerのストレージコストをFSx for ONTAPと比較します。この計算ツールから、FSx for ONTAPストレージ構成がどのように潜在的なコスト削減をもたらすかを確認し、FSx for ONTAPストレージへの移行を計画できます。</block>
-  <block id="f6858e5eadd0ed940450d85121838545" category="list-text">*ワークロードファクトリーのユーザーインターフェース*：_クイック作成_と_高度な作成_のデプロイメントモードオプションを提供します。クイック作成には、AWS、NetApp、および業界標準のベストプラクティスがストレージ構成に含まれています。</block>
   <block id="a5a980f3518b6bdf573ccca8b4570aaa" category="list-text">*Codebox*：開発者に、FSx for ONTAPの操作用コードビューア、コピーおよびダウンロード用のコードテンプレート、コード再利用のための自動化カタログを提供します。</block>
   <block id="2f00f54e8e91e47bd247b06a51824fb0" category="inline-link-macro">Amazon FSx for NetApp ONTAPの価格設定</block>
   <block id="f779a02b6ead6147136f74bc7ce29eaa" category="paragraph">Workload Factoryではなく、AWSがお客様のFSx for ONTAPアカウントを保守します。<block ref="d466c04e3dc9277f23f307f5afe7df62" category="inline-link-macro-rx"></block>をご参照ください。</block>
@@ -3858,7 +3835,6 @@
   <block id="c4201ee0fd07b804ee782357c70d2e27" category="list-text">変更を破棄するには、*以前のバージョンに戻す*をクリックします。ルールは元の定義に戻り、編集モードを終了します。</block>
   <block id="c5ef40517475cde4aa83a5451658e49f" category="summary">ファイルシステムのFSx for ONTAPファイルシステムタグは、いつでも追加、更新、または削除できます。</block>
   <block id="3dd4ca2c61c588825f3e69d7851510b5" category="doc">NetApp Workload FactoryでFSx for ONTAPファイル システム設定を管理する</block>
-  <block id="b24c16fd1abe8154a92346f6dd1baf6b" category="paragraph">NetApp Workload Factory で FSx for ONTAP ファイルシステムの設定を管理します。ファイルシステムのタグを管理したり、必要に応じて fsxadmin パスワードをリセットしたり、必要に応じてスループット容量を更新したりできます。</block>
   <block id="f120bfb32fdc034593c753c46a030312" category="section-title">FSx for ONTAP ファイルシステムタグを管理する</block>
   <block id="46512aa67048f4a43e843b7f1767367e" category="paragraph">タグは、リソースを分類するのに役立ちます。NetApp Workload Factoryでは、いつでもファイルシステムのタグを追加、編集、削除できます。</block>
   <block id="d54726e20094db4246fecbd64718cb16" category="list-text">*インベントリ*で、更新するファイルシステムのアクションメニューを選択し、*ファイルシステムタグの管理*を選択します。</block>
@@ -4217,7 +4193,6 @@
   <block id="dacae3a3d22c24a7e5e2a28664e1043d" category="paragraph">ボリューム再調整操作が停止し、アクティブボリュームの移動が中止されます。</block>
   <block id="3d7b2807e22b58e985dfcb21a31b176e" category="summary">タグは、リソースを分類するのに役立ちます。FSx for ONTAPボリュームのボリュームタグは、いつでも追加、編集、削除できます。</block>
   <block id="2e4be9b0e28ca3065b74b93bd25ca696" category="doc">NetApp Workload Factory でボリューム設定を管理する</block>
-  <block id="e541b8bee1897be0fb1272397166c050" category="paragraph">組織のニーズに合わせて、NetApp Workload Factory の ONTAP ボリューム設定に対応する FSx をカスタマイズします。ボリュームタグを管理してリソースを分類したり、ストレージ効率設定を更新してスペースとコストの節約を最適化したり、イミュータブルファイル設定を管理してデータ保持を制御し、不正な変更から保護したりできます。</block>
   <block id="d151342d67a639e871ca8c57524ca7f8" category="section-title">ボリュームタグを管理する</block>
   <block id="693a8f663c39ae53134101e5d974fda8" category="paragraph">タグは、リソースを分類するのに役立ちます。NetApp Workload FactoryのFSx for ONTAPボリュームのボリュームタグは、いつでも追加、編集、削除できます。</block>
   <block id="1111cc43d23839eef53ada84488c133d" category="list-text">タグを変更するボリュームのアクションメニューを選択します。</block>
@@ -4980,19 +4955,11 @@
   <block id="70d5997237e2a666a80612de57a49652" category="paragraph">ボリュームクローンが分割され、「ボリューム」タブに表示されます。</block>
   <block id="56df9b1084a1d8fbfcb5630d52db4560" category="summary">NetApp Workload Factory で FSx for ONTAP ファイルシステムリソースのコストを追跡し、レポートを生成します。</block>
   <block id="e34daec9a99e5e16cdd75dd4637d156b" category="doc">NetApp Workload Factory のリソースのコストを追跡してレポートを取得する</block>
-  <block id="5585a04aef8ebc87e1cda202d7e2a439" category="paragraph">FSx for ONTAP ファイルシステムのコストと使用状況を、NetApp Workload Factory コンソールの統合ビューで追跡できます。コストデータは、予算管理やリソースの効率的な最適化に役立ちます。Workload Factory は、FSx for ONTAP ファイルシステムリソースのコストレポートを生成し、関係者と共有することができます。</block>
   <block id="132c7cd068e9c3c95296d05738c81a90" category="paragraph">Workload Factory は、AWS Cost Explorer からコストデータを取得することで、FSx for ONTAP ファイルシステムのコストと使用状況を追跡します。以下のコスト詳細が追跡されます：使用タイプ、使用 SKU、デプロイメントタイプ、使用量、および合計コスト。</block>
-  <block id="759dd0f8e7a28f421f2c25ba15aca0e1" category="paragraph">固有のリソースの場合、Workload Factory は、実際のパフォーマンスティアの使用状況、プロビジョニング済みだが未使用のスペースに割り当てられたパフォーマンスティアコストの比例配分、容量ごとに分配されたパフォーマンス割り当て、および容量プールの使用状況を組み合わせてコストを計算します。各構成要素は、その次元における単位あたりの価格で乗算され、その結果を合計することで、各リソースの総コストが決定されます。</block>
-  <block id="0ed1a26b65398b8b99cc7180f0f958ba" category="paragraph">コストダッシュボードでは、AWSアカウント、認証情報、1つ以上のリージョン、および時間範囲でコストと使用状況データをフィルタリングして、FSx for ONTAPファイルシステムの使用量を把握できます。データは常に月単位で表示されます。</block>
-  <block id="88a0a8f5a8b6a8f15a5f8938008d3945" category="paragraph">以下の権限を使用して、AWS Cost Explorerからお客様のFSx for ONTAPファイルシステムリソースのコストと使用状況データを取得します：<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block> および<block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block>。AWS Cost Explorer APIと当社の見積もりを使用して、総コストを算出します。</block>
   <block id="80e92f578bcc9bc76e7904c0736e30b0" category="inline-link-macro">AWSのコスト配分タグについて詳しくはこちらをご覧ください。</block>
-  <block id="30aa9e3df2319b487f228fe2955abbb2" category="paragraph">AWSの割り当てタグキーとタグキー値は、特定のコストを特定するための追加のフィルタリングレイヤーを提供します。_タグ_はキーと値で構成されます。タグキーとタグキー値でフィルタリングするには、FSx for ONTAPファイルシステムにタグを割り当てます。<block ref="8ea95efe0fef689337ea8960e5c1861f" category="inline-link-macro-rx"></block></block>
-  <block id="0b0bedbf9ddde3e3d54ab1a3b6a5f9a6" category="paragraph">コストダッシュボードに表示されるコストデータに加えて、FSx for ONTAP ファイルシステムリソースのコストレポートを生成できます。コストレポートのデータには、特定のファイルシステムとボリュームに関する情報が表示されます。このレポートはダウンロード可能な PDF ファイルで、関係者と共有できます。</block>
   <block id="258ef99c8c6162f96d39f58575b891c4" category="section-title">コストを追跡する</block>
   <block id="4eb4c996873463b028b9c244954294a7" category="paragraph">Workload Factory コンソールのコストダッシュボードに表示されるコストは、AWS Cost Explorer のデータに基づいており、24時間ごとに更新されます。</block>
-  <block id="d33d3fec0d0cc42bf9722d3406ba5aa2" category="paragraph">次の要件を満たしていることを確認してください：</block>
   <block id="2f019e00d19e9fc00fa1b2973a3e1766" category="list-text">Workload Factory で FSx for ONTAP のコストを追跡するには、<block ref="fe3fbe2a123d988769e068d3001a8bd3" category="inline-link-macro-rx"></block>必要があります。</block>
-  <block id="cbdceaa837454b037267d62ad01fe349" category="list-text">AWS割り当てタグでフィルタリングするには、FSx for ONTAPファイルシステムにタグが割り当てられていることを確認してください。</block>
   <block id="4c55de1297173a3ebed41397bb8aaa06" category="list-text">*FSx for ONTAP* メニューから、*コスト* を選択します。</block>
   <block id="0920742e44f6fc32f644b1fa4ba9f2ee" category="list-text">コストダッシュボードから、以下の情報を指定して FSx for ONTAP リソースのコストと容量データをフィルタリングします。</block>
   <block id="f4654cadb5477c95a6a0e93a5be01b7b" category="list-text">*AWSアカウント*：コストデータを表示するアカウントを選択します。</block>
@@ -5008,7 +4975,6 @@
   <block id="766eb30a1e5bad36f68174d269e44581" category="list-text">レポート画面で、以下の情報を入力してください。</block>
   <block id="6d28ef4b6f4c3cf90653ef05bfe35523" category="list-text">*ファイルシステム*：レポートに含める FSx for ONTAP ファイルシステムを1つ以上選択してください。</block>
   <block id="a7bd0905e600528204e4269535f4130f" category="list-text">*ボリューム*：（オプション）レポートに含めるボリュームを1つ以上選択します。</block>
-  <block id="9eedf15c88882820c71be2457a0407b4" category="paragraph">PDF形式のレポートが生成され、ダウンロードできます。</block>
   <block id="753f0ef1207693ec3d5a5341ae8e6a92" category="summary">アカウント内のすべてのレプリケーション関係における遅延を監視するには、トラッキングを有効にしてください。</block>
   <block id="b9ceeddf626c03ee2118a4917ae8c38b" category="doc">NetApp Workload Factoryでレプリケーションの遅延を追跡する</block>
   <block id="4fd22cd0c1b62f84962ef1e8ffd9c966" category="paragraph">アカウント全体のレプリケーション遅延を監視するには、トラッキングを有効にしてください。Workload Factoryは、遅延が設定されたしきい値を超えた場合にアラートを発します。デフォルトでは、通常の転送時間を確保し、誤報を減らすために、しきい値はレプリケーション間隔の150%に設定されています。RPOに合わせてしきい値を調整し、遅延がそのしきい値を超えた場合に通知を受け取ることができます。データをCSVファイルにエクスポートして、さらに分析することもできます。</block>
@@ -6795,4 +6761,54 @@
   <block id="f6400c3e909c93ba53f8281302a7ffef" category="paragraph">どちらの場合も、初回ログイン時にコンソールへの登録が完了します。</block>
   <block id="adbbbb6561b05ff5263526309e842926" category="inline-link-macro">組織の管理者への連絡方法を確認します。</block>
   <block id="172584f9c60790ff1f0e0a5fce827ebd" category="list-text">システムから組織の作成を求められた場合は、ダイアログボックスを閉じてコンソール管理者に連絡し、コンソール組織にお客様を追加してアクセス権を付与してもらってください。 <block ref="b322cd1c319c783c8c76cc03c56dbbda" category="inline-link-macro-rx"></block></block>
+  <block id="309e95695e9929bae28088a2259c1445" category="paragraph">Workload Factoryの通知は、NetApp Consoleを使用して設定できます。</block>
+  <block id="4ecef83a6c0c3ac1ae349c42700f3f4d" category="paragraph">利用可能な通知オプションは次のとおりです： * *通知*：Workload Factoryを設定して、NetApp Consoleのベルアイコンの下に表示される通知を送信します。* *メール*：Amazon SNSの設定を必要とせずに、アカウントに関連付けられている任意のメールアドレスで通知を受け取るには、NetApp Consoleでメール通知を有効にします。* *Amazon SNS*：Workload Factoryを設定して、Amazon SNSトピックに通知を送信します。</block>
+  <block id="3dba14348891216cbb525a2715282a3a" category="paragraph">NetApp Consoleがトピックに通知を送信するように設定したら、Amazon SNSドキュメントの<block ref="88c7b6108316e02c36e39863bedc2019" category="inline-link-rx"></block>に従ってトピックをサブスクライブし、Workload Factoryからの通知を受け取れるようにしてください。</block>
+  <block id="78b6013fa1972ce59794d77815cf0e84" category="paragraph">ユーザーインターフェースは、より新しいリンクバージョンが利用可能になった際に自動的に通知し、アップグレード手順を提供します。</block>
+  <block id="a1072b42afa8dbdd2e60149176ed2b12" category="paragraph">通知を有効にするには、<block ref="60e31a43dca9b03e9f576d31c623d89d" category="inline-link-macro-rx"></block>を参照してください。</block>
+  <block id="f065a2ea22107a252e472f97258693a7" category="summary">NetApp Workload Factory は、Amazon FSx for NetApp ONTAP ファイルシステムの構成を定期的に分析し、構成上の問題がないかどうかを確認します。</block>
+  <block id="92f07513b1875b2b1e256306d4e74e27" category="paragraph">NetApp Workload Factory は、Amazon FSx for NetApp ONTAP ファイルシステムの構成を定期的に分析し、構成上の問題がないかどうかを確認します。問題が検出された場合、Workload Factory は問題点を示し、ファイルシステムストレージが最高のパフォーマンス、コスト効率、およびベストプラクティスへの準拠を実現できるよう、変更すべき点を説明します。</block>
+  <block id="686258893afc7cbc33af9d0c32b54312" category="paragraph">Workload Factoryは、サポートされているクラウドストレージ環境におけるワークロードを毎日分析します。この分析により、優れたアーキテクチャのステータス、インサイト、および推奨事項が提供されます。</block>
+  <block id="d7ee1f6067100032c0f40e0241fe9a6e" category="paragraph">日々の分析が完了すると、デプロイメントのWell-architectedダッシュボードに、構成が「最適化済み」または「最適化されていない」として表示されます。設定に関する問題はカテゴリ別に整理されており、推奨事項も併せて掲載されています。Workload Factoryは一部の問題を自動的に修正できます。手動での対応が必要な問題については、Workload Factoryが推奨される変更を実施するための詳細な手順を提供します。</block>
+  <block id="f967a65feeea9a5eb224969af17f10c0" category="admonition">現在、NetApp Workload Factoryはすべての構成に対してワークロード固有の推奨事項を提供していません。ワークロードのニーズに合わせて設定を調整してください。</block>
+  <block id="b5ca8aeb1728c55a82632de4d573b0d2" category="paragraph">データベース環境では、NetApp SnapCenter のアプリケーション整合性スナップショットを使用して、特定の時点におけるボリュームデータの正確で信頼性の高いスナップショットを取得します。これにより、アプリケーションをスムーズに動作させ、データを保護することができます。SnapCenter はバックアップを容易にし、データの迅速かつ正確な復元を支援することで、ダウンタイムを削減し、最も重要なワークロードを保護します。</block>
+  <block id="e2119ef621c437914ee4e29d6fb63c5a" category="list-text">AWS MGN の設定</block>
+  <block id="21f27afbe2e059e4ff2e37035ed04387" category="paragraph">AWS MGN で使用する前に、必要な AWS Transform MGN （MGN）接続設定と API 認証設定を使用して FSx for ONTAP ファイルシステムを設定してください。</block>
+  <block id="bed459e6df93ff6f9fe5d1a77eb803e3" category="paragraph">過剰なSSD容量は、不必要なコスト増につながります。SSDの容量を減らしつつ、20%の空き容量バッファを維持します。この操作には数時間から数日かかる場合があり、その間は他のファイルシステム操作はサポートされません。</block>
+  <block id="4301ccf5ac142a1dbaeb981182ce69d5" category="list-text">*ボリュームスペース管理*</block>
+  <block id="7009643ac9a2e671892c7d150d41bfd9" category="paragraph">ボリュームの容量管理を連携させることで、ボリュームの容量不足のリスクを軽減できます。これがないと、予期せぬデータやスナップショットの増加によってボリュームがいっぱいになり、書き込みエラーやアプリケーションへの影響が発生する可能性があります。</block>
+  <block id="cb56b487346d236a0f8aa8d9bee96a32" category="list-text">*ワークロード*：ボリュームに関連付けられているワークロードを選択します。</block>
+  <block id="5027902eb321e29c02f1b29693c38975" category="list-text">*コンソールユーザーインターフェース*：_クイック作成_と_高度な作成_のデプロイメントモードオプションを提供します。クイック作成には、ストレージ構成に関するAWS、NetApp、および業界標準のベストプラクティスが含まれます。インターフェースには、SSDストレージ容量とスループットの使用傾向、ワークロードの概要、および展開可能な詳細な構成設定も表示されます。</block>
+  <block id="4add18b12df10bcbce425a63ffca5e83" category="paragraph">NetApp Workload Factory で FSx for ONTAP ファイルシステムの設定を管理し、ファイルシステムを整理された状態に保ち、セキュリティを確保し、ワークロードに適したサイズを維持します。タグの追加または編集、ONTAP 認証情報の管理、fsxadmin パスワードのリセット、スループット容量の更新はいつでも実行できます。</block>
+  <block id="e5887c2efb1d1c33ac1d1a94c80a271f" category="section-title">ONTAP クレデンシャルの管理</block>
+  <block id="cb024049d5ea2ff7afa317a6714dc5e2" category="paragraph">FSx for ONTAP ファイルシステムの ONTAP 認証情報を NetApp Workload Factory で管理します。Workload Factory には、プライマリ認証情報と制限付き認証情報の2種類があります。デフォルトでは、ファイルシステムはプライマリ ONTAP 認証情報を使用します。制限付き認証情報は、Ask Me、ルールビルダー、カスタムダッシュボードなどの AI オペレーション（AIOps）にのみ使用されます。必要に応じて制限付き認証情報セットを追加でき、どちらの認証情報セットもいつでも更新できます。</block>
+  <block id="8d1d531715a92e9a9357a3f3a1c54f69" category="paragraph">次のタスクを実行できます。</block>
+  <block id="fa4aa5fb5750ccbf7f29962d66653d6a" category="list-text">ユーザー名とパスワード、またはシークレット ARN のいずれかを使用して、制限付きクレデンシャルセットを追加するオプションを選択します。</block>
+  <block id="1f6972d3f9f44512acd184a7af564248" category="list-text">ユーザー名とパスワード、パスワードのみ、またはシークレット ARN など、既存のクレデンシャルを変更します。</block>
+  <block id="b0eba0716b32b9e0d471543aca11caf3" category="paragraph">Workload Factory は、Workload Factory 認証情報サービス（ユーザー名とパスワード）と AWS Secrets Manager 間の切り替えをサポートしています。</block>
+  <block id="90d7592f5d4256c52e645ce7955c7f4f" category="paragraph">Workload Factory は、制限付き認証情報を次のように処理します：</block>
+  <block id="04ef7c827068e612d0f1327e980be8b3" category="list-text">ファイルシステムに制限付き認証情報を指定していない状態で、カスタムルールやダッシュボードを作成したり、Ask Me機能で質問したりすると、Workload Factoryは読み取り専用のONTAP認証情報を制限付き認証情報セットとして作成します。</block>
+  <block id="61110a65f48af136e292786872d9f8d0" category="list-text">ファイルシステムに対して既に制限付き認証情報を提供している場合、それらの認証情報がAIOpsに使用されます。</block>
+  <block id="72c8b62dc4527a52bace0bee76899e26" category="paragraph">ONTAP クレデンシャルを管理するには、リンクを関連付ける必要があります。<block ref="3d8b5f4a54daf7fc368470fe5a7ec250" category="inline-link-macro-rx"></block>。リンクが関連付けられたら、この操作に戻ります。</block>
+  <block id="a1212720bff481df667e432e87fd3f32" category="list-text">FSx for ONTAPメニューから、*インベントリ*を選択します。</block>
+  <block id="552aaa62e5f9c440e967a13585126f27" category="list-text">*インベントリ*で、認証情報を管理するファイルシステムのアクションメニューを選択し、*管理*を選択します。</block>
+  <block id="85d885bc9803c37bc40f8df41305e5e7" category="paragraph"><block ref="85d885bc9803c37bc40f8df41305e5e7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="82643209e079706944263aa4ac7fa0ec" category="list-text">「ONTAP クレデンシャルの管理」を選択します。</block>
+  <block id="5baa98427cdf9e7fa18b25794f917fd6" category="list-text">プライマリまたは制限付き ONTAP クレデンシャルを更新します。</block>
+  <block id="1cb58d6b9aaeab21f9af6c3012269014" category="paragraph">組織のニーズに合わせて、NetApp Workload Factory の ONTAP ボリューム設定に対応する FSx をカスタマイズします。ボリュームタグを管理してボリュームワークロードの設定などのリソースを分類したり、ストレージ効率設定を更新してスペースとコストの節約を最適化したり、イミュータブルファイル設定を管理してデータ保持を制御し、不正な変更から保護したりできます。</block>
+  <block id="3f723254bac88a4b39c3650549be282a" category="section-title">ボリュームワークロードの変更</block>
+  <block id="87ab4fb0ad018565836567d164671f73" category="paragraph">ボリュームのワークロードを、想定される使用事例に合わせて更新します。</block>
+  <block id="757a7ffb20a279d7239febb013141ad5" category="list-text">メニュー <block ref="d1917ed039a7bd34b3d1373e5ffc5ece" category="inline-image-macro-rx" type="image"></block> を選択し、次に*Storage*を選択します。</block>
+  <block id="48392de7f44d75a05d38a8c1a399d8ac" category="list-text">ストレージメニューから「ボリュームエクスプローラー」を選択します。</block>
+  <block id="17ec06b9eaa321300fab59fd56971e66" category="list-text">ワークロードを更新するボリュームのアクションメニューを選択します。</block>
+  <block id="ed2541738b61ca0c7584cd62bf74b27d" category="list-text">*高度な操作*を選択し、*ワークロードの変更*を選択します。</block>
+  <block id="cd9e2d546766552cd75de00b7717f0cf" category="list-text">「ワークロードの変更」ダイアログで、ボリュームに適したワークロードを選択します。</block>
+  <block id="8137b647e9c277bf5504be0415118937" category="paragraph">NetApp Workload Factory は、FSx for ONTAP ファイルシステムのコストと使用状況の統合ビューを提供し、予算管理とリソースの効率的な最適化を支援します。FSx for ONTAP ファイルシステムリソースのコストレポートを生成して、関係者と共有することもできます。</block>
+  <block id="0ecf72bcc13fb55d0aa28c82a90ab6f4" category="paragraph">固有のリソースの場合、Workload Factory は、実際のパフォーマンスティアの使用状況、プロビジョニング済みだが未使用のスペースに割り当てられたパフォーマンスティアコストの比例配分、容量ごとに分配されたパフォーマンス割り当て、および容量プールの使用状況を組み合わせてコストを計算します。Workload Factory は、各コンポーネントにそのディメンションにおける単価を乗算し、その結果を合計して各リソースの総コストを決定します。</block>
+  <block id="4e1be2d2764b1091c173258f7eff8d9c" category="paragraph">コストダッシュボードでは、AWSアカウント、認証情報、1つ以上のリージョン、および時間範囲でコストと使用状況データをフィルタリングして、FSx for ONTAPファイルシステムの使用量を把握できます。Workload Factoryは常に月単位でデータを表示します。1つ以上のファイルシステム、およびファイルシステム内の1つ以上のボリュームでフィルタリングすることもできます。AWSのコスト配分タグキーとタグキー値は、特定のコストを特定するための追加のフィルタリングレイヤーを提供します。_タグ_はキーと値で構成されます。タグキーとタグキー値でフィルタリングするには、FSx for ONTAPファイルシステムにタグを割り当てます。<block ref="8ea95efe0fef689337ea8960e5c1861f" category="inline-link-macro-rx"></block></block>
+  <block id="ecec373dbe2f05b3a3b863fd07d13592" category="paragraph">Workload Factory は、以下の権限を使用して AWS Cost Explorer から FSx for ONTAP ファイルシステムリソースのコストと使用状況データを取得します：<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block> および <block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block>。総コストは、AWS コスト API と当社独自の見積もりを使用して算出します。</block>
+  <block id="552ae61b34399969ed0ea2c7955fd9ef" category="paragraph">コストダッシュボードのコストデータに加えて、コストエグゼクティブサマリーには、FSx for ONTAP ファイルシステムのコストと組織の支出パターンが表示されます。FSx for ONTAP ファイルシステムリソースのコストレポートを生成することもできます。このレポートはダウンロード可能な CSV ファイルで、関係者と共有できます。</block>
+  <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">以下の要件を満たしていることを確認してください。</block>
+  <block id="53c306e93da69caff455d3eaa34a6b5c" category="list-text">AWS割り当てタグでフィルタリングするには、FSx for ONTAPファイルシステムにタグが割り当てられていることを確認してください。</block>
+  <block id="22818134e299296b864b78dc4cca4c88" category="paragraph">CSV形式のレポートが生成され、ダウンロードできます。</block>
 </blocks>
