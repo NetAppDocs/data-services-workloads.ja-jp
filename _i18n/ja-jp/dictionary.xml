@@ -2816,7 +2816,6 @@
   <block id="0be251ac51e901583999154779926c3b" category="paragraph">ブロックデバイスが7日間使用されなかった場合は、コスト削減のため、ブロックデバイスのデータをアーカイブするか、使用されていないブロックデバイスを削除してください。</block>
   <block id="8611faa768b220ecb3795c6fda54fdaa" category="list-text">*SSD容量のオーバープロビジョニング*</block>
   <block id="934fd3399568391e103ee0d773bf954d" category="list-text">*非アクティブなNASボリューム*</block>
-  <block id="72d8d7f27cf31b02bb7df1a01b23ab49" category="paragraph">構成分析では、アクティブに使用されていない NAS ボリュームを特定し、コストを削減するためにボリュームを削除またはアーカイブすることを提案します。</block>
   <block id="8722112d28d6eea0aff9478fb61c5de7" category="section-title">パフォーマンス効率</block>
   <block id="62d0d3849cddbcf3cccae74f05719854" category="paragraph">パフォーマンス効率を高めることで、ストレージリソースが効果的に使用され、ワークロードが最適なパフォーマンスを発揮することを確認できます。</block>
   <block id="fbb48f4d1a3f9488b40b10d1cb8a50bd" category="list-text">*FlexGroupボリュームの再調整*</block>
@@ -3108,7 +3107,6 @@
   <block id="0abde7f01f46e5ae295493bf4b280687" category="list-text">切り替え操作では、すべてのストレージVM構成設定がターゲットストレージVMに移行するわけではありません。例えば、iSCSI、ブロードキャストドメインMTU、DNS設定などは移行されません。切り替え後、対象のストレージVM上でこれらの設定を手動で更新してください。詳細については、<block ref="af05d35e02c20d22f4e6b1df9b57e0a2" category="inline-xref-macro-rx"></block>セクションを参照してください。</block>
   <block id="893700039eb02078c7602e997d7f9922" category="list-text">ストレージVMがドメイントンネル認証を使用している場合は、移行を開始する前に、ターゲットファイルシステム上でドメイントンネルを設定して有効にしてください。</block>
   <block id="dddf91d5ccee3135470e6089b62618ba" category="list-text">*クローン*：クローンは個別のボリュームとして移行されるため、ターゲットのFSx for ONTAPファイルシステムでより多くのスペースを消費します。ターゲットの容量増加を避けるため、カットオーバー前にクローンを削除することを検討してください。</block>
-  <block id="233115f3ed74b7b4516b8f0a1efbaedf" category="list-text">*キャッシュボリューム*：ONTAP FlexCache 9.17.x以前の場合。キャッシュボリュームを含むソースストレージVMは、カットオーバーではサポートされません。移行の失敗を回避するには、カットオーバー前にONTAP FlexCache関係を削除してください。</block>
   <block id="03c85e91696d00a533c3da3b08434532" category="list-text">*AWS S3 アクセスポイント*：S3 アクセスポイントを使用するボリュームでは、移行ユースケースのためのカットオーバーレプリケーションはサポートされていません。移行の失敗を避けるため、ソースボリュームから S3 アクセスポイントを削除してください。</block>
   <block id="849ee629a3b8f33b04a9b242a47e3d59" category="list-text">*ONTAP S3構成*：ONTAP S3構成を持つvserverでは、移行ユースケースのカットオーバーレプリケーションはサポートされていません。移行の失敗を回避するために、vserver上のオブジェクトストアサーバー、バケット、ユーザー、グループ、ポリシーなどのONTAP S3構成を削除してください。</block>
   <block id="ab3171de62100468c23112d3fda9227b" category="list-text">*LUNシリアル番号とiSCSIターゲットIQN*：LUNシリアル番号とiSCSIターゲットIQNはカットオーバー時に変更されます。</block>
@@ -6830,18 +6828,15 @@
   <block id="8bc0878ae35d7f3c225b4bac0e907504" category="paragraph"><block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
   <block id="0ef70b60892b97d12c2eebf7686872ca" category="paragraph">カスタムルールを使用すると、優れた設計のダッシュボードで、NetAppのベストプラクティスとともに、独自のアーキテクチャ標準を設定、チェック、適用できます。</block>
   <block id="91b90f08c0d07c5aa66b502a1d12c868" category="paragraph">ルールビルダーを使用すると、平易な言葉でカスタムルールを作成できます。これらのルールは、すべてのリソースに対してチェックされます。カスタムルールを使用すると、デフォルトのルールではカバーされない可能性のある、組織の基準、リスク制限、および運用要件を適用できます。</block>
-  <block id="60a625f073158b990bcf2ad232af27aa" category="admonition">アカウント管理者がAI機能を無効にしている場合、新しいルールを作成したり、既存のルールを編集したりすることはできません。既にスケジュールされているルールは、引き続き実行されます。<block ref="fb4375aa776b206d4ba3c7bbae1bcfb2" category="inline-link-macro-rx"></block>。</block>
   <block id="4edc72502b9f9929e41bae938a7490c1" category="paragraph">カスタムルールはAIを活用して、平易な言葉で書かれた指示を明確で構造化されたルールに変換します。AIはリクエストを解釈してルールを提案し、指示をどのように理解したかを説明したうえで、ルールの保存またはスケジュールの前に承認を求めます。このプロセスは、以下のことを確実にします：</block>
   <block id="0465277e228b6cf7f37c1fab3872f9cd" category="list-text">ルールは明確に定義され、エラーがないかチェックされています</block>
   <block id="f2b92cb195f44b1f57205f66b9c1c992" category="list-text">カスタムコードは実行されません</block>
   <block id="f6b50ace5a7da2eb893c9a1a1c3971be" category="list-text">ルールを承認する前に、評価される内容を正確に確認できます</block>
   <block id="110a917dc178ad706edce62d767a4196" category="list-text">各カスタムルールには、評価対象のリソースタイプ、条件ロジック、重要度、評価スケジュール、および是正措置に関するガイダンスが含まれます。</block>
-  <block id="5eb43201405d6bbeac74bcd01d61e2e1" category="list-text">AWS環境への読み取り専用アクセス。カスタムルールでは、セキュリティ境界として読み取り専用権限が必要です。<block ref="1db25aada4bff8233b24c1d7b39230cd" category="inline-link-macro-rx"></block>。</block>
   <block id="823a6e1d7fe661be55dd3af05f972b11" category="list-text">ONTAP クレデンシャル</block>
   <block id="559e5220d6130b1d9f3af60fa24ff138" category="list-text">読み取り専用権限を持つFSxビューアユーザー。Workload Factoryは、まだ存在しない場合、各FSx for ONTAPファイルシステムに読み取り専用ユーザーを作成し、評価を実行できるようにします。</block>
   <block id="04d1424a4b58f665f6537d166f4f9750" category="list-text">リンクまたはエージェント</block>
   <block id="b68341d527b58582cc7cb537c3230cd8" category="inline-link-macro">リンクを使用してFSx for ONTAPファイルシステムに接続する</block>
-  <block id="d358f748048c3fa0487b8cd6d6410fb2" category="list-text">AWS APIがアクセスできない設定を確認するためにONTAPに直接接続する必要があるルールにのみ必要です。<block ref="4c7cc50e5133efc728aaa88011208eda" category="inline-link-macro-rx"></block>。</block>
   <block id="00d54cb4ae79a42990f001ca7b1eafd2" category="list-text">ルールは問題を自動的に解決するものではありません。提供されたガイダンスに従って、準拠していないリソースをお客様ご自身で修正する必要があります。</block>
   <block id="e0ff3e32dbc4b668a800d5b59c47613b" category="list-text">各ルールは1種類のリソースのみをチェックしますが、幅広いリソースに適用できます。たとえば、1つのルールで複数のリージョン、すべてのリージョン、または複数のアカウントのボリュームを評価できます。異なるリソースタイプを評価するには、それぞれ別のルールを作成します。</block>
   <block id="3f84490332db2de49bed3d46ab452bb0" category="list-text">過剰なスキャンを防ぐため、ルールは1時間に最大1回実行されます。</block>
@@ -6863,7 +6858,6 @@
   <block id="cc36425e424f4c30e5d1dd8b4cf78a69" category="list-text">本番ボリュームの保護</block>
   <block id="9beacae88b6d84f519d92cf003a30d57" category="list-text">アーカイブボリュームの階層化</block>
   <block id="ccf414cfce06645c55d0bcfd5f41608b" category="list-text">ファイルシステムの命名規則</block>
-  <block id="9b4ad9b41b7f7f63bf3258fc3894691a" category="paragraph"><block ref="a9a97108e6fef351f8c6a7a2af6f4937" category="inline-link-macro-rx"></block> <block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
   <block id="71d671c8e1cf2aa5cf976dd7ff9d340b" category="summary">ルールカタログから、カスタムアーキテクチャルールを表示、編集、有効化、無効化、および削除できます。</block>
   <block id="1cf051440b9604c5c57c4c6cab344202" category="doc">NetApp Console で Workload Factory のカスタムルールを管理する</block>
   <block id="8ef292d4be46fbc351d35b26b3ce8720" category="paragraph">ルールカタログは、すべてのカスタムルールを管理できる場所です。ルールの詳細を確認したり、ルールを編集したり、結果を確認したり、ルールをスケジュールに基づいて実行するかどうかを制御したりできます。</block>
@@ -6913,4 +6907,10 @@
   <block id="64f2f595f7dd037774e1dbd99cb2ab7b" category="sidebar">AIエージェントの設定を管理する</block>
   <block id="3fba0171e458258e875a2f8013e395b8" category="cell">SQL Server 2025</block>
   <block id="9e5f96378bed43aac0d5d94368775263" category="cell">Windows Server 2025</block>
+  <block id="084b022f1511ba8dda542f70832d22e4" category="paragraph">NASボリュームが31日間使用されなかった場合は、コスト削減のため、使用されていないNASボリュームをアーカイブまたは削除してください。</block>
+  <block id="6d4d9f3d79904b627f6aca8246717bca" category="list-text">*キャッシュボリューム*：キャッシュボリュームを含むソースストレージVMは、切り替えでサポートされません。移行の失敗を防ぐため、切り替え前にONTAP FlexCache関係を削除してください。</block>
+  <block id="179ab629584266b78c7a691ade72de63" category="admonition">アカウント管理者がAI機能を無効にしている場合、新しいルールを作成したり、既存のルールを編集したりすることはできません。既にスケジュールされているルールは、引き続き実行されます。<block ref="646cadbb9cfc9d23560c447c51098225" category="inline-link-macro-rx"></block>。</block>
+  <block id="22941004ec8c49f5d8a764461a973801" category="list-text">AWS環境への読み取り専用アクセス。カスタムルールでは、セキュリティ境界として読み取り専用権限が必要です。<block ref="8e1e3c879b9dae9bf3456eb51959b906" category="inline-link-macro-rx"></block>。</block>
+  <block id="8af9128504255d95219d06192a7427f2" category="list-text">AWS APIがアクセスできない設定を確認するためにONTAPに直接接続する必要があるルールにのみ必要です。<block ref="c8334f2cb013f0b691325d2b949f8312" category="inline-link-macro-rx"></block>。</block>
+  <block id="ef517711d9a5dee55f2bb56046d3fd70" category="paragraph"><block ref="385442535e80145b437f6d2ceb94114a" category="inline-link-macro-rx"></block> <block ref="f571cd95e32f7c421382198bc0dd0eae" category="inline-link-macro-rx"></block></block>
 </blocks>

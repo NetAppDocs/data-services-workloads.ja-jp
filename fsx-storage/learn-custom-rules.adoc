@@ -24,7 +24,7 @@ summary: NetApp のベストプラクティスとともに組織の標準を適�
 ルールビルダーを使用すると、平易な言葉でカスタムルールを作成できます。これらのルールは、すべてのリソースに対してチェックされます。カスタムルールを使用すると、デフォルトのルールではカバーされない可能性のある、組織の基準、リスク制限、および運用要件を適用できます。
 
 
-NOTE: アカウント管理者がAI機能を無効にしている場合、新しいルールを作成したり、既存のルールを編集したりすることはできません。既にスケジュールされているルールは、引き続き実行されます。link:../admin/manage-genai-features.html.["AI機能の管理について"^]。
+NOTE: アカウント管理者がAI機能を無効にしている場合、新しいルールを作成したり、既存のルールを編集したりすることはできません。既にスケジュールされているルールは、引き続き実行されます。link:../admin/manage-genai-features.html["AI機能の管理について"]。
 
 
 
@@ -46,9 +46,9 @@ NOTE: アカウント管理者がAI機能を無効にしている場合、新し
 
 カスタムルールを作成して実行する前に、以下のものを用意してください：
 
-AWS クレデンシャル:: AWS環境への読み取り専用アクセス。カスタムルールでは、セキュリティ境界として読み取り専用権限が必要です。link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["Workload FactoryにAWS認証情報を追加する"^]。
+AWS クレデンシャル:: AWS環境への読み取り専用アクセス。カスタムルールでは、セキュリティ境界として読み取り専用権限が必要です。link:add-credentials.html["Workload FactoryにAWS認証情報を追加する"]。
 ONTAP クレデンシャル:: 読み取り専用権限を持つFSxビューアユーザー。Workload Factoryは、まだ存在しない場合、各FSx for ONTAPファイルシステムに読み取り専用ユーザーを作成し、評価を実行できるようにします。
-リンクまたはエージェント:: AWS APIがアクセスできない設定を確認するためにONTAPに直接接続する必要があるルールにのみ必要です。link:https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["リンクを使用してFSx for ONTAPファイルシステムに接続する"^]。
+リンクまたはエージェント:: AWS APIがアクセスできない設定を確認するためにONTAPに直接接続する必要があるルールにのみ必要です。link:create-link.html["リンクを使用してFSx for ONTAPファイルシステムに接続する"]。
 
 
 
@@ -110,4 +110,4 @@ Disabled:: 一時停止中ですが、削除はされていません。再度有
 [[what-to-do-next]]
 == 次のステップ
 
-link:../fsx-storage/create-custom-rule.html["カスタムルールを作成する"] link:../fsx-storage/manage-custom-rules.html["カスタムルールの管理"]
+link:create-custom-rule.html["カスタムルールを作成する"] link:manage-custom-rules.html["カスタムルールの管理"]
