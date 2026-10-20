@@ -13,7 +13,7 @@ summary: EDA向けにNetApp Workload Factoryの使用を開始する前に、Net
 [role="lead"]
 EDA向けにNetApp Workload Factoryを使用する前に、NetApp Workload FactoryとAWSが適切にセットアップされていることを確認してください。これには、AWSログイン認証情報や、導入済みのFSx for ONTAPファイルシステムなどが含まれます。
 
-Workload Factoryのログインとアカウント:: link:../setup/sign-up-and-log-in.html["NetApp Consoleにサインアップしてログインします。"]する必要があります
+Workload Factoryのログインとアカウント:: link:https://console.netapp.com["NetApp Consoleにログイン"^]する必要があります。アカウントをお持ちでない場合は、まずNetApp Consoleにlink:https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["サインアップ"^]してからログインしてください。
 AWS認証情報と権限:: 読み取り / 書き込み権限を持つAWS認証情報をWorkload Factoryに追加する必要があります。つまり、EDAではWorkload Factoryを_読み取り / 書き込み_モードで使用することになります。
 
 

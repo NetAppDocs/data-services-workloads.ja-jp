@@ -75,7 +75,7 @@ Workload Factoryはlink:https://console.netapp.com["NetApp Console"^]からア�
 
 NetApp Consoleを使用するには、NetApp Support Siteのクレデンシャルでサインアップするか、NetApp Consoleのログインを作成する必要があります。最初のユーザーが組織管理者となり、ユーザーアカウントと権限を管理します。役割を更新したり、管理者を追加したりするのは後からでも可能です。
 
-* link:sign-up-and-log-in.html["NetApp Consoleへのサインアップおよびログイン方法について説明します。"]
+* NetApp Consoleにlink:https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["登録"^]。
 * link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["NetApp ConsoleのIDアクセス管理について"^]
 
 

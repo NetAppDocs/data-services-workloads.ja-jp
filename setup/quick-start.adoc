@@ -13,14 +13,15 @@ summary: Workload Factoryがリソースを直接管理し、ワークロード�
 [role="lead"]
 NetApp Workload Factoryは、NetApp Consoleからクラウドデータサービスとしてユーザーがアクセスできます。Workload Factoryの使用を開始するには、NetApp Consoleでサインアップしてアカウントを作成し、クラウド プロバイダの認証情報を追加して、Workload Factoryがリソースを直接管理し、ワークロードを最適化できるようにします。
 
-始める前に、link:learn-about-workload-factory.html["Workload Factory"]について理解しておく必要があります。
+始める前に、link:learn-about-workload-factory.html["Workload Factory"]について理解しておく必要があります。また、NetApp Consoleにlink:https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["サインアップ"^]する必要があります。
 
 
 
-[[sign-up-and-log-in-to-workload-factory-from-netapp-console]]
-== NetApp ConsoleからWorkload Factoryにサインアップしてログインする
+[[log-in-to-workload-factory-from-netapp-console]]
+== NetApp ConsoleからWorkload Factoryにログインします
 
-link:sign-up-and-log-in.html["NetApp ConsoleからWorkload Factoryにサインアップしてログインする"]
+.  https://console.netapp.com["NetApp Console"^]にログインします。
+
 
 次に、お使いのクラウド プロバイダの *Quick start* リンクを選択して開始します。
 

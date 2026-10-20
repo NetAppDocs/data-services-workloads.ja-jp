@@ -11,7 +11,7 @@ summary: Infrastructure-as-Codeスニペットの使用、ホストの検出、�
 
 
 [role="lead"]
-データベース向け NetApp Workload Factory を使用すると、_表示、計画、分析_ の権限ですぐに利用を開始できます。Workload Factory を使用してホストの検出やリソースの管理などを行う場合は、いくつかの手順で利用を開始できます。
+NetApp Workload Factory for Databasesを使用すると、権限がなくてもすぐに利用を開始できます。Workload Factoryを使用してホストの検出やリソースの管理などを行う場合は、いくつかの手順で利用を開始できます。
 
 データベースを使用するには、AWSアカウントが必要です。
 
@@ -19,7 +19,7 @@ summary: Infrastructure-as-Codeスニペットの使用、ホストの検出、�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]NetApp Workload Factoryにログイン
 [role="quick-margin-para"]
-link:../setup/sign-up-and-log-in.html["サインアップ"^]して、NetApp Consoleにログインする必要があります。
+link:https://console.netapp.com["NetApp Consoleにログイン"^]する必要があります。アカウントをお持ちでない場合は、まずNetApp Consoleにlink:https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["サインアップ"^]してからログインしてください。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2"] データベース ワークロードの資格情報と権限を追加する
 [role="quick-margin-para"]
