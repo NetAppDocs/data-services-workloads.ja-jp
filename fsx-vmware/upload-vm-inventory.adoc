@@ -4,7 +4,7 @@ permalink: fsx-vmware/upload-vm-inventory.html
 keywords: vm workloads, capture vm details 
 summary: プランニングセンターを使用して、現在のVMware環境に関する情報をアップロードできます。 
 ---
-= VMインベントリデータをNetApp Workload Factoryにアップロードする
+= VMインベントリデータをWorkload Factory for VMwareにアップロードする
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

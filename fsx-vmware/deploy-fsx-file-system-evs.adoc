@@ -4,7 +4,7 @@ permalink: fsx-vmware/deploy-fsx-file-system-evs.html
 keywords: vm workloads, deploy fsx, deploy storage for vms, evs, elastic vmware service 
 summary: 推奨されるFSx for ONTAPファイルシステム（場合によっては複数のファイルシステム）がお客様の要件を正確に満たしていることを確認したら、Workload Factoryを使用してAWS環境にシステムをデプロイできます。 
 ---
-= 推奨されるFSx for ONTAPファイルシステムをデプロイします
+= Amazon EVS 向けに FSx for ONTAP をデプロイする
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

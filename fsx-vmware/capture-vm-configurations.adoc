@@ -4,7 +4,7 @@ permalink: fsx-vmware/capture-vm-configurations.html
 keywords: vm workloads, capture vm details 
 summary: 移行アドバイザーのVMコレクタースクリプトまたはRVToolsを使用して、現在のVM構成を取得できます。最も正確なプランを作成するために、VM構成データとパフォーマンスデータの両方を収集する移行アドバイザーのVMコレクタースクリプトを使用することをお勧めします。 
 ---
-= VMwareワークロードを使用してVMware Cloudに移行する前に、VM構成をキャプチャしてください
+= VMware Cloud on AWS の VM 構成をキャプチャします
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

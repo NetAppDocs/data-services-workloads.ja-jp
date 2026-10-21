@@ -4,7 +4,7 @@ permalink: fsx-vmware/launch-onboarding-advisor.html
 keywords: overview, concepts, features, use case, workloads, how Workload Factory works 
 summary: VMware移行アドバイザーにアクセスするには、NetApp Workload Factoryにログインします。ウィザードの手順に従って、ニーズに合わせてカスタマイズされた導入計画または移行計画を作成します。 
 ---
-= VMwareワークロード移行アドバイザーを使用して、VMware Cloud on AWSのデプロイメントプランを作成する
+= VMware Cloud on AWS のデプロイメント計画を作成する
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

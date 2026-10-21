@@ -239,13 +239,13 @@ sidebar:
       entries:
       - title: VMware向けNetApp Workload Factoryについて学ぶ
         url: "/fsx-vmware/learn-about-vmware-workloads.html"
-      - title: Amazon EVSへの移行のクイックスタート
+      - title: Amazon EVS移行のクイックスタート
         url: "/fsx-vmware/quick-start-evs.html"
-      - title: Amazon EC2への移行のクイックスタート
+      - title: Amazon EC2移行のクイックスタート
         url: "/fsx-vmware/quick-start-native.html"
-      - title: VMware Cloud on AWSへの移行のクイックスタート
+      - title: VMware Cloud on AWS移行のクイックスタート
         url: "/fsx-vmware/quick-start-vmware.html"
-      - title: Google Cloud VMware Engine への移行のクイックスタート
+      - title: Google Cloud VMware Engine 移行のクイックスタート
         url: "/fsx-vmware/quick-start-gcve.html"
       - title: VMwareプランニングセンターをご覧ください
         url: "/fsx-vmware/explore-planning-center.html"
