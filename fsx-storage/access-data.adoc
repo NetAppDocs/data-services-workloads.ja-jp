@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/access-data.html 
 keywords: access data, mount point, mount volumes, mount clients, on-premises 
-summary: NASクライアント用にボリュームをマウントし、SANクライアント用にiSCSI LUNをマウントすることで、オンプレミスからFSx for ONTAPファイルシステムにアクセスできます。 
+summary: Workload FactoryでFSx for ONTAPボリュームのマウントポイントを取得し、NASおよびSANクライアントにボリュームとiSCSI LUNをマウントするためのリンクを見つけます。 
 ---
 = FSx for ONTAPファイルシステムデータにアクセスする
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: NASクライアント用にボリュームをマウントし、SANク�
 [role="lead"]
 NASクライアント用にボリュームをマウントし、SANクライアント用にiSCSI LUNをマウントすることで、オンプレミスからFSx for ONTAPファイルシステムにアクセスできます。
 
-Amazon FSx for NetApp ONTAPドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html["データへのアクセス"^]には、データへのアクセス方法に関するトピックが参考として記載されています。
+Amazon FSx for NetApp ONTAPドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html["データへのアクセス"^]には、データへのアクセス方法に関する情報が記載されています。
 
 NetApp Workload Factoryでボリュームのマウントポイントを取得することもできます。
 
@@ -22,7 +22,7 @@ NetApp Workload Factoryでボリュームのマウントポイントを取得す
 [[get-mount-point-for-volumes-in-netapp-workload-factory]]
 == NetApp Workload Factoryでボリュームのマウントポイントを取得する
 
-ボリュームのマウントポイントを取得し、CIFS共有またはNFSクライアントに共有をマウントします。
+ボリュームのマウントポイントを取得し、ボリュームをCIFS共有またはNFSクライアントにマウントします。
 
 .手順
 . link:https://console.netapp.com["NetApp Console"^]にログインします。

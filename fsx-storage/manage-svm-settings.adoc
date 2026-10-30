@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/manage-svm-settings.html 
 keywords: edit storage vm settings, vm tags, svm tags, storage vm settings, storage vm password, svm password 
-summary: ストレージVMのタグをいつでも追加、更新、または削除できます。 
+summary: FSx for ONTAPファイルシステムのストレージVMのActive Directoryを構成し、タグを管理し、パスワードをリセットします。 
 ---
 = NetApp Workload Factory でストレージ VM 設定を管理する
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: ストレージVMのタグをいつでも追加、更新、または削
 
 
 [role="lead"]
-ストレージ VM の設定を NetApp Workload Factory で管理します。ストレージ VM の Active Directory を設定および更新したり、ストレージ VM のパスワードを更新したり、ストレージ VM のタグを管理したりできます。
+NetApp Workload FactoryでストレージVMの設定を管理します。Active Directoryの設定と更新、ストレージVMのパスワードのリセット、およびストレージVMのタグの管理を行うことができます。
 
 
 
@@ -32,7 +32,7 @@ NetApp Workload Factory の FSx for ONTAP ファイルシステム内のスト�
 +
 .. *参加するActive Directoryドメイン*：Active Directoryの完全修飾ドメイン名（FQDN）を入力してください。
 .. *DNS IPアドレス*：カンマで区切って最大3つのIPアドレスを入力してください。
-.. *SMBサーバーのNetBIOS名*：ストレージVM用に作成するActive DirectoryコンピューターオブジェクトのSMBサーバーのNetBIOS名を入力します。これは、Active DirectoryにおけるこのSVMの名前です。
+.. *SMBサーバーのNetBIOS名*：ストレージVM用に作成するActive DirectoryコンピューターオブジェクトのSMBサーバーのNetBIOS名を入力します。これは、Active DirectoryにおけるストレージVMの名前です。
 .. *ユーザー名*：既存のActive Directoryに登録されているサービスアカウントのユーザー名を入力してください。
 +
 ドメインの接頭辞や接尾辞は含めないでください。 `EXAMPLE\ADMIN`には、 `ADMIN`を使用します。

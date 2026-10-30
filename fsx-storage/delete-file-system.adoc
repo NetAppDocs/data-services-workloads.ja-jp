@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/delete-file-system.html 
 keywords: file system, delete file system, file system deletion 
-summary: NetApp Workload Factoryでファイルシステムを削除するには、まずファイルシステムに関連付けられているボリューム、ストレージVM、またはレプリケーション関係をすべて削除する必要があります。 
+summary: ボリューム、ストレージVM、およびレプリケーション関係を削除したあと、NetApp Workload FactoryでFSx for ONTAPファイルシステムを削除します。 
 ---
 = NetApp Workload Factoryでファイルシステムを削除する
 :allow-uri-read: 

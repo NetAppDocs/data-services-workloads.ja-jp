@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/improve-configurations.html 
 keywords: implement best practices, well-architected file system, Amazon FSx for NetApp ONTAP, FSx for ONTAP 
-summary: Workload Factory は Amazon FSx for NetApp ONTAP の構成をスキャンし、運用上の卓越性を達成するためのインサイトと推奨事項を提供します。 
+summary: Workload Factoryで、FSx for ONTAPファイルシステムの優れたアーキテクチャの状態を確認し、構成の問題を修正して、構成分析を無視または再有効化します。 
 ---
 = 適切に設計された FSx for ONTAP ファイルシステム構成を実装する
 :allow-uri-read: 
@@ -57,7 +57,7 @@ FSx for ONTAP ファイルシステム、またはファイルシステム内の
 .手順
 . link:https://console.netapp.com["NetApp Console"^]にログインします。
 . メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*Workloads* > *Well-architected* > *FSx for ONTAP* を選択します。
-. 任意の設定で「表示と修正」を選択します。推奨事項をよく確認してください。
+. 任意の構成の「表示と修正」を選択してください。推奨事項をよく確認してください。
 +
 この推奨事項では、ベストプラクティスと最適化されていない設定における潜在的な問題点について説明しています。
 

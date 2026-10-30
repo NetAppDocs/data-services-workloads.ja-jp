@@ -11,7 +11,7 @@ summary: NetApp Workload Factoryコンソールから移動することなく、
 
 
 [role="lead"]
-NetApp Workload Factoryコンソールから移動することなく、キャッシュ関係に関連付けられている_キャッシュ_ボリュームを検出して表示します。キャッシュ関係は、ONTAP FlexCache関係とも呼ばれます。Workload Factoryは、FlexCacheテクノロジを使用して既存のキャッシュ関係を検出します。これは、データアクセスを高速化し、読み取りが集中するワークロード（特にクライアントが同じデータに繰り返しアクセスする必要がある場合）のWANレイテンシ、帯域幅、およびコストを削減する、NetApp ONTAPのリモートキャッシュ機能です。
+NetApp Workload Factoryコンソールから移動することなく、キャッシュ関係に関連付けられている_cache_ボリュームを検出して表示できます。キャッシュ関係は、ONTAP FlexCache関係とも呼ばれます。Workload Factoryは、FlexCacheテクノロジを使用して既存のキャッシュ関係を検出します。これはNetApp ONTAPのリモートキャッシュ機能であり、データアクセスを高速化し、特にクライアントが同じデータに繰り返しアクセスする必要がある読み取り集中型のワークロードにおいて、WANレイテンシ、帯域幅、およびコストを削減します。
 
 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-flexcache.html["FlexCacheを使用したデータの複製について、詳細をご確認ください。"^]
 

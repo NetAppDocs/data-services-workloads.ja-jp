@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/learn-fsx-ontap.html 
 keywords: Amazon FSx for NetApp ONTAP, FSx, storage, aws 
-summary: Amazon FSx for NetApp ONTAPは、お客様がWorkload Factory内のワークロードのストレージバックエンドとしてファイルシステムを起動および実行できるようにする、フルマネージドサービスです。 
+summary: Workload Factoryのワークロードのストレージバックエンドとしてファイルシステムを起動および実行できる完全マネージドサービスである、Amazon FSx for NetApp ONTAPについて説明します。 
 ---
 = Amazon FSx for NetApp ONTAP（NetApp Workload Factory）について
 :allow-uri-read: 
@@ -24,9 +24,9 @@ FSx for ONTAPは、Workload Factoryの_ストレージ_コンポーネントで�
 
 FSx for ONTAPは以下の機能を提供します：
 
-* *フルマネージドサービス*：Workload Factoryコンソールと統合されたフルマネージドサービスを提供します。
+* *完全マネージドサービス*：Workload Factoryコンソールと統合された完全マネージドサービスを提供します。
 * *高可用性*：各FSx for ONTAPファイルシステムに高可用性を提供し、単一および複数のアベイラビリティゾーンの導入をサポートします。
-* *自動スナップショット*：自動化された効率的なスナップショットでデータを保護します。スナップショットは、ファイルシステムまたはボリュームの、ほぼ瞬時に作成される、容量効率に優れたポイントインタイムの読み取り専用コピーです。
+* *自動スナップショット*：自動化された効率的なスナップショットでデータを保護します。スナップショットは、ファイルシステムやボリュームの、ほぼ瞬時に作成されるスペース効率に優れたポイントインタイムの読み取り専用コピーです。
 * *ボリュームレプリケーション*：Amazon Web Services 全体にわたるリージョン間レプリケーションによる災害復旧機能を提供します。
 * *効率的なバックアップ*：緊急時に備えて、別のリージョンにデータのコピーを保存することで、保護層をさらに強化します。
 * *高速クローニング*：高速クローニングによりアプリケーション開発を加速します。
@@ -46,7 +46,7 @@ FSx for ONTAPは以下の機能を提供します：
 
 * *ストレージコスト比較計算ツール*：Amazon Elastic Block Store（EBS）、Elastic File System（EFS）、およびFSx for Windows File ServerのストレージコストをFSx for ONTAPと比較します。この計算ツールから、FSx for ONTAPストレージ構成がどのように潜在的なコスト削減をもたらすかを確認し、FSx for ONTAPストレージへの移行を計画できます。
 * *コンソールユーザーインターフェース*：_クイック作成_と_高度な作成_のデプロイメントモードオプションを提供します。クイック作成には、ストレージ構成に関するAWS、NetApp、および業界標準のベストプラクティスが含まれます。インターフェースには、SSDストレージ容量とスループットの使用傾向、ワークロードの概要、および展開可能な詳細な構成設定も表示されます。
-* *Codebox*：開発者に、FSx for ONTAPの操作用コードビューア、コピーおよびダウンロード用のコードテンプレート、コード再利用のための自動化カタログを提供します。
+* *Codebox*：開発者に、FSx for ONTAP操作用のコードビューア、コピーおよびダウンロード用のコードテンプレート、コード再利用のための自動化カタログを提供します。
 
 
 
@@ -77,7 +77,7 @@ Workload Factoryではなく、AWSがお客様のFSx for ONTAPアカウントを
 [[regions]]
 == Regions
 
-Workload factory は、FSx for ONTAP がサポートされているすべての商用リージョンでサポートされています。link:https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/["サポートされているAmazonリージョンを表示します。"^]
+Workload Factory は、FSx for ONTAP がサポートされているすべての商用リージョンでサポートされています。 link:https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/["サポートされているAmazonリージョンを表示します。"^]
 
 以下のAWSリージョンはサポートされていません：
 

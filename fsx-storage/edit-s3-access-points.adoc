@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/edit-s3-access-points.html 
+keywords: S3, s3, access points, manage access points, change access points, update access points, modify access points 
+summary: FSx for ONTAPのボリュームのS3アクセスポイントの詳細を更新し、タグを管理し、インベントリテーブルを有効または無効にします。 
+---
+= NetApp Console で FSx for ONTAP ボリュームの S3 アクセスポイントを編集する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp ConsoleでFSx for ONTAPボリュームのS3アクセスポイントの詳細を更新し、タグを管理します。
+
+アクセスポイントの*インベントリテーブル*を有効または無効にすることもできます。インベントリテーブルは、S3アクセスポイントからアクセス可能なすべてのオブジェクトのメタデータを生成し、AWS S3リクエストのコストが発生します。詳細については、link:https://aws.amazon.com/s3/pricing/["Amazon S3 価格設定ドキュメント"^]を参照してください。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"] から、*ワークロード* > *ボリュームエクスプローラー* を選択します。
+. S3アクセスポイントを編集するボリュームのアクションメニューを選択し、*詳細アクション*、*S3アクセスポイントの管理*の順に選択します。
+. *S3 アクセスポイントの管理*画面でアクションメニューを選択し、*アクセスポイントの編集*を選択します。
+. 更新を行い、* Apply * を選択します。
++
+ジャーナルテーブル機能のインフラストラクチャを設定するには、S3アクセスポイントのネットワーク構成として*Internet*を選択する必要があります。link:setup-journal-table.html["ジャーナルテーブルのインフラストラクチャを設定する方法を確認します"]。
+
+

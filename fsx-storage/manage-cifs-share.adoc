@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/manage-cifs-share.html 
 keywords: cifs, smb, SMB, CIFS, cifs share, change, update, modify, delete, create 
-summary: Workload Factory でボリュームの SMB または CIFS 共有を管理するには、作成、ユーザおよびグループアクセスの決定、削除が含まれます。 
+summary: Workload Factory のボリュームに対して、SMB/CIFS 共有を作成、変更、または削除し、どのユーザーとグループがアクセスできるかを制御できます。 
 ---
 = NetApp Workload Factory でボリュームの SMB/CIFS 共有を管理する
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Workload Factory でボリュームの SMB または CIFS 共有を管�
 
 
 [role="lead"]
-Workload Factory でボリュームの SMB/CIFS 共有を管理する機能には、SMB/CIFS 共有の作成、アクセス権限を付与するユーザーとグループの決定、および付与する権限レベルの決定、SMB/CIFS 共有の削除が含まれます。
+Workload Factory でボリュームの SMB/CIFS 共有を作成、変更、または削除します。共有フォルダにアクセスできるユーザーとグループ、およびそれぞれのアクセス権限レベルを制御します。
 
 .開始する前に
 始める前に、以下のことを行ってください：
@@ -25,7 +25,7 @@ Workload Factory でボリュームの SMB/CIFS 共有を管理する機能に�
 [[create-an-smbcifs-share-for-a-volume]]
 == ボリューム用のSMB/CIFS共有を作成する
 
-ボリューム用のSMB/CIFS共有を作成するには、以下の手順に従ってください。
+ボリューム用のSMB/CIFS共有を作成します。
 
 .手順
 . link:https://console.netapp.com["NetApp Console"^]にログインします。
@@ -36,7 +36,7 @@ Workload Factory でボリュームの SMB/CIFS 共有を管理する機能に�
 . SMB/CIFS共有の作成ダイアログで、以下の情報を入力してください：
 +
 .. *名前*：SMB/CIFS共有の名前を入力してください。
-.. *パス*：デフォルトのボリューム名を使用してパスを定義するか、内部ディレクトリへの共有を指定してください。
+.. *パス*：デフォルトのボリューム名を使用してパスを定義するか、内部ディレクトリへの共有を指定します。
 +
 ボリューム名として有効なパス入力（例：「avocado」）は以下のとおりです：
 
@@ -64,7 +64,7 @@ Workload Factory でボリュームの SMB/CIFS 共有を管理する機能に�
 [[change-an-smbcifs-share-for-a-volume]]
 == ボリュームのSMB/CIFS共有を変更する
 
-ボリュームのSMB/CIFS共有設定を変更するには、以下の手順に従ってください。
+ボリュームのSMB/CIFS共有設定を変更します。
 
 .手順
 . link:https://console.netapp.com["NetApp Console"^]にログインします。

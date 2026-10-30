@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/create-block-device.html 
 keywords: create block device, create lun, iscsi protocol 
-summary: 業務部門（LOB）アプリケーションの要件をサポートするブロックデバイスを作成します。 
+summary: 既存または新規のボリュームにiSCSIブロックデバイスを作成し、イニシエータグループアクセスを構成して、FSx for ONTAPのストレージ効率と保護オプションを設定します。 
 ---
 = NetApp Workload Factoryでファイルシステム用のブロックデバイスを作成する
 :allow-uri-read: 
@@ -90,7 +90,7 @@ NOTE: Snapshotの時刻はファイルシステムのタイムゾーンに基づ
 
 .. *階層化ポリシー*：ボリュームに保存されるデータの階層化ポリシーを選択します。
 +
-Workload Factory コンソールを使用してボリュームを作成する場合、デフォルトの階層化ポリシーは「バランス型（自動）」です。ボリューム階層化ポリシーの詳細については、AWS FSx for NetApp ONTAP ドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["ボリュームストレージ容量"^]を参照してください。Workload Factory は、階層化ポリシーに Workload Factory コンソールでユースケースベースの名前を使用しており、FSx for ONTAP の階層化ポリシー名は括弧内に記載されています。
+Workload Factoryコンソールを使用してボリュームを作成する場合、デフォルトの階層化ポリシーは_Balanced (Auto)_です。ボリュームの階層化ポリシーの詳細については、AWS FSx for NetApp ONTAPドキュメントのlink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["ボリュームストレージ容量"^]を参照してください。Workload Factoryは、階層化ポリシーについてWorkload Factoryコンソールでユースケースベースの名前を使用し、FSx for ONTAPの階層化ポリシー名を括弧内に含めます。
 
 .. *ARP/AI*：リンクがファイルシステムに関連付けられている場合、NetAppのAIによる自律型ランサムウェア対策（ARP/AI）はデフォルトで有効になります。link:ransomware-protection.html["ARP/AIの詳細"]。続行するには、ステートメントに同意してください。
 +

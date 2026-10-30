@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/create-discover-systems.html 
 keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
-summary: クラウド ストレージ システムを作成または検出して、NetApp Consoleからボリュームや追加のデータサービスを追加および管理します。 
+summary: NetApp Console からボリュームや追加のデータサービスを追加および管理するために、FSx for ONTAP ファイルシステムを作成または検出します。 
 ---
 = NetApp Consoleでクラウドストレージシステムを作成または検出する
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: クラウド ストレージ システムを作成または検出して
 
 
 [role="lead"]
-クラウド ストレージ システムを作成または検出して、NetApp Consoleからボリュームや追加のデータサービスを追加および管理します。
+NetApp Consoleからボリュームや追加のデータサービスを追加および管理するために、第1世代および第2世代のFSx for ONTAPファイルシステムを作成または検出します。
 
 
 
@@ -74,7 +74,7 @@ NOTE: CodeboxからTerraformを使用する場合、コピーまたはダウン�
 
 
 
-.. *タグ*：オプションで、最大50個のタグを追加できます。
+.. *タグ*：必要に応じて、最大50個のタグを追加できます。
 
 
 . 「ファイルシステムの詳細」欄に、以下の情報を入力してください：
@@ -116,7 +116,7 @@ AWS Managed Microsoft AD を使用している場合は、AWS Delegated FSx Admi
 
 
 .結果
-ファイルシステムを作成した場合、新しいFSx for ONTAP設定がシステムページに表示されます。
+ファイルシステムを作成したら、システムページでその内容を確認できます。
 
 FSx for ONTAPファイルシステムは、NetApp Consoleのワークロードからの管理、ONTAP System Managerの使用、AWS CloudFormationの使用など、いくつかの方法で管理できます。
 
@@ -160,7 +160,7 @@ FSx for ONTAPファイルシステムは、NetApp Consoleのワークロード�
 
 
 
-.. *タグ*：オプションで、最大50個のタグを追加できます。
+.. *タグ*：必要に応じて、最大50個のタグを追加できます。
 
 
 . ファイルシステムの詳細欄に、以下の情報を入力してください：
@@ -174,8 +174,8 @@ FSx for ONTAPファイルシステムは、NetApp Consoleのワークロード�
 .. *HAペアあたりのスループット容量*：HAペアの数あたりのスループット容量を選択します。第一世代のファイルシステムは、HAペアを1つしかサポートしていません。
 .. *プロビジョニング済みIOPS*：次のいずれかのオプションを選択してください：
 +
-*** *自動*：自動設定の場合、作成される GiB ごとに 3 IOPS が追加されます。
-*** *ユーザープロビジョニング*：ユーザープロビジョニングの場合は、IOPS値を入力してください。
+*** *自動*：作成された GiB ごとに 3 IOPS が追加されます。
+*** *ユーザープロビジョニング*：IOPS値を入力してください。
 
 
 .. *ONTAP認証情報*：オプション。ONTAPのユーザー名とパスワードを入力してください。パスワードは今すぐ設定することも、後で設定することもできます。
@@ -237,7 +237,7 @@ AWS Managed Microsoft AD を使用している場合は、AWS Delegated FSx Admi
 
 
 .結果
-ファイルシステムを作成した場合、新しいFSx for ONTAP設定がシステムページに表示されます。
+ファイルシステムを作成したら、システムページでその内容を確認できます。
 
 FSx for ONTAPファイルシステムは、NetApp Consoleのワークロードからの管理、ONTAP System Managerの使用、AWS CloudFormationの使用など、いくつかの方法で管理できます。
 
@@ -245,27 +245,27 @@ FSx for ONTAPファイルシステムは、NetApp Consoleのワークロード�
 ====
 
 
-[[discover-an-existing-cloud-storage-system]]
-== 既存のクラウドストレージシステムを検出する
+[[discover-an-existing-fsx-for-ontap-file-system]]
+== 既存のFSx for ONTAPファイルシステムを検出する
 
-以前にWorkload Factoryでクラウド ストレージ プロバイダの認証情報を提供している場合は、Discoverable systemsページからストレージシステムを自動的に検出できます。利用可能なデータサービスを確認することもできます。
+Workload Factory でクラウド ストレージ プロバイダの認証情報を以前に提供している場合は、Discoverable systems ページから FSx for ONTAP ファイルシステムを自動的に検出できます。利用可能なデータサービスを確認することもできます。
 
 .タスク概要
-クラウドストレージシステムは、アカウント内で一度だけ検出でき、1つのワークスペースにのみ関連付けることができます。ストレージシステムは後で削除して、別のワークスペースに再関連付けすることができます。
+アカウント内でFSx for ONTAPファイルシステムを検出して1つのワークスペースに関連付けることができるのは、1回のみです。ファイルシステムは後で削除して、別のワークスペースに再関連付けできます。
 
 .手順
 . NetApp Consoleメニューから、*ストレージ*、*管理*、*Discoverable systems*の順に選択します。
-. 検出されたクラウドストレージシステムの数が表示されます。*検出*を選択します。
+. 検出されたFSx for ONTAPファイルシステムの数が表示されます。*検出*を選択します。
 . 1つ以上のストレージシステムを選択し、*検出*を選択してシステムページに追加します。
 
 
 [NOTE]
 ====
-* 名前のないストレージシステムを選択した場合、システムの名前を入力するよう求められます。
-* コンソールから管理に必要な認証情報を持たないストレージシステムを選択した場合、必要な権限を持つ認証情報を選択するよう促されます。
+* 名前のないファイルシステムを選択した場合、システムの名前を入力するよう求められます。
+* Consoleから管理するために必要な認証情報がないファイルシステムを選択した場合、必要な権限を持つ認証情報を選択するよう求めるプロンプトが表示されます。
 * 以下のリージョンは検出をサポートしていません：中国リージョン、GovCloud（米国）リージョン、Secret Cloud、およびTop Secret Cloud。
 
 
 ====
 .結果
-コンソールは、検出されたシステムを「システム」ページに表示します。ストレージシステムは、NetApp Consoleのワークロードからの管理、ONTAP System Managerの使用、またはクラウド プロバイダのストレージ管理ツールの使用など、さまざまな方法で管理できます。
+Consoleは、検出されたファイルシステムをシステムページに表示します。ファイルシステムは、NetApp Consoleのワークロードからの管理、ONTAP System Managerの使用、クラウド プロバイダのストレージ管理ツールの使用など、さまざまな方法で管理できます。

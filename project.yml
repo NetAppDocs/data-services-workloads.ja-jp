@@ -130,7 +130,7 @@ sidebar:
           - title: S3アクセスポイントを作成して接続する
             url: "/fsx-storage/create-s3-access-points.html"
           - title: S3アクセスポイントを管理する
-            url: "/fsx-storage/manage-s3-access-points.html"
+            url: "/fsx-storage/edit-s3-access-points.html"
           - title: ジャーナルテーブルのインフラストラクチャをセットアップする
             url: "/fsx-storage/setup-journal-table.html"
         - title: クローンボリュームを分割する
