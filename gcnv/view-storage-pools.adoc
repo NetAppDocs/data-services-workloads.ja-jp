@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: gcnv/view-storage-pools.html 
+keywords: view storage pools, storage pools, gcnv 
+summary: Google Cloud NetApp Volumes のストレージプールとその詳細を NetApp Workload Factory で表示します。 
+---
+= Google Cloud NetApp Volumes ストレージプールを NetApp Workload Factory で表示する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloud NetApp Volumes のストレージプールとその詳細を NetApp Workload Factory で表示します。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]から、*ストレージ* > *Google Cloud NetApp Volumes* を選択します。
+. *プロジェクト*、*認証情報*、*リージョン*の各フィルターを使用して、表示されるストレージプールの範囲を指定します。
+. ストレージプールテーブルを確認してください。このテーブルには、名前、ステータス、サービスレベル、容量などの詳細が表示されます。
++
+ストレージプールのサービスレベルは、Standard、Premium、Extreme、Flex File、またはFlex Unifiedのいずれかです。モードには、Flex Unifiedストレージプールの場合はDefaultまたはONTAPが表示され、その他のすべてのサービスレベルの場合はDefaultが表示されます。
+
+. ストレージプールの名前を選択すると、スループットや説明などの詳細情報が表示されます。
+

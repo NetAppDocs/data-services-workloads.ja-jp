@@ -105,7 +105,6 @@
   <block id="292198e01fad7795066f40b6fec350fd" category="list-text">*FSx for ONTAP*から、レプリケートするボリュームを含むファイルシステムを選択します。</block>
   <block id="bc9c958c3279391522e702151359608b" category="list-text">* レプリケーション関係 * タブを選択します。</block>
   <block id="23c1b911bea8dc9e9cdd65d07a7745ca" category="list-text">レプリケーション関係テーブルで、切り替えるレプリケーション関係を選択し、*レプリケーションの切り替え*を選択します。</block>
-  <block id="e4d846e7cde6ab6686b9817d81bc55f6" category="list-text">カットオーバーレプリケーションダイアログの情報を確認し、_cut over_ と入力して確定します。</block>
   <block id="03fbb06beb5ba7043334c9f7b18e1f16" category="list-text">*FSx for ONTAP* から、更新するファイルシステムのアクションメニューを選択し、*管理*を選択します。</block>
   <block id="eb38ae8021803ad1eb467650a72c6ca2" category="list-text">ファイルシステムの概要から、*レプリケーション関係*タブを選択します。</block>
   <block id="e7fac383dedc147790819a6b6ec1ca87" category="list-text">レプリケーション関係タブで、初期化するレプリケーション関係のアクションメニューを選択します。</block>
@@ -268,7 +267,6 @@
   <block id="43d2bb31c641fd8b871b835572bc7441" category="paragraph">監視したい内容を平易な言葉で記述することで、カスタムダッシュボードを作成できます。AIがセットアップ手順を案内し、ダッシュボードがワークロードと優先順位に合うようにします。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">タスク概要</block>
   <block id="463a1f1058198f82800c115a2a913de5" category="paragraph">カスタムダッシュボードは、AIによる対話を通じて、ユーザーが視覚化したい内容を理解します。監視ニーズを自然言語で説明すると、システムが確認のための質問を投げかけ、ダッシュボードが要件を満たしていることを確認します。</block>
-  <block id="5af1607522ddad534f7fc3e5976684e5" category="paragraph">作成後、ダッシュボードを更新すると最新のデータが表示されます。</block>
   <block id="a8f8e9b8eb3f376a4b560c169094087e" category="paragraph">カスタムダッシュボードは設計上読み取り専用であり、ストレージやワークロードの設定を変更することはできませんのでご注意ください。</block>
   <block id="21b694dc2503eab08ab245a8bcfe9f1c" category="inline-link-macro">AI管理について学ぶ</block>
   <block id="1490f3908001d2cdf7587ba480973340" category="section-title">ダッシュボードを作成する</block>
@@ -288,9 +286,7 @@
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">次の手順</block>
   <block id="fb3b6f147b0a44a08f4c961dc053571e" category="paragraph">作成後、以下のことが可能です：</block>
   <block id="86d47ec5cc124c99638dc3c2f21c96e0" category="list-text">ダッシュボードの公開範囲を変更して、チームと共有する</block>
-  <block id="a5c04615d2baa4c3104d2afbb5b85c59" category="list-text">最新の情報を確認するには、ダッシュボードのデータを更新してください。</block>
   <block id="7bff2130a08698224667671d85a34ed4" category="list-text">不要になったダッシュボードを削除する</block>
-  <block id="ed5184af3d39b3e314759db5b95ba675" category="list-text">ダッシュボードの詳細（作成者や最終更新日時など）を表示します</block>
   <block id="d10995cac5dfc264a5da7f4abec9025d" category="inline-link-macro">カスタムダッシュボードを管理する</block>
   <block id="1703fc0755f2533bd9d727fa0298c500" category="inline-link-macro">カスタムダッシュボードのトラブルシューティング</block>
   <block id="b765164d0d63341925efe41eda98a9b0" category="summary">あらかじめ定義されたビューに縛られることなく、ワークロードと優先順位に合わせてカスタマイズされたAI搭載ダッシュボードを作成し、運用の可視性を向上させることができます。</block>
@@ -366,7 +362,6 @@
   <block id="939742a8d44add9f4ad62a0fc3824a6e" category="list-text">*プライベートダッシュボードに変更* - ダッシュボードを自分だけに表示します</block>
   <block id="7e3cce2609a225eafd019dfc30a9437a" category="paragraph">ダッシュボードは即座に更新されます。ダッシュボードカード上の表示状態ラベルには、現在のステータスが表示されます。</block>
   <block id="9e3f16aef1d22400bdae48c5cb77b00f" category="section-title">ダッシュボードのデータを更新する</block>
-  <block id="4e424a1ad37782627141d4d50f79b586" category="paragraph">ダッシュボードを開くと、ダッシュボードのデータが読み込まれます。最新の情報を確認するには、更新してください。</block>
   <block id="74ee9feffcb1603b7eeb47c099c0e5a5" category="section-title">ダッシュボードを削除する</block>
   <block id="e54360b7371199d6607f76cd1ae6ad17" category="paragraph">不要になったダッシュボードは削除してください。この操作は永続的なものであり、元に戻すことはできません。</block>
   <block id="3325f3a5c13a73bb87ed2dabebb0b6a3" category="list-text">「カスタムダッシュボード」ページで、削除するダッシュボードを見つけます。</block>
@@ -3011,7 +3006,6 @@
   <block id="38adbad92c37166c4ce64da1eb51513b" category="inline-link-macro">ボリュームを作成する</block>
   <block id="75ba895a2e374208ae80d98ebcf116ba" category="paragraph">不変のファイルを含むソース ボリュームを複製する場合、ターゲット ボリュームとファイル システムは、ソース ボリュームの保持期間が終了するまでロックされたままになります。不変ファイル機能は、FSx for ONTAP ファイルシステムの<block ref="40da211f809bc6c9e6163aa605349c18" category="inline-link-macro-rx"></block>ときに使用できます。</block>
   <block id="db02b80a9dd5a7c959ec87fdf41baa91" category="inline-link-macro">カスケードレプリケーション</block>
-  <block id="e9df00e078102fb55394d13dad9115a4" category="paragraph">1つのソース（読み取り / 書き込み）ボリュームまたは1つのデータ保護（DP）ボリュームを複製できます。カスケードレプリケーションはサポートされていますが、3番目のホップはサポートされていません。<block ref="a7ce0f55df6d6b86426266d8a7eeb328" category="inline-link-macro-rx"></block>の詳細をご覧ください。</block>
   <block id="ed5b7e4aa04c57efe98d70f7ef15379d" category="section-title">移行のユースケース</block>
   <block id="3ff25ab258de4c80bbe3f420e00a3c7e" category="paragraph">移行時には、1つのストレージVMのデータと構成設定を複製することを選択できます。データと構成設定を一緒に移行する場合は、ボリュームの最後のレプリケーションが過去24時間以内に完了していることを確認してください。この機能を使用するには、同じストレージVM内のすべてのボリュームを選択する必要があります。すべてのボリュームの階層化ポリシーは、デフォルトでソースボリュームの階層化ポリシーが適用されます。これは、移行のユースケースにおいて推奨される設定です。</block>
   <block id="a4b076b073df12f01e734ba016dbebd2" category="paragraph">Workload Factoryは、以下のストレージシステム間でのストレージVMの移行レプリケーションをサポートしています。</block>
@@ -3021,12 +3015,6 @@
   <block id="811a8960cadc3b9f9379096dc8b6b831" category="list-text">第 1 世代から第 1 世代</block>
   <block id="9b03bdd83a5017b3aa998f32e7ad219f" category="list-text">第2世代から第2世代</block>
   <block id="e148ba55e71be246708dafe4293a314f" category="paragraph">ストレージVMのデータと構成設定を移行するには、3つの操作を完了する必要があります。</block>
-  <block id="c6b6c5bfe5708feb9348282cee3701d5" category="inline-xref">レプリケーション関係を作成する</block>
-  <block id="3297677183a67f243b8c6abf28b4fb81" category="list-text"><block ref="d3f4ef0dd3d11e1cc504390affbdef58" category="inline-xref-macro-rx"></block>、ユースケースとして*Migration*を選択し、*Replicate storage VM configuration*を選択します。</block>
-  <block id="4578208e79d59d2ad53f30812b33d008" category="inline-xref">レプリケーション関係を初期化する</block>
-  <block id="ee673c79e2fee1e050f07ed104f6188d" category="list-text"><block ref="1876753e18c7b524394b3d041c7ca2f6" category="inline-xref-macro-rx"></block>データをソースからターゲットストレージシステムに転送します。</block>
-  <block id="f2ce5ba0f770aa8ae822f79404813d99" category="inline-xref">移行ユースケースのカットオーバーレプリケーション</block>
-  <block id="23dd3a896e2b24326fa839ac0c555b13" category="list-text"><block ref="78c2faa9b52f24796e9c82977a0d449a" category="inline-xref-macro-rx"></block>ソースファイルシステムからターゲットのFSx for ONTAPファイルシステムにデータと構成設定を永続的に移行します。</block>
   <block id="34ed3d0886446fdce0ca12aba8d0a847" category="section-title">ステップ1：レプリケーション関係を作成する</block>
   <block id="388c14942d26a5119b21a74fab9025a3" category="paragraph">2つのFSx for ONTAPファイルシステム間、オンプレミスONTAPシステムとFSx for ONTAPファイルシステム間、またはCloud Volumes ONTAPとFSx for ONTAPファイルシステム間でデータを複製します。</block>
   <block id="0aa7d11dc16260c47faf9d5b0b642366" category="paragraph">開始する前に、これらの要件を確認してください。</block>
@@ -3049,13 +3037,10 @@
   <block id="938304b34ce3517fe01a2000f5b9d7df" category="paragraph">レプリケーションの状態が *Idle* と表示されたら、データ転送は完了です。</block>
   <block id="d0d09a499e6cdf9f1d34c4e5929c7f4d" category="section-title">ステップ3：移行ユースケースにおけるレプリケーションの切り替え</block>
   <block id="ed57615365ad2815423480008d91d450" category="section-title">切り替え作業の計画</block>
-  <block id="fa425772bf4dc1e54c8368c2b99d4b1b" category="paragraph">移行ユースケースにおける切り替え作業を計画する際には、以下の点を考慮してください。</block>
   <block id="eeb77472aa3a83d51f0873ec83e22572" category="list-text">*ストレージVM構成設定*：</block>
   <block id="d77811034f737ab45ed7ddebe9c096fd" category="inline-xref">切り替え後に構成設定を更新する</block>
-  <block id="0abde7f01f46e5ae295493bf4b280687" category="list-text">切り替え操作では、すべてのストレージVM構成設定がターゲットストレージVMに移行するわけではありません。例えば、iSCSI、ブロードキャストドメインMTU、DNS設定などは移行されません。切り替え後、対象のストレージVM上でこれらの設定を手動で更新してください。詳細については、<block ref="af05d35e02c20d22f4e6b1df9b57e0a2" category="inline-xref-macro-rx"></block>セクションを参照してください。</block>
   <block id="893700039eb02078c7602e997d7f9922" category="list-text">ストレージVMがドメイントンネル認証を使用している場合は、移行を開始する前に、ターゲットファイルシステム上でドメイントンネルを設定して有効にしてください。</block>
   <block id="03c85e91696d00a533c3da3b08434532" category="list-text">*AWS S3 アクセスポイント*：S3 アクセスポイントを使用するボリュームでは、移行ユースケースのためのカットオーバーレプリケーションはサポートされていません。移行の失敗を避けるため、ソースボリュームから S3 アクセスポイントを削除してください。</block>
-  <block id="849ee629a3b8f33b04a9b242a47e3d59" category="list-text">*ONTAP S3構成*：ONTAP S3構成を持つvserverでは、移行ユースケースのカットオーバーレプリケーションはサポートされていません。移行の失敗を回避するために、vserver上のオブジェクトストアサーバー、バケット、ユーザー、グループ、ポリシーなどのONTAP S3構成を削除してください。</block>
   <block id="ab3171de62100468c23112d3fda9227b" category="list-text">*LUNシリアル番号とiSCSIターゲットIQN*：LUNシリアル番号とiSCSIターゲットIQNはカットオーバー時に変更されます。</block>
   <block id="aed0e194718db8e0128d88b14756819e" category="list-text">レプリケーションを切り替える前に、ストレージ VM へのクライアントアクセスをすべて停止します。</block>
   <block id="3021805b6a1038ca60c0a0b6321eeb81" category="list-text">リンク接続のために、FSx for ONTAPファイルシステムに関連付けられたセキュリティグループで以下のポートを開いておく必要があります：ポート443（HTTPS）およびポート22（SSH）。</block>
@@ -3065,7 +3050,6 @@
   <block id="2a6f3123e92916a549d4843b0432ee15" category="list-text">iSCSIの場合：</block>
   <block id="6620d06a6f36ee92ee8c0b9c206e5932" category="list-text">igroupを再作成する</block>
   <block id="1d215d1d64ff0e5459b1b60c4e0f0ba2" category="list-text">LUNマッピングの更新</block>
-  <block id="22c26e33ed22192caefb59eb41da6dd7" category="list-text">各SANクライアントにログインし、新しいターゲットのiSCSI/MPIO設定を更新し、古いvserverターゲットIPを削除します</block>
   <block id="add6659449d7aeb40a4dd48b3f75db00" category="list-text">ブロードキャストドメインのMTU設定が想定どおりであることを検証する</block>
   <block id="cd823c1632b612f3a00bc9cf049ef97b" category="list-text">DNS設定が想定どおりであることを確認する</block>
   <block id="b33f176ae89f054db5b204e18e50bedb" category="list-text">ソースストレージVMにキャッシュボリュームが存在する場合は、キャッシュ関係（ONTAP FlexCache関係）を再作成します。</block>
@@ -3426,7 +3410,6 @@
   <block id="408a4f348f40acee70fae7c43f89e8ac" category="inline-link-macro">Workload FactoryのFSx for ONTAPのヘルプを取得する</block>
   <block id="79b8403eb51e9eb841884de955a99f16" category="paragraph">Workload FactoryまたはWorkload Factoryアプリケーションとサービスに関する一般的な質問については、<block ref="84e1270a3cfabd4fd60afbaf552cfd80" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="201a18ac1c906df6358f39af33c244de" category="summary">NetApp Workload FactoryでFSx for ONTAPファイルシステムのブロックストレージを管理します。</block>
-  <block id="373d40a556613e20661d6c89ac8751a6" category="paragraph">NetApp Workload Factory を使用して、igroup やブロックデバイスなどのブロックストレージリソースの管理を簡素化し、FSx for ONTAP ブロックデバイスのクライアントアクセスを制御することで、最適なパフォーマンスを実現し、コストを最小限に抑えます。</block>
   <block id="eb65a539cb451b6fbdc221ea311b28d4" category="paragraph">Workload Factoryコンソールから、イニシエータグループ（igroup）を管理して、クライアントによるブロックデバイスへのアクセスを制御できます。ブロックデバイスの詳細を表示したり、容量を増やしたり、クローンを作成したり、クライアントアクセスを管理したり、非アクティブなブロックデバイスのデータをアーカイブしたり、ブロックデバイスを削除したりすることもできます。</block>
   <block id="30f276b848a0c37c6c54368f5714fc72" category="list-text">クライアント接続</block>
   <block id="e7963aa68819cfe7f854ea292af57bb0" category="list-text">ブロックデバイスのステータス</block>
@@ -4601,8 +4584,6 @@
   <block id="ee58955cf84a9682824159e8019bdbef" category="list-text">*データ保護アクション*を選択し、次に*クローンボリュームの分割*を選択します。</block>
   <block id="d774297729b342ccb9c4096a5382bba3" category="list-text">ボリューム分割ダイアログで、*削除*を選択します。</block>
   <block id="70d5997237e2a666a80612de57a49652" category="paragraph">ボリュームクローンが分割され、「ボリューム」タブに表示されます。</block>
-  <block id="56df9b1084a1d8fbfcb5630d52db4560" category="summary">NetApp Workload Factory で FSx for ONTAP ファイルシステムリソースのコストを追跡し、レポートを生成します。</block>
-  <block id="132c7cd068e9c3c95296d05738c81a90" category="paragraph">Workload Factory は、AWS Cost Explorer からコストデータを取得することで、FSx for ONTAP ファイルシステムのコストと使用状況を追跡します。以下のコスト詳細が追跡されます：使用タイプ、使用 SKU、デプロイメントタイプ、使用量、および合計コスト。</block>
   <block id="80e92f578bcc9bc76e7904c0736e30b0" category="inline-link-macro">AWSのコスト配分タグについて詳しくはこちらをご覧ください。</block>
   <block id="258ef99c8c6162f96d39f58575b891c4" category="section-title">コストを追跡する</block>
   <block id="4eb4c996873463b028b9c244954294a7" category="paragraph">Workload Factory コンソールのコストダッシュボードに表示されるコストは、AWS Cost Explorer のデータに基づいており、24時間ごとに更新されます。</block>
@@ -5886,7 +5867,6 @@
   <block id="8080238bef7e394ebde429d0b0350f39" category="paragraph">Oracle Cloud Infrastructure NetApp Storage Service（OCI NSS）システムを検出し、NetApp Consoleからボリュームと追加のデータサービスを管理します。</block>
   <block id="426e924adb2bfc6580aff49868fd2947" category="paragraph">Workload Factoryで、OCI NSS環境の認証情報を入力してください。</block>
   <block id="baf2ffbfd6df3e3088d4ec4d0fe6469c" category="summary">リンクを作成して関連付けることで、NetApp Workload FactoryアカウントとOracle Cloud Infrastructure NetApp Storage Serviceストレージシステム間の信頼関係と接続性を提供できます。</block>
-  <block id="0bab62dd41264a0da561a8aee755e228" category="doc">リンクを使用してOracle Cloud Infrastructure NetApp Storage Serviceストレージシステムに接続する</block>
   <block id="6cda5fe2dd00c5f3962f980ab197b568" category="paragraph">高度なストレージ管理操作を実行するには、NetApp Workload FactoryアカウントとOracle Cloud Infrastructure NetApp ストレージサービス（OCI NSS）システム間の接続をセットアップします。このプロセスでは、リンクを作成してストレージシステムに関連付けます。リンクの関連付けにより、OCI APIでは利用できない特定の機能をOCI NSSシステムから直接監視および管理できるようになります。</block>
   <block id="8bdf8aef803a863146011061e2efad7c" category="paragraph">Workload Factory の _link_ は、テナント内の OCI Functions アプリケーションです。Workload Factory はこれを使用して、OCI NSS ストレージプール上の ONTAP システムと通信します（HTTPS 443 および SSH 22）。</block>
   <block id="c81313fa2caeb789b074d24d89129caa" category="paragraph">リンクはOCI Functionsを使用して、イベントに応じてコードを実行し、そのコードに必要なコンピューティングリソースを自動的に管理します。作成したリンクはお客様のNetAppアカウントの一部であり、Oracle Cloud Infrastructureアカウントに関連付けられています。</block>
@@ -6376,10 +6356,7 @@
   <block id="17ec06b9eaa321300fab59fd56971e66" category="list-text">ワークロードを更新するボリュームのアクションメニューを選択します。</block>
   <block id="ed2541738b61ca0c7584cd62bf74b27d" category="list-text">*高度な操作*を選択し、*ワークロードの変更*を選択します。</block>
   <block id="cd9e2d546766552cd75de00b7717f0cf" category="list-text">「ワークロードの変更」ダイアログで、ボリュームに適したワークロードを選択します。</block>
-  <block id="8137b647e9c277bf5504be0415118937" category="paragraph">NetApp Workload Factory は、FSx for ONTAP ファイルシステムのコストと使用状況の統合ビューを提供し、予算管理とリソースの効率的な最適化を支援します。FSx for ONTAP ファイルシステムリソースのコストレポートを生成して、関係者と共有することもできます。</block>
   <block id="0ecf72bcc13fb55d0aa28c82a90ab6f4" category="paragraph">固有のリソースの場合、Workload Factory は、実際のパフォーマンスティアの使用状況、プロビジョニング済みだが未使用のスペースに割り当てられたパフォーマンスティアコストの比例配分、容量ごとに分配されたパフォーマンス割り当て、および容量プールの使用状況を組み合わせてコストを計算します。Workload Factory は、各コンポーネントにそのディメンションにおける単価を乗算し、その結果を合計して各リソースの総コストを決定します。</block>
-  <block id="ecec373dbe2f05b3a3b863fd07d13592" category="paragraph">Workload Factory は、以下の権限を使用して AWS Cost Explorer から FSx for ONTAP ファイルシステムリソースのコストと使用状況データを取得します：<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block> および <block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block>。総コストは、AWS コスト API と当社独自の見積もりを使用して算出します。</block>
-  <block id="552ae61b34399969ed0ea2c7955fd9ef" category="paragraph">コストダッシュボードのコストデータに加えて、コストエグゼクティブサマリーには、FSx for ONTAP ファイルシステムのコストと組織の支出パターンが表示されます。FSx for ONTAP ファイルシステムリソースのコストレポートを生成することもできます。このレポートはダウンロード可能な CSV ファイルで、関係者と共有できます。</block>
   <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">以下の要件を満たしていることを確認してください。</block>
   <block id="53c306e93da69caff455d3eaa34a6b5c" category="list-text">AWS割り当てタグでフィルタリングするには、FSx for ONTAPファイルシステムにタグが割り当てられていることを確認してください。</block>
   <block id="9a90fd93ba397d5f48de07251acc1808" category="list-text">レイテンシーイベントの構成要素の内訳</block>
@@ -6490,7 +6467,6 @@
   <block id="5af9190832e86a39b32955d77e972b2e" category="list-text">有効にする詳細表示オプションを選択してください。</block>
   <block id="6ef261950960e68b5c274dbb2ad858c2" category="paragraph">ダッシュボードカタログから、カスタムダッシュボードを表示および管理できます。プライベートダッシュボードはお客様のみ閲覧できますが、パブリックダッシュボードはWorkload Factoryアカウントのすべてのユーザーが閲覧できます。各ダッシュボードには、作成者名、作成日、公開設定（プライベートまたはパブリック）などの基本的な詳細情報が表示されます。</block>
   <block id="94ab7238c8d6eb39314e6dc172cba073" category="list-text">メニューから「Workloads Overview」を選択し、次に「Custom dashboards」を選択します。</block>
-  <block id="09716803bbab78d4545cc7210ae61d90" category="paragraph">ダッシュボードはワークロードからデータを再読み込みします。</block>
   <block id="d2258a9653c6a977efeeb955b27c66e9" category="section-title">ダッシュボードを編集する</block>
   <block id="4e2f12e496523d85bae4a969657d45aa" category="paragraph">ダッシュボードを編集することで、表示する指標、グラフ、期間などを変更できます。</block>
   <block id="b13bad0dcb6df4e403e8e2af9058dfe5" category="list-text">「カスタムダッシュボード」ページで、編集するダッシュボードを見つけます。</block>
@@ -6882,8 +6858,6 @@
   <block id="c22c40952e764e45b7df2a64900275c1" category="list-text">分割中にFlexCloneボリュームをオフラインにすると、分割処理は中断されます。FlexCloneボリュームをオンラインに戻すと、分割処理が再開されます。</block>
   <block id="a27e74c36d4d969817e56da6fc886e29" category="list-text">FlexCloneボリュームを親ボリュームから分割したあとは、再結合できません。</block>
   <block id="641dbf8afdab8b23e51c29e452cbd5dc" category="list-text">クローンされたボリュームを分割するには、リンクを関連付ける必要があります。<block ref="3d8b5f4a54daf7fc368470fe5a7ec250" category="inline-link-macro-rx"></block>。リンクを関連付けたら、この操作に戻ってください。</block>
-  <block id="79ccfc8de982194cab3acf19277d4a57" category="doc">NetApp Workload FactoryでFSx for ONTAPのコストを追跡してレポートを取得する</block>
-  <block id="9fa871dac57d54d520eddd6e7c2bc7e4" category="paragraph">コストダッシュボードでは、AWSアカウント、クレデンシャル、1つ以上のリージョン、および期間でコストと使用状況データをフィルタリングして、FSx for ONTAPファイルシステムの消費量を把握できます。Workload Factoryは常に月単位でデータを表示します。1つ以上のファイルシステム、およびファイルシステム内の1つ以上のボリュームでフィルタリングすることもできます。AWSのコスト配分タグキーとタグキー値により、特定のコストを特定するためのフィルタリングのレイヤーが追加されます。_タグ_はキーと値で構成されます。タグキーとタグキー値でフィルタリングするには、FSx for ONTAPファイルシステムにタグを割り当てます。<block ref="8ea95efe0fef689337ea8960e5c1861f" category="inline-link-macro-rx"></block></block>
   <block id="904e5c7e4bec4fed64fcbb6a83a967f6" category="paragraph">Workload Factoryは、ダウンロード可能なCSVレポートを生成します。</block>
   <block id="d50ebccae5983a46539e57c6cafdeafa" category="list-text">必要に応じて、*遅延時間通知を有効にする*を選択すると、レプリケーション遅延がしきい値を超えた場合に通知を受け取ることができます。</block>
   <block id="57aa08723363676e08889a7debcc7fae" category="paragraph">ボリュームバックアップは増分バックアップであるため、最新のバックアップ以降に変更されたボリューム上のデータのみが保存されます。これにより、バックアップの作成に必要な時間とバックアップに必要なストレージ容量が最小限に抑えられ、データの重複を防ぐことでストレージコストを節約できます。</block>
@@ -6894,4 +6868,208 @@
   <block id="5cc3a2f957608c982418e6d81db9bcb5" category="paragraph">ボリュームの階層化ポリシーの詳細については、AWS FSx for NetApp ONTAPドキュメントの<block ref="de51d392f5d252a956349995f441f55c" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="ed03428f07f32f6a071fde8ad3ae828e" category="list-text">スナップショットポリシーが作成されると、ストレージVMとの関連付けは変更できませんが、ボリュームへのポリシーの追加や削除はいつでも可能です。</block>
   <block id="0e700b0865ff6014ea0ab70b0131914e" category="summary">リージョンサポート、容量管理、iSCSI、データ保護、ストレージVMの移行など、Workload FactoryにおけるAmazon FSx for NetApp ONTAPの既知の制限事項について確認します。</block>
+  <block id="4db89734d848869d20c5c98a44e7de1b" category="list-text">切り替えテストの手順を完了してから、実際の切り替えを実行してください。</block>
+  <block id="fa0ab2f86cd05046110c737fd5ce84b8" category="paragraph">処理中にダイアログを閉じた場合は、*レプリケーション関係*タブから*SVM移行ステータス*を確認し、準備ができたら切り替え操作を続行できます。</block>
+  <block id="981cf06d12c9b4f422a2927885d64c6f" category="list-text">レプリケーションの切り替えダイアログの情報を確認し、_cut over_ と入力してプロセスを完了します。</block>
+  <block id="f5740048ddae6de6c98d146bef8a05eb" category="doc">Workload Factoryの管理機能強化</block>
+  <block id="d5700d6fbdfdaa11c8c6dcbd565d8446" category="section-title">カスタムダッシュボードのデータを確認して更新します</block>
+  <block id="a2ace9589bb1ff3e1b64e40ba9982721" category="paragraph">カスタムダッシュボードの指標が最後に更新された日時を確認したり、手動で更新したりできるようになりました。「データの更新」にカーソルを合わせると、最終更新日時が表示されます。</block>
+  <block id="6497706c70a607634590a156941b4e50" category="paragraph">*データの更新* を選択して、新しいスキャンを開始します。スキャンが開始されたことを示すバナーが表示され、スキャンが完了するまでボタンは無効になります。</block>
+  <block id="2895998bd3d7c5fdb39e7fddc2bd608a" category="paragraph">新しいデータが利用可能になったら、通知バナーの*今すぐ読み込む*を選択してダッシュボードを更新してください。</block>
+  <block id="f418ba29e821ca3da1b907e6156d2db5" category="paragraph">「データの更新」と「今すぐ読み込む」の両方で、Tracker にデータ収集イベントが作成されます。</block>
+  <block id="0b62b5947fe6e091e6c0c1e387e32e69" category="inline-link-macro">カスタムダッシュボードデータを更新する方法を確認する</block>
+  <block id="d6592fddba6a07bb0a917566a4081fc5" category="paragraph"><block ref="d6592fddba6a07bb0a917566a4081fc5" category="inline-link-macro-rx"></block></block>
+  <block id="524f9b4ee818c419ee1585959e10855c" category="section-title">カスタムダッシュボードのリージョンを指定します</block>
+  <block id="9aca8419896ce9b5d75b523be971bafb" category="paragraph">カスタムダッシュボードでは、リクエストに含まれていない地域を1つ以上選択するよう求められるようになりました。ダッシュボードのデータは、選択した地域に限定されます。</block>
+  <block id="35a63836682befdc98086e583b61298a" category="inline-link-macro">カスタムダッシュボードの作成方法を学習します</block>
+  <block id="265c60992e7c3b3f876f80926a9c3a65" category="paragraph"><block ref="265c60992e7c3b3f876f80926a9c3a65" category="inline-link-macro-rx"></block></block>
+  <block id="639dc972d056a14ca9535d40d9ba48bb" category="section-title">FSx for ONTAP リンク作成の IAM ポリシー</block>
+  <block id="20721709cc5df2882070722a30cc34c3" category="paragraph">リンクを作成するためのCloudFormationテンプレートとTerraformコードでは、インラインのLambda権限ではなく、IAMポリシーを使用するようになりました。</block>
+  <block id="2f101cc9d5d0dd23089ae6fca31ac27f" category="paragraph"><block ref="2f101cc9d5d0dd23089ae6fca31ac27f" category="inline-link-macro-rx"></block></block>
+  <block id="b3e7d6d7f8501adc86f1a7337ebfb531" category="section-title">AIエージェントの動作に関する監査と追跡</block>
+  <block id="5aecb2747daa4a62ad221d70aaf568df" category="paragraph">Tracker を使用して、AIエージェント設定の変更と、読み取り / 書き込みモードでの各承認リクエスト（エージェントの質問とユーザーの回答を含む）を確認できるようになりました。</block>
+  <block id="25d50a8630b3c335d684f59cca6d3ace" category="paragraph">Workload Factory APIを介して行われたリソースの変更は、その操作を実行するWorkload Factoryサービスがログに記録します。</block>
+  <block id="db0781c4ffb5f26ba7ad4f2ffe3dfdbd" category="inline-link-macro">エージェントのアクションの監査と追跡について学ぶ</block>
+  <block id="d280606d2d970fea6313288893352119" category="paragraph"><block ref="d280606d2d970fea6313288893352119" category="inline-link-macro-rx"></block></block>
+  <block id="9e81dbda2a0d084e31f85eea0c371131" category="section-title">Amazon FSx for NetApp ONTAPの機能強化</block>
+  <block id="230227ce1631475a082d9f0865ea84b2" category="section-title">イニシエータグループ図の改良</block>
+  <block id="9312a185b7f4389cd2dc1b61172e5f20" category="paragraph">「クライアントアクセス管理」ページに表示される、ブロックデバイスのイニシエータグループを示す図に、ホストに関する詳細情報が追加されました。図中のホストにカーソルを合わせると、ホスト名、インスタンスID、ワークロードタイプ、リージョン、iSCSI修飾名（IQN）などのホストの詳細が表示されます。</block>
+  <block id="40a8a1ceba59de4101cf77a14d6fb2d5" category="section-title">Well-Architectedの問題に対するメール機能の強化</block>
+  <block id="954ae82c2d96e9bd8c7d4e143bf3c187" category="paragraph">新しいメールデザインでは、Workload Factoryが検出した構成上の問題について、より詳細な情報とコンテキストを提供します。メールには、分析されたリソースの数、警告または重大な問題があるリソースの数、およびそれらの問題の内容が記載されています。また、このメールにはFSx for ONTAPのWell-Architectedダッシュボードへのリンクも記載されているため、問題をすぐに解決できます。</block>
+  <block id="1854fdec65dd4a2dd839c666aba07186" category="section-title">優れた設計のダッシュボード機能強化</block>
+  <block id="4640bfbf90e44f31ffe06c764207a151" category="section-title">選択された構成チェックのサポート</block>
+  <block id="4baa1879436d89821519b031a9b29e1d" category="paragraph">選択した構成に対して手動で分析を実行することで、関心のある構成のみを分析し、待ち時間を短縮できます。</block>
+  <block id="9864fa88fc3747e67b6fc38c9b938677" category="section-title">優れたアーキテクチャ分析における新たな推奨事項</block>
+  <block id="a38b9a0af0de5e85c5e64a158079deb5" category="paragraph">Workload Factory は、FSx for ONTAP ファイルシステムの適切なアーキテクチャ分析に以下の構成を含めるようになりました：</block>
+  <block id="696836fc5f2a32266d0ffc0fb5047e3b" category="paragraph">ストレージワークロードの場合：</block>
+  <block id="c244576dbf541429d6bef056ce769d1b" category="list-text">*ホストをフェイルオーバーノードに接続*：信頼性を確保するため、アクティブ / パッシブのFSx for ONTAPファイルシステムでホストがフェイルオーバーノードに接続されているかどうかを確認します。</block>
+  <block id="6ebacaf65862325841aba88bf388a132" category="list-text">*ホストを優先ノードに接続*：ホストがパフォーマンス効率のために優先ノードを使用してブロックデバイスに接続されているかどうかを確認します。</block>
+  <block id="b25392745f1a47aaf9f1983cd8b1eff5" category="list-text">*ARP/AIの複数デバイス検出のギャップ*：ボリュームにブロックデバイスが1つだけ接続されている場合に、ARP/AIは完全な保護範囲を提供します。ボリュームに複数のブロックデバイスが接続されている場合、Workload Factoryはブロックデバイスを新しいボリュームに移動し、各ボリュームにブロックデバイスが1つだけ存在するようにします。</block>
+  <block id="034f9073833298cb75f90f7455203432" category="list-text">*クローンクリーンアップ*：ストレージ使用量を最適化し、コストを削減するために削除できる、30日以上前のボリュームクローンがあるかどうかを確認します。</block>
+  <block id="8e5f97675e6b58e2c142d4e3623f4e20" category="list-text">*igroup OSとホストの一致*：イニシエータグループ（igroup）のオペレーティングシステムがホストのオペレーティングシステムと一致しているかどうかを確認し、I/Oやパフォーマンスの問題を防止します。</block>
+  <block id="68545ea02d5d413d5558618d4f250fed" category="paragraph">Kubernetesワークロードの場合：</block>
+  <block id="92ea527417ca1a6f10e672dd5dc590fb" category="list-text">*QoS設定*：パフォーマンス効率を高めるために、Kubernetesの永続ボリュームがONTAP QoSポリシーで保護されているかどうかを確認します。</block>
+  <block id="a48d1b9cc2b4fca01a8c056a0f21ca0b" category="list-text">*専用KubernetesストレージVM*：ファイルシステムがKubernetesワークロードに専用のストレージVMを使用しているかどうかを確認し、分離性を向上させ、ストレージ管理を簡素化します。</block>
+  <block id="e8b78d1ad4445d483c25f605f3dcd508" category="list-text">*専用のKubernetesエクスポートポリシー*：各Kubernetes永続ボリュームに、クラスターのワーカーノードからのアクセスのみを許可する専用のエクスポートポリシーがあるかどうかを確認します。</block>
+  <block id="15c94f3b03de47c250527326d660fabe" category="list-text">*Kubernetes iSCSIバックエンドの双方向CHAP*：Trident iSCSIバックエンドでセキュリティのために相互CHAP認証が有効になっているかどうかを確認します。</block>
+  <block id="a9f15f720c325ed93ec2ae6e8f017053" category="list-text">*アプリケーションストレージVMでの<block ref="d51321f13693d09d4a9cbb2758b42d12" prefix=" " category="inline-code"></block>の無効化*：クライアントがアクセスできないエクスポートを一覧表示するのを防ぐため、アプリケーションストレージVMで<block ref="d51321f13693d09d4a9cbb2758b42d12" prefix=" " category="inline-code"></block>が無効になっているかどうかを確認します。</block>
+  <block id="8c491145be7052ead6caabd40f13d8d8" category="paragraph">データベースワークロードの場合：</block>
+  <block id="109086be5976370a05137d1276790c52" category="list-text">*SAP HANAスナップショットポリシー*：アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるために、SAP HANAボリュームのスナップショットポリシーが「なし」に設定されているかどうかを確認します。</block>
+  <block id="f516997bc5858804907fffead3bf17bc" category="list-text">*MySQLスナップショットポリシー*：アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるために、MySQLボリュームのスナップショットポリシーが「なし」に設定されているかどうかを確認します。</block>
+  <block id="326acdfcec515bde261a6c24416222fc" category="list-text">*PostgreSQLスナップショットポリシー*：アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるために、PostgreSQLボリュームのスナップショットポリシーが「なし」に設定されているかどうかを確認します。</block>
+  <block id="b37f9a2971bf4d3f39ba06b420da1cf6" category="section-title">構成の現在の値と推奨値</block>
+  <block id="da748e56834f287fe9b9c164de80a667" category="paragraph">適切に設計されたダッシュボードでは、最適化されていない一部の構成について、現在の値と推奨値を確認できます。これは、修正する前に推奨される値を示しています。</block>
+  <block id="0ab265b548fdc40b21483e61ffde3aba" category="list-text">コールドデータ階層化</block>
+  <block id="4c0abf2d4c54820b8d33061abaf30759" category="list-text">Snapshot ポリシー</block>
+  <block id="6f5cf50fa90f8d99bf50f65e676c6cba" category="list-text">SSDの容量余裕</block>
+  <block id="4c3fd0f1c4be65a2279b728897c84838" category="section-title">コスト改善</block>
+  <block id="7d9291e210fb85e5195b3fd168c5441e" category="section-title">コスト予測と分析</block>
+  <block id="abc7b1907c0e0856759e4d13b2c516f0" category="paragraph">コスト予測機能を使用して、FSx for ONTAPファイルシステムのコストを予測できるようになりました。これは、予算計画を立て、リソースを効果的に最適化するのに役立ちます。また、コストや利用パターンに関する分析結果を確認することで、コスト最適化の機会を特定することもできます。</block>
+  <block id="0e1d8ca59fdf60970c2d4a8bbabe2e5b" category="section-title">AWS コストおよび使用状況レポート（CUR）</block>
+  <block id="133a30124f90912db7b6e93321823906" category="paragraph">Workload Factoryは、お客様所有のS3バケットに配信される詳細な請求記録を提供するために、AWS Cost Explorerの代わりにAWS Cost and Usage Reports（CUR）を使用するようになりました。CURはより詳細なコスト情報を提供し、高度なFinOps、チャージバック、およびコスト配分のユースケースの基盤として機能します。</block>
+  <block id="9744964a1ca6fbce3b75a4f5042f9597" category="section-title">ストレージVM移行の改善</block>
+  <block id="e6567f9c034c2cedd4efbe2f207f9b2a" category="paragraph">Workload Factoryは、ストレージVMの移行に関して、ユーザーインターフェース内でより詳細なガイダンスを提供します。これには、移行を本番環境に導入する前に、段階的な手順説明とテスト実行が含まれます。</block>
+  <block id="5d9883007f4bc5361c0311ad3ad7cfd1" category="inline-link-macro">ストレージVM移行について詳しくはこちらをご覧ください</block>
+  <block id="f9aacc67b23285dcf36836993d0a0240" category="paragraph"><block ref="f9aacc67b23285dcf36836993d0a0240" category="inline-link-macro-rx"></block></block>
+  <block id="f96336c52a88a7b30c68866854b7e3f2" category="section-title">レプリケーション遅延メール通知の改善</block>
+  <block id="1e403f6a94558e4fb3362faed8f74a9b" category="paragraph">関連するレプリケーション遅延イベントが多数発生した場合、Workload Factoryはそれらを自動的に1つのメール通知に統合するため、通知が多すぎて混乱することはありません。</block>
+  <block id="f45963c176c2d5c66e1ddbfab6e6a59e" category="section-title">自動容量管理機能の強化</block>
+  <block id="cc7093a020c173b1abf32b6436684cd2" category="paragraph">Workload Factoryに容量の自動管理を依頼する前に、自動容量管理通知を有効にして機能を試用できるようになりました。ファイルシステムの容量が少なくなると、通知されます。</block>
+  <block id="b3ae445fa637203f0dc17550b5c4a56c" category="section-title">適切に設計されたダッシュボードに含まれるデータベース構成</block>
+  <block id="17d52f36b5492e8aeada41d949434243" category="paragraph">適切に設計されたダッシュボードには、データベース構成に関する推奨事項が含まれるようになり、ベストプラクティスに基づいて設定を評価および最適化できるようになりました。ダッシュボードに含まれる最初の設定項目は以下のとおりです：</block>
+  <block id="935aff9bc7bcf43dd1fe5825226b72c1" category="list-text">ブロックデバイスのOSタイプをホストと一致させる</block>
+  <block id="868e9efce60d04bdf51fc2494a73a9ce" category="list-text">非アクティブなブロックデバイス（LUN）</block>
+  <block id="797a6fe95ffc7bef7107556bac722567" category="list-text">データファイル（.mdf）の配置</block>
+  <block id="27c70398ced593abb96a3c33b5e1072b" category="list-text">ログファイル（.ldf）の配置</block>
+  <block id="346c87aaab415cd5adb218f88181ede8" category="list-text">マルチパスI/Oステータス</block>
+  <block id="92a6dbd219f1455bd74f5d666b1b27c5" category="list-text">マルチパスI/Oタイムアウト</block>
+  <block id="33bf723377efe51bc70f70bbb5efa8a4" category="paragraph">Workload Factoryコンソールでメインメニューを選択し、次に*Well-architected*を選択してWell-architectedダッシュボードを見つけます。</block>
+  <block id="2d647234501319107057acb4d3f8dfaf" category="inline-image-macro">Workload Factory コンソールの Well-architected メニューオプション</block>
+  <block id="353cc99df6b21e74c805e74bdab4b8aa" category="paragraph"><block ref="353cc99df6b21e74c805e74bdab4b8aa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="84ae0158deb3f95e6027fdf8d5ff467d" category="section-title">スループット決定ポイント</block>
+  <block id="b9b80cf2e741a86ab9f6e9dd0b8f44ac" category="paragraph">クライアントのスループットに関する推奨事項と、自動化の判断ポイントを確認できるようになりました。判断ポイントにカーソルを合わせると、現在のSKUと推奨SKU、または一定期間内に違反した指標（％）などの詳細情報が表示されます。</block>
+  <block id="490c092a516d299c8fbfc8f3e4bca146" category="section-title">Google Cloud NetApp Volumesの機能強化</block>
+  <block id="6d3b86d67ca631d6e7b36cd36908e1a9" category="section-title">Google Cloud NetApp Volumes ストレージプールを表示</block>
+  <block id="655c266ebeabfc3d2b4a982b26cfc3a8" category="paragraph">NetApp Workload Factory で Google Cloud NetApp Volumes ストレージプールを表示できるようになりました。プロジェクト、クレデンシャル、リージョンでフィルタリングし、ストレージプールの名前を選択すると、ゾーン、レプリカゾーン、スループット、説明、ラベルなど、その詳細情報が表示されます。</block>
+  <block id="d96dd657e1823dcd531c1900f529272e" category="section-title">OCI NetApp ストレージサービスの強化</block>
+  <block id="3fbce80cc4c6eedf8f73c5f9b6c3f793" category="section-title">OCI NSSシステムの適切に設計された分析</block>
+  <block id="9f5fa839697eb430476ab0306b2d577b" category="paragraph">NetApp Workload Factoryには、OCI NSSシステム向けの適切に設計された評価機能が含まれています。この評価では、業務効率の向上に役立つ洞察、推奨事項、および改善策を提供します。</block>
+  <block id="d7662b370716819187607c075f76f667" category="paragraph">OCI Well-Architected Frameworkの以下の柱について、構成評価が利用可能です：</block>
+  <block id="9d065ca994a324833e03b9b5b5ed7cd9" category="list-text">信頼性：ファイルオブジェクト容量、スナップショットポリシー、およびSSD容量の余裕</block>
+  <block id="4ddeff02856cd810ad47ff7e36c7b39c" category="list-text">運用上の卓越性：ホストから認識可能な容量レポートとボリューム容量のヘッドルーム</block>
+  <block id="7dc11e8b104c8a8c4a3b0a79dfe90760" category="list-text">コスト最適化：コールドデータ階層化、スナップショットクリーンアップ、ストレージ効率化</block>
+  <block id="4c08f7b0400f82cb6607401bcdf078f1" category="inline-link-macro">OCI NSSシステムの適切に設計された分析</block>
+  <block id="5514a97cb8286872cf232b29c81405be" category="inline-link-macro">適切に設計された構成を実装する</block>
+  <block id="6c5cb49a519e4001a13828cd8f9f28ab" category="paragraph"><block ref="026b7813287d66b370ca6b12a499c052" category="inline-link-macro-rx"></block>および<block ref="503539a9757057d0d19762cf2dfced52" category="inline-link-macro-rx"></block>の詳細をご覧ください。</block>
+  <block id="0e43f192242267f4b6ae5962e9f5b38c" category="inline-link-macro">ダッシュボードデータの更新方法を確認する</block>
+  <block id="375aa345c9d070c5d5cbb33fd17abdf9" category="paragraph">作成後、ダッシュボードのメトリクスが最後に更新された日時を確認し、オンデマンドアップデートをリクエストできます。<block ref="8d1eeddf54e1415c46105e0180873b4f" category="inline-link-macro-rx"></block>。</block>
+  <block id="a0029b147e3a4c22ba57efcbb020c23e" category="list-text">*最終更新*タイムスタンプを確認し、*データ更新*を選択して最新の指標をリクエストしてください</block>
+  <block id="b70a9e9de689b4f17365d6060076d3b8" category="section-title">エージェントの行動に関する監査と追跡</block>
+  <block id="774a23889a059a060f089bac423f3b00" category="paragraph">読み書きモードでは、Trackerはエージェントの質問とユーザーの回答を含む各承認リクエストを記録します。Workload Factory APIを介して行われたリソースの変更は、その操作を実行するWorkload Factoryサービスがログに記録します。たとえば、Workload Factoryを通じて作成されたボリュームは、*Agent*ではなく*Storage*サービスタグの下に表示されます。</block>
+  <block id="13ab1a7b5cd6ff60fb50525984ba6258" category="inline-link-macro">Tracker を使用した監視操作について学ぶ</block>
+  <block id="ce1e81713ecf4df9a934306eea668257" category="paragraph"><block ref="3451659cf3ed6290294c6cb6aa2fa232" category="inline-link-macro-rx"></block>。</block>
+  <block id="1c25d10ad7fe7b9def7bd90be9bb63ac" category="section-title">データが最新かどうか確認してください</block>
+  <block id="40d839f036c0870ce0f44a810dc01fd9" category="paragraph">ダッシュボードのデータが最後に更新された日時を確認したり、いつでも更新をリクエストしたりできます。ツールチップには、最終更新日時が表示されます。</block>
+  <block id="3943baa01d778cb77042aa99b8829491" category="paragraph">*データの更新* を選択して、新しいスキャンを開始します。スキャン中はボタンは使用できません。新しいデータが準備できると、ダッシュボードを更新するオプションを含むバナーが表示されます。</block>
+  <block id="d3d3c2c161c272f6861e216f8ab84982" category="paragraph"><block ref="8d1eeddf54e1415c46105e0180873b4f" category="inline-link-macro-rx"></block>。</block>
+  <block id="4561b6d16c60561c7dfef3363842359b" category="paragraph">ダッシュボードが最後に更新された日時を確認し、最新のデータが必要な場合はオンデマンドスキャンをリクエストしてください。</block>
+  <block id="cb19e9f8b4fdf3bf166690f03f0888ff" category="paragraph">「データの更新」ツールチップには、ダッシュボードが最後に更新された日時を示す「最終更新日時」のタイムスタンプが表示されます。このタイムスタンプは、収集されたデータの日時を示しており、ダッシュボードの設定が最後に変更された日時を示すものではありません。</block>
+  <block id="34839e5b2cbe60267b78999786be488f" category="paragraph">*データの更新*を選択すると、新しいスキャンが開始されます。スキャン実行中はボタンが無効になり、ツールチップにスキャンが進行中であることが表示されます。</block>
+  <block id="3f80dcb08a2a2d2b7e2915dd88cfbff4" category="paragraph">Workload Factoryは、*データの更新*または*今すぐ読み込む*のいずれかを選択すると、Trackerにイベントを記録します。<block ref="3451659cf3ed6290294c6cb6aa2fa232" category="inline-link-macro-rx"></block>。</block>
+  <block id="b2f99e18989e76354ebba4fd4d399227" category="list-text">ダッシュボードカタログから、表示したいダッシュボードを開きます。</block>
+  <block id="b01e2768b9cf649d978bf4ea1879ea19" category="list-text">*データの更新*にカーソルを合わせると、*最終更新*の日時を確認できます。</block>
+  <block id="669bf0e2d3a5223b736f207a1738dcea" category="list-text">最新の指標を要求するには、*データの更新*を選択してください。</block>
+  <block id="2c40fb628cd47c18fe14a2939979ebf9" category="paragraph">バナーはスキャンが開始されたことを示します。スキャンが完了するまでお待ちください。</block>
+  <block id="dd2142eca6bec99aaba2fbc5a1fef1f5" category="list-text">新しいデータが利用可能になると、バナーに次のメッセージが表示されます：「新しいデータが利用可能です。今すぐ読み込むか、いつでも『データの更新』をクリックして表示を更新してください。」</block>
+  <block id="f5f7ef3c1692aa4447b9fb26ad98940c" category="list-text">バナーの「今すぐ読み込む」を選択すると、利用可能なデータがダッシュボードに読み込まれます。または、「データの更新」を選択して表示を更新してください。</block>
+  <block id="abff96b75117f320254f372b6518244b" category="paragraph">ダッシュボードには、更新された指標が表示されます。</block>
+  <block id="6347309ad07af7266241819bb2af76d1" category="list-text">*ホストをフェイルオーバーノードに接続する*</block>
+  <block id="e89cb70f69260bd0359dad1d58cb94de" category="paragraph">Workload Factory は、フェイルオーバー時の接続性を維持し、中断を回避するために、ホストをフェイルオーバーノードに接続することを推奨します。</block>
+  <block id="d8f7d6931c10571f6b09ab824fb1eb68" category="list-text">*SAP HANAスナップショットポリシー*</block>
+  <block id="5430bb473a033ac7ca3cf168ada8eef0" category="paragraph">アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるには、SAP HANAボリュームのスナップショットポリシーを「None」に設定してください。</block>
+  <block id="bed53786c7f97a0d4610c92e2155c179" category="list-text">*MySQLスナップショットポリシー*</block>
+  <block id="2cfa406a51ef73bbf2e8700e3f414fba" category="paragraph">アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるには、MySQLボリュームのスナップショットポリシーを「なし」に設定してください。</block>
+  <block id="277b9300260dd55ca64290333450ba59" category="list-text">*PostgreSQLスナップショットポリシー*</block>
+  <block id="2a902e0c93222642481e7829b61f6885" category="paragraph">PostgreSQLボリュームのスナップショットポリシーを「なし」に設定することで、ストレージコストを削減し、アクティブなデータベースデータのパフォーマンスを向上させることができます。</block>
+  <block id="f6713ad974e1c45e6ae6f336e05e1acb" category="list-text">*ARP/AIによる複数デバイス検出のギャップ*</block>
+  <block id="99585e92af9e1ad2380aa522d6753d7a" category="paragraph">ARP/AIは、ボリュームにブロックデバイスが1つだけ接続されている場合に、完全な保護範囲を提供します。ボリュームに複数のブロックデバイスが接続されている場合、Workload Factoryはブロックデバイスを新しいボリュームに移動し、各ボリュームにブロックデバイスが1つだけ存在するようにします。</block>
+  <block id="94252ec3a780f58314c91e97ef4e34dd" category="list-text">*Kubernetes iSCSIバックエンド向け双方向CHAP*</block>
+  <block id="33abb23bb89c7fd6e6403f57410fd19d" category="paragraph">Trident iSCSIバックエンドには双方向CHAP認証を使用して、iSCSIイニシエータとターゲットが相互に認証されるようにします。これにより、許可されていないホストがストレージVMに対してiSCSIセッションを確立するのを防ぎます。</block>
+  <block id="6afaedca049edca8b26b3afcc63112c5" category="list-text">*アプリケーションストレージVMで無効にする<block ref="d51321f13693d09d4a9cbb2758b42d12" prefix=" " category="inline-code"></block>*</block>
+  <block id="bfd8d5ee3b60e71cb8f894bb8d7d7f01" category="paragraph">アプリケーションストレージVMで<block ref="d51321f13693d09d4a9cbb2758b42d12" prefix=" " category="inline-code"></block>を無効にして、クライアントがアクセスできないエクスポートを一覧表示できないようにします。</block>
+  <block id="17a183ee5c2a455937989091c69ca48d" category="list-text">*専用のKubernetesストレージVM*</block>
+  <block id="aeb9ac6a931deb0972004e13a0b50cbd" category="paragraph">Kubernetesワークロードには専用のストレージVMを使用してください。Kubernetesのストレージを分離しておくことで、管理が容易になり、ポリシー設定が簡素化され、ストレージ設定の一貫性を確保しやすくなります。</block>
+  <block id="dd54a6cc471e0bb15a8807c9b04d608a" category="list-text">*igroup OSをホストOSに一致させる*</block>
+  <block id="9b4b32350b17fe80d09c863ee9493bc1" category="paragraph">I/Oやパフォーマンスの問題を防ぐため、イニシエータグループ（igroup）のオペレーティングシステムをホストのオペレーティングシステムと一致させてください。</block>
+  <block id="e2521a2a2f696d450620b08167cf1c24" category="list-text">*クローンのクリーンアップ*</block>
+  <block id="25c12f9fc894aee637d81a1bb835e475" category="paragraph">ストレージ使用量を最適化し、コストを削減するために、30日以上前のボリュームクローンはすべて削除してください。</block>
+  <block id="32e2568abf1f06db9af3e7c8594aae66" category="paragraph">1つのソース（読み取り / 書き込み）ボリュームまたは1つのデータ保護（DP）ボリュームを複製できます。カスケードレプリケーションはサポートされていますが、3番目のホップはサポートされていません。<block ref="b43da9c23395dea7a8657c3dcd68f92f" category="inline-xref-macro-rx"></block> の詳細をご覧ください。</block>
+  <block id="99975dc4e0b5174f74f44270f9c4bb79" category="list-text"><block ref="c333b1c4d501da5c597263cb02a86bf0" category="inline-xref-macro-rx"></block>、ユースケースとして*Migration*を選択し、*Replicate storage VM configuration*を選択します。</block>
+  <block id="439799af583df4008d7b4f10d93c939a" category="list-text"><block ref="86056281cff85f2bf6f7be28510fe95d" category="inline-xref-macro-rx"></block>データをソースからターゲットストレージシステムに転送します。</block>
+  <block id="48a79c23389fad3919124aa678f218c9" category="list-text"><block ref="8e0c7083554029f9517e717da960b953" category="inline-xref-macro-rx"></block>を使用して移行をテストし、その後、ソースファイルシステムからターゲットのFSx for ONTAPファイルシステムにデータと構成設定を永続的に移行します。</block>
+  <block id="d69fbbb711f8ff18ddfdec1f828d8dde" category="paragraph">テストと切り替えを行う前に、以下の点を考慮してください。</block>
+  <block id="f54dbcea12e59e12722877876b169b60" category="inline-xref">これらの設定を手動で更新します</block>
+  <block id="773c27512e59c2c2dbd6e6ff8964b7d4" category="list-text">切り替え操作では、すべてのストレージVM構成設定がターゲットストレージVMに移行されるわけではありません。たとえば、iSCSI、ブロードキャストドメインMTU、DNS設定は移行されません。<block ref="e8bd260fbd2f342593da7654c0529249" category="inline-xref-macro-rx"></block>切り替え後のターゲットストレージVM上。</block>
+  <block id="e618f0853e36806a08addf80f080aa17" category="list-text">*ONTAP S3 configurations*：移行ユースケースのカットオーバーレプリケーションは、ONTAP S3構成を持つストレージVMではサポートされていません。移行の失敗を回避するために、ストレージVM上のobject-store-server、バケット、ユーザー、グループ、ポリシーなどのONTAP S3構成を削除してください。</block>
+  <block id="24cce11f73b548e9176ae1c180b0e7c1" category="list-text">Workload Factory のファイルシステム内のレプリケーション関係テーブルで、*SVM 移行ステータス* が *有効 | カットオーバーのテスト準備完了* になっていることを確認してください。</block>
+  <block id="6685d526488e756ed5738a4874c4bccb" category="section-title">レプリケーションの切り替え</block>
+  <block id="12dabbf4de087e3801b25bebe491cfe6" category="paragraph">Workload Factoryは、移行ユースケースにおけるレプリケーションの切り替えプロセスを管理するのに役立ちます。まず、切り替えが問題なく進められることを確認するために、お客様の環境をテストします。第二に、ターゲットファイルシステムへの実際の切り替えを実行します。</block>
+  <block id="641a5b87ae1a6b3f69a51cbf9d3327e7" category="paragraph">移行テストを完了する前に、ターゲットストレージVM上のすべてのデータにアクセスできることを確認してください。</block>
+  <block id="e710e21634c08d4bb9e43d51a67a87eb" category="paragraph">移行ユースケースにおけるレプリケーションの切り替え手順については、指示に従ってください。ユーザーインターフェースが、切り替えプロセスを段階的に案内します。</block>
+  <block id="d4db5cd7a78570802f5cc12157792523" category="list-text">各SANクライアントにログインし、新しいターゲットのiSCSI/MPIO設定を更新し、古いストレージVMターゲットIPを削除します</block>
+  <block id="78727553c283af369070757e652c05cc" category="paragraph">NetApp Workload Factoryを使用して、igroupやブロックデバイスなどのブロックストレージリソースの管理を簡素化し、FSx for ONTAPブロックデバイスへのクライアントアクセスを制御することで、最適なパフォーマンスを提供し、コストを最小限に抑えます。クライアント接続を最適化し、問題を迅速に解決するには、ブロックデバイスのigroup図を参照してください。</block>
+  <block id="356b28bbbd0d4021c21f75e7c065f091" category="list-text">ホスト名、インスタンスID、ワークロードタイプ、リージョン、iSCSI修飾名（IQN）などのホストの詳細</block>
+  <block id="01fae763ec208cbe8aba55abc3b09866" category="summary">NetApp Workload Factoryで、FSx for ONTAPファイルシステムリソースのコストを追跡します。</block>
+  <block id="3f9d767840a18ac75b11c7dd9ba87a88" category="doc">NetApp Workload Factoryのリソースのコストを追跡する</block>
+  <block id="bfb6f1b412cd95d58b271e3d69547dda" category="paragraph">NetApp Workload Factoryを使用してFSx for ONTAPファイルシステムのコストと使用状況を追跡することで、予算を管理し、リソースを効果的に最適化できます。最小限の権限を必要とするデータで全体的なコストを提供するために、AWS Cost Explorerを使用しています。リソース（ファイルシステムまたはボリューム）ごとのコストはWorkload Factoryの計算に基づいており、AWS Cost Explorerでは得られない独自のインサイトを提供します。</block>
+  <block id="c3f094be203d9270a67844e5fa353013" category="paragraph">Workload Factory は、以下の権限を使用して AWS Cost Explorer から FSx for ONTAP ファイルシステムリソースのコストと使用状況データを取得します：<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block> および <block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block>。以下のコスト詳細が追跡されます：使用タイプ、使用 SKU、デプロイメントタイプ、使用量、および合計コスト。</block>
+  <block id="0044e1f3a22c6d9ef97c0d6e8c1fdb03" category="paragraph">コストダッシュボードには、全体コストとリソース別のコストを表示する2つのタブがあります。</block>
+  <block id="65ab1b7df4df327df8504998be956f5b" category="list-text">総コストは、AWS Cost Explorer APIから直接取得したデータに基づいています。</block>
+  <block id="9b98495d5e24798622609ac8cda337e1" category="list-text">リソース別コスト表示では、ファイルシステムやボリュームごとのコスト見積もりが表示されます。</block>
+  <block id="512a8b4930f422b87988b36e61c761d2" category="paragraph">Workload Factoryは常に月単位でデータを表示します。</block>
+  <block id="03bb428183665b2d297f7a2b126ada64" category="paragraph">AWSアカウント、認証情報、1つ以上のリージョン、および期間でコストと使用状況データをフィルタリングして、FSx for ONTAPファイルシステムの使用量を把握できます。1つ以上のファイルシステム、およびファイルシステム内の1つ以上のボリュームでフィルタリングすることもできます。</block>
+  <block id="2564431d5eb8e6c2a5e05b3cf2258f0b" category="paragraph">AWSのコスト配分タグキーとタグキー値は、特定のコストを特定するための追加のフィルタリングレイヤーを提供します。_タグ_はキーと値で構成されます。タグキーとタグキー値でフィルタリングするには、FSx for ONTAPファイルシステムにタグを割り当てます。<block ref="8ea95efe0fef689337ea8960e5c1861f" category="inline-link-macro-rx"></block></block>
+  <block id="00785d0f1296ca2a8d0846890b38a469" category="paragraph">コストダッシュボードのコストデータに加えて、AIが生成したコストエグゼクティブサマリーには、FSx for ONTAPファイルシステムのコストと組織の支出パターンが表示されます。FSx for ONTAPファイルシステムリソースのCSVファイルを生成して、チームや関係者と共有できます。</block>
+  <block id="2921ec21e61178e9d5c3b00b52cdcc7f" category="summary">Google Cloud NetApp Volumes のストレージプールとその詳細を NetApp Workload Factory で表示します。</block>
+  <block id="24a255fcd6a980ea654569c0aed96684" category="doc">Google Cloud NetApp Volumes ストレージプールを NetApp Workload Factory で表示する</block>
+  <block id="24fbf973ac266841a1d1950057044a86" category="list-text">メニュー<block ref="d0893c56792da060977c8f5dd5abb05a" category="inline-image-macro-rx" type="image"></block>から、*ストレージ* &gt; *Google Cloud NetApp Volumes* を選択します。</block>
+  <block id="df8082635850b98b5c044dc4b51ba0fb" category="list-text">*プロジェクト*、*認証情報*、*リージョン*の各フィルターを使用して、表示されるストレージプールの範囲を指定します。</block>
+  <block id="2ccd3603ab54ceda81ae72e3db7d5b45" category="list-text">ストレージプールテーブルを確認してください。このテーブルには、名前、ステータス、サービスレベル、容量などの詳細が表示されます。</block>
+  <block id="2c52de43be722390ea5df253b5dbd317" category="paragraph">ストレージプールのサービスレベルは、Standard、Premium、Extreme、Flex File、またはFlex Unifiedのいずれかです。モードには、Flex Unifiedストレージプールの場合はDefaultまたはONTAPが表示され、その他のすべてのサービスレベルの場合はDefaultが表示されます。</block>
+  <block id="0a7d44a25a513ebc54a0e4e95b7b3145" category="list-text">ストレージプールの名前を選択すると、スループットや説明などの詳細情報が表示されます。</block>
+  <block id="daae87d6d4b7a65960223391e99b2bf1" category="summary">NetApp Workload Factoryは、OCI NSSシステムの構成を定期的に分析し、構成上の問題がないかどうかを判断します。</block>
+  <block id="8075bafeb6baaa23a8b24e6f5b983e9e" category="doc">OCI NSSシステムの構成分析</block>
+  <block id="b22355dc2933d3eb629a9b60fe9c24d0" category="paragraph">NetApp Workload Factoryは、OCI NSSシステムの構成を定期的に分析し、構成上の問題がないかどうかを判断します。問題が検出された場合、Workload Factoryは問題点を示し、ストレージ環境が最高のパフォーマンス、コスト効率、およびベストプラクティスへの準拠を実現できるよう、変更すべき点を説明します。</block>
+  <block id="fbef8b32b5268cdc762132c3c8e01b74" category="list-text">OCI Well-Architected Framework アドバイザー</block>
+  <block id="a6b85fac6d120c7bd544dcd1f30b35de" category="paragraph">日々の分析が完了すると、デプロイメントのWell-architectedダッシュボードに、構成が「最適化済み」または「最適化されていない」として表示されます。設定に関する問題はカテゴリ別に整理されており、推奨事項も併せて掲載されています。Workload Factoryは、推奨される変更を実施するための詳細な手順を提供します。</block>
+  <block id="8848ef7c96763d3f08995681ffc004b6" category="list-text">リンクを関連付けます。リンク接続により、Workload Factoryはデータ保護やパフォーマンスなど、すべてのOCI NSSシステム構成を分析できます。</block>
+  <block id="3e04fbf67b56db9461ae97dc846ca167" category="paragraph"><block ref="e9af2ce98076e9a8dd007f2845e4e70f" category="inline-link-macro-rx"></block>。</block>
+  <block id="b29f71885ba2ce4a16c86126f52804ae" category="list-text">OCI アカウントで_表示、計画、分析_の権限を付与してください。</block>
+  <block id="ef844ede64315307dee0704956d6aee5" category="inline-link-macro">OCI アカウントに権限を付与する方法を説明します</block>
+  <block id="f25bd2346ab8a5951bd835fdf0f0d7f0" category="paragraph"><block ref="9ca8440835f5980ea2202b41ccc271e7" category="inline-link-macro-rx"></block>。</block>
+  <block id="9782f948325708f7c9a12b48ab18675e" category="paragraph">ボリューム容量制限に達しないように、ファイル容量のしきい値を引き上げるべきです。ファイル容量（iノード）が不足しているため、ボリュームへの追加データの書き込みができません。Workload Factoryは、新規ファイルの作成を可能にするため、ファイル容量の使用率を80%未満に維持することを推奨しています。</block>
+  <block id="85328d3db8fe5d1da969e2eaeb0023e1" category="paragraph">運用上の卓越性により、ワークロードが効果的に運用および監視され、ユーザーの要件をサポートできることが保証されます。</block>
+  <block id="7b95c4e901138e8f666b33e68bc581db" category="paragraph">データの増加に対応し、予期しない容量の問題を防ぐために、ボリューム容量のヘッドルームは10%に設定する必要があります。</block>
+  <block id="f63ddee9cc0c3851457909a9a862bac0" category="list-text">*コールドデータ階層化* スナップショットのみの階層化ポリシーを使用します。このポリシーでは、アクティブなデータはSSD階層に保持され、スナップショットデータのみが容量階層に移動します。このアプローチにより、ストレージコストを削減しながら、データベースワークロードの低レイテンシのパフォーマンスを維持できます。7日間のクーリング期間のあとにスナップショットデータを階層化します。</block>
+  <block id="2607d748d53e53355cf341ff59fd61ac" category="list-text">*スナップショットのクリーンアップ*</block>
+  <block id="08f59202d2946c1aac674509e0161a4c" category="inline-link-macro">適切に設計されたOCI NSS構成を実装する</block>
+  <block id="7c3e2dcf300bf174055ca214ab29ff09" category="paragraph"><block ref="7c3e2dcf300bf174055ca214ab29ff09" category="inline-link-macro-rx"></block></block>
+  <block id="d2f04c6606827834c212813ba8530a53" category="doc">リンクを使用してOCI NetApp Storage Serviceストレージシステムに接続する</block>
+  <block id="e3a12eeb93ddbad9936f64a12bb2990b" category="summary">Workload Factory は Amazon FSx for NetApp ONTAP の構成をスキャンし、運用上の卓越性を達成するためのインサイトと推奨事項を提供します。</block>
+  <block id="e56101005a7ed45119ff48406091e6d4" category="doc">適切に設計されたOCI NSSシステム構成を実装する</block>
+  <block id="22979194f7eaddbd9fca2e1fe039b759" category="paragraph">Workload Factoryを使用して、Oracle Cloud Infrastructure NetApp Storage Service（OCI NSS）システムのベストプラクティスを実装します。適切に設計された状態を簡単に確認し、構成に関する問題を把握して問題を修正することで、信頼性、セキュリティ、効率性、パフォーマンス、コストの面で最適化されていないシステムのアーキテクチャを改善できます。</block>
+  <block id="9ff22ac64e3119cfabeca4129d444a57" category="paragraph">Workload Factoryは、OCI NSSシステムの展開構成を毎日分析します。</block>
+  <block id="aac3b2ff7e39f3ad99e62a7c110f404d" category="inline-link-macro">リンクを使用してOCI NSSシステムに接続する</block>
+  <block id="dfce4fb4ba7e38f099f7cc10188568ff" category="paragraph">リンク接続により、Workload Factory はパフォーマンス、データ保護、および構成に関する問題をスキャンできます。<block ref="f7e59cb445429b5d2153bcbc58bac6c3" category="inline-link-macro-rx"></block>ファイルシステムリソースの最も包括的な分析を行うために。</block>
+  <block id="86441bb8ed65cedfe101ba30b31d8c3b" category="paragraph">Workload Factoryは、OCI NSSシステムの以下の構成について、適切に設計されているかどうかを分析します：</block>
+  <block id="127dbf246c89a2aeb37b444598d9f619" category="list-text">OCI アカウントで<block ref="1e9440ab1b64d47ef319a569b579363c" category="inline-link-macro-rx"></block>する必要があります。</block>
+  <block id="b53c73ee77148a4ebba4c99fab72e627" category="list-text"><block ref="f7e59cb445429b5d2153bcbc58bac6c3" category="inline-link-macro-rx"></block>ファイルシステムリソースの最も包括的な分析を行うために。</block>
+  <block id="2ac738cf4c15d21f16261387602209ec" category="paragraph">OCI NSSシステム、またはファイルシステム内の選択したボリュームの構成に関する問題を修正できます。修正する設定を1つ以上選択できます。</block>
+  <block id="f888e88e3e3041557d311ea4519422b1" category="list-text">メニュー <block ref="d0893c56792da060977c8f5dd5abb05a" category="inline-image-macro-rx" type="image"></block> から、*ワークロード* &gt; *Well-architected* &gt; *OCI NSS システム* を選択します。</block>
+  <block id="3efa1f5617c52b1aa6c34c67d5726abd" category="list-text">任意の構成の「表示と修正」を選択してください。推奨事項をよく確認してください。</block>
+  <block id="388720070126c9456cfb2f5019b9abcd" category="paragraph">1つ以上のOCI NSSシステムまたはボリュームの構成分析を停止するには、閉じるボタンをクリックしてください。分析はいつでも再開できます。</block>
+  <block id="ed39d7e152de2ada740ccd3a78afc0bb" category="list-text">OCI NSSシステムのWell-Architectedダッシュボードで、「構成」の下にある、お客様の環境に適用されない構成を選択してください。</block>
+  <block id="8b253c1d4259c21c8314fc85adcb31d6" category="section-title">2026年11月1日</block>
+  <block id="b6109a32079ec6b1674d08deef3b061a" category="sidebar">OCI NetAppストレージサービスの構成分析</block>
+  <block id="ccffb8af48fec4f0b06bcd53e8686fea" category="sidebar">OCI NetAppストレージサービスの構成を改善する</block>
 </blocks>

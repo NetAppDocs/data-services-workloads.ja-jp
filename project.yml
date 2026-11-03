@@ -307,6 +307,8 @@ sidebar:
       url: "/gcnv/add-roles.html"
     - title: Google Cloud NetApp Volumes 認証情報を追加
       url: "/gcnv/add-credentials.html"
+    - title: Google Cloud NetApp Volumes ストレージプールを表示
+      url: "/gcnv/view-storage-pools.html"
     - title: Google Cloud NetApp Volumes の構成分析
       url: "/gcnv/configuration-analysis.html"
     - title: ストレージプール構成を改善する
@@ -323,6 +325,10 @@ sidebar:
       url: "/oci/create-discover-systems.html"
     - title: OCIストレージシステムに接続する
       url: "/oci/create-link.html"
+    - title: OCI NetAppストレージサービスの構成分析
+      url: "/oci/configuration-analysis.html"
+    - title: OCI NetAppストレージサービスの構成を改善する
+      url: "/oci/improve-configurations.html"
     - title: OCI NetApp ストレージサービスの権限リファレンス
       url: "/oci/permissions-oci.html"
   - title: Workload Factoryの管理

@@ -7,7 +7,7 @@ summary: FSx for ONTAPのボリュームのS3アクセスポイントの詳細�
 = NetApp Console で FSx for ONTAP ボリュームの S3 アクセスポイントを編集する
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
