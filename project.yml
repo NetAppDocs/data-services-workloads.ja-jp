@@ -293,6 +293,8 @@ sidebar:
       entries:
       - title: FSx for ONTAP のパフォーマンス
         url: "/fsx-storage/performance-reference.html"
+      - title: FSx for ONTAP の権限
+        url: "/fsx-storage/permissions-reference-fsx.html"
       - title: FSx for ONTAPのセキュリティ
         url: "/fsx-storage/security-reference.html"
   - title: Google Cloud NetApp Volumes
@@ -315,22 +317,32 @@ sidebar:
       url: "/gcnv/improve-configurations.html"
   - title: OCI NetAppストレージサービス
     entries:
-    - title: OCI NetAppストレージサービスについて
-      url: "/oci/learn-about-oci.html"
-    - title: OCI NetApp ストレージサービスのクイックスタート
-      url: "/oci/quick-start-oci.html"
-    - title: OCI認証情報を追加する
-      url: "/oci/add-credentials-oci.html"
-    - title: OCIストレージシステムの検出
-      url: "/oci/create-discover-systems.html"
-    - title: OCIストレージシステムに接続する
-      url: "/oci/create-link.html"
-    - title: OCI NetAppストレージサービスの構成分析
-      url: "/oci/configuration-analysis.html"
-    - title: OCI NetAppストレージサービスの構成を改善する
-      url: "/oci/improve-configurations.html"
-    - title: OCI NetApp ストレージサービスの権限リファレンス
-      url: "/oci/permissions-oci.html"
+    - title: Workload FactoryでOCI NetApp Storage Serviceを使用する
+      entries:
+      - title: OCI NetAppストレージサービスについて
+        url: "/oci/learn-about-oci.html"
+      - title: OCI NetApp ストレージサービスのクイックスタート
+        url: "/oci/quick-start-oci.html"
+      - title: OCI認証情報を追加する
+        url: "/oci/add-credentials-oci.html"
+      - title: OCIストレージシステムの検出
+        url: "/oci/create-discover-systems.html"
+      - title: OCIストレージシステムに接続する
+        url: "/oci/create-link.html"
+    - title: データの保護
+      entries:
+      - title: データを保護するためのcyber vaultを作成する
+        url: "/oci/create-cyber-vault.html"
+    - title: OCI NetApp ストレージサービスリソースの管理
+      entries:
+      - title: OCI NetAppストレージサービスの構成分析
+        url: "/oci/configuration-analysis.html"
+      - title: OCI NetAppストレージサービスの構成を改善する
+        url: "/oci/improve-configurations.html"
+    - title: 参照先
+      entries:
+      - title: OCI NetApp ストレージサービスの権限リファレンス
+        url: "/oci/permissions-oci.html"
   - title: Workload Factoryの管理
     entries:
     - title: 適切に設計されたワークロードを構築および運用する

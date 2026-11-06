@@ -2875,7 +2875,6 @@
   <block id="75ef547803457d883c1ab7eec9dd8c12" category="paragraph">Amazon FSx for NetApp ONTAP は、cyber vault のソースおよびターゲットとしてサポートされています。</block>
   <block id="b672f52ade975e864ae6b58722c03689" category="paragraph-title">導入</block>
   <block id="e8e8dcbe97676a6fe5760aae822c6e61" category="paragraph">Workload Factoryは、cyber vaultアーキテクチャの作成を支援します。お客様がNetAppに連絡してcyber vaultの実装に関心があることをお伝えいただくと、NetAppのスペシャリストがお客様にご連絡し、要件についてご相談させていただきます。</block>
-  <block id="9577a31ea32e2c5b58950150698f2a07" category="paragraph">利用を開始するには、ng-FSx-CyberVault@netapp.com にメールを送信してください。</block>
   <block id="a9541230016fd9f6de7895f1a32b75fb" category="inline-link-macro">ONTAP cyber vaultドキュメント</block>
   <block id="9241eb0a9aab7657dc2b300da8931da7" category="paragraph">cyber vaultの詳細と、このアーキテクチャの設定方法については、<block ref="5ee11ce3f9bfc218d47e808a1ac01a55" category="inline-link-macro-rx"></block>を参照してください。</block>
   <block id="21b32a5531b6213c6f49c70cd4ba55c2" category="summary">クラウド ストレージ システムを作成または検出して、NetApp Consoleからボリュームや追加のデータサービスを追加および管理します。</block>
@@ -7072,4 +7071,12 @@
   <block id="8b253c1d4259c21c8314fc85adcb31d6" category="section-title">2026年11月1日</block>
   <block id="b6109a32079ec6b1674d08deef3b061a" category="sidebar">OCI NetAppストレージサービスの構成分析</block>
   <block id="ccffb8af48fec4f0b06bcd53e8686fea" category="sidebar">OCI NetAppストレージサービスの構成を改善する</block>
+  <block id="a2e83c1dd25f125287b17739cb38fd88" category="paragraph">SSDストレージ層の容量は、使用率が80%を超えないようにしてください。このしきい値を超えると、キャパシティプールストレージ層へのデータの読み書きに影響が出たり、ファイルシステムのスループット容量が低下したりする可能性があります。容量が不足すると、データボリュームは読み取り専用になります。新しいデータを書き込もうとするサービスも失敗します。</block>
+  <block id="1e1ba6e3e89c5c46a8b08f6bb7ca5b1e" category="paragraph">始めるには、ng-CyberVault@netapp.com にメールを送信してください。</block>
+  <block id="377ba154ccba26a0c8629b61ddb6ed8e" category="doc">cyber vaultでOCI NetApp ストレージサービスのデータを保護します</block>
+  <block id="065ce2bbd0b2c80480729cc2db24ecf0" category="section-title">OCI NetApp ストレージサービス cyber vaults</block>
+  <block id="1d36752b389e26db7ea175cfa8c55520" category="paragraph">OCI NetApp Storage Serviceは、cyber vaultのソースおよびターゲットとしてサポートされています。</block>
+  <block id="aef8b94004154212084538bcd066fcd4" category="sidebar">FSx for ONTAP の権限</block>
+  <block id="84dd6c967c118d2d788a5e553796a8d0" category="sidebar">Workload FactoryでOCI NetApp Storage Serviceを使用する</block>
+  <block id="ce58205871372f591193549c18437f34" category="sidebar">OCI NetApp ストレージサービスリソースの管理</block>
 </blocks>
