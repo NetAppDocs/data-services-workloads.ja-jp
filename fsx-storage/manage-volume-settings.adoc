@@ -114,5 +114,5 @@ summary: NetApp Workload Factoryで、FSx for ONTAPボリュームのボリュ�
 * link:create-volume.html["Workload Factoryでボリュームを作成する"]
 * link:manage-volume-capacity.html["Workload Factory でボリューム容量を管理する"]
 * link:change-tiering-policy.html["Workload Factory でボリューム階層化ポリシーを変更する"]
-* link:manage-s3-access-points.html["Workload FactoryでS3アクセスポイントを管理する"]
+* link:edit-s3-access-points.html["Workload FactoryでS3アクセスポイントを管理する"]
 

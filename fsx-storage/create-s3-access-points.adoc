@@ -52,4 +52,4 @@ S3 アクセス ポイントを接続すると、一意のエイリアスとと�
 
 その他の関連トピック：
 
-link:manage-s3-access-points.html["NetApp Workload FactoryでボリュームのS3アクセスポイントを編集または削除する"]
+link:edit-s3-access-points.html["NetApp Workload FactoryでボリュームのS3アクセスポイントを編集または削除する"]

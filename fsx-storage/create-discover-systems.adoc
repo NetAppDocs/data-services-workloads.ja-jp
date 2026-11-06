@@ -21,7 +21,7 @@ NetApp Consoleからボリュームや追加のデータサービスを追加お
 [[create-a-storage-system]]
 == ストレージシステムを作成する
 
-最初のステップは、ストレージシステムを作成することです。クラウド プロバイダのコンソールですでにストレージシステムを作成している場合は、<<既存のクラウドストレージシステムを検出する,NetApp Consoleを使用して検出する>>。
+最初のステップは、ストレージシステムを作成することです。クラウド プロバイダのコンソールですでにストレージシステムを作成している場合は、<<discover-system,NetApp Consoleを使用して検出する>>。
 
 .タスク概要
 ストレージVMは、ファイルシステムを作成する際に作成されます。
@@ -246,6 +246,7 @@ FSx for ONTAPファイルシステムは、NetApp Consoleのワークロード�
 
 
 [[discover-an-existing-fsx-for-ontap-file-system]]
+[[discover-system]]
 == 既存のFSx for ONTAPファイルシステムを検出する
 
 Workload Factory でクラウド ストレージ プロバイダの認証情報を以前に提供している場合は、Discoverable systems ページから FSx for ONTAP ファイルシステムを自動的に検出できます。利用可能なデータサービスを確認することもできます。

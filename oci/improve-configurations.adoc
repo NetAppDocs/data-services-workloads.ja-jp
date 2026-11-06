@@ -39,7 +39,7 @@ Workload Factoryは、OCI NSSシステムの以下の構成について、適切
 [[before-you-begin]]
 == 開始する前に
 
-* OCI アカウントでlink:add-credentials.html["操作および修復の権限を付与する"]する必要があります。
+* OCI アカウントでlink:add-credentials-oci.html["操作および修復の権限を付与する"]する必要があります。
 * link:create-link.html["リンクを使用してOCI NSSシステムに接続する"]ファイルシステムリソースの最も包括的な分析を行うために。
 
 

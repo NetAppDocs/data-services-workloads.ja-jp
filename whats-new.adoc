@@ -35,7 +35,7 @@ summary: ワークロード管理、サービス管理、ストレージ機能�
 
 「データの更新」と「今すぐ読み込む」の両方で、Tracker にデータ収集イベントが作成されます。
 
-link:admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["カスタムダッシュボードデータを更新する方法を確認する"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["カスタムダッシュボードデータを更新する方法を確認する"]
 
 
 
@@ -43,7 +43,7 @@ link:admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["カスタ�
 
 カスタムダッシュボードでは、リクエストに含まれていない地域を1つ以上選択するよう求められるようになりました。ダッシュボードのデータは、選択した地域に限定されます。
 
-link:admin/create-custom-dashboard-fsx.html["カスタムダッシュボードの作成方法を学習します"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/create-custom-dashboard-fsx.html["カスタムダッシュボードの作成方法を学習します"]
 
 
 
@@ -51,7 +51,7 @@ link:admin/create-custom-dashboard-fsx.html["カスタムダッシュボード�
 
 リンクを作成するためのCloudFormationテンプレートとTerraformコードでは、インラインのLambda権限ではなく、IAMポリシーを使用するようになりました。
 
-link:fsx-storage/create-link.html["リンクの作成方法を学ぶ"]
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-storage/create-link.html["リンクの作成方法を学ぶ"]
 
 
 
@@ -61,7 +61,7 @@ Tracker を使用して、AIエージェント設定の変更と、読み取り 
 
 Workload Factory APIを介して行われたリソースの変更は、その操作を実行するWorkload Factoryサービスがログに記録します。
 
-link:admin/learn-agent.html#audit-and-tracking-for-agent-actions["エージェントのアクションの監査と追跡について学ぶ"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/learn-agent.html["エージェントのアクションの監査と追跡について学ぶ"]
 
 
 
@@ -229,7 +229,7 @@ OCI Well-Architected Frameworkの以下の柱について、構成評価が利�
 * コスト最適化：コールドデータ階層化、スナップショットクリーンアップ、ストレージ効率化
 
 
-link:oci/configuration-analysis.html["OCI NSSシステムの適切に設計された分析"]およびlink:oci/improve-configurations.html["適切に設計された構成を実装する"]の詳細をご覧ください。
+link:https://docs.netapp.com/us-en/data-services-workloads/oci/add-credentials-oci.html["OCI NSSシステムの適切に設計された分析"]およびlink:https://docs.netapp.com/us-en/data-services-workloads/oci/improve-configurations.html["適切に設計された構成を実装する"]の詳細をご覧ください。
 
 
 
