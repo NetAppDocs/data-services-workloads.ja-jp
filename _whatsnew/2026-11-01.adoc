@@ -186,6 +186,23 @@ image:well-architected-menu-option.png["Workload Factory コンソールの Well
 
 
 
+[[workload-factory-for-vmware-enhancements]]
+=== Workload Factory for VMwareの機能強化
+
+これらの機能強化は、VMware移行向けのEVS TCO計算ツールを対象としています。
+
+
+
+==== EVS TCO 計算ツールにおける i7i.metal-24xl および i7i.metal-48xl インスタンスのサポート
+
+EVSのTCO計算ツールが、クラスターホストとしてAWSのi7i.metal-24xlおよびi7i.metal-48xl EC2インスタンスをサポートするようになりました。i4i.metal構成と比較して、i7i.metal-24xlインスタンスは、コンピューティングのEVS初期コストを約33%、vSANストレージのEVS初期コストを約25%削減します。
+
+この計算ツールは、すべてのインスタンスタイプを比較し、最もコストの低いオプションを自動的に選択します。新しい比較セクションでは、EVSホストの構成を並べて表示することで、ニーズに最適な設定をより簡単に選択できます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-vmware/calculate-evs-savings.html["EVSの推定節約額を計算する"]
+
+
+
 [[workload-factory-for-eda-enhancements]]
 === Workload Factory for EDAの機能強化
 

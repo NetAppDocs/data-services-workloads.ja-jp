@@ -7105,4 +7105,11 @@
   <block id="38e979158d55ae25a36aba4d97b0a8b4" category="list-text">成長傾向に基づいて将来の容量ニーズを計画する</block>
   <block id="2814ccd9bf1ef1faffa5931e29ee7f74" category="list-text">自動化の失敗に関するトラブルシューティング</block>
   <block id="f2abe5914eba19478c3b813d9def8548" category="sidebar">FSx for ONTAP レイテンシ分析</block>
+  <block id="e9f11fc9d91bec322284ec741f87191d" category="section-title">Workload Factory for VMwareの機能強化</block>
+  <block id="2296d077680e104e6519a9745c173ece" category="paragraph">これらの機能強化は、VMware移行向けのEVS TCO計算ツールを対象としています。</block>
+  <block id="37460924712e1c37dc5ad9be085001ad" category="section-title">EVS TCO 計算ツールにおける i7i.metal-24xl および i7i.metal-48xl インスタンスのサポート</block>
+  <block id="b6c3bb340d0b13e009a53c6c8a2b9219" category="paragraph">EVSのTCO計算ツールが、クラスターホストとしてAWSのi7i.metal-24xlおよびi7i.metal-48xl EC2インスタンスをサポートするようになりました。i4i.metal構成と比較して、i7i.metal-24xlインスタンスは、コンピューティングのEVS初期コストを約33%、vSANストレージのEVS初期コストを約25%削減します。</block>
+  <block id="e50148793a31ae443693925cfda40d91" category="paragraph">この計算ツールは、すべてのインスタンスタイプを比較し、最もコストの低いオプションを自動的に選択します。新しい比較セクションでは、EVSホストの構成を並べて表示することで、ニーズに最適な設定をより簡単に選択できます。</block>
+  <block id="0665cdd8950328e06e0db9b1e16938d3" category="inline-link-macro">EVSの推定節約額を計算する</block>
+  <block id="536315c4cd9e40b477f48fcc8b1863a7" category="paragraph"><block ref="536315c4cd9e40b477f48fcc8b1863a7" category="inline-link-macro-rx"></block></block>
 </blocks>
