@@ -215,6 +215,16 @@ sidebar:
           url: "/fsx-eda/task-activate-overview-dashboard.html"
         - title: 概要ダッシュボードを使用する
           url: "/fsx-eda/task-use-overview-dashboard.html"
+      - title: FSx for ONTAP レイテンシ分析
+        entries:
+        - title: レイテンシ監視について学ぶ
+          url: "/fsx-eda/learn-latency-monitoring.html"
+        - title: レイテンシー監視の設定
+          url: "/fsx-eda/task-configure-latency-monitoring.html"
+        - title: レイテンシの問題を分析
+          url: "/fsx-eda/task-analyze-latency-issues.html"
+        - title: レイテンシの傾向を分析
+          url: "/fsx-eda/task-analyze-latency-trends.html"
       - title: プロジェクト使用状況分析
         entries:
         - title: プロジェクトダッシュボードについて

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: fsx-eda/learn-latency-monitoring.html 
-keywords: latency analysis, CloudWatch alarms, volume latency, read latency, write latency, critical events, warning events, latency thresholds, IOPS thresholds, latency monitoring, FSx for ONTAP, root cause analysis, QoS delay center, automated analysis 
+keywords: latency analysis, CloudWatch alarms, volume latency, read latency, write latency, critical events, warning events, latency thresholds, IOPS thresholds, latency monitoring, FSx for ONTAP, root cause analysis, QoS delay center, automated analysis, file system pressure 
 summary: Workload Factory for EDA のレイテンシー監視が、自動基本分析とオプションの AI 分析を使用して FSx for ONTAP ボリュームのパフォーマンス問題の検出と分析にどのように役立つかについて説明します。 
 ---
 = Workload Factory for EDAにおけるレイテンシ監視について学ぶ
@@ -108,15 +108,7 @@ NOTE: ONTAP QoS 分析と CloudWatch のレイテンシ値は、データの収�
 [[ai-analysis]]
 === AI分析
 
-基本的な分析によって遅延の原因を特定できる場合もありますが、データやクラスタコンポーネントが関わるより複雑な状況では、より詳細な調査が必要となることが多いです。AI分析は、過負荷状態のボリューム、不適切な設定、容量追加の必要性など、基本的な分析では見落とされる可能性のある問題を発見することで、より詳細なトラブルシューティングを可能にします。
-
-AI分析の利用可否は、アカウント設定によって異なります。
-
-* *NetApp管理AIクレジットが有効*：Bedrockの追加設定なしでAI分析を実行できます。
-* *管理者により無効化されています*：AIオプションは利用できません。
-
-
-NetApp が管理する AI クレジットが有効になっている場合でも、月間予算に達すると、AI 分析は利用できなくなり、メッセージが表示されます。
+基本的な分析によって遅延の原因を特定できる場合もありますが、データやクラスタコンポーネントが関わるより複雑な状況では、より詳細な調査が必要となることがよくあります。AI分析は、過負荷状態のボリューム、不適切な設定、容量追加の必要性など、基本的な分析では見落とされがちな問題を発見することで、より詳細なトラブルシューティングを可能にします。
 
 AI分析を実行すると、システムは以下を提供します：
 
@@ -124,6 +116,13 @@ AI分析を実行すると、システムは以下を提供します：
 * *影響を受けるクライアント*：レイテンシの影響を受けるEC2インスタンス名のリスト
 * *潜在的な修復手順*：問題を解決するための2つ以上の具体的なアクション
 
+
+
+
+[[file-system-pressure]]
+=== ファイルシステムの負荷
+
+レイテンシアラートのあるボリュームについては、オンデマンドチェックを実行して、イベント発生時にファイルシステムにパフォーマンスに影響を与えるほどの負荷がかかっていたかどうかを確認できます。このチェックでは、イベント前の40分間のCloudWatchデータを確認し、*Pressured* または *Not pressured* のいずれかを返します。Pressuredという結果は、ファイルシステムの負荷がパフォーマンスとレイテンシに影響を与えた可能性が80%以上あることを意味します。このチェックにはFSx for ONTAPリソースへのリンクも含まれているため、関連する指標を確認できます。
 
 
 

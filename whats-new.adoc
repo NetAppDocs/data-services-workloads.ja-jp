@@ -202,6 +202,45 @@ image:well-architected-menu-option.png["Workload Factory コンソールの Well
 
 
 
+[[workload-factory-for-eda-enhancements]]
+=== Workload Factory for EDAの機能強化
+
+これらの機能強化には、レイテンシー分析におけるボリュームの詳細、ファイルシステムの負荷チェック、スループットの判断ポイント、およびレイテンシー分析の再実行が含まれます。
+
+
+
+==== レイテンシー分析中にボリュームの詳細を表示します
+
+レイテンシイベントを分析する際に、Workload Factoryでボリュームの詳細を表示することで、ボリュームがどのように構成されているかを確認できます。詳細レイテンシ分析ページには、*ボリュームタイプ*（RWまたはDP）と*ボリュームスタイル*（FlexVolまたはFlexGroup）が表示されます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-eda/task-analyze-latency-trends.html["レイテンシの傾向を分析する方法を学ぶ"]
+
+
+
+==== レイテンシイベントのファイルシステムの負荷を確認する
+
+Workload Factoryでは、レイテンシイベントが発生した際にファイルシステムの負荷がパフォーマンスに影響を与えたかどうかを確認できるため、ファイルシステムを調査するかどうかを判断できます。レイテンシアラートが発生しているボリュームについては、イベント発生前の40分間のCloudWatchデータを表示し、ファイルシステムを開いてさらに調査することができます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-eda/learn-latency-monitoring.html#file-system-pressure["ファイルシステムの負荷チェックについて"]
+
+
+
+==== EDAのスループット決定ポイントを確認する
+
+EDA概要ダッシュボードでクライアントのスループット決定ポイントを確認することで、Workload Factoryがスループットの変更を推奨または適用したタイミングを確認できます。決定ポイントにカーソルを合わせると、現在のSKUと推奨SKU、または指定した期間内に違反した指標などの詳細が表示されます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-eda/task-use-overview-dashboard.html#analyze-capacity-and-throughput-trends-and-decision-points["スループット決定ポイントのレビュー方法"]
+
+
+
+==== レイテンシ分析を再度実行する
+
+Workload Factoryでは、ボリュームに対してレイテンシ分析を再度実行することで、調査や変更後に結果を更新できます。*分析を再度実行*を選択すると、新しい分析が開始され、結果が更新されます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-eda/task-analyze-latency-issues.html["レイテンシの問題を分析する方法について学習します"]
+
+
+
 [[google-cloud-netapp-volumes-enhancements]]
 === Google Cloud NetApp Volumesの機能強化
 
