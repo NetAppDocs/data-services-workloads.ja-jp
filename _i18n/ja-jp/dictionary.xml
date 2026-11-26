@@ -6897,7 +6897,6 @@
   <block id="9744964a1ca6fbce3b75a4f5042f9597" category="section-title">ストレージVM移行の改善</block>
   <block id="e6567f9c034c2cedd4efbe2f207f9b2a" category="paragraph">Workload Factoryは、ストレージVMの移行に関して、ユーザーインターフェース内でより詳細なガイダンスを提供します。これには、移行を本番環境に導入する前に、段階的な手順説明とテスト実行が含まれます。</block>
   <block id="5d9883007f4bc5361c0311ad3ad7cfd1" category="inline-link-macro">ストレージVM移行について詳しくはこちらをご覧ください</block>
-  <block id="f9aacc67b23285dcf36836993d0a0240" category="paragraph"><block ref="f9aacc67b23285dcf36836993d0a0240" category="inline-link-macro-rx"></block></block>
   <block id="f96336c52a88a7b30c68866854b7e3f2" category="section-title">レプリケーション遅延メール通知の改善</block>
   <block id="1e403f6a94558e4fb3362faed8f74a9b" category="paragraph">関連するレプリケーション遅延イベントが多数発生した場合、Workload Factoryはそれらを自動的に1つのメール通知に統合するため、通知が多すぎて混乱することはありません。</block>
   <block id="f45963c176c2d5c66e1ddbfab6e6a59e" category="section-title">自動容量管理機能の強化</block>
@@ -7112,4 +7111,5 @@
   <block id="e50148793a31ae443693925cfda40d91" category="paragraph">この計算ツールは、すべてのインスタンスタイプを比較し、最もコストの低いオプションを自動的に選択します。新しい比較セクションでは、EVSホストの構成を並べて表示することで、ニーズに最適な設定をより簡単に選択できます。</block>
   <block id="0665cdd8950328e06e0db9b1e16938d3" category="inline-link-macro">EVSの推定節約額を計算する</block>
   <block id="536315c4cd9e40b477f48fcc8b1863a7" category="paragraph"><block ref="536315c4cd9e40b477f48fcc8b1863a7" category="inline-link-macro-rx"></block></block>
+  <block id="d708ba996885d5ea1c1b9727bc557415" category="paragraph"><block ref="d708ba996885d5ea1c1b9727bc557415" category="inline-link-macro-rx"></block></block>
 </blocks>

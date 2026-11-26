@@ -154,7 +154,7 @@ Workload Factoryは、お客様所有のS3バケットに配信される詳細�
 
 Workload Factoryは、ストレージVMの移行に関して、ユーザーインターフェース内でより詳細なガイダンスを提供します。これには、移行を本番環境に導入する前に、段階的な手順説明とテスト実行が含まれます。
 
-link:fsx-storage/create-replication.html["ストレージVM移行について詳しくはこちらをご覧ください"]
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-storage/create-replication.html["ストレージVM移行について詳しくはこちらをご覧ください"]
 
 
 
