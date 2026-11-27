@@ -7,7 +7,7 @@ summary: NetAppは、NetApp Consoleのサポートをさまざまな方法で提
 = NetApp Console クラウドサービスのヘルプを取得する
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: https://docs.netapp.com/us-en/console-family/media/
 
 
 [role="lead"]
@@ -87,7 +87,7 @@ NetApp Console コミュニティに参加して、進行中のディスカッ�
 
 
 +
-image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/screenshot-create-case.png["NetApp サポートでケースを作成するための「ケースの作成」フォームのスクリーンショット。"]
+image:screenshot-create-case.png["NetApp サポートでケースを作成するための「ケースの作成」フォームのスクリーンショット。"]
 
 
 
@@ -141,10 +141,10 @@ image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/scr
 ** *組織のケース*の下にある*表示*を選択すると、貴社に関連付けられているすべてのケースが表示されます。
 ** 日付範囲を変更するには、正確な日付範囲を選択するか、別の期間を選択してください。
 ** 列の内容をフィルタリングします。
-** テーブルに表示される列を変更するには、image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-columns.png["表に表示されるプラスアイコン"]を選択してから、表示する列を選択します。
+** テーブルに表示される列を変更するには、image:icon-table-columns.png["表に表示されるプラスアイコン"]を選択してから、表示する列を選択します。
 
 
-. image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-action.png["表の最後の列に表示される、3つの点が描かれたアイコン"]を選択し、利用可能なオプションのいずれかを選択して、既存のケースを管理します：
+. image:icon-table-action.png["表の最後の列に表示される、3つの点が描かれたアイコン"]を選択し、利用可能なオプションのいずれかを選択して、既存のケースを管理します：
 +
 ** *ケースを表示*：特定のケースに関する詳細情報を表示します。
 ** *ケースメモの更新*：問題に関する詳細情報を入力するか、*ファイルのアップロード*を選択して最大5つのファイルを添付してください。

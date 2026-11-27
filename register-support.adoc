@@ -7,7 +7,7 @@ summary: NetApp テクニカルサポートでサポートケースを開く前�
 = NetApp Console でサポートに登録する
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: https://docs.netapp.com/us-en/console-family/media/
 
 
 [role="lead"]
@@ -94,7 +94,7 @@ NetAppを初めてご利用になる方で、NSSアカウントをお持ちで�
 . コンソールの右上にあるヘルプアイコンを選択し、*サポート*を選択します。
 . サポート登録ページからアカウントIDのシリアル番号をご確認ください。
 +
-image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/screenshot-serial-number.png["ヘルプメニューのスクリーンショット。「サポート」が最初のオプションとして表示されています。"]
+image:screenshot-serial-number.png["ヘルプメニューのスクリーンショット。「サポート」が最初のオプションとして表示されています。"]
 
 .  https://register.netapp.com["NetAppのサポート登録サイト"^]に移動し、*登録済みの NetApp のお客様ではありません*を選択します。
 . 必須項目（赤いアスタリスクが付いている項目）を入力してください。
@@ -149,7 +149,7 @@ NSS 認証情報を NetApp Console アカウントに関連付けることは、
 .手順
 . コンソールの右上にあるヘルプアイコンを選択し、*サポート*を選択します。
 +
-image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/screenshot-help-support.png["ヘルプメニューのスクリーンショット。「サポート」が最初のオプションとして表示されています。"]
+image:screenshot-help-support.png["ヘルプメニューのスクリーンショット。「サポート」が最初のオプションとして表示されています。"]
 
 . 「NSS Management」＞「Add NSS Account」を選択します。
 . プロンプトが表示されたら、*続行*を選択して、Microsoft のログインページにリダイレクトされます。
@@ -174,9 +174,9 @@ NetAppは、サポートおよびライセンスに特化した認証サービ�
 
 ** ログインに成功すると、NetApp は NSS ユーザー名を保存します。
 +
-これはシステムによって生成されたIDで、お客様のメールアドレスにマッピングされます。*NSS管理*ページのimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-nss-menu.png["横に並んだ3つの点のアイコン"]メニューからメールアドレスを表示できます。
+これはシステムによって生成されたIDで、お客様のメールアドレスにマッピングされます。*NSS管理*ページのimage:icon-nss-menu.png["横に並んだ3つの点のアイコン"]メニューからメールアドレスを表示できます。
 
-** ログイン資格情報トークンを更新する必要がある場合は、image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-nss-menu.png["横に並んだ3つの点のアイコン"] メニューに*資格情報の更新*オプションもあります。
+** ログイン資格情報トークンを更新する必要がある場合は、image:icon-nss-menu.png["横に並んだ3つの点のアイコン"] メニューに*資格情報の更新*オプションもあります。
 +
 このオプションを選択すると、再度ログインを求められます。これらのアカウントのトークンは 90 日後に有効期限が切れることにご注意ください。この件については、通知が掲載されますのでご確認ください。
 
