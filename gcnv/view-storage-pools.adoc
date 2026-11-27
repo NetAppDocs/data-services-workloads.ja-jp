@@ -17,9 +17,16 @@ Google Cloud NetApp Volumes のストレージプールとその詳細を NetApp
 . link:https://console.netapp.com["NetApp Console"^]にログインします。
 . メニューimage:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]から、*ストレージ* > *Google Cloud NetApp Volumes* を選択します。
 . *プロジェクト*、*認証情報*、*リージョン*の各フィルターを使用して、表示されるストレージプールの範囲を指定します。
++
+Google Cloud NetApp Volumesシステムで*システムに入る*を選択してこのページを開くと、フィルタにはすでにそのシステムのプロジェクト、認証情報、リージョンが表示されます。すべてのリージョンを対象とするシステムを開くと、すべてのリージョンが選択された状態になります。
+
 . ストレージプールテーブルを確認してください。このテーブルには、名前、ステータス、サービスレベル、容量などの詳細が表示されます。
 +
 ストレージプールのサービスレベルは、Standard、Premium、Extreme、Flex File、またはFlex Unifiedのいずれかです。モードには、Flex Unifiedストレージプールの場合はDefaultまたはONTAPが表示され、その他のすべてのサービスレベルの場合はDefaultが表示されます。
 
 . ストレージプールの名前を選択すると、スループットや説明などの詳細情報が表示されます。
+
+
+.関連情報
+* link:delete-storage-pool.html["Google Cloud NetApp Volumesストレージプールを削除する"]
 

@@ -37,7 +37,7 @@ NetApp Workload Factory で FSx for ONTAP ファイルシステムの設定を�
 [[manage-ontap-credentials]]
 == ONTAP クレデンシャルの管理
 
-FSx for ONTAP ファイルシステムの ONTAP 認証情報を NetApp Workload Factory で管理します。Workload Factory には、プライマリ認証情報と制限付き認証情報の2種類があります。デフォルトでは、ファイルシステムはプライマリ ONTAP 認証情報を使用します。制限付き認証情報は、Ask Me、ルールビルダー、カスタムダッシュボードなどの AI オペレーション（AIOps）にのみ使用されます。必要に応じて制限付き認証情報セットを追加でき、どちらの認証情報セットもいつでも更新できます。
+NetApp Workload FactoryでFSx for ONTAPファイルシステムのONTAP認証情報を管理します。Workload Factoryの認証情報には、プライマリと制限付きの2種類があります。デフォルトでは、ファイルシステムはプライマリONTAP認証情報を使用します。制限付き認証情報は、Ask Me、カスタムルール、カスタムダッシュボードなどのAIオペレーション（AIOps）にのみ使用されます。必要に応じて制限付き認証情報セットを追加でき、どちらの認証情報セットもいつでも更新できます。
 
 次のタスクを実行できます。
 

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: gcnv/create-discover-systems.html 
-keywords: Google Cloud NetApp Volumes, gcnv, volumes, create system, delete system, access key, secret key, region, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
-summary: クラウド ストレージ システムを作成または検出して、NetApp Consoleからボリュームや追加のデータサービスを追加および管理します。 
+keywords: Google Cloud NetApp Volumes, gcnv, add system, system name, credentials, region, NetApp Console 
+summary: ストレージプール、ボリューム、データサービスを管理するために、Google Cloud NetApp VolumesシステムをNetApp Consoleに追加します。 
 ---
-= NetApp ConsoleでGoogle Cloud NetApp Volumesシステムを作成または検出する
+= Google Cloud NetApp VolumesシステムをNetApp Consoleで追加する
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,33 +14,30 @@ summary: クラウド ストレージ システムを作成または検出して
 
 
 [role="lead"]
-Google Cloud NetApp Volumesシステムを検出し、NetApp Consoleからボリュームと追加のデータサービスを管理します。
+Google Cloud NetApp Volumesシステムを追加して、NetApp Consoleからストレージプールとボリュームを管理できるようにします。
 
 
 
-[[discover-an-existing-cloud-storage-system]]
-== 既存のクラウドストレージシステムを検出する
+[[add-a-system]]
+== システムを追加する
 
-Discoverable systemsページからストレージシステムを検出します。
+Workload Factoryがすべてのリージョンでそのストレージプールを含めるように、管理するプロジェクトを登録します。
 
 .開始する前に
-Workload Factory で Google Cloud NetApp Volumes の認証情報を入力してください。
-
-.タスク概要
-クラウドストレージシステムは、アカウント内で一度だけ検出でき、1つのワークスペースにのみ関連付けることができます。ストレージシステムは後で削除して、別のワークスペースに再関連付けすることができます。
+Workload FactoryでGoogle Cloud NetApp Volumesプロジェクトの認証情報を追加します。link:add-credentials.html["認証情報を追加する方法を確認する"]。
 
 .手順
-. NetApp Consoleメニューから、*ストレージ*、*管理*、*Discoverable systems*の順に選択します。
-. 検出されたクラウドストレージシステムの数が表示されます。*検出*を選択します。
-. 1つ以上のストレージシステムを選択し、*検出*を選択してシステムページに追加します。
+. NetApp Consoleメニューから、*ストレージ* > *管理* > システムを選択し、次に*システムの追加* > *Google Cloud Platform*を選択します。
+. *Google Cloud NetApp Volumes*で、*検出*を選択します。
+. システムの名前を入力してください。
+. システムの認証情報を選択してください。
+. 必要に応じて、リージョンを選択してください。リージョンを選択しない場合、システムはすべてのリージョンを対象とします。
++
+
+NOTE: リージョンによって検出が制限されることはありません。Workload Factoryは、認証情報に基づいてすべてのリージョンのストレージプールを検出します。選択したリージョンによって、システムがキャンバスに表示する内容と、コンプライアンスおよびDRaaSが使用する内容が決まります。
+
+. *検出*をクリックします。
 
 
-[NOTE]
-====
-* 名前のないストレージシステムを選択した場合、システムの名前を入力するよう求められます。
-* コンソールから管理に必要な認証情報を持たないストレージシステムを選択した場合、必要な権限を持つ認証情報を選択するよう促されます。
-
-
-====
 .結果
-コンソールは、検出されたシステムを「システム」ページに表示します。ストレージシステムは、NetApp Consoleのワークロードからの管理、ONTAP System Managerの使用、またはクラウド プロバイダのストレージ管理ツールの使用など、さまざまな方法で管理できます。
+NetApp Consoleのシステムページにシステムが表示されます。同じ認証情報に対して、いくつでもシステムを追加できます。

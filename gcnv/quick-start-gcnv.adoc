@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: gcnv/quick-start-gcnv.html 
 keywords: set up google cloud netapp volumes, quick start,system 
-summary: Google Cloud NetApp Volumes の使用を開始するには、NetApp Console のロールを割り当て、認証情報を追加して、システムを検出します。 
+summary: Google Cloud NetApp Volumesの利用を開始するには、NetApp Consoleのロールを割り当て、認証情報を追加し、システムを追加します。 
 ---
 = Google Cloud NetApp Volumes のクイックスタート
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Google Cloud NetApp Volumes の使用を開始するには、NetApp Con
 
 
 [role="lead"]
-Google Cloud NetApp Volumes の使用を開始するには、NetApp Console ロールの割り当て、認証情報の追加、およびシステムの検出を行います。
+Google Cloud NetApp Volumesの利用を開始するには、NetApp Consoleのロールを割り当て、認証情報を追加し、システムを追加します。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"] link:../gcnv/add-roles.html["役割を割り当てる"]
 [role="quick-margin-para"]
@@ -26,4 +26,4 @@ NetApp Consoleで、Google Cloud NetApp Volumesの認証情報を追加します
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] link:../gcnv/create-discover-systems.html["システムを追加する"]
 [role="quick-margin-para"]
-NetApp Consoleで、認証情報、Google Cloudプロジェクト、およびサポートされているリージョンを使用してシステムを検出します。
+NetApp Consoleで、認証情報を使用してシステムを追加します。必要に応じて、リージョンを選択します。

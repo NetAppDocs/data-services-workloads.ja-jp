@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: gcnv/add-roles.html 
-keywords: setup, set up, add role, requirements, permissions, google cloud netapp volumes, gcnv, bluexp. netapp console,assign 
+keywords: setup, set up, add role, requirements, permissions, google cloud netapp volumes, netapp console,assign 
 summary: NetApp Consoleでは、メンバーに適切なロールを割り当てる必要があります。 
 ---
 = Google Cloud NetApp Volumesのロールを割り当てる

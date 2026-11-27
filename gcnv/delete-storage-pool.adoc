@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: gcnv/delete-storage-pool.html 
+keywords: delete storage pool, remove storage pool, storage pool 
+summary: NetApp Workload Factoryで、ボリュームのないGoogle Cloud NetApp Volumesストレージプールを削除します。 
+---
+= Google Cloud NetApp VolumesストレージプールをNetApp Workload Factoryで削除する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloudコンソールを使用せずに、ボリュームが含まれなくなったストレージプールを削除します。
+
+
+
+[[before-you-begin]]
+== 開始する前に
+
+必要なときに削除オプションを使用できるように、ストレージプールとユーザーロールで削除が許可されていることを確認してください。
+
+* ストレージプールにはボリュームがあってはなりません。
+* ストレージプールは、準備完了状態またはエラー状態である必要があります。
+* Google Cloud NetApp Volumes管理者ロールが必要です。
+
+
+
+
+[[delete-a-storage-pool]]
+== ストレージプールを削除する
+
+ストレージプールを削除する際は、それに依存するものが何もないことを確信できる場合にのみ削除してください。一度削除すると元に戻すことはできません。
+
+.手順
+. link:https://console.netapp.com["NetApp Console"^]にログインします。
+. メニュー image:workloads-menu-icon.png["ハンバーガーメニューアイコンは、Workload Factoryのメニュー項目であるWorkloadsに移動するために使用します"]、*ワークロード* > *ストレージ* > *Google Cloud NetApp Volumes* を選択します。
+. ストレージプールテーブルで、ストレージプールのimage:screenshot_gallery_options.gif["3つの点が描かれたアイコン。"]を選択し、*削除*を選択します。
+. 確認ダイアログで、*delete* と入力して確定し、*削除* を選択します。
+
+
+.結果
+ストレージプールのステータスが「削除中」に変更されます。削除が完了すると、Workload Factoryはストレージプールをテーブルから削除します。削除に失敗した場合、ストレージプールはテーブルに残り、link:../admin/monitor-operations.html["トラッカー"] にエラーメッセージが表示されます。

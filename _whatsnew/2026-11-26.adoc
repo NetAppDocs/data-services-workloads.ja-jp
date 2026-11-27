@@ -1,0 +1,153 @@
+= Amazon FSx for NetApp ONTAPの機能強化
+:allow-uri-read: 
+
+
+
+
+[[amazon-fsx-for-netapp-ontap-enhancements]]
+=== Amazon FSx for NetApp ONTAPの機能強化
+
+
+
+==== 複数のFSx for ONTAPファイルシステムをリンクに関連付ける
+
+各ファイルシステムごとに関連付けを繰り返すのではなく、1つのワークフローで複数のFSx for ONTAPファイルシステムを新規または既存のリンクに関連付けることができるようになりました。各ファイルシステムのONTAP認証情報を入力するか、複数のファイルシステムに同じ認証情報を適用することで、リンクを認証できます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/setup/links-overview.html["リンクの詳細"]
+
+
+
+==== ストレージVMネームサービスの新しい推奨事項
+
+Workload Factory では、適切なアーキテクチャ分析において、ストレージ VM ネーム サービスに関する以下の推奨事項が追加されました：
+
+*DNSとLDAPサーバの冗長性*：DNSを使用するストレージVMには少なくとも2つのDNSサーバ、LDAPを使用するストレージVMには少なくとも2つのLDAPサーバを推奨します。単一のサーバ障害によって、名前解決、ドメイン認証、またはNFSアクセスがブロックされる可能性があります。
+
+
+
+==== ボリュームエクスプローラーの機能強化
+
+
+
+===== 新しいボリュームエクスプローラーテーブルの列
+
+ボリュームエクスプローラーテーブルには、以下の新しい列が含まれます：
+
+* *Logical used size*: クライアントがストレージ効率化の削減前に使用済みとして認識するスペースを表示します。この列はデフォルトで表示されます。
+* *ジャンクション パス*：ボリュームのジャンクション パスを示します。
+
+
+
+
+===== マウントポイントを管理する
+
+ボリュームエクスプローラから直接、ストレージVMのネームスペース内でボリュームがマウントされる場所を管理できるようになりました。ボリュームの「詳細設定」メニューから「マウントポイントの管理」を選択して、ストレージVMのネームスペースをツリーとして表示し、ボリュームのマウント、アンマウント、またはジャンクションパスの変更を行います。Workload Factoryは、ボリュームをアンマウントする前に依存関係をチェックします。他のボリュームがマウントされているボリュームはアンマウントできません。また、ボリュームにSMB共有が含まれている場合は警告が表示されます。
+
+
+
+===== 新しいボリューム用のネストされたジャンクション パス
+
+ボリュームを作成する際に、「詳細設定」セクションで、 `/test1/test2`などのネストされたジャンクション パスを入力できるようになりました。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-storage/create-volume.html["ボリュームの作成方法を確認する"]
+
+
+
+==== 適切に設計された構成をカスタムルールとしてカスタマイズする
+
+適切に設計された構成からカスタムルールを開始することで、元のベストプラクティスを維持しつつ、独自のしきい値や範囲を適用できます。Workload Factoryは、その構成に基づいて編集可能なプロンプト付きでカスタムルールを開きます。ルールはドラフトとして開始され、その説明にはどの構成に基づいているかが明記されています。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-storage/improve-configurations.html["適切に設計された構成をカスタマイズする方法を確認します"]
+
+
+
+==== スケジュールされたカスタムルール実行の通知を受け取ります
+
+スケジュールされたカスタムルールの通知を有効にすると、Workload Factoryにサインインしなくても結果を取得できます。スケジュールされた実行のたびに通知を受け取るか、実行が失敗または部分的に成功した場合にのみ通知を受け取ることができます。通知は、すでに設定済みのチャネルを通じて送信されます。手動テストでは通知は送信されません。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-storage/manage-custom-rules.html["スケジュールされたカスタムルールの通知を受け取る方法を確認します"]
+
+
+
+[[workload-factory-administration-enhancements]]
+=== Workload Factoryの管理機能強化
+
+これらの機能強化は、Workload Factoryにおけるカスタムダッシュボードやその他の管理タスクを対象としています。
+
+
+
+==== カスタムダッシュボードのタイトルと説明を編集する
+
+カスタムダッシュボードのタイトルと説明は、ダッシュボードカタログまたはダッシュボードビューから編集できるため、ダッシュボードの変更に合わせて常に最新の状態に保つことができます。どちらの項目も必須であり、2つのダッシュボードに同じタイトルを付けることができます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/manage-custom-dashboards-fsx.html["カスタムダッシュボードの管理方法"]
+
+
+
+[[workload-factory-for-eda-enhancements]]
+=== Workload Factory for EDAの機能強化
+
+これらの機能強化は、追跡対象ボリュームの自動AI分析、AI分析におけるより明確な根本原因の説明、およびレイテンシ分析結果の保持期間に関するものです。
+
+
+
+==== 自動AI分析用のボリュームを追跡
+
+レイテンシーの問題が検出された際に、自動AI分析の対象となるボリュームを指定できます。分析結果は72時間保存され、通知メールにも含まれるため、自分で分析を実行しなくても原因を確認できます。
+
+link:https://docs.netapp.com/us-en/workload-eda/task-analyze-latency-issues.html["遅延問題の分析について"^]。
+
+
+
+==== AI分析における根本原因のより明確な説明
+
+AI分析を活用することで、遅延発生の原因をより明確に把握できます。この分析では、FlexCache、容量プール、ファイルシステムに関連する問題のほか、スループットとIOPSの制限、SSDの高い使用率、書き込みの飽和、同じリソースを使用している他のボリュームに関連する問題がないかを確認します。
+
+link:https://docs.netapp.com/us-en/workload-eda/task-analyze-latency-issues.html["遅延問題の分析について"^]。
+
+
+
+==== レイテンシ分析結果は72時間保持されます
+
+レイテンシ分析の結果が、インターフェース上で24時間ではなく72時間表示されるようになりました。これにより、ボリュームの過去の分析結果を確認できます。
+
+link:https://docs.netapp.com/us-en/workload-eda/task-analyze-latency-issues.html["遅延問題の分析について"^]。
+
+
+
+[[google-cloud-netapp-volumes-enhancements]]
+=== Google Cloud NetApp Volumesの機能強化
+
+これらの機能強化には、ストレージプールの削除、システムからのストレージプールインベントリの表示、リージョンをまたいだシステムの追加、および右側のパネルからのシステム管理が含まれます。
+
+
+
+==== ストレージプールを削除する
+
+ボリュームが存在せず、状態が「準備完了」または「エラー」であるGoogle Cloud NetApp Volumesストレージプールを削除できます。削除は取り消せません。削除が失敗した場合、プールはインベントリに残り、エラーはTrackerに記録されます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/gcnv/delete-storage-pool.html["ストレージプールを削除する方法を確認します"]
+
+
+
+==== システムからストレージプールのインベントリを開く
+
+Google Cloud NetApp Volumesシステムの*Enter system*を選択すると、Workload Factoryのストレージプールインベントリが開き、そのシステムのプロジェクト、認証情報、およびリージョンがすでに選択された状態になります。すべてのリージョンを対象とするシステムの場合は、すべてのリージョンが選択された状態で開きます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/gcnv/view-storage-pools.html["ストレージプールの表示方法"]
+
+
+
+==== すべてのリージョンにシステムを追加する
+
+Google Cloud NetApp Volumesシステムを追加する場合、リージョンはオプションであり、デフォルトではすべてのリージョンになります。Workload Factoryは、選択した認証情報のすべてのリージョンでストレージプールを検出します。選択したリージョンによって、システムがキャンバスに表示する内容と、コンプライアンスおよびDRaaSが使用する内容が決まります。検出が制限されることはありません。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/gcnv/create-discover-systems.html["システムを追加する方法"]
+
+
+
+==== 右パネルからシステムを管理する
+
+Google Cloud NetApp Volumesシステムの右側のパネルでは、ボリュームを表示し、NetApp Consoleからシステムにアクセスできます。
+
+link:https://docs.netapp.com/us-en/data-services-workloads/gcnv/view-storage-pools.html["ストレージプールの表示方法"]

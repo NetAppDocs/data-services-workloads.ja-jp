@@ -2134,7 +2134,6 @@
   <block id="38eacd6054dad756b607d4c8329eee03" category="section-title">レイテンシ分析パネル</block>
   <block id="0665519f24690502dfcb8f5913d6b056" category="paragraph">*重大度*列でレイテンシイベントを選択すると、そのイベントのレイテンシ分析パネルが開きます。このパネルには、レイテンシイベントのさまざまな表示方法を示すタブが含まれています。</block>
   <block id="d4aa2b3d15c42ad4fd480c90a0dd2ff0" category="paragraph">AI分析の利用可否は、アカウント設定によって異なります。NetApp管理型AIが有効になっている場合、Bedrockをセットアップせずにすることなく、AI分析を実行できます。月間クレジット上限に達した場合、または管理者がAI機能を無効にした場合、AI分析は利用できません。</block>
-  <block id="749a48c0317fe3f2ef0a45565b6d5eaa" category="list-text">*基本*：自動分析の結果を表示します。ファイルシステムにリンクされている場合、コンポーネントの内訳を表示し、どのコンポーネントが遅延の原因となっているかを示します。リンクが存在しない場合は、追加するように促されます。</block>
   <block id="15cd7052e1d93c893bde34b56ad0d78f" category="paragraph">影響を受けたボリュームの CloudWatch メトリクスのインタラクティブなレイテンシーグラフが表示されます。イベントをトリガーしたアラームに応じて、読み取りまたは書き込みのメトリクスが表示されます。異なる期間を選択したり、フィルターを使用して「すべて」、「読み取り」、「書き込み」、または「メタデータ」の操作を表示したりできます。</block>
   <block id="56dacd4284bdced92c0b004472a11758" category="list-text">*AI分析*：より詳細な調査を行い、具体的な根本原因と潜在的な改善策を特定します。</block>
   <block id="633009349fd0d4ddd69254b14ddb614b" category="list-text">*詳細なレイテンシー分析*：影響を受けたボリュームの CloudWatch メトリクスのインタラクティブなグラフを表示します。これらのグラフは、時間の経過に伴うレイテンシ、IOPS、およびスループットを示しています。イベントをトリガーしたアラームに応じて、読み取りまたは書き込みのメトリクスが表示されます。異なる期間を選択したり、フィルターを使用して「すべて」、「読み取り」、「書き込み」、または「メタデータ」の操作を表示したりできます。</block>
@@ -2144,7 +2143,6 @@
   <block id="b40f6683a1eb1ae3afa3737db2b06397" category="list-text">「Basic」タブを確認してください。リンクが接続されている場合は、コンポーネントの内訳を開いて、遅延の原因を確認してください。リンクが接続されていない場合は、コンポーネントを分析できるように、リンクを張るためのプロンプトを選択してください。</block>
   <block id="d8f181efec7f7692ea2986c04f76ad86" category="list-text">*AI分析*タブで、*分析*（利用可能な場合）を選択すると、データやクラスタの問題など、より詳細な調査結果が表示されます。これは、具体的な根本原因と潜在的な改善策を特定するのに役立ちます。</block>
   <block id="988f6f9e1ca459bc23b17e74878baf18" category="paragraph">結果を確認します。確認項目は以下のとおりです。</block>
-  <block id="d5f97a1cb8e0382743f28559f0c6ace7" category="list-text">潜在的な根本原因の説明</block>
   <block id="a9e75b44526a7c3342bd86bfb6079dcc" category="list-text">影響を受けるEC2クライアントのリスト</block>
   <block id="0a3d11a9c21fb1f2a4dc021dc4a83aad" category="list-text">推奨される修復手順</block>
   <block id="92ffa2df9924192cd277aff197d336a5" category="list-text">*完全な分析を表示*を選択すると、選択した期間におけるCloudWatchメトリクスのボリュームレイテンシ、IOPS、スループットを示すパフォーマンスチャートを含む、AI分析の完全な結果が表示されます。</block>
@@ -2690,7 +2688,6 @@
   <block id="3583e4a3e4e2e122cff65b8ad9045348" category="list-text">プロアクティブな可観測性</block>
   <block id="16fcd85dc9469370b62b4b46381f8e2a" category="list-text">洞察から行動へ</block>
   <block id="7a3fc3cf12e9da54628c7311398bee5c" category="list-text">AWS Well-Architected Framework アドバイザー</block>
-  <block id="8779c6393df05e1705b311d9e0f13958" category="paragraph">また、組織の標準とNetAppのベストプラクティスに照らして環境を検証するために、平易な言葉でカスタムルールを作成することもできます。ドライランでルールをテストし、各環境で実行するようにスケジュールを設定します。<block ref="02fcf2ffb8ce0690b17b03c9491ef999" category="inline-link-macro-rx"></block>。</block>
   <block id="8feb6c8d13e912657481adbe0cafebb3" category="paragraph">Workload Factory は、継続的な評価と推奨事項、および修復策を組み合わせることで、大規模なストレージ、データベース、および VMware 環境にベストプラクティスを適用します。自動化された修正機能は、人的ミスを減らし、均一な管理を確保し、ワークロードインフラストラクチャ全体でパフォーマンスと信頼性を維持します。</block>
   <block id="3f6f8b4e204fd3aa39cac35661de164d" category="section-title">分析要件</block>
   <block id="ccfc2060f8f316d0ccd33b0289111a38" category="paragraph">ファイルシステムを完全に分析するには、以下の手順を実行する必要があります。</block>
@@ -2742,7 +2739,6 @@
   <block id="a39ae09f8be4327fc176cfeb76a0e366" category="section-title">コスト最適化</block>
   <block id="394c926099d3d2cf7e0d7477f17faf38" category="paragraph">コストの最適化により、コストを低く抑えながらビジネスの価値を最大限に高めることができます。</block>
   <block id="01fd10a8e7ac161e328da4eaf6292046" category="list-text">*コールドデータ階層化*</block>
-  <block id="fdc181efad43392a7f4edba311fccf94" category="paragraph">SSDストレージ階層の利用率を削減するために、コールドデータ階層化を有効にしてください。一般的なデータストレージを目的としたすべてのボリュームに階層化ポリシーを適用します。データベースボリュームについては、必要に応じてコールドデータ階層化を有効にしてください。FSx for ONTAPはデータを継続的にスキャンしてコールドデータを検出し、中断することなくキャパシティプール層に移動します。</block>
   <block id="1642a3ac22d754ea2e3215648c2ca8a7" category="list-text">*ストレージ効率*</block>
   <block id="a97dffed0cf7eab28dd24e64546425b8" category="paragraph">ストレージ効率化機能（コンパクション、圧縮、重複排除）を有効にすることで、ストレージ利用率を最適化し、SSDティアのコストを削減します。</block>
   <block id="4839729f2857a14e606b9472d85de0c1" category="list-text">*バックアップの有効期限*</block>
@@ -2823,7 +2819,6 @@
   <block id="aa5bf59269969e22f1e91f0116790d69" category="paragraph">カスタムルールを作成して実行する前に、以下のものを用意してください：</block>
   <block id="fadf874162a190084750a51220f07180" category="list-text">カスタムルールの作成には、NetApp の Bedrock AI サービスが使用されることを理解しています。</block>
   <block id="536d32f8526dd0faea40f78af4cad034" category="section-title">ルールを作成します。</block>
-  <block id="3f87c61ee7c070ec896e14d55b132e25" category="paragraph">ルールビルダーを開くと、カスタムルールを作成するのに役立つサンプルプロンプトが表示されます。「プロンプトをコピー」を選択すると、サンプルプロンプトがAIダイアログのテキストボックスにコピーされます。</block>
   <block id="ab99baf0da39867076eea6e470865275" category="list-text">「ルールを作成」フィールドに、ルールの説明を自然言語で入力してください。以下の点について、できるだけ具体的に説明してください。</block>
   <block id="d8eefaf38d3f8455541df01bc5d6831b" category="list-text">チェックしているリソースの種類（ファイルシステム、ボリューム、またはキャッシュ）。</block>
   <block id="4e86c5f58eeed68b966c1b5f2cf16853" category="list-text">検証しようとしている条件は何ですか？</block>
@@ -2833,7 +2828,6 @@
   <block id="448a77fdd0ab1119d70eda7dfad65fa7" category="list-text"><block ref="9bf5747e0eee12d0fcc488bd415a8bc3" category="inline-image-macro-rx" type="image"></block>を選択します。</block>
   <block id="15fc6fdd1dd9d66889237c7e8a75d290" category="paragraph">AIがあなたの入力内容を分析し、ルール定義を生成します。</block>
   <block id="1c88936123899b4423b51efeb098f008" category="section-title">AIの解釈を確認する</block>
-  <block id="28ea3f4811ef4cb7fc2b7f08d6fce5a7" category="paragraph">ルールビルダーには以下が表示されます：</block>
   <block id="f89784f298e9f6255c6acd2f32b4051a" category="list-text">解釈内容を確認し、意図した内容と一致しているかどうか確認してください。</block>
   <block id="f7dd96479a94850934674d003fe54f52" category="list-text">すべての質問に回答したら、*Continue* を選択してルールを作成してください。</block>
   <block id="66178252f08edeeeeda7bfc5ebf5227b" category="section-title">ルールをテストする</block>
@@ -3519,9 +3513,7 @@
   <block id="dc782d3e46ef3bd4b9ae294af16366b0" category="paragraph">SMB/CIFS共有を削除すると、その共有は利用できなくなり、マウントしようとするユーザーはアクセスできなくなります。</block>
   <block id="73d6e57b628ed920f4ce69e52d8df9d7" category="list-text">SMB/CIFS共有の削除ダイアログで、*削除*を選択して削除を確定します。</block>
   <block id="d8bb2214730133a5475bf68bf933cdeb" category="section-title">ルールカタログを表示する</block>
-  <block id="12dc6c12cd959eea202fab9d01a2ef04" category="paragraph">ルールカタログには、作成したすべてのルール、そのステータス、スケジュール、および最新の結果が表示されます。</block>
   <block id="e1cf2ece0db166d8b4c6b87f20794e11" category="inline-image-macro">ハンバーガーメニューアイコン</block>
-  <block id="dd5177b4ae0935729bdc02652d8232ff" category="list-text">メニュー <block ref="438b712f6e6afc173ce78a756adc207c" category="inline-image-macro-rx" type="image"></block> を選択し、次に *Rule builder* を選択します。</block>
   <block id="2dbbd81185e2ce12dca0c0137a343a42" category="list-text">*ルールを表示* をクリックして、ルールカタログを開きます。</block>
   <block id="5890f83979745a0ed0d6d680fbcc1638" category="section-title">ルール結果を表示する</block>
   <block id="eeed19c5f7da7509abad8a01045710dc" category="paragraph">結果には、ルールに準拠しているリソースと準拠していないリソースが表示されます。</block>
@@ -3831,16 +3823,13 @@
   <block id="9e37c13416b5ae00943c0a3e0a5515e1" category="list-text">リバランス操作を開始したら、ボリュームバランスページから*リバランスを停止*を選択します。</block>
   <block id="e1c8bb61c19d6ae0db6ae5e69616299c" category="list-text">「リバランスを停止」ダイアログで、*停止*を選択します。</block>
   <block id="dacae3a3d22c24a7e5e2a28664e1043d" category="paragraph">ボリューム再調整操作が停止し、アクティブボリュームの移動が中止されます。</block>
-  <block id="2e4be9b0e28ca3065b74b93bd25ca696" category="doc">NetApp Workload Factory でボリューム設定を管理する</block>
   <block id="d151342d67a639e871ca8c57524ca7f8" category="section-title">ボリュームタグを管理する</block>
   <block id="693a8f663c39ae53134101e5d974fda8" category="paragraph">タグは、リソースを分類するのに役立ちます。NetApp Workload FactoryのFSx for ONTAPボリュームのボリュームタグは、いつでも追加、編集、削除できます。</block>
   <block id="1111cc43d23839eef53ada84488c133d" category="list-text">タグを変更するボリュームのアクションメニューを選択します。</block>
-  <block id="c966edae1d484c4f3e557d47709e08a1" category="list-text">*基本操作*を選択し、次に*ボリュームタグの編集*を選択します。</block>
   <block id="9724e2d67a8b8dacb5f774fbf0309b44" category="list-text">ボリュームタグの編集ページで、タグの追加、編集、または削除を行います。</block>
   <block id="88ba83269635947653a5d84b3d1da8be" category="paragraph">ボリュームに適用できるタグの最大数は50個です。</block>
   <block id="70db812201935aaccc5a6c48663fbbd9" category="section-title">ボリュームストレージの効率を更新</block>
   <block id="5315e58af0e826259e6ff3250a45d68c" category="paragraph">ボリューム作成後、ストレージ効率設定を更新してください。</block>
-  <block id="07834469705cb1cae603dc37fac50539" category="paragraph">ストレージ効率化機能には、重複排除、データ圧縮、データコンパクションが含まれており、FlexVol volumeで最適なスペース節約を実現します。重複排除は、重複するデータブロックを排除します。データ圧縮は、データブロックを圧縮して、必要な物理ストレージ容量を削減します。データコンパクションは、より少ないスペースにより多くのデータを保存して、ストレージ効率を向上させます。</block>
   <block id="6949ed855da826654fa3e3a2e2a18279" category="paragraph">ボリューム作成時にストレージ効率化を有効にしなかった場合でも、いつでもこの設定を有効にすることで、容量とコストの節約につながる可能性があります。</block>
   <block id="3561512c31eaec9705db4d98de971d93" category="paragraph">ストレージ効率を有効または無効にするかどうかにかかわらず、ボリュームはシンプロビジョニングを使用します。</block>
   <block id="3b4ba83afa209df4541afdb1c96a15f9" category="list-text">ストレージ効率設定を更新するボリュームのアクションメニューを選択します。</block>
@@ -3848,17 +3837,11 @@
   <block id="fc86913f9636c03cbcbb4e3e03d4b332" category="list-text">ボリュームストレージの効率化を有効または無効にするかを選択します。</block>
   <block id="b755b7c9e5db773b9578d24d7b40b61d" category="list-text">変更を保存するには、*適用*を選択してください。</block>
   <block id="0b83e178116e79ce2a76377c2fe4e4ed" category="section-title">NetApp Workload Factoryでボリュームの不変ファイルを管理する</block>
-  <block id="64a89a3651290ba9a03fd440b6a0ebf1" category="paragraph">この機能が有効になっている場合、保持ポリシーと期間、自動コミット期間、ボリューム追加モードなど、ボリュームの特定の不変ファイル設定を更新できます。</block>
   <block id="b492e06a3b3ad8340a18b513da6d700b" category="inline-link-macro">ボリューム作成</block>
   <block id="0178234ce599b2e6182625dc7a986f96" category="list-text">更新するボリュームのアクションメニューを選択します。</block>
   <block id="93e46e1a97b77571f38fbf3e149f1774" category="list-text">*データ保護アクション*を選択し、次に*変更不可能なファイルの管理*を選択します。</block>
-  <block id="ad020fe684b765118a2055b344aee93d" category="list-text">「変更不可能なファイルの管理」ページでは、以下の項目を更新できます：</block>
-  <block id="41aead073b18e72c83b214fa747bdba7" category="list-text">*保持期間*：*指定なし*または*期間を指定*を選択してください。</block>
-  <block id="bdc86b1b59114d960fddc6510ce5b5aa" category="list-text">*期間を指定*：保持ポリシー、最小期間と最大期間、自動コミット機能、およびボリューム追加モード機能を定義するオプション。以下の詳細情報を提供してください：</block>
   <block id="f8acb56e7fdfc40573cdcf902933cf6b" category="list-text">*保持ポリシー*：この期間は、最小保持期間以上かつ最大保持期間以下でなければなりません。</block>
   <block id="5e014a6c33a86633de2b837f04c25093" category="list-text">*最小期間と最大期間*：このボリューム内のファイルを不変の WORM 状態にコミットするための最小期間と最大期間を設定します。</block>
-  <block id="25c4d2e22e431bb231ebfacb000ad26c" category="list-text">*自動コミット*：自動コミット期間中に変更されていないファイルを WORM に自動的にコミットする機能を有効または無効にします。</block>
-  <block id="6dc7abcdf6f4b84a36a87f40f2787a33" category="list-text">*特権削除*：この機能を有効または無効にします。この機能を有効にすると、SnapLock管理者が有効期限前のWORMボリュームを削除できるようになります。この機能は、エンタープライズ保持モードでのみサポートされています。</block>
   <block id="866b1ecefa63336519b427710ec4d496" category="inline-link-macro">Workload Factoryでボリュームを作成する</block>
   <block id="f2b9c933540bfeebed06160c6e39c4ba" category="list-text"><block ref="f2b9c933540bfeebed06160c6e39c4ba" category="inline-link-macro-rx"></block></block>
   <block id="db99231f6dff7de5950fdeb11214939f" category="inline-link-macro">Workload Factory でボリューム容量を管理する</block>
@@ -5519,10 +5502,7 @@
   <block id="7ac5667c1b90b6524fde9817118effea" category="paragraph">Workload Factory は、容量不足のリスクを軽減するために、ボリューム使用率を80%未満に抑えることを推奨しています。ボリュームが予想以上に速く増加した場合、迅速に拡張する必要が生じる可能性があります。これは、特に急激または断続的な増加が発生した場合に、アプリケーションへの影響リスクを高める可能性があります。シンプロビジョニングと自動容量管理を使用すると、このリスクは低減されます。1つまたは複数のボリュームに対して無効化し、必要に応じて後で再度有効化することができます。</block>
   <block id="f793fba5432b14d544dc9553f3dba075" category="inline-link-macro">適切に設計された Google Cloud NetApp Volumes の構成を実装する</block>
   <block id="97b454b609a0aa059f0ee5086b4e833b" category="paragraph"><block ref="97b454b609a0aa059f0ee5086b4e833b" category="inline-link-macro-rx"></block></block>
-  <block id="e59d726fcfb88c6055be1c3faacbdade" category="doc">NetApp ConsoleでGoogle Cloud NetApp Volumesシステムを作成または検出する</block>
-  <block id="50ee01defb15abd93bc6b3404bcb087d" category="paragraph">Google Cloud NetApp Volumesシステムを検出し、NetApp Consoleからボリュームと追加のデータサービスを管理します。</block>
   <block id="8145d004afbc2327122adddf556de278" category="paragraph">Discoverable systemsページからストレージシステムを検出します。</block>
-  <block id="932a709702b0fabe39c59febfaaa5b36" category="paragraph">Workload Factory で Google Cloud NetApp Volumes の認証情報を入力してください。</block>
   <block id="1fbc6d00faf337e60116deb7a9436737" category="summary">ワークロードファクトリーは、Google Cloud NetApp Volumes の構成をスキャンし、運用上の卓越性を実現するためのインサイトと推奨事項を提供します。</block>
   <block id="5bf39b6df69484117b7a94f73c047bec" category="paragraph">構成分析のインサイトと推奨事項を活用して、NetApp を使用し、Google Cloud ストレージ上で稼働する Google Cloud NetApp Volumes ストレージプールのベストプラクティスを実装します。適切に設計された状態を簡単に確認したり、構成上の問題点を把握したり、信頼性、セキュリティ、パフォーマンス、コストの面で最適化されていないストレージプールのアーキテクチャを改善するための推奨事項を入手したりできます。</block>
   <block id="7d1ff00602d5a32748c6468a1bf8908e" category="paragraph">NetAppは、Google Cloud における NetApp Volumes ストレージプールのデプロイメントを毎日分析します。日々の分析では、ウェルアーキテクチャのステータス、および構成上の問題を理解してストレージプールがベストプラクティスに準拠するための洞察と推奨事項が提供されます。</block>
@@ -6310,7 +6290,6 @@
   <block id="5027902eb321e29c02f1b29693c38975" category="list-text">*コンソールユーザーインターフェース*：_クイック作成_と_高度な作成_のデプロイメントモードオプションを提供します。クイック作成には、ストレージ構成に関するAWS、NetApp、および業界標準のベストプラクティスが含まれます。インターフェースには、SSDストレージ容量とスループットの使用傾向、ワークロードの概要、および展開可能な詳細な構成設定も表示されます。</block>
   <block id="4add18b12df10bcbce425a63ffca5e83" category="paragraph">NetApp Workload Factory で FSx for ONTAP ファイルシステムの設定を管理し、ファイルシステムを整理された状態に保ち、セキュリティを確保し、ワークロードに適したサイズを維持します。タグの追加または編集、ONTAP 認証情報の管理、fsxadmin パスワードのリセット、スループット容量の更新はいつでも実行できます。</block>
   <block id="e5887c2efb1d1c33ac1d1a94c80a271f" category="section-title">ONTAP クレデンシャルの管理</block>
-  <block id="cb024049d5ea2ff7afa317a6714dc5e2" category="paragraph">FSx for ONTAP ファイルシステムの ONTAP 認証情報を NetApp Workload Factory で管理します。Workload Factory には、プライマリ認証情報と制限付き認証情報の2種類があります。デフォルトでは、ファイルシステムはプライマリ ONTAP 認証情報を使用します。制限付き認証情報は、Ask Me、ルールビルダー、カスタムダッシュボードなどの AI オペレーション（AIOps）にのみ使用されます。必要に応じて制限付き認証情報セットを追加でき、どちらの認証情報セットもいつでも更新できます。</block>
   <block id="8d1d531715a92e9a9357a3f3a1c54f69" category="paragraph">次のタスクを実行できます。</block>
   <block id="fa4aa5fb5750ccbf7f29962d66653d6a" category="list-text">ユーザー名とパスワード、またはシークレット ARN のいずれかを使用して、制限付きクレデンシャルセットを追加するオプションを選択します。</block>
   <block id="1f6972d3f9f44512acd184a7af564248" category="list-text">ユーザー名とパスワード、パスワードのみ、またはシークレット ARN など、既存のクレデンシャルを変更します。</block>
@@ -6325,10 +6304,7 @@
   <block id="5baa98427cdf9e7fa18b25794f917fd6" category="list-text">プライマリまたは制限付き ONTAP クレデンシャルを更新します。</block>
   <block id="3f723254bac88a4b39c3650549be282a" category="section-title">ボリュームワークロードの変更</block>
   <block id="87ab4fb0ad018565836567d164671f73" category="paragraph">ボリュームのワークロードを、想定される使用事例に合わせて更新します。</block>
-  <block id="757a7ffb20a279d7239febb013141ad5" category="list-text">メニュー <block ref="d1917ed039a7bd34b3d1373e5ffc5ece" category="inline-image-macro-rx" type="image"></block> を選択し、次に*Storage*を選択します。</block>
-  <block id="48392de7f44d75a05d38a8c1a399d8ac" category="list-text">ストレージメニューから「ボリュームエクスプローラー」を選択します。</block>
   <block id="17ec06b9eaa321300fab59fd56971e66" category="list-text">ワークロードを更新するボリュームのアクションメニューを選択します。</block>
-  <block id="ed2541738b61ca0c7584cd62bf74b27d" category="list-text">*高度な操作*を選択し、*ワークロードの変更*を選択します。</block>
   <block id="cd9e2d546766552cd75de00b7717f0cf" category="list-text">「ワークロードの変更」ダイアログで、ボリュームに適したワークロードを選択します。</block>
   <block id="0ecf72bcc13fb55d0aa28c82a90ab6f4" category="paragraph">固有のリソースの場合、Workload Factory は、実際のパフォーマンスティアの使用状況、プロビジョニング済みだが未使用のスペースに割り当てられたパフォーマンスティアコストの比例配分、容量ごとに分配されたパフォーマンス割り当て、および容量プールの使用状況を組み合わせてコストを計算します。Workload Factory は、各コンポーネントにそのディメンションにおける単価を乗算し、その結果を合計して各リソースの総コストを決定します。</block>
   <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">以下の要件を満たしていることを確認してください。</block>
@@ -6451,8 +6427,6 @@
   <block id="89806ea6a9ed9b0bb6cb322f912aff65" category="paragraph">ダッシュボードは変更内容に合わせて更新されます。最終更新日も更新されます。</block>
   <block id="665b56adc96ec0ae170583f2c939549f" category="list-text"><block ref="665b56adc96ec0ae170583f2c939549f" category="inline-link-macro-rx"></block></block>
   <block id="dbc831d32bec483a9698bd8ffbae773b" category="doc">NetApp Workload FactoryのAI機能の管理</block>
-  <block id="17f306dd010c4f9182635b5f5e336fa1" category="paragraph">Workload Factoryには、Ask Me、AIエージェント、カスタムダッシュボード、ルールビルダー、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させるAI搭載機能が多数含まれています。</block>
-  <block id="cbdbc1bacc2d0ff55d93219e225f857a" category="list-text">すべてのAI機能をオフにします。ユーザーは、Ask Me、AI エージェント、アナライザー、カスタムダッシュボード、ルールビルダー、その他の AI 搭載ツールを使用できなくなります。</block>
   <block id="d558bf5c801444e8a41fb205b6481939" category="list-text"><block ref="d558bf5c801444e8a41fb205b6481939" category="inline-link-macro-rx"></block></block>
   <block id="7822184101da98dc9a2f973bcc0b1e57" category="list-text"><block ref="e353446964aabeb4012c8f3074fb20a4" category="inline-link-macro-rx"></block>のサンプルプロンプトのいずれかから始めてください。</block>
   <block id="1d66ae30886d42b24d56159b752d6ad9" category="inline-link-macro">権限要件</block>
@@ -6482,13 +6456,11 @@
   <block id="3784e1d30d90c571998c16706c434e4f" category="list-text"><block ref="3784e1d30d90c571998c16706c434e4f" category="inline-link-macro-rx"></block></block>
   <block id="274d09f174202ef30839bc1b86c8644b" category="list-text"><block ref="274d09f174202ef30839bc1b86c8644b" category="inline-link-macro-rx"></block></block>
   <block id="a8f76ad42c3df15f6fbe9addd47ffe36" category="doc">NetApp Console で Workload Factory のカスタムルールを作成する</block>
-  <block id="f4014ae984242fefc2f0569e68611a2e" category="paragraph">Workload FactoryでFSx for ONTAPリソースをチェックするためのカスタムルールを作成します。ルールを平易な言葉で記述すると、AIルールビルダーがリクエストを検証済みのルールに変換します。</block>
   <block id="4995e76cedbca110dbb7cefe85e61d77" category="paragraph">ルール設定プロセスでは、各ステップを順を追って案内します：ルールの作成、AIがルールをどのように理解したかの確認、定期的なレビューをスケジュールする前の結果の確認。お客様はプロセス全体を通して主導権を握ることができます。システムはお客様のプロンプトに基づいてルールを提案しますが、お客様が承認するまで何も実行されません。</block>
   <block id="d87385efd143a7a589ef7be597c50809" category="admonition">アカウント管理者がAI機能を無効にしている場合、メッセージが表示され、カスタムルールを作成または編集できなくなります。管理者に連絡するか、<block ref="ba4e701e567767978f2b4fc32c409de8" category="inline-link-macro-rx"></block>。</block>
   <block id="5d9b02c1296ee6f0b859a2db7ccf523b" category="list-text">AWS認証情報を読み取り専用アクセスで設定しました。</block>
   <block id="0876642abf2aedd4eb3ae76dd87f7586" category="list-text">閲覧権限を持つ ONTAP 認証情報があります。</block>
   <block id="0e8e25fe832310f010ce2950b2110974" category="list-text">FSx for ONTAP 接続用にリンクまたはエージェントが設定されています。</block>
-  <block id="be31b56e3ba8f8ceee6d9deed7f5c112" category="list-text">メニュー <block ref="438b712f6e6afc173ce78a756adc207c" category="inline-image-macro-rx" type="image"></block> を選択し、次に ワークロード &gt; 適切に設計された &gt; ルールビルダー を選択します。</block>
   <block id="0cd216375fd6782b45d9f84efb6f3e84" category="list-text">解析された解釈</block>
   <block id="9d009657b96c5aad9fa21f1828b73bcf" category="list-text">AIがプロンプトを平易な言葉でどのように理解したか。</block>
   <block id="e35d59c335e26445eed5e3cf4fc88047" category="list-text">ルール定義</block>
@@ -6510,10 +6482,8 @@
   <block id="39a7241c7fb2f38f3a304dc5a7ddd33e" category="list-text">定期的な評価をスケジュールするには、評価頻度を設定し、「スケジュール」を選択してください。このルールは有効になっており、定義されたスケジュールに従って実行されます。</block>
   <block id="9c85906f54c1b8a93d6470f07300ddfa" category="list-text">検証後にスケジュール設定せずに保存するには、*下書きとして保存*を選択してください。ルールは保存されますが、スケジュールされるまでは評価されません。</block>
   <block id="4a5aaf656967e8a439bf519ae6b59880" category="list-text">ルールを削除するには、*削除*を選択します。</block>
-  <block id="ac896c02d18100750fc4d290b272e808" category="paragraph">お客様のカスタムルールが作成され、ルールカタログに登録されました。スケジュールを設定すると、指定された頻度でFSx for ONTAPリソースをチェックします。後でルールを編集する場合、更新版を保存する前に、システムはチャット、レビュー、承認、検証といった同じ手順を案内します。</block>
   <block id="8bc0878ae35d7f3c225b4bac0e907504" category="paragraph"><block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
   <block id="0ef70b60892b97d12c2eebf7686872ca" category="paragraph">カスタムルールを使用すると、優れた設計のダッシュボードで、NetAppのベストプラクティスとともに、独自のアーキテクチャ標準を設定、チェック、適用できます。</block>
-  <block id="91b90f08c0d07c5aa66b502a1d12c868" category="paragraph">ルールビルダーを使用すると、平易な言葉でカスタムルールを作成できます。これらのルールは、すべてのリソースに対してチェックされます。カスタムルールを使用すると、デフォルトのルールではカバーされない可能性のある、組織の基準、リスク制限、および運用要件を適用できます。</block>
   <block id="4edc72502b9f9929e41bae938a7490c1" category="paragraph">カスタムルールはAIを活用して、平易な言葉で書かれた指示を明確で構造化されたルールに変換します。AIはリクエストを解釈してルールを提案し、指示をどのように理解したかを説明したうえで、ルールの保存またはスケジュールの前に承認を求めます。このプロセスは、以下のことを確実にします：</block>
   <block id="0465277e228b6cf7f37c1fab3872f9cd" category="list-text">ルールは明確に定義され、エラーがないかチェックされています</block>
   <block id="f2b92cb195f44b1f57205f66b9c1c992" category="list-text">カスタムコードは実行されません</block>
@@ -6546,7 +6516,6 @@
   <block id="ccf414cfce06645c55d0bcfd5f41608b" category="list-text">ファイルシステムの命名規則</block>
   <block id="71d671c8e1cf2aa5cf976dd7ff9d340b" category="summary">ルールカタログから、カスタムアーキテクチャルールを表示、編集、有効化、無効化、および削除できます。</block>
   <block id="1cf051440b9604c5c57c4c6cab344202" category="doc">NetApp Console で Workload Factory のカスタムルールを管理する</block>
-  <block id="8ef292d4be46fbc351d35b26b3ce8720" category="paragraph">ルールカタログは、すべてのカスタムルールを管理できる場所です。ルールの詳細を確認したり、ルールを編集したり、結果を確認したり、ルールをスケジュールに基づいて実行するかどうかを制御したりできます。</block>
   <block id="dbea8da43ac90f4152565d880d18e30e" category="paragraph">ルール名はいつでも変更できます。ルールの説明、リソースの種類、スケジュール、重要度、条件ロジック、評価範囲、および是正措置に関するガイダンスを編集することもできます。</block>
   <block id="8473633d69dc94d27429c2a37902fe75" category="paragraph">ルールは、ルールカタログまたはルール詳細カードから名前を変更できます。その他のルール設定を編集するには、ルールカタログから始めてください。</block>
   <block id="2dc19156fac0f6096a2db17a78fe0da8" category="list-text">ルール名を変更するには、カタログまたはルール詳細カードからルール名を更新してください。</block>
@@ -6559,9 +6528,7 @@
   <block id="023ad31a6b18fc538747a36ab488e65c" category="list-text">ルールがドラフトモードの場合は、*ルールの検証*を選択して、更新されたロジックをテストしてください。</block>
   <block id="58b17236d18d0245f7322e360753f322" category="list-text">変更を保存するには、*保存*をクリックして現在のルールを置き換えてください。スケジュールを変更した場合は、更新後のスケジュールを保存してください。スケジュールを変更していない場合は、変更はありません。</block>
   <block id="a91166998826b450f2fb807ba450dbc4" category="list-text">変更を破棄するには、*変更を破棄*をクリックします。ルールは以前のバージョンに戻り、編集モードを終了します。</block>
-  <block id="053ebf33b65f60110cd8e776b413ed79" category="paragraph">ルールを編集している間は、そのルールは*編集中*と表示されます。他のユーザーには引き続き現在のスケジュール済みルールが表示され、変更を保存するまではスケジュールされた実行は通常どおり継続されます。</block>
   <block id="8c5fb02c595607ff2d6a7bffe64be464" category="section-title">ルールを一時停止する</block>
-  <block id="ad91e5fff3b8c62296713afbb3628a85" category="paragraph">ルールを削除せずに評価を停止するには、ルールを一時停止します。一時停止されたルールはカタログに残り、いつでも再開できます。</block>
   <block id="6128c344ce68ca2256885ace5b47ff93" category="list-text">ルール一覧で、一時停止したいルールをクリックします。</block>
   <block id="082d380473aced66fdfe341c99cda5a8" category="list-text">スケジュールされたルールを一時停止するには、「一時停止」をクリックして確認してください。ルールはスケジュールに従って実行されなくなります。</block>
   <block id="45967b1be5307f4c7a1110294cadcd04" category="list-text">一時停止したルールを再開するには、*Resume* をクリックして確認します。ルールは定期的な評価を再開します。</block>
@@ -6572,28 +6539,23 @@
   <block id="a611c28af3d155e736c074bd926dc51b" category="list-text">ルールを完全に削除することを確認してください。</block>
   <block id="f36dd1b2731552458a4d8983a8bec074" category="paragraph">当該ルールはカタログから削除されました。すべての評価履歴は削除されます。</block>
   <block id="ee46de54fef48d3ea00b2c8fc06cb58b" category="section-title">簡単なテストを実行する</block>
-  <block id="bd472ca28321d77d062059272b456804" category="paragraph">次の定期実行を待つことなく、いつでもクイックテストを実行して現在のコンプライアンス状況を確認できます。</block>
   <block id="5edd65680f750fa6f32b6e445f24fd27" category="list-text">ルールカタログで、評価したいルールをクリックします。</block>
   <block id="ae7b417afa23cb538530e43e4b08cfff" category="list-text">*検証*をクリックします。</block>
   <block id="b4b7ad5dbb1a5d746e0ac8936e3f4798" category="paragraph">システムは、対象となるすべてのリソースをルールロジックに基づいて評価します。</block>
   <block id="5cb57852939f164731c4f61fcca33dac" category="list-text">結果を確認して、現在のコンプライアンス状況を把握してください。</block>
   <block id="2cc894218e78a9699920859cc698e5d7" category="paragraph">テストは監査され、ルールの評価履歴に表示されます。</block>
   <block id="26a1c27f638f5372654511db0a450638" category="paragraph"><block ref="26a1c27f638f5372654511db0a450638" category="inline-link-macro-rx"></block></block>
-  <block id="9a8fccbd850aa8643a89826b7a8fb208" category="summary">Google Cloud NetApp Volumes の使用を開始するには、NetApp Console のロールを割り当て、認証情報を追加して、システムを検出します。</block>
-  <block id="2999755d1730c0395dc6d69c2e4175da" category="paragraph">Google Cloud NetApp Volumes の使用を開始するには、NetApp Console ロールの割り当て、認証情報の追加、およびシステムの検出を行います。</block>
   <block id="aa0b2ca9fbe37ff46d33ea907e58b677" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="4db55a1c8076378b257ee9e0511dd2d4" category="inline-link-macro-rx"></block></block>
   <block id="0f391d5482822722d86585c248878517" category="inline-link-macro">クレデンシャルを追加</block>
   <block id="6f2763cd3e02476cb119778797369b0f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="2fd3a5be9d6b1b1b584f1ac1aa0e2f8e" category="inline-link-macro-rx"></block></block>
   <block id="77d5ddb0fb660aaf755b6ed1f614b0c5" category="paragraph">NetApp Consoleで、Google Cloud NetApp Volumesの認証情報を追加します。</block>
   <block id="66db479b9f5558108a119367246238d1" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="8b88ff7d74af8bb26ccc5fa950b51632" category="inline-link-macro-rx"></block></block>
-  <block id="3d5dcea171c7a77f7cb0efa8c9a0cd1a" category="paragraph">NetApp Consoleで、認証情報、Google Cloudプロジェクト、およびサポートされているリージョンを使用してシステムを検出します。</block>
   <block id="c04236280596e42d063458cddb934506" category="sidebar">AIエージェント</block>
   <block id="737f86fc6a3bb3563670dac4c0b49585" category="sidebar">Workload Factory AIOps</block>
   <block id="ff2cb9e669640d8f287be7fc339c4d78" category="sidebar">AIエージェントについて学ぶ</block>
   <block id="64f2f595f7dd037774e1dbd99cb2ab7b" category="sidebar">AIエージェントの設定を管理する</block>
   <block id="3fba0171e458258e875a2f8013e395b8" category="cell">SQL Server 2025</block>
   <block id="9e5f96378bed43aac0d5d94368775263" category="cell">Windows Server 2025</block>
-  <block id="084b022f1511ba8dda542f70832d22e4" category="paragraph">NASボリュームが31日間使用されなかった場合は、コスト削減のため、使用されていないNASボリュームをアーカイブまたは削除してください。</block>
   <block id="6d4d9f3d79904b627f6aca8246717bca" category="list-text">*キャッシュボリューム*：キャッシュボリュームを含むソースストレージVMは、切り替えでサポートされません。移行の失敗を防ぐため、切り替え前にONTAP FlexCache関係を削除してください。</block>
   <block id="179ab629584266b78c7a691ade72de63" category="admonition">アカウント管理者がAI機能を無効にしている場合、新しいルールを作成したり、既存のルールを編集したりすることはできません。既にスケジュールされているルールは、引き続き実行されます。<block ref="646cadbb9cfc9d23560c447c51098225" category="inline-link-macro-rx"></block>。</block>
   <block id="22941004ec8c49f5d8a764461a973801" category="list-text">AWS環境への読み取り専用アクセス。カスタムルールでは、セキュリティ境界として読み取り専用権限が必要です。<block ref="8e1e3c879b9dae9bf3456eb51959b906" category="inline-link-macro-rx"></block>。</block>
@@ -6603,7 +6565,6 @@
   <block id="fdb1959aef23285e43fe2cdcd4f28fee" category="paragraph">Workload FactoryにおけるAI機能へのアクセスを制御します。AI機能をオフにするか、NetAppまたはお客様の組織が管理するAWS Bedrockを使用できます。</block>
   <block id="6f5403c75b81b8b52cd43cae97fcf772" category="list-text">顧客管理型Bedrock</block>
   <block id="c18ad30e2ef4050c256483f9a51ad2de" category="list-text">独自のAWS Bedrock設定を使用してください。</block>
-  <block id="edf60b9bc6b08bdb2aa52c67c9ff0924" category="list-text">最良の結果を得るには、NetAppはAmazon Bedrock構成でAnthropic Claude Sonnet 4.5または4.6を使用することを推奨します</block>
   <block id="4580e55cbed2076f7b001c4793810627" category="list-text">顧客管理型の Bedrock を使用している場合は、Workload Factory の IAM ロールにリンクされている認証情報の AWS ポリシーを更新してください。</block>
   <block id="42f8e0cc53973b95fb8c5ab1b1940d45" category="admonition">Workload Factory IAMロールにリンクされている認証情報に対して、必要な権限をAWSポリシーに追加します。</block>
   <block id="d8180f5e900b1f6f9e24a34bcc5df784" category="list-text">メニューから、*管理* &gt; *設定* &gt; *AIツール* を選択します。</block>
@@ -6792,11 +6753,8 @@
   <block id="060a56ccfbd9aaaf478d6c32ef40a68c" category="paragraph">FlexGroupボリューム容量のバランス確認には、構成要素の現在のレイアウトの評価が含まれます。ボリュームの容量をリバランスすると、NetApp Workload Factoryは、偶数個の構成要素を持つ新しい構成要素レイアウトを設計し、すべてのHAペアにデータを均等に分散させます。このサービスはリバランス計画を実行し、それによって読み取り / 書き込み処理が改善されます。</block>
   <block id="574713587eaf140dc0962f46a1bb8717" category="list-text">リバランスを行ったボリューム上の既存のスナップショットは部分的なものとなり、ボリュームデータの復元には使用できませんが、リバランス後に取得した新しいスナップショットはボリュームデータの復元に使用できます。</block>
   <block id="7629ffb115c5fb010968b91584235adb" category="paragraph">FSx for ONTAPファイルシステムの1つのノード内で、あるFlexVol volumeと他のFlexVol volumeのバランスを取ることができます。ファイルシステムの各ノードに複数のFlexVol volumeがあり、単一のFlexVol volumeが選択されている場合、そのFlexVol volumeはすべてのFlexVolsを考慮してバランスが取られますが、移動できるのは選択されたボリュームのみです。</block>
-  <block id="289d7f526b2620360ec3a8225eff44c1" category="summary">NetApp Workload Factoryで、FSx for ONTAPボリュームのボリュームワークロードを変更、ボリュームタグを編集、ストレージ効率を更新、および不変ファイル設定を管理します。</block>
-  <block id="2c2e0e41bc65a4d0ede842474cb0f079" category="paragraph">組織のニーズに合わせて、NetApp Workload FactoryでFSx for ONTAPボリューム設定をカスタマイズします。ボリュームのワークロードとタグを設定してリソースを分類したり、ストレージ効率設定を更新してスペースとコストの削減を最適化したり、不変ファイル設定を管理してデータ保持を制御し、不正な変更から保護したりできます。</block>
   <block id="ba6f9ccf967e3f23548f30ca0ff52a0e" category="paragraph">不変ファイルは、<block ref="c2ed7675c4babbb461c62976097c066d" category="inline-link-macro-rx"></block>時にのみ有効にできます。</block>
   <block id="8e3414aa969732768a412e56c4c391ae" category="list-text">*未指定*：デフォルトの最小期間は0年、デフォルトの最大期間は30年です。</block>
-  <block id="67c59fac0ecc7a902fc194915c0bf14a" category="list-text">*ボリューム追加モード*：この機能を有効または無効にします。ボリューム追加モードを有効にすると、WORMファイルに新しいコンテンツを追加できます。</block>
   <block id="9e1079689569db62524b04b9ccafce93" category="summary">AWSパフォーマンスドキュメントへのリンクを含む、NetApp Workload FactoryのFSx for ONTAPファイルシステムのパフォーマンスリファレンス情報を確認します。</block>
   <block id="69530f7b3bdbd4ad588c0c148d8e48b7" category="paragraph">FSx for ONTAPファイルシステムのパフォーマンスを理解するために、<block ref="a572b0e55a3a15b7b3460602e8714ba1" category="inline-link-macro-rx"></block>のドキュメントを確認してください。</block>
   <block id="ebeea727f6d2829701bdab0749b8b789" category="summary">Workload Factory で、FSx for ONTAP ファイルシステムの自動 SSD IOPS プロビジョニングを有効にするか、ユーザーがプロビジョニングした IOPS 値を設定します。</block>
@@ -6950,20 +6908,10 @@
   <block id="abff96b75117f320254f372b6518244b" category="paragraph">ダッシュボードには、更新された指標が表示されます。</block>
   <block id="6347309ad07af7266241819bb2af76d1" category="list-text">*ホストをフェイルオーバーノードに接続する*</block>
   <block id="e89cb70f69260bd0359dad1d58cb94de" category="paragraph">Workload Factory は、フェイルオーバー時の接続性を維持し、中断を回避するために、ホストをフェイルオーバーノードに接続することを推奨します。</block>
-  <block id="d8f7d6931c10571f6b09ab824fb1eb68" category="list-text">*SAP HANAスナップショットポリシー*</block>
-  <block id="5430bb473a033ac7ca3cf168ada8eef0" category="paragraph">アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるには、SAP HANAボリュームのスナップショットポリシーを「None」に設定してください。</block>
-  <block id="bed53786c7f97a0d4610c92e2155c179" category="list-text">*MySQLスナップショットポリシー*</block>
-  <block id="2cfa406a51ef73bbf2e8700e3f414fba" category="paragraph">アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるには、MySQLボリュームのスナップショットポリシーを「なし」に設定してください。</block>
-  <block id="277b9300260dd55ca64290333450ba59" category="list-text">*PostgreSQLスナップショットポリシー*</block>
-  <block id="2a902e0c93222642481e7829b61f6885" category="paragraph">PostgreSQLボリュームのスナップショットポリシーを「なし」に設定することで、ストレージコストを削減し、アクティブなデータベースデータのパフォーマンスを向上させることができます。</block>
   <block id="f6713ad974e1c45e6ae6f336e05e1acb" category="list-text">*ARP/AIによる複数デバイス検出のギャップ*</block>
   <block id="99585e92af9e1ad2380aa522d6753d7a" category="paragraph">ARP/AIは、ボリュームにブロックデバイスが1つだけ接続されている場合に、完全な保護範囲を提供します。ボリュームに複数のブロックデバイスが接続されている場合、Workload Factoryはブロックデバイスを新しいボリュームに移動し、各ボリュームにブロックデバイスが1つだけ存在するようにします。</block>
-  <block id="94252ec3a780f58314c91e97ef4e34dd" category="list-text">*Kubernetes iSCSIバックエンド向け双方向CHAP*</block>
-  <block id="33abb23bb89c7fd6e6403f57410fd19d" category="paragraph">Trident iSCSIバックエンドには双方向CHAP認証を使用して、iSCSIイニシエータとターゲットが相互に認証されるようにします。これにより、許可されていないホストがストレージVMに対してiSCSIセッションを確立するのを防ぎます。</block>
   <block id="6afaedca049edca8b26b3afcc63112c5" category="list-text">*アプリケーションストレージVMで無効にする<block ref="d51321f13693d09d4a9cbb2758b42d12" prefix=" " category="inline-code"></block>*</block>
   <block id="bfd8d5ee3b60e71cb8f894bb8d7d7f01" category="paragraph">アプリケーションストレージVMで<block ref="d51321f13693d09d4a9cbb2758b42d12" prefix=" " category="inline-code"></block>を無効にして、クライアントがアクセスできないエクスポートを一覧表示できないようにします。</block>
-  <block id="17a183ee5c2a455937989091c69ca48d" category="list-text">*専用のKubernetesストレージVM*</block>
-  <block id="aeb9ac6a931deb0972004e13a0b50cbd" category="paragraph">Kubernetesワークロードには専用のストレージVMを使用してください。Kubernetesのストレージを分離しておくことで、管理が容易になり、ポリシー設定が簡素化され、ストレージ設定の一貫性を確保しやすくなります。</block>
   <block id="dd54a6cc471e0bb15a8807c9b04d608a" category="list-text">*igroup OSをホストOSに一致させる*</block>
   <block id="9b4b32350b17fe80d09c863ee9493bc1" category="paragraph">I/Oやパフォーマンスの問題を防ぐため、イニシエータグループ（igroup）のオペレーティングシステムをホストのオペレーティングシステムと一致させてください。</block>
   <block id="e2521a2a2f696d450620b08167cf1c24" category="list-text">*クローンのクリーンアップ*</block>
@@ -7112,4 +7060,168 @@
   <block id="0665cdd8950328e06e0db9b1e16938d3" category="inline-link-macro">EVSの推定節約額を計算する</block>
   <block id="536315c4cd9e40b477f48fcc8b1863a7" category="paragraph"><block ref="536315c4cd9e40b477f48fcc8b1863a7" category="inline-link-macro-rx"></block></block>
   <block id="d708ba996885d5ea1c1b9727bc557415" category="paragraph"><block ref="d708ba996885d5ea1c1b9727bc557415" category="inline-link-macro-rx"></block></block>
+  <block id="e84199af3f0a22cf508c7275319c9d81" category="section-title">複数のFSx for ONTAPファイルシステムをリンクに関連付ける</block>
+  <block id="9618a351b6032a7e1eee8e331d0dc5d5" category="paragraph">各ファイルシステムごとに関連付けを繰り返すのではなく、1つのワークフローで複数のFSx for ONTAPファイルシステムを新規または既存のリンクに関連付けることができるようになりました。各ファイルシステムのONTAP認証情報を入力するか、複数のファイルシステムに同じ認証情報を適用することで、リンクを認証できます。</block>
+  <block id="e726e73c171e193dfab137a6f5ae9729" category="paragraph"><block ref="e726e73c171e193dfab137a6f5ae9729" category="inline-link-macro-rx"></block></block>
+  <block id="3ccacb3236a6f36f11b2ec0009544b17" category="section-title">ストレージVMネームサービスの新しい推奨事項</block>
+  <block id="fbdd6100f23f5a660b5abe28fcb2b09f" category="paragraph">Workload Factory では、適切なアーキテクチャ分析において、ストレージ VM ネーム サービスに関する以下の推奨事項が追加されました：</block>
+  <block id="d64be06adb6d10ab66b9f6b94ca50fcf" category="paragraph">*DNSとLDAPサーバの冗長性*：DNSを使用するストレージVMには少なくとも2つのDNSサーバ、LDAPを使用するストレージVMには少なくとも2つのLDAPサーバを推奨します。単一のサーバ障害によって、名前解決、ドメイン認証、またはNFSアクセスがブロックされる可能性があります。</block>
+  <block id="7f937176bc96624307a21211c6e363b9" category="section-title">ボリュームエクスプローラーの機能強化</block>
+  <block id="82f9746d20f9c112b999254d96f68c35" category="section-title">新しいボリュームエクスプローラーテーブルの列</block>
+  <block id="429fbe2106af89a7f2c8096eed7d6005" category="paragraph">ボリュームエクスプローラーテーブルには、以下の新しい列が含まれます：</block>
+  <block id="4bfa3a7e5aa20511dfdbd772b20d7cad" category="list-text">*Logical used size*: クライアントがストレージ効率化の削減前に使用済みとして認識するスペースを表示します。この列はデフォルトで表示されます。</block>
+  <block id="1ebe3707797c8e132ba981865e779a06" category="list-text">*ジャンクション パス*：ボリュームのジャンクション パスを示します。</block>
+  <block id="2313bb4965c4cdefc333eae5dc9f873b" category="section-title">マウントポイントを管理する</block>
+  <block id="c8974a5aa184bb4bdb929cece2bd9485" category="paragraph">ボリュームエクスプローラから直接、ストレージVMのネームスペース内でボリュームがマウントされる場所を管理できるようになりました。ボリュームの「詳細設定」メニューから「マウントポイントの管理」を選択して、ストレージVMのネームスペースをツリーとして表示し、ボリュームのマウント、アンマウント、またはジャンクションパスの変更を行います。Workload Factoryは、ボリュームをアンマウントする前に依存関係をチェックします。他のボリュームがマウントされているボリュームはアンマウントできません。また、ボリュームにSMB共有が含まれている場合は警告が表示されます。</block>
+  <block id="fc67722d0e110f79ff44ed37368e589c" category="section-title">新しいボリューム用のネストされたジャンクション パス</block>
+  <block id="69fc90af1c9281568bdf45e9799d57d6" category="paragraph">ボリュームを作成する際に、「詳細設定」セクションで、<block ref="6ec7d50bc22104cd5628a14f3ea325a4" prefix=" " category="inline-code"></block>などのネストされたジャンクション パスを入力できるようになりました。</block>
+  <block id="7fbf47e0030156e11689a191784df599" category="inline-link-macro">ボリュームの作成方法を確認する</block>
+  <block id="456a99e04a7966867f92671f26d5cae0" category="paragraph"><block ref="456a99e04a7966867f92671f26d5cae0" category="inline-link-macro-rx"></block></block>
+  <block id="5faee5c8e33b5f0b156646e83f976d83" category="section-title">適切に設計された構成をカスタムルールとしてカスタマイズする</block>
+  <block id="995825c99ed4c299f1660557f6451c42" category="paragraph">適切に設計された構成からカスタムルールを開始することで、元のベストプラクティスを維持しつつ、独自のしきい値や範囲を適用できます。Workload Factoryは、その構成に基づいて編集可能なプロンプト付きでカスタムルールを開きます。ルールはドラフトとして開始され、その説明にはどの構成に基づいているかが明記されています。</block>
+  <block id="257f9926a8593f0cf9caa117626fcd6f" category="inline-link-macro">適切に設計された構成をカスタマイズする方法を確認します</block>
+  <block id="0a6fec7ae9e3a960c14178276b4396d1" category="paragraph"><block ref="0a6fec7ae9e3a960c14178276b4396d1" category="inline-link-macro-rx"></block></block>
+  <block id="4fa9c0bce2f1b45a04656d29fbfbb564" category="section-title">スケジュールされたカスタムルール実行の通知を受け取ります</block>
+  <block id="2235dc711ef4c2f3e5167506ffcef41c" category="paragraph">スケジュールされたカスタムルールの通知を有効にすると、Workload Factoryにサインインしなくても結果を取得できます。スケジュールされた実行のたびに通知を受け取るか、実行が失敗または部分的に成功した場合にのみ通知を受け取ることができます。通知は、すでに設定済みのチャネルを通じて送信されます。手動テストでは通知は送信されません。</block>
+  <block id="a57798fee8a8f5fabef775d76f9c1531" category="inline-link-macro">スケジュールされたカスタムルールの通知を受け取る方法を確認します</block>
+  <block id="1aefdba9453f7e3a411594f57b9b7cef" category="paragraph"><block ref="1aefdba9453f7e3a411594f57b9b7cef" category="inline-link-macro-rx"></block></block>
+  <block id="1d5dc0231f3cc52e6923384e6e4e293e" category="paragraph">これらの機能強化は、Workload Factoryにおけるカスタムダッシュボードやその他の管理タスクを対象としています。</block>
+  <block id="81a9f96e5c919c4cddd5e8baf33bc31f" category="section-title">カスタムダッシュボードのタイトルと説明を編集する</block>
+  <block id="e2c2437b93fb3b379ae799b9c5ec87b7" category="paragraph">カスタムダッシュボードのタイトルと説明は、ダッシュボードカタログまたはダッシュボードビューから編集できるため、ダッシュボードの変更に合わせて常に最新の状態に保つことができます。どちらの項目も必須であり、2つのダッシュボードに同じタイトルを付けることができます。</block>
+  <block id="d030448981400ac2939566a8b11f10ec" category="inline-link-macro">カスタムダッシュボードの管理方法</block>
+  <block id="db4eac5f22ce7e5cbfc31bd6ca4ed7e8" category="paragraph"><block ref="db4eac5f22ce7e5cbfc31bd6ca4ed7e8" category="inline-link-macro-rx"></block></block>
+  <block id="dda69a53945d5e78eb0be6205ad77948" category="paragraph">これらの機能強化は、追跡対象ボリュームの自動AI分析、AI分析におけるより明確な根本原因の説明、およびレイテンシ分析結果の保持期間に関するものです。</block>
+  <block id="d27242d4c09d8c87514da12ce13686cf" category="section-title">自動AI分析用のボリュームを追跡</block>
+  <block id="68eb2bcf977ad1777848c2763968bf76" category="paragraph">レイテンシーの問題が検出された際に、自動AI分析の対象となるボリュームを指定できます。分析結果は72時間保存され、通知メールにも含まれるため、自分で分析を実行しなくても原因を確認できます。</block>
+  <block id="1e2beb43d53ce6e7e78ce598ad680f34" category="inline-link-macro">遅延問題の分析について</block>
+  <block id="7ab17ff19aa466bc8531cc7568dea5a6" category="paragraph"><block ref="13291cb64cb4778475d22fb041bce2e0" category="inline-link-macro-rx"></block>。</block>
+  <block id="7c957c99db335692d391818317e98469" category="section-title">AI分析における根本原因のより明確な説明</block>
+  <block id="5d5ae6579cd363d7050ca9ed9dc36998" category="paragraph">AI分析を活用することで、遅延発生の原因をより明確に把握できます。この分析では、FlexCache、容量プール、ファイルシステムに関連する問題のほか、スループットとIOPSの制限、SSDの高い使用率、書き込みの飽和、同じリソースを使用している他のボリュームに関連する問題がないかを確認します。</block>
+  <block id="d8b3a98e16ebd6e698fb6c48570112ff" category="section-title">レイテンシ分析結果は72時間保持されます</block>
+  <block id="d880e6876de7da75b637df83143f9c3e" category="paragraph">レイテンシ分析の結果が、インターフェース上で24時間ではなく72時間表示されるようになりました。これにより、ボリュームの過去の分析結果を確認できます。</block>
+  <block id="8c93aeeae4ab46e42ef19364a7dbaa6c" category="paragraph">これらの機能強化には、ストレージプールの削除、システムからのストレージプールインベントリの表示、リージョンをまたいだシステムの追加、および右側のパネルからのシステム管理が含まれます。</block>
+  <block id="69e1bc44aa452878b78f550b1157f17f" category="section-title">ストレージプールを削除する</block>
+  <block id="8f7df204e470ff814e16ada222cfd4fa" category="paragraph">ボリュームが存在せず、状態が「準備完了」または「エラー」であるGoogle Cloud NetApp Volumesストレージプールを削除できます。削除は取り消せません。削除が失敗した場合、プールはインベントリに残り、エラーはTrackerに記録されます。</block>
+  <block id="cf1fecfd25a257b4ef20c0ed95f07e3c" category="inline-link-macro">ストレージプールを削除する方法を確認します</block>
+  <block id="9398f8b40217b965231fdcd4332786c7" category="paragraph"><block ref="9398f8b40217b965231fdcd4332786c7" category="inline-link-macro-rx"></block></block>
+  <block id="f414c370e39e4064ccb2c0276e677ef1" category="section-title">システムからストレージプールのインベントリを開く</block>
+  <block id="fb042f4fef17c0635a4ffba674613c27" category="paragraph">Google Cloud NetApp Volumesシステムの*Enter system*を選択すると、Workload Factoryのストレージプールインベントリが開き、そのシステムのプロジェクト、認証情報、およびリージョンがすでに選択された状態になります。すべてのリージョンを対象とするシステムの場合は、すべてのリージョンが選択された状態で開きます。</block>
+  <block id="4462344106e22700fb8a40d1f2d42478" category="inline-link-macro">ストレージプールの表示方法</block>
+  <block id="87d8c8b6b1b6d61f129dd9175c8964a9" category="paragraph"><block ref="87d8c8b6b1b6d61f129dd9175c8964a9" category="inline-link-macro-rx"></block></block>
+  <block id="9dc46a144f1a0e6482d6121e2e30f08d" category="section-title">すべてのリージョンにシステムを追加する</block>
+  <block id="faa635f68227860e333316c339d2a5c6" category="paragraph">Google Cloud NetApp Volumesシステムを追加する場合、リージョンはオプションであり、デフォルトではすべてのリージョンになります。Workload Factoryは、選択した認証情報のすべてのリージョンでストレージプールを検出します。選択したリージョンによって、システムがキャンバスに表示する内容と、コンプライアンスおよびDRaaSが使用する内容が決まります。検出が制限されることはありません。</block>
+  <block id="0dd4224dfebbf9a0e09ca374f38a0ee8" category="inline-link-macro">システムを追加する方法</block>
+  <block id="8192d65972817c5c908ef9d3d21cee6f" category="paragraph"><block ref="8192d65972817c5c908ef9d3d21cee6f" category="inline-link-macro-rx"></block></block>
+  <block id="31e995fabcf8533b601702a3403d2a1c" category="section-title">右パネルからシステムを管理する</block>
+  <block id="ae836161166cd65fe60409dc6cb172a7" category="paragraph">Google Cloud NetApp Volumesシステムの右側のパネルでは、ボリュームを表示し、NetApp Consoleからシステムにアクセスできます。</block>
+  <block id="4a9f7350b8d8500b00182c8cc25bdd54" category="paragraph">Workload Factoryには、Ask Me、AIエージェント、カスタムダッシュボード、カスタムルール、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させるAI搭載機能が多数含まれています。</block>
+  <block id="6347580b91437dcd5e409f814f3c41b2" category="list-text">最良の結果を得るには、NetAppはお客様のAmazon Bedrock構成で最新のAnthropic Claude Sonnetモデルを使用することを推奨します</block>
+  <block id="d9b0d76580a14f1511949cb896fee3b9" category="list-text">すべてのAI機能をオフにします。ユーザーは、Ask Me、AIエージェント、アナライザー、カスタムダッシュボード、カスタムルール、その他のAI搭載ツールを使用できなくなります。</block>
+  <block id="fbf7c59bcc60e696e716c2a2edf9aa79" category="list-text">*基本*：自動分析の結果を表示します。ファイルシステムにリンクされている場合、コンポーネントの内訳を表示し、どのコンポーネントが遅延の原因となっているかを示します。リンクが存在しない場合は、追加するように促されます。データ保護（DP）ボリュームについては、コンポーネントの内訳は利用できません。</block>
+  <block id="c6c30df2997883eea8c8f301f7a599ac" category="list-text">FlexCache、容量プール、ファイルシステムの原因、スループットとIOPSの制限、高いSSD使用率、書き込み飽和、および同じリソースを使用する他のボリュームをチェックする、潜在的な根本原因の説明。</block>
+  <block id="f28679041ebdc639726306886c3536d4" category="section-title">自動分析用のボリュームを追跡</block>
+  <block id="5cc00eaaa4ee3f52f70cedfb04df2a66" category="paragraph">追跡対象のボリュームは、遅延イベントが検出されると自動的にAI分析を受けるため、分析を開始しなくても原因を確認できます。</block>
+  <block id="be8385142d03432caa2702e8fa2ff77d" category="list-text">ボリュームを追跡するには、1つまたは複数のボリュームを選択し、追跡対象としてマークします。追跡を停止するには、それらの選択を解除してください。</block>
+  <block id="2d589364448aa47e5d0c3915699388c3" category="list-text">追跡対象ボリュームには、AI分析インジケータの横に追跡インジケータが表示されます。テーブルをフィルタリングして、追跡対象ボリュームのみを表示できます。</block>
+  <block id="65263ccaebb6988b3467ecddae578d0d" category="list-text">分析結果は、手動分析も含め、72時間保持されます。自動分析結果にはタイムスタンプが表示され、右側のパネルの*AI分析*セクションと詳細分析ページに表示されます。</block>
+  <block id="6729823054470da17caf1edccc7bd348" category="list-text">自動分析は、新たな遅延イベントが発生した場合、または前回の分析から24時間経過した場合にのみ再度実行されます。</block>
+  <block id="0ce9ecf0ee56adb4193e9b9818ce529c" category="list-text">手動で分析を実行すると、現在の結果が上書きされます。</block>
+  <block id="9d421cf9cf97c7b1555ec3673f553a82" category="list-text">追跡対象ボリュームは30日後に自動的に選択解除されます。</block>
+  <block id="c555be87e5b227321ac7fe2dedfa27aa" category="list-text">通知メールには、自動分析の結果が含まれています。</block>
+  <block id="024fa8efda81fb5efac8ac629e905d49" category="paragraph">また、組織の標準やNetAppのベストプラクティスに照らして環境を検証するために、平易な言葉でカスタムルールを作成することもできます。サポートされている適切に設計された構成からルールを開始することも、独自のプロンプトを作成することもできます。ドライランでルールをテストし、環境全体で実行するようにスケジュールを設定します。<block ref="02fcf2ffb8ce0690b17b03c9491ef999" category="inline-link-macro-rx"></block>。</block>
+  <block id="d53c6928d91e05727a68237a23178943" category="list-text">*データベーススナップショットポリシー*</block>
+  <block id="258c750e44ac929e2d433849160bcaa4" category="paragraph">アクティブなデータベースデータのストレージコストを削減し、パフォーマンスを向上させるには、SAP HANA、MySQL、およびPostgreSQLボリュームのスナップショットポリシーを「なし」に設定してください。</block>
+  <block id="6eff047f2b112eb2738cd183d41bd8cb" category="paragraph">SSDストレージ階層の利用率を削減するために、コールドデータ階層化を有効にします。一般的なデータストレージを目的としたすべてのボリュームに階層化ポリシーを適用します。SAP HANAプライマリボリューム以外のデータベースボリュームについては、必要に応じてコールドデータ階層化を有効にします。FSx for ONTAPは、データを継続的にスキャンしてコールドデータを検出し、中断することなくキャパシティプール階層に移動します。</block>
+  <block id="e3cbbd9e3a19a7a63306cf078173c55e" category="paragraph">NASボリュームが31日間使用されなかった場合、コスト削減のため、データを容量プール層にアーカイブするか、使用されていないNASボリュームを削除してください。</block>
+  <block id="acbf2aa964e3e50f3723295891ba8528" category="paragraph">Workload FactoryでFSx for ONTAPリソースをチェックするカスタムルールを作成します。ルールを平易な言葉で記述すると、Workload Factoryがリクエストを検証済みのルールに変換します。</block>
+  <block id="3b428fb12c8fcf790f776e900ea4e763" category="paragraph">リソースで実行される前にルールを確認できるように、必要なチェックを記述してください。</block>
+  <block id="72293eecdb4ed34791f93e4595a99b82" category="list-text">メニュー <block ref="438b712f6e6afc173ce78a756adc207c" category="inline-image-macro-rx" type="image"></block> を選択し、ワークロード &gt; 適切に設計された &gt; カスタムルール を選択します。</block>
+  <block id="281068ca5fe3f31e0714c68d7ab15edf" category="paragraph">カスタムルールを開くと、カスタムルールを作成するのに役立つサンプルプロンプトが表示されます。「プロンプトをコピー」を選択すると、サンプルプロンプトがAIダイアログのテキストボックスにコピーされます。</block>
+  <block id="0109f2f11bde34f5f95d6375af5b565d" category="paragraph">適切に設計された構成からカスタムルールを開いた場合、プロンプトはすでに入力されており、送信されません。続行する前にプロンプトを編集してください。</block>
+  <block id="3d56eda2da1dcba2001b730ff7b47463" category="paragraph">ページには以下が表示されます：</block>
+  <block id="89ed58bdee6f83ea45c59b698295bd76" category="paragraph">お客様のカスタムルールが作成され、ルールカタログに登録されました。スケジュールを設定すると、指定された頻度でFSx for ONTAPリソースをチェックします。適切に設計された構成から開始した場合、ルールの説明には、ルールがその構成に基づいていることが記載されます。元の構成は変更または削除されません。後でルールを編集する場合、更新版を保存する前に、システムはチャット、レビュー、承認、検証といった同じ手順を案内します。</block>
+  <block id="6548d80fe8acb07c5119f468a30cd2b1" category="section-title">設定をカスタムルールとしてカスタマイズする</block>
+  <block id="65ffa589e19def1b77341b26414218b3" category="paragraph">組織の標準にアーキテクチャチェックを適合させることで、元の推奨事項を引き続き利用できるようにします。</block>
+  <block id="06662f11a4d517ed4c43dff59de4377f" category="paragraph">*ルールとしてカスタマイズ*が利用可能な場合は、その設定からカスタムルールを作成できます。プロンプトは設定から事前に入力されており、送信するまで送信されません。</block>
+  <block id="397312d35d189b1ca8dd9c5e781db1d7" category="list-text">調整したい設定を選択してください。</block>
+  <block id="77cdd33e121f416984cfff47fa017003" category="list-text">*ルールとしてカスタマイズ* が利用可能な場合は、それを選択します。</block>
+  <block id="ce41b5656479e047228c34d4c08a6491" category="paragraph">カスタムルールを開くと、設定に基づいたプロンプトが表示されます。プロンプトは送信されません。プロンプトを編集して、別のリソース、しきい値、またはチェックを使用します。</block>
+  <block id="a0fcf6704fe8fb215938bb9bc5569f71" category="list-text">プロンプトを確認し、ルールを検証し、保存またはスケジュール設定する手順を完了してください。ルールは、スケジュールを設定するまでドラフトのままになります。</block>
+  <block id="385442535e80145b437f6d2ceb94114a" category="paragraph"><block ref="385442535e80145b437f6d2ceb94114a" category="inline-link-macro-rx"></block></block>
+  <block id="cdd8029c485f2576c1ad77aef7b775ac" category="paragraph">元の設定は、適切に設計されたダッシュボード内に保持され、削除されません。ルールの説明には、ルールがこの構成に基づいていることが記載されています。カスタムルールは、お客様の環境のみを読み取ります。推奨事項を適用するには、ダッシュボードの設定を更新してください。</block>
+  <block id="be755af1154fd568af3ecda71d9f19cd" category="paragraph">カスタムルールを使用すると、平易な言葉でチェックを作成できます。これらのルールは、すべてのリソースに対してチェックされます。カスタムルールを使用すると、デフォルトのルールではカバーされない可能性のある、組織の基準、リスク制限、および運用要件を適用できます。サポートされている、適切に設計された構成からカスタムルールを開始できます。元の設定はそのまま維持され、新しいルールはスケジュールされるまで下書きとして扱われます。スケジュールされたルールが終了した際に通知を受け取ることができます。<block ref="f571cd95e32f7c421382198bc0dd0eae" category="inline-link-macro-rx"></block></block>
+  <block id="10c0ca1430e4a23a3776a347bb89c301" category="list-text">適切に設計された構成から作成されたカスタムルールは、その構成を変更したり、無効にしたりすることはありません。</block>
+  <block id="f0f0722cab25b84bbc45bdfb9ac3e3f9" category="paragraph">ルールカタログは、すべてのカスタムルールを管理できる場所です。ルールの詳細を確認したり、ルールを編集したり、結果を確認したり、スケジュールされた実行の通知を有効にしたり、ルールをスケジュールに基づいて実行するかどうかを制御したりできます。</block>
+  <block id="dc0328108097de375d63033fb6ad9299" category="paragraph">ルールカタログには、作成したすべてのルール、そのステータス、スケジュール、最新の結果、および通知が有効になっているかどうかが表示されます。</block>
+  <block id="5ccce28fe65cf17b314491d667074b11" category="list-text">メニュー <block ref="438b712f6e6afc173ce78a756adc207c" category="inline-image-macro-rx" type="image"></block> を選択し、次に *Well-architected* &gt; *カスタムルール* を選択します。</block>
+  <block id="a7f39d6a61d28a05a69517eea5d21afa" category="section-title">スケジュールされたカスタムルールの通知を受け取る</block>
+  <block id="8890f52a94249930a08e1261acbcdcd9" category="paragraph">スケジュールされたカスタムルールが完了した際に通知を受け取ることで、ログインせずに結果を確認できます。</block>
+  <block id="e219f1f5b3109521d68cf6df03bd46a7" category="paragraph">通知はデフォルトではオフになっており、ルールごとにオンにする必要があります。スケジュールされた各実行のあとに、Workload Factoryはアカウントにすでに設定されているチャネルを使用して通知を1件送信します。アカウントのどのユーザーでも、通知のオンとオフを切り替えることができます。手動テストでは通知は送信されません。</block>
+  <block id="279d9f1187f318e1ad59faa5af465a27" category="paragraph">ルールがスケジュールに基づいて実行できること、およびアカウントが通知を送信できることを確認してください。</block>
+  <block id="57ec21795cfab00ff87c73b22767762b" category="list-text">この設定は、ルールがスケジュールされている場合のみ変更できます。</block>
+  <block id="3c02a9446ece23038345c900f0bc775a" category="inline-link-macro">Workload Factoryで通知を設定する</block>
+  <block id="aba7d6e728a37bdce74d692d5d6df340" category="list-text">Workload Factoryの通知サービスが有効になっています。<block ref="9268d07bd0991b2d1d3e66266d6d2bc8" category="inline-link-macro-rx"></block>。</block>
+  <block id="700b5359baa639c4c843f6dd44c28f93" category="list-text">ルールカタログで、該当するルールを選択します。</block>
+  <block id="32e1b2d68d805112c1234e6706614b38" category="list-text">ルールがスケジュールされていないために「通知を受け取る」が利用できない場合は、ルールをスケジュールしてから再度開いてください。</block>
+  <block id="8a029fee577177f5fbc4ddd6bd0c34dc" category="list-text">通知が設定されていないために「通知を受け取る」が利用できない場合は、アカウントの通知を設定してから、ルールを再度開いてください。</block>
+  <block id="8e908dde0685fe63d1f8f6cf7072015f" category="list-text">*Notify me*をオンにして、すべてのスケジュール実行、または失敗した実行もしくは部分的に成功した実行のみを選択します。</block>
+  <block id="7380189d27cdf2604f8f82438bb46fa8" category="paragraph">ルールを編集している間は、そのルールは*編集中*と表示されます。他のユーザーには引き続き現在のスケジュール済みルールが表示され、変更を保存するまではスケジュールされた実行は通常どおり継続されます。ルールを編集しても、そのルールの通知のオン/オフは切り替わりません。</block>
+  <block id="6997a56fa011d6a492ccb057a62c0e06" category="paragraph">ルールを削除せずに評価を停止するには、ルールを一時停止します。一時停止されたルールはカタログに残り、いつでも再開できます。ルールを一時停止しても、通知のオン/オフは切り替わりません。</block>
+  <block id="25e4e83ab80d16b8437ac0964a2bf891" category="paragraph">次の定期実行を待つことなく、いつでもクイックテストを実行して現在のコンプライアンス状況を確認できます。クイックテストでは通知は送信されません。</block>
+  <block id="4806727e3496e0c57e2084f24f41da75" category="paragraph">NetApp Workload FactoryでFSx for ONTAPファイルシステムのONTAP認証情報を管理します。Workload Factoryの認証情報には、プライマリと制限付きの2種類があります。デフォルトでは、ファイルシステムはプライマリONTAP認証情報を使用します。制限付き認証情報は、Ask Me、カスタムルール、カスタムダッシュボードなどのAIオペレーション（AIOps）にのみ使用されます。必要に応じて制限付き認証情報セットを追加でき、どちらの認証情報セットもいつでも更新できます。</block>
+  <block id="5de3a26d1928fa2d7566c2b1b6c48dec" category="summary">NetApp Workload Factoryで、FSx for ONTAPボリュームのボリュームワークロードの変更、マウントポイントの管理、ボリュームタグの編集、ストレージ効率の更新、および不変ファイル設定の管理を行います。</block>
+  <block id="7b087eeecae864e2c9d9d93db2a48db0" category="doc">NetApp Workload FactoryでのFSx for ONTAPボリューム設定の管理</block>
+  <block id="4b2b58ee39226862707af9b9e7a481de" category="paragraph">組織のニーズに合わせて、NetApp Workload FactoryでFSx for ONTAPのボリューム設定をカスタマイズします。ボリュームのワークロードとタグを設定してリソースを分類したり、ストレージ効率化設定を更新してスペースとコストの削減を最適化したり、マウントポイント（ジャンクション パス）を管理してボリュームのマウント場所を制御したり、不変ファイル設定を管理してデータ保持を制御し、不正な変更から保護したりできます。</block>
+  <block id="b66bce0291b5350e67b733af8e8dfeea" category="list-text">*高度な操作*を選択し、次に*ワークロードの変更*を選択します。</block>
+  <block id="ec2af5efe7b0693062973380659bfb01" category="section-title">マウントポイント（ジャンクション パス）を管理する</block>
+  <block id="3b8aace37fda8495ba1d97e86b4933b8" category="paragraph">ストレージVMのネームスペース内でボリュームがマウントされる場所を管理します。Workload Factoryは、ボリュームをアンマウントする前に依存関係をチェックします。配下に他のボリュームがマウントされているボリュームはアンマウントできません。また、ボリュームにSMB共有がある場合は警告が表示されます。</block>
+  <block id="7e207070dba32bc2d9db91d9a3decdb5" category="list-text">マウントポイントを管理するボリュームのアクションメニューを選択してください。</block>
+  <block id="21babbf03bfdb4d3555d622a4a317326" category="list-text">*高度な操作*を選択し、次に*マウントポイントの管理*を選択します。</block>
+  <block id="869ef23c31ab0b150a1fbe65bb87f9af" category="list-text">「マウントポイントの管理」ページで、ボリュームのマウント、アンマウント、またはマウントポイント（ジャンクション パス）の変更を行います。</block>
+  <block id="254644a810bbe7a3fb027082524206ee" category="list-text">「基本操作」を選択し、「ボリュームタグの編集」を選択します。</block>
+  <block id="d7e929397f13e43caeab387a1498a691" category="paragraph">ストレージ効率化機能には、重複排除、データ圧縮、データコンパクションが含まれており、FlexVol volumeで最適なスペース削減を実現します。重複排除は、重複するデータブロックを削除します。データ圧縮は、データブロックを圧縮して、必要な物理ストレージ容量を削減します。データコンパクションは、より少ないスペースにより多くのデータを格納して、ストレージ効率を向上させます。</block>
+  <block id="10ec8702d6349905e781244561a65beb" category="paragraph">ボリュームで不変ファイル機能が有効になっている場合、保持ポリシーと期間、自動コミット期間、ボリューム追加モードなどの設定を更新できます。</block>
+  <block id="bcfbe24418aa1748995a29c2c1e3d3a4" category="list-text">「変更不可能なファイルの管理」ページで、以下の項目を更新してください：</block>
+  <block id="23528654d11ac6810e0b45a50ee6ccdb" category="list-text">*保持期間*：*指定なし* または *期間を指定* を選択します。</block>
+  <block id="10800b7f5af598341a73b31f9c89b023" category="list-text">*期間を指定*：保持ポリシー、最小期間と最大期間、自動コミット機能、およびボリューム追加モード機能を定義します。以下の詳細情報を指定してください：</block>
+  <block id="3fff6881c6375df52a3382a1c28d3c27" category="list-text">*自動コミット*：自動コミット期間中に変更されていないファイルを自動的にWORMにコミットする機能を有効または無効にします。</block>
+  <block id="b96145a118f5f22d5671016368e91049" category="list-text">*特権削除*：この機能を有効または無効にします。この機能を有効にすると、SnapLock管理者が有効期限切れでないWORMボリュームを削除できるようになります。この機能は、エンタープライズ保持モードでのみサポートされています。</block>
+  <block id="984d3b6784a4e9d6d1595f3476df9311" category="list-text">*ボリューム追加モード*：この機能を有効または無効にします。ボリューム追加モードを有効にすると、WORMファイルに新しいコンテンツを追加できます。</block>
+  <block id="1bdf57aea148d81edd2bba7f717f7726" category="summary">ストレージプール、ボリューム、データサービスを管理するために、Google Cloud NetApp VolumesシステムをNetApp Consoleに追加します。</block>
+  <block id="7d6959b89f1b504bb8feffa93dff49d7" category="doc">Google Cloud NetApp VolumesシステムをNetApp Consoleで追加する</block>
+  <block id="90b218b74f4eb42f58f0cf2011b356c5" category="paragraph">Google Cloud NetApp Volumesシステムを追加して、NetApp Consoleからストレージプールとボリュームを管理できるようにします。</block>
+  <block id="b8bd5dd6c6cb9c8f4b2f1917925ab04e" category="paragraph">Workload Factoryがすべてのリージョンでそのストレージプールを含めるように、管理するプロジェクトを登録します。</block>
+  <block id="544654a10596f8a1a75cb081d4b60b46" category="inline-link-macro">認証情報を追加する方法を確認する</block>
+  <block id="92143231ffb5666fffaac5dee5d91ab7" category="paragraph">Workload FactoryでGoogle Cloud NetApp Volumesプロジェクトの認証情報を追加します。<block ref="02f2c5c794dcb1bc0222a011490fa860" category="inline-link-macro-rx"></block>。</block>
+  <block id="737d29543235a85b94d028ef2fe47af0" category="list-text">NetApp Consoleメニューから、*ストレージ* &gt; *管理* &gt; システムを選択し、次に*システムの追加* &gt; *Google Cloud Platform*を選択します。</block>
+  <block id="45cc41325177f091be5fe2c08b4283d6" category="list-text">*Google Cloud NetApp Volumes*で、*検出*を選択します。</block>
+  <block id="d80e79c3d96dec3b7d4daf9305412777" category="list-text">システムの名前を入力してください。</block>
+  <block id="3b96f7be18015d6eb28b81a5e4fe3011" category="list-text">システムの認証情報を選択してください。</block>
+  <block id="9ff38a3896cd59c63238d6ebad0fbdf4" category="list-text">必要に応じて、リージョンを選択してください。リージョンを選択しない場合、システムはすべてのリージョンを対象とします。</block>
+  <block id="283089d8b3fbe7d80fa3658cf708a1b1" category="admonition">リージョンによって検出が制限されることはありません。Workload Factoryは、認証情報に基づいてすべてのリージョンのストレージプールを検出します。選択したリージョンによって、システムがキャンバスに表示する内容と、コンプライアンスおよびDRaaSが使用する内容が決まります。</block>
+  <block id="6c2553b6253cdbd6f6d77a23211e2497" category="list-text">*検出*をクリックします。</block>
+  <block id="54cb892471079a0559f5197cecb21d04" category="paragraph">NetApp Consoleのシステムページにシステムが表示されます。同じ認証情報に対して、いくつでもシステムを追加できます。</block>
+  <block id="a820d58512782f28ed155fb55f65456f" category="summary">NetApp Workload Factoryで、ボリュームのないGoogle Cloud NetApp Volumesストレージプールを削除します。</block>
+  <block id="29161ad1721b01c469fab0acbc5ac9e9" category="doc">Google Cloud NetApp VolumesストレージプールをNetApp Workload Factoryで削除する</block>
+  <block id="be50237e09ecde3d0293f8e6677f9bb0" category="paragraph">Google Cloudコンソールを使用せずに、ボリュームが含まれなくなったストレージプールを削除します。</block>
+  <block id="9398d57b13ebdc353024e43464ac9694" category="paragraph">必要なときに削除オプションを使用できるように、ストレージプールとユーザーロールで削除が許可されていることを確認してください。</block>
+  <block id="1b9c9bf8c217196cbf0fe2b8745c540d" category="list-text">ストレージプールにはボリュームがあってはなりません。</block>
+  <block id="bb1364c0adb1d0f5e8918749a5ecbffa" category="list-text">ストレージプールは、準備完了状態またはエラー状態である必要があります。</block>
+  <block id="af88331e9964964dbe442b366d1ac6df" category="list-text">Google Cloud NetApp Volumes管理者ロールが必要です。</block>
+  <block id="bed2ca610fb69910bb8ef4c1b5a550f4" category="paragraph">ストレージプールを削除する際は、それに依存するものが何もないことを確信できる場合にのみ削除してください。一度削除すると元に戻すことはできません。</block>
+  <block id="ac2979c112aec90afc57be9ad357080d" category="list-text">メニュー <block ref="d0893c56792da060977c8f5dd5abb05a" category="inline-image-macro-rx" type="image"></block>、*ワークロード* &gt; *ストレージ* &gt; *Google Cloud NetApp Volumes* を選択します。</block>
+  <block id="0be02c4c2c6d230d37294eca91cac32d" category="list-text">ストレージプールテーブルで、ストレージプールの<block ref="8891ca04a345a35bd7da25d57718d9b7" category="inline-image-macro-rx" type="image"></block>を選択し、*削除*を選択します。</block>
+  <block id="bdc007d762f0dce7de79c538c125f8c0" category="list-text">確認ダイアログで、*delete* と入力して確定し、*削除* を選択します。</block>
+  <block id="26b8a5f8cbb692e906c8eed4b88cc0bd" category="inline-link-macro">トラッカー</block>
+  <block id="aa4403b6cc8cfa5753950f959d4825e3" category="paragraph">ストレージプールのステータスが「削除中」に変更されます。削除が完了すると、Workload Factoryはストレージプールをテーブルから削除します。削除に失敗した場合、ストレージプールはテーブルに残り、<block ref="16f5b5bf9289e709fc587a71b063a7a8" category="inline-link-macro-rx"></block> にエラーメッセージが表示されます。</block>
+  <block id="56d12594a8f59f797fe17a169b45a221" category="list-text">オプション：ダッシュボードの範囲を指定するには、*プロジェクト*、*認証情報*、*リージョン*の各フィルタを使用します。</block>
+  <block id="e601170e9f18e3a7a1c1539a873f8c52" category="summary">Google Cloud NetApp Volumesの利用を開始するには、NetApp Consoleのロールを割り当て、認証情報を追加し、システムを追加します。</block>
+  <block id="21872b477ae43407e3cd40c0caefeb02" category="paragraph">Google Cloud NetApp Volumesの利用を開始するには、NetApp Consoleのロールを割り当て、認証情報を追加し、システムを追加します。</block>
+  <block id="8246a129fc774e2bd3e763ef58d63658" category="paragraph">NetApp Consoleで、認証情報を使用してシステムを追加します。必要に応じて、リージョンを選択します。</block>
+  <block id="a9a45188b1b57b3832dc903c15823c34" category="paragraph">Google Cloud NetApp Volumesシステムで*システムに入る*を選択してこのページを開くと、フィルタにはすでにそのシステムのプロジェクト、認証情報、リージョンが表示されます。すべてのリージョンを対象とするシステムを開くと、すべてのリージョンが選択された状態になります。</block>
+  <block id="4545f3dbdf2159a2d30925d5ee8a966f" category="inline-link-macro">Google Cloud NetApp Volumesストレージプールを削除する</block>
+  <block id="18a7028c6cbce600b01de653195a4e1f" category="list-text"><block ref="18a7028c6cbce600b01de653195a4e1f" category="inline-link-macro-rx"></block></block>
+  <block id="764f20ec2dd6a78505eaec1ab08fa0fb" category="section-title">DPボリュームのレイテンシの内訳</block>
+  <block id="45d5d8eb50bda01c3e493da6cbdf9431" category="paragraph">基本的なレイテンシ分析におけるコンポーネントの内訳は、データ保護（DP）ボリュームでは利用できません。</block>
+  <block id="5fd02484bbe1124b48ec6e3c36e522cb" category="section-title">2026年11月26日</block>
 </blocks>

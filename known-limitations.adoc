@@ -319,3 +319,10 @@ SUSE Linux Enterprise Server 12にOracle Databaseを登録する際、Workload F
 === オペレーター権限が必要です
 
 NetApp Workload Factory for EDAが正しく機能するには、オペレータ権限が必要です。
+
+
+
+[[latency-breakdown-for-dp-volumes]]
+=== DPボリュームのレイテンシの内訳
+
+基本的なレイテンシ分析におけるコンポーネントの内訳は、データ保護（DP）ボリュームでは利用できません。

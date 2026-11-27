@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: admin/manage-genai-features.html 
-keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration 
+keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, custom rules, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration 
 summary: Workload FactoryにおけるBedrockベースのAI機能へのアクセスを制御します。AI機能をオフにするか、NetApp管理型またはお客様管理型のBedrockを使用できます。 
 ---
 = NetApp Workload FactoryのAI機能の管理
@@ -21,7 +21,7 @@ Workload FactoryにおけるAI機能へのアクセスを制御します。AI機
 [[about-ai-features]]
 == AI機能について
 
-Workload Factoryには、Ask Me、AIエージェント、カスタムダッシュボード、ルールビルダー、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させるAI搭載機能が多数含まれています。
+Workload Factoryには、Ask Me、AIエージェント、カスタムダッシュボード、カスタムルール、EMS、データベースログ、レイテンシのアナライザーなど、ユーザーエクスペリエンスを向上させるAI搭載機能が多数含まれています。
 
 Workload Factoryの管理者であれば、AI設定ページでこれらの機能におけるAIの使用方法を制御できます。
 
@@ -44,11 +44,11 @@ NetAppマネージド Bedrock （推奨）:: NetApp が管理する AWS Bedrock 
 顧客管理型Bedrock:: 独自のAWS Bedrock設定を使用してください。
 +
 --
-* 最良の結果を得るには、NetAppはAmazon Bedrock構成でAnthropic Claude Sonnet 4.5または4.6を使用することを推奨します
+* 最良の結果を得るには、NetAppはお客様のAmazon Bedrock構成で最新のAnthropic Claude Sonnetモデルを使用することを推奨します
 
 
 --
-GenAI機能オフ:: すべてのAI機能をオフにします。ユーザーは、Ask Me、AI エージェント、アナライザー、カスタムダッシュボード、ルールビルダー、その他の AI 搭載ツールを使用できなくなります。
+GenAI機能オフ:: すべてのAI機能をオフにします。ユーザーは、Ask Me、AIエージェント、アナライザー、カスタムダッシュボード、カスタムルール、その他のAI搭載ツールを使用できなくなります。
 
 
 
